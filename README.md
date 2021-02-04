@@ -5,7 +5,7 @@
 ### 文章分类
 
 - [电脑相关](https://github.com/wtto00/Blog/projects/1)
-- [代码开发](https://github.com/wtto00/Blog/projects/2)
+- [前端开发](https://github.com/wtto00/Blog/projects/2)
 - [软件使用](https://github.com/wtto00/Blog/projects/3)
 
 [点击查看所有分类](https://github.com/wtto00/Blog/projects)
