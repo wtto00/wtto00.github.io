@@ -1,0 +1,46 @@
+---
+issue_number: 7
+title: 使用postcss-pxtorem自适应后，vant组件大小样式不对
+---
+
+因为 vant 的设计稿高宽度是 **1500px** ，如果自己所使用的设计稿宽度不是相同的，那么`postcss-pxtorem`转换的 rem 大小就不会匹配
+
+```less
+// App.less
+/* prettier-ignore */
+html {
+  // 设置根字体大小为 屏幕宽度 / 10
+  font-size: calc(10vw);
+  @media screen and (min-width: 768px) {
+    font-size: (768 / 10)PX;
+  }
+}
+/* prettier-ignore */
+body {
+  max-width: 768PX;
+}
+```
+
+```js
+// vue.config.js
+const pxtorem = require('postcss-pxtorem');
+
+module.exports = {
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          pxtorem({
+            rootValue: ({ file }) => {
+              if (file.indexOf('node_modules/vant') > -1) return [(设计稿宽度 / 10) * (设计稿宽度 / 1500)];
+              return [设计稿宽度 / 10];
+            },
+          }),
+        ],
+      },
+    },
+  },
+};
+```
+
+其中 `APP.less` 中的 _屏幕宽度 / 10_ , _768 / 10_ 和 `vue.config.js` 中的 _设计稿宽度 / 10_ ，两个的倍数需要保持一致，不一定是 10，也可以改成自己想要的倍数
