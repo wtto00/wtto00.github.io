@@ -6,9 +6,9 @@ title: uniapp利用canvas在小程序上面生成图片
 ```javascript
 /**
  * 从这里开始画图
- * @param {Object} canvas 画布对象
- * @param {Object} data 渲染需要用的的数据
- * @param {Object} callback 画布对象
+ * @param {object} canvas 画布对象
+ * @param {object} data 渲染需要用的的数据
+ * @param {function} callback 画布对象
  */
 function startDraw(canvas, data, callback) {
   // 定义画布大小
@@ -91,7 +91,7 @@ function startDraw(canvas, data, callback) {
 
 /**
  * 画图片
- * @param {Object} canvas 画布对象
+ * @param {object} canvas 画布对象
  * @param {string} src 图片地址
  * @param {number} x 画图开始位置x
  * @param {number} y 画图开始位置y
@@ -145,7 +145,7 @@ function drawImage(canvas, src, x, y, width, height, radius, fit, callback) {
 
 /**
  * 画圆角矩形
- * @param {Object} ctx 画笔
+ * @param {object} ctx 画笔
  * @param {number} x 画图开始位置x
  * @param {number} y 画图开始位置y
  * @param {number} width 画图宽度
@@ -177,7 +177,7 @@ function drawRoundedRect(ctx, x, y, width, height, _radius = 0) {
 
 /**
  * 根据宽度计算要显示文字
- * @param {Object} ctx 画笔
+ * @param {object} ctx 画笔
  * @param {string} text 原始文字
  * @param {number} fontSize 字体大小
  * @param {boolean} bold 是否加粗
@@ -221,12 +221,12 @@ function splitText(ctx, text = '', fontSize, bold, width, maxLines) {
 
 /**
  * 渲染显示文字
- * @param {Object} ctx 画笔
+ * @param {object} ctx 画笔
  * @param {number} x 画图开始位置x
  * @param {number} y 画图开始位置y
  * @param {number} width 文字容器宽度
  * @param {string} text 原始文字
- * @param {Object} style 文字样式
+ * @param {object} style 文字样式
  * @param {number} maxLines 文字最多显示几行
  */
 function renderText(ctx, x, y, width, text, style, maxLines) {
@@ -242,7 +242,7 @@ function renderText(ctx, x, y, width, text, style, maxLines) {
 
 /**
  * 导出画布到本地临时文件
- * @param {Object} canvas 画布
+ * @param {object} canvas 画布
  */
 function saveCanvas(canvas, callback) {
   uni.canvasToTempFilePath({
