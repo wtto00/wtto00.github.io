@@ -140,7 +140,7 @@ function drawImage(canvas, src, x, y, width, height, radius, fit, callback) {
   image.onerror = (err) => {
     showError(err.message || '加载图片失败: ' + src);
   };
-  image.src = src;
+  image.src = src || '';
 }
 
 /**
