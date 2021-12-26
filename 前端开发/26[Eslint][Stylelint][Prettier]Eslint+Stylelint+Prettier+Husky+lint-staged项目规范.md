@@ -113,7 +113,7 @@ npm set-script prepare "husky install"
 yarn prepare
 
 # 添加Hook
-npx husky add .husky/pre-commit "npx lint-staged"
+npx husky set .husky/pre-commit "npx lint-staged"
 
 # 执行Git
 git add .
