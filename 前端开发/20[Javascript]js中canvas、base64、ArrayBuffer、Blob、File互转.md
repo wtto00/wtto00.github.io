@@ -10,6 +10,14 @@ const dataurl = canvas.toDataURL('image/png');
 console.log(dataurl);
 ```
 
+### canvas to Blob
+
+```javascript
+canvas.toBlob((blob) => {
+  console.log(blob);
+});
+```
+
 ### base64 to canvas
 
 ```javascript
@@ -53,6 +61,13 @@ reader.readAsArrayBuffer(blob);
 ```javascript
 const file = new File([blob], `${fileName}`);
 console.log(file);
+```
+
+### Blob to Url
+
+```javascript
+const url = URL.createObjectURL(blob);
+console.log(url);
 ```
 
 ### File to base64 / Blob to base64
