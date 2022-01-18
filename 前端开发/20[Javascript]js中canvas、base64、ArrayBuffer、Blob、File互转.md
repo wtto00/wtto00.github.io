@@ -36,12 +36,30 @@ const buffer = Buffer.from(arr[1], 'base64');
 console.log(buffer);
 ```
 
+### base64 to ArrayBuffer
+
+浏览器环境下
+
+```javascript
+const arr = base64.split(',');
+const [, mime] = arr[0].match(/:(.*?);/);
+const bstr = atob(arr[1]);
+let n = bstr.length;
+const u8arr = new Uint8Array(n);
+while (n > 0) {
+  n -= 1;
+  u8arr[n] = bstr.charCodeAt(n);
+}
+console.log(u8arr);
+```
+
 ### ArrayBuffer to Blob
 
 ```javascript
-const arr = dataurl.split(',');
-const buffer = Buffer.from(arr[1], 'base64');
-const blob = new Blob([buffer], { type: arr[0] });
+const arr = base64.split(',');
+const [, mime] = arr[0].match(/:(.*?);/);
+
+const blob = new Blob([buffer], { type: mime });
 console.log(blob);
 ```
 
