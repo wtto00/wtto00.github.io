@@ -57,11 +57,13 @@ Node.js: version < 12
  */
 function replaceUrl(url, params = {}) {
   const matches = url.match(/\{((?!\/).)+\}/g);
+  if (!matches) return url;
 
   let res = '';
   let originUrl = url;
 
-  matches.forEach((item) => {
+  for (let i = 0; i < matches.length; i++) {
+    const item = matches[i];
     const index = originUrl.indexOf(item);
     const beforeStr = originUrl.substring(0, index);
     res += beforeStr;
@@ -70,7 +72,7 @@ function replaceUrl(url, params = {}) {
     res += params[key] || '';
 
     originUrl = originUrl.substring(index + item.length);
-  });
+  }
 
   res += originUrl;
 
