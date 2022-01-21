@@ -3,6 +3,13 @@ issue_number: 28
 title: js 匹配 url 路径参数，并替换变量
 ---
 
+> https://node.green/#ES2020-features-String-prototype-matchAll
+> matchAll 在 nodejs，v12 版本才支持
+
+### Node.js v12+
+
+Node.js: version >= 12
+
 ```javascript
 /**
  * 匹配替换url中的变量
@@ -36,4 +43,37 @@ function replaceUrl(url, params = {}) {
 let url = replaceUrl('/yearpost/settop/{1}/{num}/1', { 1: 222, num: 444 });
 console.log(url);
 // /yearpost/settop/222/444/1
+```
+
+### Node.js v12-
+
+Node.js: version < 12
+
+```javascript
+/**
+ * 匹配替换url中的变量
+ * @param {string} url
+ * @param {object} params
+ */
+function replaceUrl(url, params = {}) {
+  const matches = url.match(/\{((?!\/).)+\}/g);
+
+  let res = '';
+  let originUrl = url;
+
+  matches.forEach((item) => {
+    const index = originUrl.indexOf(item);
+    const beforeStr = originUrl.substring(0, index);
+    res += beforeStr;
+
+    const key = item.substring(1, item.length - 1);
+    res += params[key] || '';
+
+    originUrl = originUrl.substring(index + item.length);
+  });
+
+  res += originUrl;
+
+  return res;
+}
 ```
