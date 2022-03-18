@@ -313,3 +313,17 @@ function savePosterFile(tempImgPath) {
   });
 }
 ```
+
+---
+
+- 提示`Tainted canvases may not be exported.`
+  原因是画布跨域加载了非本域名的图片，导致画布被污染，无法导出为图片。解决办法添加`crossOrigin`属性
+  ```javascript
+  image.crossOrigin = 'anonymous';
+  ```
+- 图片加载的时候报错 `CORS` 跨域错误
+  如果服务端没有设置防盗链的话以及其他限制的话，这种情况很可能是浏览器缓存导致的，可以在图片链接后面加上随机数。
+  ```javascript
+  image.src = `${url}?${Math.random()}`;
+  ```
+  > 参考 https://segmentfault.com/q/1010000008648867
