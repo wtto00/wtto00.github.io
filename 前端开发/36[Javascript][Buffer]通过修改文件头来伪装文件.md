@@ -75,13 +75,14 @@ title: 通过修改文件头来伪装文件
   ```javascript
   fs.writeFileSync('./target/0.png', buffer);
 
-  console.log(await fileTypeFromFile('./source/0.ts'));
+  console.log(await fileTypeFromFile('./target/0.ts'));
   // { ext: 'png', mime: 'image/png' }
-  console.log(mime.getType('./source/0.ts'));
+  console.log(mime.getType('./target/0.ts'));
   // image/png
   ```
 
-  直接更改后缀`target/0.png`为`target/0.ts`，是可以直接用视频播放器播放的。
+  直接打开`target/0.png`，可以作为图片打开，不报错。
+  直接更改后缀`target/0.png`为`target/0.ts`，可以用视频播放器播放，不报错。
 
 ---
 
