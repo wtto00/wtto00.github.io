@@ -106,7 +106,7 @@ pnpm add lint-staged -D
 pnpm add husky -D
 
 # 添加初始化脚本
-pnpm set-script prepare "husky install & husky set .husky/pre-commit \"npx lint-staged\""
+pnpm set-script prepare "husky install && husky set .husky/pre-commit \"npx lint-staged\""
 
 # 初始化
 pnpm prepare
