@@ -15,7 +15,7 @@ pnpm add eslint -D
 pnpx eslint --init
 
 # 添加执行脚本 文件后缀名根据需要修改
-pnpm set-script lint "eslint --fix --color ./**/*.{js,jsx,ts,tsx}"
+pnpm set-script lint "eslint --ignore-path .gitignore --fix --color ./**/*.{js,jsx,ts,tsx}"
 ```
 
 ## **Stylelint**
