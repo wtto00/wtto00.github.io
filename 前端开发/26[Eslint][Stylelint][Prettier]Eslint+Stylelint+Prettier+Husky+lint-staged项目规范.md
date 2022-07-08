@@ -3,44 +3,36 @@ issue_number: 26
 title: Eslint+Stylelint+Prettier+Husky+lint-staged项目规范
 ---
 
-### **1. 创建项目**
-
-[Vite 官方文档](https://cn.vitejs.dev/guide/#scaffolding-your-first-vite-project)
-
-```shell
-yarn create vite
-```
-
-### **2. Eslint**
+## **Eslint**
 
 [ESLint 官方文档](https://cn.eslint.org/docs/user-guide/configuring)
 
 ```bash
 # 安装依赖
-yarn add eslint -D
+pnpm add eslint -D
 
 # eslint 初始化
-npx eslint --init
+pnpx eslint --init
 
 # 添加执行脚本 文件后缀名根据需要修改
-npm set-script lint "eslint --fix --color src/**/*.{js,jsx}"
+pnpm set-script lint "eslint --fix --color ./**/*.{js,jsx,ts,tsx}"
 ```
 
-### **3. Stylelint**
+## **Stylelint**
 
 [stylelint 官方文档](https://stylelint.io/user-guide/get-started)
 
 ```shell
 # 安装依赖
-yarn add stylelint stylelint-config-recommended -D
+pnpm add stylelint stylelint-config-recommended -D
 
 # 如果使用less
-yarn add stylelint-less stylelint-config-recommended-less -D
+pnpm add stylelint-less stylelint-config-recommended-less -D
 # 如果使用scss
-yarn add stylelint-config-recommended-scss -D
+pnpm add stylelint-config-recommended-scss -D
 
 # 添加执行脚本 文件后缀名根据需要修改
-npm set-script style "stylelint --fix --color src/**/*.{css,less}"
+pnpx set-script style "stylelint --fix --color ./**/*.{css,less}"
 ```
 
 配置`stylelint.config.js`
@@ -55,16 +47,16 @@ module.exports = {
 };
 ```
 
-### **4. Prettier**
+## **Prettier**
 
 [Prettier 官方文档](https://prettier.io/docs/en/options.html)
 
 ```shell
 # 安装依赖
-yarn add prettier -D
+pnpm add prettier -D
 
 # 添加执行脚本
-npm set-script format "prettier --write ."
+pnpx set-script format "prettier --write ."
 ```
 
 配置`.prettierrc`
@@ -78,13 +70,20 @@ npm set-script format "prettier --write ."
 }
 ```
 
-### **5. lint-staged**
+忽略处理文件配置`.prettierignore`
+
+```text
+.gitignore
+.prettierignore
+```
+
+## **lint-staged**
 
 [lint-staged 官方文档](https://github.com/okonet/lint-staged)
 
 ```shell
 # 安装依赖
-yarn add lint-staged -D
+pnpm add lint-staged -D
 ```
 
 配置`package.json`
@@ -92,28 +91,25 @@ yarn add lint-staged -D
 ```json
 {
   "lint-staged": {
-    "*.{js,jsx}": ["yarn format", "yarn lint", "git add"],
-    "*.{css,less}": ["yarn format", "yarn style", "git add"]
+    "*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --color --fix ", "git add"],
+    "!(**.{js,jsx,ts,tsx})": ["prettier --write", "git add"]
   }
 }
 ```
 
-### **6.Husky**
+## **Husky**
 
 [Husky 官方文档](https://github.com/typicode/husky)
 
 ```shell
 # 安装依赖
-yarn add husky -D
+pnpm add husky -D
 
 # 添加初始化脚本
-npm set-script prepare "husky install"
+pnpm set-script prepare "husky install & husky set .husky/pre-commit \"npx lint-staged\""
 
 # 初始化
-yarn prepare
-
-# 添加Hook
-npx husky set .husky/pre-commit "npx lint-staged"
+pnpm prepare
 
 # 执行Git
 git add .
