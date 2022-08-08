@@ -12,10 +12,10 @@ title: Eslint+Stylelint+Prettier+Husky+lint-staged项目规范
 pnpm add eslint -D
 
 # eslint 初始化
-pnpx eslint --init
+npx eslint --init
 
 # 添加执行脚本 文件后缀名根据需要修改
-pnpm set-script lint "eslint --ignore-path .gitignore --fix --color ./**/*.{js,jsx,ts,tsx}"
+npm set-script lint "eslint --ignore-path .gitignore --fix --color ./**/*.{js,jsx,ts,tsx}"
 ```
 
 ## **Stylelint**
@@ -32,7 +32,7 @@ pnpm add stylelint-less stylelint-config-recommended-less -D
 pnpm add stylelint-config-recommended-scss -D
 
 # 添加执行脚本 文件后缀名根据需要修改
-pnpx set-script style "stylelint --fix --color ./**/*.{css,less}"
+npm set-script style "stylelint --fix --color ./**/*.{css,less}"
 ```
 
 配置`stylelint.config.js`
@@ -56,7 +56,7 @@ module.exports = {
 pnpm add prettier -D
 
 # 添加执行脚本
-pnpx set-script format "prettier --write ."
+npm set-script format "prettier . --write --ignore-unknown"
 ```
 
 配置`.prettierrc`
@@ -68,13 +68,6 @@ pnpx set-script format "prettier --write ."
   "trailingComma": "all",
   "arrowParens": "always"
 }
-```
-
-忽略处理文件配置`.prettierignore`
-
-```text
-.gitignore
-.prettierignore
 ```
 
 ## **lint-staged**
@@ -91,8 +84,8 @@ pnpm add lint-staged -D
 ```json
 {
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --color --fix ", "git add"],
-    "!(**.{js,jsx,ts,tsx})": ["prettier --write", "git add"]
+    "*": ["prettier --write --ignore-unknown"],
+    "*.{js,mjs,jsx,ts,tsx}": ["eslint --color --fix"]
   }
 }
 ```
@@ -106,7 +99,7 @@ pnpm add lint-staged -D
 pnpm add husky -D
 
 # 添加初始化脚本
-pnpm set-script prepare "husky install && husky set .husky/pre-commit \"npx lint-staged\""
+npm set-script prepare "husky install && husky set .husky/pre-commit \"npx lint-staged\""
 
 # 初始化
 pnpm prepare
