@@ -3,7 +3,9 @@ issue_number: 30
 title: 使用mask实现前景内容透明度渐变
 ---
 
-<img width="320" alt="image" src="https://user-images.githubusercontent.com/30424139/157073119-52de2419-bb36-4357-9ee7-ccb7af843a7e.png">
+![使用mask实现前景内容透明度渐变](https://s3.bmp.ovh/imgs/2022/08/09/91fdd952745d06bd.gif)
+
+> mask 遮罩，使用一张图片或者渐变色做为遮罩，所在元素的透明度会跟随遮罩的透明度。
 
 ```html
 <div class="wrap">

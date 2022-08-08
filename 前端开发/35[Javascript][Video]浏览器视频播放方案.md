@@ -9,7 +9,7 @@ title: 浏览器视频播放方案
 | 视频类型 | 视频协议 |
 | :------: | :-------------------: |
 | 点播 | m3u8/mp4/flv |
-| 直播 | m3u8/http-flv/web-rtc |
+| 直播 | m3u8/http-flv/webrtc |
 | 双向 | webrtc |
 
 **各浏览器平台方案：**
@@ -24,7 +24,7 @@ title: 浏览器视频播放方案
 | :------: | :------: | :----------: | :-----------: | :------: | :----------------------------------------------------: |
 | http-flv | http 流 | flv | 低（4-10 秒） | 连续流 | [flv.js](https://github.com/Bilibili/flv.js)(bilibili) |
 | rtmp | tcp 流 | flv | 低（1~5 秒） | 连续流 | [video.js](https://videojs.com/)<sup>[2]</sup> |
-| hls | http 流 | Ts 文件 | 高（15-30 秒） | 切片文件 | [hls.js](https://github.com/video-dev/hls.js) |
+| hls | http 流 | m3u8+Ts 文件 | 高（15-30 秒） | 切片文件 | [hls.js](https://github.com/video-dev/hls.js) |
 |Dash|http|mp4,3gp,webm|高|切片文件|mp4 和 webm 可通过 video 标签直接播放|
 
 **针对流媒体服务的方案：**

@@ -43,4 +43,4 @@ download();
 ```
 
 下载保存所有文档页到本地图片后，可以使用 [https://www.67tool.com/pdf/imgToPdf](https://www.67tool.com/pdf/imgToPdf) 把图片转为 pdf。
-如果页面特别多，不好一下子全部转成 pdf，可以分段转成多个 pdf 文件，然后使用 [http://www.pdfdo.com/pdf-merge.aspx](http://www.pdfdo.com/pdf-merge.aspx) 把多个 pdf 合并为一个。
+如果页面特别多，不好一下子全部转成 pdf，可以分段转成多个 pdf 文件，然后使用 [https://www.67tool.com/pdf/merge](https://www.67tool.com/pdf/merge) 把多个 pdf 合并为一个。
