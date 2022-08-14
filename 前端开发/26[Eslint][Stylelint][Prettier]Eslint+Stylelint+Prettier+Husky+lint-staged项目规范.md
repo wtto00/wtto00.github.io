@@ -85,7 +85,8 @@ pnpm add lint-staged -D
 {
   "lint-staged": {
     "*": ["prettier --write --ignore-unknown"],
-    "*.{js,mjs,jsx,ts,tsx}": ["eslint --color --fix"]
+    "*.{js,mjs,jsx,ts,mts,tsx}": ["eslint --color --fix"],
+    "*.{ts,mts,tsx}": ["tsc --noEmit --pretty"]
   }
 }
 ```
