@@ -1,6 +1,6 @@
 ---
 issue_number: 20
-title: js中canvas、base64、ArrayBuffer、Blob、File互转
+title: js中canvas、base64、ArrayBuffer、Blob、Url、File互转
 ---
 
 ### canvas to base64
@@ -86,6 +86,12 @@ console.log(file);
 ```javascript
 const url = URL.createObjectURL(blob);
 console.log(url);
+```
+
+### Url to Blob
+
+```javascript
+const blob = await fetch(url).then((r) => r.blob());
 ```
 
 ### File to base64 / Blob to base64
