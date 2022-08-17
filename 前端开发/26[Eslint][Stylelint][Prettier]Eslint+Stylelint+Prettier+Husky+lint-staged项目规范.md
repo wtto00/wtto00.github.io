@@ -15,11 +15,13 @@ pnpm add eslint -D
 npx eslint --init
 
 # 添加执行脚本 文件后缀名根据需要修改
-npm set-script lint "eslint --ignore-path .gitignore --fix --color ./**/*.{js,jsx,ts,tsx}"
+npm pkg set scripts.lint="eslint --ignore-path .gitignore --fix --color ./**/*.{js,jsx,ts,tsx}"
+# npm set-script lint "eslint --ignore-path .gitignore --fix --color ./**/*.{js,jsx,ts,tsx}"
 ```
 
-## **Stylelint**
+## **Stylelint[可选]**
 
+此规范一般不用，`prettier`可格式化 style 文件
 [stylelint 官方文档](https://stylelint.io/user-guide/get-started)
 
 ```shell
@@ -32,7 +34,8 @@ pnpm add stylelint-less stylelint-config-recommended-less -D
 pnpm add stylelint-config-recommended-scss -D
 
 # 添加执行脚本 文件后缀名根据需要修改
-npm set-script style "stylelint --fix --color ./**/*.{css,less}"
+npm pkg set scripts.style="stylelint --fix --color ./**/*.{css,less}"
+# npm set-script style "stylelint --fix --color ./**/*.{css,less}"
 ```
 
 配置`stylelint.config.js`
@@ -56,7 +59,8 @@ module.exports = {
 pnpm add prettier -D
 
 # 添加执行脚本
-npm set-script format "prettier . --write --ignore-unknown"
+npm pkg set scripts.format="prettier . --write --ignore-unknown"
+# npm set-script format "prettier . --write --ignore-unknown"
 ```
 
 配置`.prettierrc`
@@ -102,7 +106,8 @@ pnpm add lint-staged -D
 pnpm add husky -D
 
 # 添加初始化脚本
-npm set-script prepare "husky install && husky set .husky/pre-commit \"npx lint-staged\""
+npm pkg set scripts.prepare="husky install && husky set .husky/pre-commit \"npx lint-staged\""
+# npm set-script prepare "husky install && husky set .husky/pre-commit \"npx lint-staged\""
 
 # 初始化
 pnpm prepare
