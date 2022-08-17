@@ -21,7 +21,7 @@ npm pkg set scripts.lint="eslint --ignore-path .gitignore --fix --color ./**/*.{
 
 ## **Stylelint[可选]**
 
-此规范一般不用，`prettier`可格式化 style 文件
+此规范一般不用，`prettier`可格式化 style 文件 git
 [stylelint 官方文档](https://stylelint.io/user-guide/get-started)
 
 ```shell
@@ -93,6 +93,19 @@ pnpm add lint-staged -D
     "*.{ts,mts,tsx}": ["tsc --noEmit --pretty"]
   }
 }
+```
+
+关于 tsc 的校验，问题可参见 https://github.yanhaixiang.com/linter-tutorial/practice/lint-staged_tsc.html
+
+```javascript
+npm pkg scripts.tscheck="vue-tsc --noEmit --pretty -p ./tsconfig.json"
+
+// .lintstagedrc.cjs
+module.exports = {
+  '*': ['prettier --write --ignore-unknown'],
+  '*.{js,mjs,jsx,ts,mts,tsx,vue}': ['eslint --color --fix'],
+  '*.{ts,mts,tsx,vue}': [() => 'npm run tscheck'],
+};
 ```
 
 > 使用 VS Code 的 Git GUI 进行 commit 操作，错误信息不管是在输出中查看还是在结果文件中查看，都会出现乱码。是因为 eslint 的--color 参数以及 tsc 的--pretty 参数，会使输出结果包含有 shell 的字体颜色，这些颜色在输出中以及结果文件中不被识别。可以去掉这里的这两个参数来解决这个问题。
