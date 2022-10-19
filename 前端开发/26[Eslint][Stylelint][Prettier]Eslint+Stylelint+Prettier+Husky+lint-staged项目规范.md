@@ -21,7 +21,7 @@ npm pkg set scripts.lint="eslint --ignore-path .gitignore --fix --color ./**/*.{
 
 ## **Stylelint[可选]**
 
-此规范一般不用，`prettier`可格式化 style 文件 git
+此规范一般不用，`prettier`可格式化 style 文件
 [stylelint 官方文档](https://stylelint.io/user-guide/get-started)
 
 ```shell
@@ -97,8 +97,8 @@ pnpm add lint-staged -D
 
 关于 tsc 的校验，问题可参见 https://github.yanhaixiang.com/linter-tutorial/practice/lint-staged_tsc.html
 
-```javascript
-npm pkg scripts.tscheck="vue-tsc --noEmit --pretty -p ./tsconfig.json"
+```shell
+npm pkg set scripts.tscheck="vue-tsc --noEmit --pretty -p ./tsconfig.json"
 
 // .lintstagedrc.cjs
 module.exports = {
