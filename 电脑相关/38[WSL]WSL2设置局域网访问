@@ -49,3 +49,6 @@ title: WSL2设置局域网访问
    ```
 
    > 上述命令中的`listenaddress=0.0.0.0`可以全部更改为`listenaddress=*`
+
+1. **局域网访问**
+   上述设置好后，局域网的其他主机就可以通过 Windows 主机的 IP 以及监听的端口 listenaddress，访问 WSL2 中的项目了。
