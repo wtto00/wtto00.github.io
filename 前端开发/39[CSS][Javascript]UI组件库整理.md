@@ -33,6 +33,7 @@ title: UI组件库整理
 | [ionic](https://ionicframework.com/docs/)                                          | Mobile | ionic                 | ios/Material 两种风格 |
 | [WeUI](https://weui.github.io/react-weui/docs/#/react-weui/docs/page/1/articles/0) | Mobile | Tencent               | 微信风格              |
 | [NextUI](https://nextui.org/)                                                      | PC     | 个人                  | nextjs 风格           |
+| [Primer React](https://primer.style/react/)                                        | PC     | Github                | Github 风格           |
 
 ## Vue2
 
@@ -84,6 +85,7 @@ title: UI组件库整理
 | [WeUI](https://github.com/Tencent/weui/wiki/getting-started)               | Mobile | Tencent      | 微信风格[预览](https://weui.io) |
 | [FrozenUI](http://frozenui.github.io/getting-started)                      | Mobile | FrozenUI     | QQ 风格                         |
 | [MDUI](https://www.mdui.org/)                                              | Mobile | 个人         | Material 风格                   |
+| [Primer](https://primer.style/css/)                                        | PC     | Github       | Github 风格                     |
 | [FAST](https://www.fast.design/docs/introduction)                          | PC     | 微软         |                                 |
 | [MUI](https://www.muicss.com/)                                             | Mobile | 社区(muicss) | Material 风格                   |
 | [ColorUI](https://github.com/weilanwl/coloruicss)                          | Mobile | 个人         | 偏 Uniapp                       |
