@@ -120,3 +120,5 @@ var data =
   '</svg>';
 var svg = new Blob([data], { type: 'image/svg+xml' });
 ```
+
+> 外部样式无效
