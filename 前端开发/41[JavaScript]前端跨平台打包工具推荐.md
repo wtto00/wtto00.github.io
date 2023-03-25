@@ -37,7 +37,7 @@ title: 前端跨平台打包工具推荐
 
 ---
 
-另外还有一个要说的就是 [Flutter](https://docs.flutter.dev/)，但是他不是 JavaScript 技术栈了。
+另外还有一个要说的就是 [Flutter](https://docs.flutter.dev/) ![stars](https://img.shields.io/github/stars/flutter/flutter?style=flat-square)，但是他不是 JavaScript 技术栈了。
 
 - 社区繁荣
 - 文档齐备
