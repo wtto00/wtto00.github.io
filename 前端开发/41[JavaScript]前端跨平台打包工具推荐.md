@@ -10,7 +10,7 @@ title: 前端跨平台打包工具推荐
 
 ---
 
-#### 那么有什么框架可以代替 `Electron` 吗？可以尝试以下集中方案：
+#### 那么有什么框架可以代替 `Electron` 吗？可以尝试以下几种方案：
 
 | 框架                                                              | 前端实现                                                           | 后端实现 | 热度                                                                                      | 备注             |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------ | -------- | ----------------------------------------------------------------------------------------- | ---------------- |
@@ -21,7 +21,7 @@ title: 前端跨平台打包工具推荐
 | [go-astilectron](https://github.com/asticode/go-astilectron)      | Electron                                                           | Go       | ![stars](https://img.shields.io/github/stars/asticode/go-astilectron?style=flat-square)   |                  |
 | [Chromely](https://github.com/chromelyapps/Chromely)              | Chromium ([CEF](https://bitbucket.org/chromiumembedded/cef/src))   | .Net     | ![stars](https://img.shields.io/github/stars/chromelyapps/Chromely?style=flat-square)     | 不维护了         |
 
-以上的这些框架，基本都是轻量级的 Electron。打包体积大幅减小，但是对于系统级的 API 支持程度没有 Electron 完备。
+以上的这些框架，基本都是轻量级的 `Electron`。打包体积大幅减小，但是对于**系统级的 API** 支持程度没有 `Electron` 完备。
 
 ---
 
@@ -39,9 +39,9 @@ title: 前端跨平台打包工具推荐
 
 另外还有一个要说的就是 [Flutter](https://docs.flutter.dev/) ![stars](https://img.shields.io/github/stars/flutter/flutter?style=flat-square)，但是他不是 JavaScript 技术栈了。
 
-- 社区繁荣
+- 生态社区繁荣
 - 文档齐备
 - 性能良好
 - 几乎所有平台都支持
 
-有条件的话，就选择这个吧。
+有条件的话，推荐首选这个吧。
