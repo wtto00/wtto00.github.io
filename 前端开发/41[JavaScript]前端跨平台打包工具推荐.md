@@ -34,6 +34,7 @@ title: 前端跨平台打包工具推荐
 |[Taro](https://taro.jd.com/)|![stars](https://img.shields.io/github/stars/NervJS/taro?style=flat-square)|京东维护，大厂背书，支持小程序，vue/react|
 |[React Native](https://reactnative.dev/docs/getting-started)|![stars](https://img.shields.io/github/stars/facebook/react-native?style=flat-square)|Facebook 维护，react|
 |[Ionic](https://ionicframework.com/docs)|![stars](https://img.shields.io/github/stars/ionic-team/ionic-framework?style=flat-square)|文档无中文，vue/react/angular|
+|[Apache Cordova](https://cordova.apache.org/)|![stars](https://img.shields.io/github/stars/apache/cordova?style=flat-square)|Apache 开源组织下的|
 
 ---
 
