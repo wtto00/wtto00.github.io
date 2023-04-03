@@ -30,11 +30,11 @@ title: 前端跨平台打包工具推荐
 前面说的是一些打包到桌面端的框架，那么打包到移动端的框架有哪些呢？
 |框架|热度|备注|
 |---|----|----|
-|[uniapp](https://uniapp.dcloud.net.cn/#)|![stars](https://img.shields.io/github/stars/dcloudio/uni-app?style=flat-square) |国产的，社区齐备，支持小程序，vue|
-|[Taro](https://taro.jd.com/)|![stars](https://img.shields.io/github/stars/NervJS/taro?style=flat-square)|京东维护，大厂背书，支持小程序，vue/react|
 |[React Native](https://reactnative.dev/docs/getting-started)|![stars](https://img.shields.io/github/stars/facebook/react-native?style=flat-square)|Facebook 维护，react|
-|[Ionic](https://ionicframework.com/docs)|![stars](https://img.shields.io/github/stars/ionic-team/ionic-framework?style=flat-square)|文档无中文，vue/react/angular|
-|[Apache Cordova](https://cordova.apache.org/)|![stars](https://img.shields.io/github/stars/apache/cordova?style=flat-square)|Apache 开源组织下的|
+|[Apache Cordova](https://cordova.apache.org/)|![stars](https://img.shields.io/github/stars/apache/cordova?style=flat-square)|Apache 开源组织下的，年代比较久远了|
+|[Capacitor](https://capacitorjs.com/)|![stars](https://img.shields.io/github/stars/ionic-team/capacitor?style=flat-square)|Ionic Framework 维护，旨在替代 Cordova|
+|[uniapp](https://uniapp.dcloud.net.cn/#)|![stars](https://img.shields.io/github/stars/dcloudio/uni-app?style=flat-square) |小程序首选。Native 使用的基于 weex 改进原生渲染引擎|
+|[Taro](https://taro.jd.com/)|![stars](https://img.shields.io/github/stars/NervJS/taro?style=flat-square)|支持小程序。Native 使用的 RN|
 
 ---
 
