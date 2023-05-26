@@ -85,7 +85,7 @@ export -f command_not_found_handle
 export PATH="$PATH:D:\Program Files\Python310"
 ```
 
-上面的路径时Windows下的路径，Linux下不是这样的，改成下边这样
+上面的路径是Windows下的路径，Linux下不是这样的，改成下边这样
 
 ```shell
 export PATH="$PATH:/d/Program Files/Python310"
