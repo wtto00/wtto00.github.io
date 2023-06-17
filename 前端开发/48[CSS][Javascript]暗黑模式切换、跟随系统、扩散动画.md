@@ -1,3 +1,5 @@
+[示例 CodePen](https://codepen.io/wtto00/pen/XWydaZx)
+
 实现功能：
 
 1. `暗色模式`、`亮色模式`、`跟随系统`，三种主题设置正常工作
@@ -106,12 +108,12 @@ function toggleTheme(event?: MouseEvent) {
     ];
     document.documentElement.animate(
       {
-        clipPath: dark ? clipPath : [...clipPath].reverse(),
+        clipPath: willDark ? clipPath : [...clipPath].reverse(),
       },
       {
         duration: 500,
         easing: "ease-in",
-        pseudoElement: dark
+        pseudoElement: willDark
           ? "::view-transition-new(root)"
           : "::view-transition-old(root)",
       }
