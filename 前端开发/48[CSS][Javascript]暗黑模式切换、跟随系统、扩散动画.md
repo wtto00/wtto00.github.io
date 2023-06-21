@@ -8,6 +8,8 @@
 
    ![动画](https://github.com/wtto00/Blog/assets/30424139/234facf8-8657-4424-81fa-9ed29a96afbc)
 
+扩散动画使用 [View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API)，暂时仅 `chrome`,`Edge`,`Opera`,`Android` 支持，`iOS`,`Safari`不支持。查看 [Can I Use](https://caniuse.com/mdn-api_viewtransition)
+
 ```ts
 /** 三种主题设置 */
 type ColorScheme = "OS" | "Dark" | "Light";
