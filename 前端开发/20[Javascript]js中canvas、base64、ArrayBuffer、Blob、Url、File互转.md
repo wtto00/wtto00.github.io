@@ -6,7 +6,7 @@ title: js中canvas、base64、ArrayBuffer、Blob、Url、File互转
 ### canvas to base64
 
 ```javascript
-const dataurl = canvas.toDataURL('image/png');
+const dataurl = canvas.toDataURL("image/png");
 console.log(dataurl);
 ```
 
@@ -31,8 +31,8 @@ img.src = dataurl;
 ### base64 to ArrayBuffer
 
 ```javascript
-const arr = dataurl.split(',');
-const buffer = Buffer.from(arr[1], 'base64');
+const arr = dataurl.split(",");
+const buffer = Buffer.from(arr[1], "base64");
 console.log(buffer);
 ```
 
@@ -41,9 +41,9 @@ console.log(buffer);
 浏览器环境下
 
 ```javascript
-const arr = base64.split(',');
+const arr = base64.split(",");
 const [, mime] = arr[0].match(/:(.*?);/);
-const bstr = atob(arr[1]);
+const bstr = window.atob(arr[1]);
 let n = bstr.length;
 const u8arr = new Uint8Array(n);
 while (n > 0) {
@@ -56,7 +56,7 @@ console.log(u8arr);
 ### ArrayBuffer to Blob
 
 ```javascript
-const arr = base64.split(',');
+const arr = base64.split(",");
 const [, mime] = arr[0].match(/:(.*?);/);
 
 const blob = new Blob([buffer], { type: mime });
@@ -77,7 +77,12 @@ reader.readAsArrayBuffer(blob);
 ### Blob to File
 
 ```javascript
-const file = new File([blob], `${fileName}`);
+// const file = new File([blob], `${fileName}`);
+// 这种方法 File 属性只有 name，没有 size 等其他属性
+// console.log(file);
+const formData = new FormData();
+formData.append(filename, blob);
+const file = formData.get(filename);
 console.log(file);
 ```
 
@@ -112,13 +117,13 @@ var data =
   '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">' +
   '<foreignObject width="100%" height="100%">' +
   '<div xmlns="http://www.w3.org/1999/xhtml" style="font-size:50px">' +
-  'Simply Easy ' +
+  "Simply Easy " +
   '<span style="color:blue;">' +
-  'Learning</span>' +
-  '</div>' +
-  '</foreignObject>' +
-  '</svg>';
-var svg = new Blob([data], { type: 'image/svg+xml' });
+  "Learning</span>" +
+  "</div>" +
+  "</foreignObject>" +
+  "</svg>";
+var svg = new Blob([data], { type: "image/svg+xml" });
 ```
 
 > 外部样式无效
