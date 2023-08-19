@@ -81,7 +81,7 @@ reader.readAsArrayBuffer(blob);
 // 这种方法 File 属性只有 name，没有 size 等其他属性
 // console.log(file);
 const formData = new FormData();
-formData.append(filename, blob);
+formData.append(filename, blob, filename);
 const file = formData.get(filename);
 console.log(file);
 ```
