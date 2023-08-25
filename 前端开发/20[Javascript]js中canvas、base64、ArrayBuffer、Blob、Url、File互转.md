@@ -30,14 +30,6 @@ img.src = dataurl;
 
 ### base64 to ArrayBuffer
 
-```javascript
-const arr = dataurl.split(",");
-const buffer = Buffer.from(arr[1], "base64");
-console.log(buffer);
-```
-
-### base64 to ArrayBuffer
-
 浏览器环境下
 
 ```javascript
@@ -51,6 +43,27 @@ while (n > 0) {
   u8arr[n] = bstr.charCodeAt(n);
 }
 console.log(u8arr);
+```
+
+Nodejs
+
+```javascript
+const arr = dataurl.split(",");
+const buffer = Buffer.from(arr[1], "base64");
+console.log(buffer);
+```
+
+### ArrayBuffer to base64
+
+```javascript
+let binary = ''
+const bytes = new Uint8Array(buffer)
+const len = bytes.byteLength
+for (let i = 0; i < len; i++) {
+  binary += String.fromCharCode(bytes[i])
+}
+const base64 = window.btoa(binary)
+console.log(`data:${mime};base64,${base64}`);
 ```
 
 ### ArrayBuffer to Blob
