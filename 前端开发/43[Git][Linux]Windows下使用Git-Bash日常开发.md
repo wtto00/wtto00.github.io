@@ -3,7 +3,7 @@ issue_number: 43
 title: Windows下使用Git-Bash日常开发
 ---
 
-参考 [知乎:Windows下的Git Bash配置，提升你的终端操作体验](https://zhuanlan.zhihu.com/p/418321777)
+参考 [知乎:Windows 下的 Git Bash 配置，提升你的终端操作体验](https://zhuanlan.zhihu.com/p/418321777)
 
 ### 配置文件
 
@@ -15,7 +15,7 @@ title: Windows下使用Git-Bash日常开发
 
 `bash.exe -l -i`
 
-加上参数 `-l` 和 `-i`  
+加上参数 `-l` 和 `-i`
 
 ### Git-Bash 修改前缀 (隐藏用户 @ 主机)
 
@@ -28,7 +28,7 @@ parse_git_branch() {
 }
 # 显示 用户 @ 主机
 # export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
-# 隐藏用户 @ 主机，显示当前文件夹 
+# 隐藏用户 @ 主机，显示当前文件夹
 #export PS1="\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\]"
 
 # 只显示当前文件夹
@@ -57,7 +57,7 @@ export PS1="\[\e[32;1m\]\w $\[\e[0m\]\[\033[32m\]\$(parse_git_branch)\[\033[00m\
 - 终端不能显示中文：打开 `Git bash`，右键打开选项， `Options->Text->Locale` 改为 `zh_CN`，`Character set` 改为 `UTF-8`
 - 解决 `git status` 不能显示中文：终端输入 `git config --global core.quotepath false`
 
-### Git-Bash 不识别bat脚本，必须手动加上`.bat`后缀
+### Git-Bash 不识别 bat 脚本，必须手动加上`.bat`后缀
 
 把下边这段逻辑添加到配置文件中 `~/.bash_profile`
 
@@ -85,8 +85,23 @@ export -f command_not_found_handle
 export PATH="$PATH:D:\Program Files\Python310"
 ```
 
-上面的路径是Windows下的路径，Linux下不是这样的，改成下边这样
+上面的路径是 Windows 下的路径，Linux 下不是这样的，改成下边这样
 
 ```shell
 export PATH="$PATH:/d/Program Files/Python310"
+```
+
+### 把 code 添加到 PATH 中，执行 code 不能打开 vscode
+
+```shell
+export PATH="$PATH:/d/software/Microsoft VS Code/bin"
+```
+
+上面设置的环境变量不能打开 vscode，是因为目录`/d/software/Microsoft VS Code/bin`中有两个同名的 code 文件：`code` 和 `code.cmd`。`code`是`wsl`中执行的，`code.cmd`才是我们需要执行的。
+
+改成下方的环境设置即可：
+
+```shell
+# export PATH="$PATH:/d/software/Microsoft VS Code/bin"
+alias code="/d/software/Microsoft\ VS\ Code/bin/code.cmd"
 ```
