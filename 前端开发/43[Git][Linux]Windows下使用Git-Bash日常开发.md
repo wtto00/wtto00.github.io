@@ -1,6 +1,9 @@
 ---
 issue_number: 43
 title: Windows下使用Git-Bash日常开发
+labels:
+  - Linux
+  - Git
 ---
 
 参考 [知乎:Windows 下的 Git Bash 配置，提升你的终端操作体验](https://zhuanlan.zhihu.com/p/418321777)
