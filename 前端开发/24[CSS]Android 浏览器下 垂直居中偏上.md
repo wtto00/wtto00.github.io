@@ -1,6 +1,8 @@
 ---
 issue_number: 24
 title: Android 浏览器下 垂直居中偏上
+labels:
+  - CSS
 ---
 
 ```css

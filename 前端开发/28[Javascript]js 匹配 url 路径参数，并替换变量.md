@@ -1,6 +1,8 @@
 ---
 issue_number: 28
 title: js 匹配 url 路径参数，并替换变量
+labels:
+  - Javascript
 ---
 
 > https://node.green/#ES2020-features-String-prototype-matchAll

@@ -1,6 +1,10 @@
 ---
 issue_number: 26
 title: Eslint+Stylelint+Prettier+Husky+lint-staged项目规范
+labels:
+  - Eslint
+  - Stylelint
+  - Prettier
 ---
 
 ## **Eslint**

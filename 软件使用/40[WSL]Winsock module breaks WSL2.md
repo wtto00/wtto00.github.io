@@ -1,6 +1,8 @@
 ---
 issue_number: 40
 title: Winsock module breaks WSL2
+labels:
+  - WSL
 ---
 
 [issues #4177](https://github.com/microsoft/WSL/issues/4177#issuecomment-1429113508)

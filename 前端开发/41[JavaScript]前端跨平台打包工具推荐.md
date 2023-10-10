@@ -1,6 +1,8 @@
 ---
 issue_number: 41
 title: 前端跨平台打包工具推荐
+labels:
+  - Javascript
 ---
 
 前端构建桌面端应用程序，首先想到的是 `Electron` ，但是 `Electron` 构建的桌面端应用程序有一些缺点无法避免：

@@ -1,9 +1,9 @@
 ---
 issue_number: 37
 title: css实现3D立方体旋转
+labels:
+  - CSS
 ---
-
-![css实现3D立方体旋转](https://s1.328888.xyz/2022/08/25/wHxep.gif)
 
 [codepen](https://codepen.io/wtto00/pen/LYdoPaQ?editors=1100)
 

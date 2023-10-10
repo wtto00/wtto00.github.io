@@ -1,6 +1,9 @@
 ---
 issue_number: 1
 title: 修改 Hosts 解决一些国外站点由于国内DNS污染导致的访问失败
+labels:
+  - DNS污染
+  - 网络相关
 ---
 
 ## 获取正确地 IP 地址

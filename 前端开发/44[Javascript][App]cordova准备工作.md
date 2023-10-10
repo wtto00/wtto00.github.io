@@ -1,6 +1,9 @@
 ---
 issue_number: 44
 title: cordova准备工作
+labels:
+  - Javascript
+  - App
 ---
 
 如果已经有一个 H5 的前端项目，怎么使用 [cordova](https://cordova.apache.org/) 包装成移动端APP呢？

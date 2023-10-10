@@ -1,6 +1,8 @@
 ---
 issue_number: 38
 title: WSL2设置局域网访问
+labels:
+  - WSL
 ---
 
 1. **首先查询 WSL2 中的 IP**

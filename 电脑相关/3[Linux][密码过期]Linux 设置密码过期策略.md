@@ -1,12 +1,14 @@
 ---
 issue_number: 3
 title: Linux 设置密码过期策略
+labels:
+  - Linux
+  - 密码过期
 ---
 
 > Linux 服务器登录提示`You must change your password now and login again!`
 
 查看密码策略：
-
 ```shell
 chage -l wtto
 # 最近一次密码修改时间					：1月 20, 2021
@@ -19,15 +21,12 @@ chage -l wtto
 ```
 
 修改最后一次密码修改时间
-
 ```shell
 chage -d -d wtto
 # 第一个 -d 是 chage 的命令参数，表示修改最近一次密码修改时间
 # 第二个 -d 表示当前日期，也可以用确定日期值，例如：2021-01-20
 ```
-
 或者设置密码永不过期
-
 ```shell
 chage -M -1 wtto
 ```

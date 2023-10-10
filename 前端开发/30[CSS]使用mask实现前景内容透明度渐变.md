@@ -1,6 +1,8 @@
 ---
 issue_number: 30
 title: 使用mask实现前景内容透明度渐变
+labels:
+  - CSS
 ---
 
 ![使用mask实现前景内容透明度渐变](https://s3.bmp.ovh/imgs/2022/08/09/91fdd952745d06bd.gif)

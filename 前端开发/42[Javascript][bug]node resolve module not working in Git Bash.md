@@ -1,6 +1,9 @@
 ---
 issue_number: 42
 title: node resolve module not working when using link path
+labels:
+  - Javascript
+  - bug
 ---
 
 打算在 `Windows` 平台上使用 `Git Bash` 作为默认的 `Shell` 环境。

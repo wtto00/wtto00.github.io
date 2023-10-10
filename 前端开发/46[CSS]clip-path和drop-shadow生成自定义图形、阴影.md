@@ -1,4 +1,9 @@
-# clip-path 和 drop-shadow 生成自定义图形、阴影
+---
+issue_number: 46
+title: clip-path 和 drop-shadow 生成自定义图形、阴影
+labels:
+  - CSS
+---
 
 当使用 `clip-path` 时，会导致 `box-shadow` 无效
 

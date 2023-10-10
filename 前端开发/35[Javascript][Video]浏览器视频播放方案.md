@@ -1,6 +1,9 @@
 ---
 issue_number: 35
 title: 浏览器视频播放方案
+labels:
+  - Javascript
+  - Video
 ---
 
 ## 解决方案

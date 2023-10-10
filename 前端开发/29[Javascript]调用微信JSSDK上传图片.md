@@ -1,6 +1,8 @@
 ---
 issue_number: 29
 title: 调用微信JSSDK上传图片
+labels:
+  - 微信
 ---
 
 ```javascript

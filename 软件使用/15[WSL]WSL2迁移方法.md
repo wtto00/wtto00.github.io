@@ -1,12 +1,13 @@
 ---
 issue_number: 15
 title: WSL2迁移方法
+labels:
+  - WSL
 ---
 
-一直用 WSL2 作为开发环境，可是随着项目越来越多，越来越大，C 盘空间所剩无几，所以迁移 WSL2 到其他分区成为必要
+一直用WSL2作为开发环境，可是随着项目越来越多，越来越大，C盘空间所剩无几，所以迁移WSL2到其他分区成为必要
 
-在 Windows 的 PowerShell 中输入:
-
+在Windows的PowerShell中输入:
 ```PowerShell
 # 终止正在运行的分发或虚拟机：
 wsl --shutdown
@@ -28,5 +29,4 @@ del D:\wsl-Ubuntu-20.04
 ```
 
 注意：
-
 - 导入新的分发版或虚拟机前，需要先建立想要安装位置的目录

@@ -1,6 +1,8 @@
 ---
 issue_number: 36
 title: 通过修改文件头来伪装文件
+labels:
+  - Javascript
 ---
 
 - 获取文件真实类型

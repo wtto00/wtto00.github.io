@@ -1,6 +1,8 @@
 ---
 issue_number: 12
 title: 查看端口占用情况
+labels:
+  - 端口
 ---
 
 Linux 查看端口占用情况可以使用 lsof 和 netstat 命令。

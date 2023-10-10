@@ -1,6 +1,9 @@
 ---
 issue_number: 27
 title: uniapp利用canvas在小程序上面生成图片
+labels:
+  - uniapp
+  - canvas
 ---
 
 ```javascript

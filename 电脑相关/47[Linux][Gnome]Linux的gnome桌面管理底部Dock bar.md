@@ -1,4 +1,10 @@
-# Linux的gnome桌面管理底部Dock bar
+---
+issue_number: 47
+title: Linux的gnome桌面管理底部Dock bar
+labels:
+  - Linux
+  - Gnome
+---
 
 ## 安装 Dash-to-Dock 扩展
 

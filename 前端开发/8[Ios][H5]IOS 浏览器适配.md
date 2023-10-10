@@ -1,6 +1,9 @@
 ---
 issue_number: 8
 title: IOS 浏览器适配
+labels:
+  - H5
+  - Ios
 ---
 
 ## **overflow：scroll/auto 元素无法滑动**

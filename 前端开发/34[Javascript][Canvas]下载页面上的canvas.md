@@ -1,6 +1,8 @@
 ---
 issue_number: 34
 title: 下载页面上的canvas
+labels:
+  - Javascript
 ---
 
 许多文档类网站，文档的预览用的是`canvas`，但是下载是收费的。  

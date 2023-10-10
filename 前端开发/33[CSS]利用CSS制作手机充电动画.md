@@ -1,6 +1,8 @@
 ---
 issue_number: 33
 title: 利用CSS制作手机充电动画
+labels:
+  - CSS
 ---
 
 ![CSS充电动画](https://s3.bmp.ovh/imgs/2022/04/07/6e95f31a6a2aa16a.gif)

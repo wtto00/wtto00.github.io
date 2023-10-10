@@ -1,3 +1,11 @@
+---
+issue_number: 48
+title: 暗黑模式切换、跟随系统、扩散动画
+labels:
+  - CSS
+  - Javascript
+---
+
 [示例 CodePen](https://codepen.io/wtto00/pen/XWydaZx)
 
 实现功能：
@@ -7,8 +15,6 @@
 3. 切换主题时，加载扩散渐变动画，如下图所示：
 
    ![动画](https://github.com/wtto00/Blog/assets/30424139/234facf8-8657-4424-81fa-9ed29a96afbc)
-
-扩散动画使用 [View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API)，暂时仅 `chrome`,`Edge`,`Opera`,`Android` 支持，`iOS`,`Safari`不支持。查看 [Can I Use](https://caniuse.com/mdn-api_viewtransition)
 
 ```ts
 /** 三种主题设置 */

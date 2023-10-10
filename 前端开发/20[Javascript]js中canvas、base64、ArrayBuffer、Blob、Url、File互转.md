@@ -1,6 +1,8 @@
 ---
 issue_number: 20
 title: js中canvas、base64、ArrayBuffer、Blob、Url、File互转
+labels:
+  - Javascript
 ---
 
 ### canvas to base64

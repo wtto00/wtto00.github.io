@@ -1,14 +1,17 @@
 ---
 issue_number: 5
 title: 微信 H5 开放标签 <wx-open-launch-app> 打开 APP，打开小程序，样式问题
+labels:
+  - H5
+  - 微信
 ---
 
 官当文档https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_Open_Tag.html
 
 样式的问题参考https://developers.weixin.qq.com/community/develop/article/doc/0006e4bdccc9d83f8fba292a45b813
 
-下面是使用 `Vue3` 封装的组件
 
+下面是使用 `Vue3` 封装的组件
 ```jsx
 // WxOpenLaunchApp.jsx
 import { defineComponent } from 'vue';
@@ -21,14 +24,14 @@ export default defineComponent({
   },
   mounted() {
     const launchAppBtn = document.getElementById(this.id);
-    launchAppBtn.addEventListener('launch', (e) => {
+    launchAppBtn.addEventListener('launch', e => {
       console.log('success', e);
     });
-    launchAppBtn.addEventListener('error', (e) => {
+    launchAppBtn.addEventListener('error', e => {
       this.$emit('fail', e);
       console.log('fail', e);
     });
-    launchAppBtn.addEventListener('ready', (e) => {
+    launchAppBtn.addEventListener('ready', e => {
       console.log('ready', e);
     });
   },
@@ -37,7 +40,7 @@ export default defineComponent({
       <div style={{ position: 'relative' }}>
         {this.$slots.default()}
         <div
-          onClick={(e) => {
+          onClick={e => {
             // 非微信浏览器触发
             this.$emit('fail', e);
             console.log('fail', e);
@@ -58,6 +61,7 @@ export default defineComponent({
     );
   },
 });
+
 ```
 
 ```vue
@@ -116,4 +120,5 @@ const fail = (e) => {
   bottom: 0;
 }
 </style>
+
 ```
