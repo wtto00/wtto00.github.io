@@ -1,5 +1,4 @@
 {
-    "recommendations": [
-        "wtto00.github-issue-blog"
-    ]
+  "recommendations": ["astro-build.astro-vscode"],
+  "unwantedRecommendations": []
 }

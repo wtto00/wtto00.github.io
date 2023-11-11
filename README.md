@@ -1,42 +1,75 @@
-# 简静凡的个人博客
+![img.png](img.png)
 
----
+# Tailwind Astro Starter Project
+[![GitHub Repo stars](https://img.shields.io/github/stars/wanoo21/tailwind-astro-starting-blog?style=social)](https://GitHub.com/wanoo21/tailwind-astro-starting-blog/stargazers/)
+[![GitHub forks](https://img.shields.io/github/forks/wanoo21/tailwind-astro-starting-blog?style=social)](https://GitHub.com/wanoo21/tailwind-astro-starting-blog/network/)
+[![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fipwanciu)](https://twitter.com/ipwanciu)
 
-### 文章分类
+[//]: # ([![Sponsor]&#40;https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&link=https://github.com/sponsors/timlrx&#41;]&#40;https://github.com/sponsors/timlrx&#41;)
 
-- [电脑相关](https://github.com/wtto00/Blog/projects/1)
-- [前端开发](https://github.com/wtto00/Blog/projects/2)
-- [软件使用](https://github.com/wtto00/Blog/projects/3)
-- [后端开发](https://github.com/wtto00/Blog/projects/4)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/wanoo21/tailwind-astro-starting-blog)
+    
 
-[点击查看所有分类](https://github.com/wtto00/Blog/projects)
+This template is perfect for those who want to use Tailwind CSS and Astro to build a blog. 
 
-### 文章标签
+It is inspired by the [Tailwind Next.js Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog) - one of the most popular Next.js blogging templates.
 
-[`DNS污染`](https://github.com/wtto00/Blog/labels/DNS%E6%B1%A1%E6%9F%93) [`Yarn`](https://github.com/wtto00/Blog/labels/Yarn) [`网络相关`](https://github.com/wtto00/Blog/labels/%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3) [`Linux`](https://github.com/wtto00/Blog/labels/Linux) [`密码过期`](https://github.com/wtto00/Blog/labels/%E5%AF%86%E7%A0%81%E8%BF%87%E6%9C%9F) [`H5`](https://github.com/wtto00/Blog/labels/H5) [`Ios`](https://github.com/wtto00/Blog/labels/Ios) [`Rem`](https://github.com/wtto00/Blog/labels/Rem) [`Vue`](https://github.com/wtto00/Blog/labels/Vue) [`书签同步`](https://github.com/wtto00/Blog/labels/%E4%B9%A6%E7%AD%BE%E5%90%8C%E6%AD%A5) [`微信`](https://github.com/wtto00/Blog/labels/%E5%BE%AE%E4%BF%A1) [`浏览器`](https://github.com/wtto00/Blog/labels/%E6%B5%8F%E8%A7%88%E5%99%A8) [`CSS`](https://github.com/wtto00/Blog/labels/CSS) [`Eslint`](https://github.com/wtto00/Blog/labels/Eslint) [`Git`](https://github.com/wtto00/Blog/labels/Git) [`Javascript`](https://github.com/wtto00/Blog/labels/Javascript) [`JQuery`](https://github.com/wtto00/Blog/labels/JQuery) [`PHP`](https://github.com/wtto00/Blog/labels/PHP) [`Svn`](https://github.com/wtto00/Blog/labels/Svn) [`VS Code`](https://github.com/wtto00/Blog/labels/VS%20Code) [`WSL`](https://github.com/wtto00/Blog/labels/WSL) [`Xss`](https://github.com/wtto00/Blog/labels/Xss) [`端口`](https://github.com/wtto00/Blog/labels/%E7%AB%AF%E5%8F%A3) [`进程`](https://github.com/wtto00/Blog/labels/%E8%BF%9B%E7%A8%8B)
+Feature request or Facing issue? Check the [discussion page](https://github.com/wanoo21/tailwind-astro-starting-blog/discussions) to see if it has been brought up previously. Otherwise, feel free to start a new discussion thread. All ideas are welcomed!
 
-[点击查看所有标签](https://github.com/wtto00/Blog/labels)
+## Demo
 
-### 文章列表
+[Live Demo](https://tasb.yon.fun/) - Deployed on Vercel.
 
-- [Vite+Vue3 中使用 Eslint](https://github.com/wtto00/Blog/issues/21)
-- [js 中 canvas、base64、ArrayBuffer、Blob、File 互转](https://github.com/wtto00/Blog/issues/20)
-- [windows 下 vscode 设置了 eof=lf，但是 git 操作还是会自动把代码变为 crlf](https://github.com/wtto00/Blog/issues/19)
-- [flex 布局下 img 图片变形的解决方法](https://github.com/wtto00/Blog/issues/18)
-- [记录一次 svn 迁移至 git 的过程](https://github.com/wtto00/Blog/issues/17)
-- [Ubuntu 下切换多个 PHP 版本](https://github.com/wtto00/Blog/issues/16)
-- [WSL2 迁移方法](https://github.com/wtto00/Blog/issues/15)
-- [jQuery html() 怎么阻止 xss 攻击](https://github.com/wtto00/Blog/issues/14)
-- [Linux 查看进程运行的完整路径方法](https://github.com/wtto00/Blog/issues/13)
-- [Linux 查看端口占用情况](https://github.com/wtto00/Blog/issues/12)
-- [Floccus – 跨浏览器收藏夹同步插件](https://github.com/wtto00/Blog/issues/11)
-- [IOS 浏览器适配](https://github.com/wtto00/Blog/issues/8)
-- [使用 postcss-pxtorem 自适应后，vant 组件大小样式不对](https://github.com/wtto00/Blog/issues/7)
-- [vue 遇到 Conflicting order. Following module has been added:（加载顺序冲突）](https://github.com/wtto00/Blog/issues/6)
-- [微信 H5 开放标签 <wx-open-launch-app> 打开 APP，打开小程序，样式问题](https://github.com/wtto00/Blog/issues/5)
-- [移动端 H5 禁止缩放](https://github.com/wtto00/Blog/issues/4)
-- [Linux 设置密码过期策略](https://github.com/wtto00/Blog/issues/3)
-- [Yarn global 安装的命令无效](https://github.com/wtto00/Blog/issues/2)
-- [修改 Hosts 解决一些国外站点由于国内 DNS 污染导致的访问失败](https://github.com/wtto00/Blog/issues/1)
+## Features
 
-[点击查看所有文章](https://github.com/wtto00/Blog/issues)
+- Astro with Typescript
+- Astro MDX support
+- Easy styling customization with [Tailwind 3.3](https://tailwindcss.com/blog/tailwindcss-v3-3) and primary color attribute
+- ~~Perfect lighthouse score~~ - Still have to make some improvements
+- Mobile-friendly view
+- Light and dark theme
+- ~~Font optimization~~ - Not yet implemented
+- Automatic image optimization via Astro image component
+- Support for tags - each unique tag will be its own page
+- Support for multiple authors
+- ~~3 different blog layouts~~ - Only 2 for now
+- ~~2 different blog listing layouts~~ - Only 1 for now
+- Support for nested routing of blog posts
+- Projects page
+- ~~SEO friendly~~ still working on this, but already supports RSS feed, sitemaps and more!
+
+Even thought these features looks the same as the original template, they are implemented in a different way, and there are more to come.
+
+However, there are some features that are not in the original template, like:
+
+- Support for multiple authors pages - **each author will have** its own page, with a list of all the posts written by him/her.
+- Support for multiple tags pages - **each tag has its own page with custom description**, that can be customized with markdown. 
+- Related posts - **each post has** a list of related posts, provided by the author inside the markdown file.
+- Pagination inside blog/tags pages - **each blog/tags page has** a pagination.
+- Cool animations provided by Astro.
+- And many more that would come in the future.
+
+## Extend / Customize
+
+`src/consts.ts` contains a list of constants that you can customize to your liking, including the blog title, description, author, social media links, etc.
+
+`src/functions.ts` contains a list of functions that changes the default behavior of the template, including default post sorting and exclude draft posts.
+
+`src/content/authors/default.mdx` contains the default author information. You can add more authors by adding more `.mdx` files in the `src/content/authors` folder.
+
+`src/content/tags/default.mdx` contains the default tag information. You can add more tags by adding more `.mdx` files in the `src/content/tags` folder.
+
+`src/content/config.ts` contains all fields for author, blog and tags pages. Check what's required and what's not. You can also add more fields if you want to.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |

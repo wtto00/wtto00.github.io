@@ -1,0 +1,16 @@
+---
+import {getCollection} from 'astro:content';
+
+import {excludeDrafts} from "@/functions";
+import PostLayout from "@/layouts/PostLayout.astro";
+
+export async function getStaticPaths() {
+    const posts = await getCollection('blog', excludeDrafts);
+    return posts.map((post, index) => ({
+        params: {slug: post.slug},
+        props: {post, next: posts[index + 1], prev: posts[index - 1]},
+    }));
+}
+---
+
+<PostLayout {...Astro.props}/>
