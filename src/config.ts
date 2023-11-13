@@ -1,11 +1,12 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://wtto00.github.io/Blog/", // replace this with your deployed domain
+  website: "https://wtto00.github.io/", // replace this with your deployed domain
+  base: '/Blog',
   author: "wtto",
-  desc: "wtto's blog.",
+  desc: "Record some issues encountered in daily work.",
   title: "WTTO'S BLOG",
-  ogImage: "astropaper-og.jpg",
+  // ogImage: "wtto-blog-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 6,
 };

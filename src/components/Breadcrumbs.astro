@@ -1,4 +1,5 @@
 ---
+import { SITE } from "@/config";
 // Remove current url path and remove trailing slash if exists
 const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "");
 
@@ -15,7 +16,7 @@ breadcrumbList[0] === "posts" &&
 <nav class="breadcrumb" aria-label="breadcrumb">
   <ul>
     <li>
-      <a href="/">Home</a>
+      <a href={SITE.base}>Home</a>
       <span aria-hidden="true">&nbsp;&gt;&nbsp;</span>
     </li>
     {

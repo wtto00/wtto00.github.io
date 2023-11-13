@@ -21,7 +21,10 @@ const {
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href
 } = Astro.props
 
-const socialImageURL = new URL(ogImage ?? SITE.ogImage ?? 'og.png', Astro.url.origin).href
+const socialImageURL = new URL(
+  SITE.base + (SITE.base.endsWith('/') ? '' : '/') + (ogImage ?? SITE.ogImage ?? 'og.png'),
+  Astro.url.origin
+).href
 ---
 
 <!doctype html>
@@ -29,7 +32,7 @@ const socialImageURL = new URL(ogImage ?? SITE.ogImage ?? 'og.png', Astro.url.or
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='icon' type='image/svg+xml' href={`${SITE.base}/favicon.svg`} />
     <link rel='canonical' href={canonicalURL} />
     <meta name='generator' content={Astro.generator} />
 
@@ -38,7 +41,7 @@ const socialImageURL = new URL(ogImage ?? SITE.ogImage ?? 'og.png', Astro.url.or
     <meta name='title' content={title} />
     <meta name='description' content={description} />
     <meta name='author' content={author} />
-    <link rel='sitemap' href='/sitemap-index.xml' />
+    <link rel='sitemap' href={`${SITE.base}/sitemap-index.xml`} />
 
     <!-- Open Graph / Facebook -->
     <meta property='og:title' content={title} />
@@ -72,7 +75,7 @@ const socialImageURL = new URL(ogImage ?? SITE.ogImage ?? 'og.png', Astro.url.or
 
     <ViewTransitions />
 
-    <script is:inline src='/toggle-theme.js'></script>
+    <script is:inline src={`${SITE.base}/toggle-theme.js`}></script>
   </head>
   <body>
     <slot />

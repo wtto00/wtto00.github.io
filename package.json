@@ -14,10 +14,14 @@
     "@astrojs/check": "^0.3.1",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/solid-js": "^3.0.2",
+    "@resvg/resvg-js": "^2.6.0",
     "astro": "^3.5.3",
     "fuse.js": "^7.0.0",
     "github-slugger": "^2.0.0",
+    "remark-collapse": "^0.1.2",
+    "remark-toc": "^9.0.0",
     "solid-js": "^1.7.11",
+    "solid-satori": "^0.0.2",
     "typescript": "^5.2.2"
   },
   "devDependencies": {

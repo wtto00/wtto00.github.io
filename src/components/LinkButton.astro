@@ -1,13 +1,15 @@
 ---
+import type { CSSProperty } from 'astro/types'
 export interface Props {
   href: string
   className?: string
   ariaLabel?: string
   title?: string
   disabled?: boolean
+  target?: astroHTML.JSX.HTMLAttributeAnchorTarget
 }
 
-const { href, className, ariaLabel, title, disabled = false } = Astro.props
+const { href, className, ariaLabel, title, disabled = false, target } = Astro.props
 ---
 
 <a
@@ -17,6 +19,7 @@ const { href, className, ariaLabel, title, disabled = false } = Astro.props
   aria-label={ariaLabel}
   title={title}
   aria-disabled={disabled}
+  target={target}
 >
   <slot />
 </a>
