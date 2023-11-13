@@ -1,40 +1,38 @@
 ---
-import { SITE } from "@/config";
+import { SITE } from '@/config'
 // Remove current url path and remove trailing slash if exists
-const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "");
+const currentUrlPath = Astro.url.pathname.replace(/\/+$/, '')
+
+const baseLen = SITE.base.split('/').filter((item) => item).length
 
 // Get url array from path
 // eg: /tags/tailwindcss => ['tags', 'tailwindcss']
-const breadcrumbList = currentUrlPath.split("/").slice(1);
+const breadcrumbList = currentUrlPath.split('/').slice(baseLen + 1)
 
 // if breadcrumb is Home > Posts > 1 <etc>
 // replace Posts with Posts (page number)
-breadcrumbList[0] === "posts" &&
-  breadcrumbList.splice(0, 2, `Posts (page ${breadcrumbList[1] || 1})`);
+breadcrumbList[0] === 'posts' && breadcrumbList.splice(0, baseLen + 2, `Posts (page ${breadcrumbList[1] || 1})`)
 ---
 
-<nav class="breadcrumb" aria-label="breadcrumb">
+<nav class='breadcrumb' aria-label='breadcrumb'>
   <ul>
     <li>
       <a href={SITE.base}>Home</a>
-      <span aria-hidden="true">&nbsp;&gt;&nbsp;</span>
+      <span aria-hidden='true'>&nbsp;&gt;&nbsp;</span>
     </li>
     {
       breadcrumbList.map((breadcrumb, index) =>
         index + 1 === breadcrumbList.length ? (
           <li>
-            <span
-              class={`${index > 0 ? "lowercase" : "capitalize"}`}
-              aria-current="page"
-            >
+            <span class={`${index > 0 ? 'lowercase' : 'capitalize'}`} aria-current='page'>
               {/* make the last part lowercase in Home > Tags > some-tag */}
-              {breadcrumb}
+              {decodeURIComponent(breadcrumb)}
             </span>
           </li>
         ) : (
           <li>
             <a href={`/${breadcrumb}`}>{breadcrumb}</a>
-            <span aria-hidden="true">&nbsp;&gt;&nbsp;</span>
+            <span aria-hidden='true'>&nbsp;&gt;&nbsp;</span>
           </li>
         )
       )
