@@ -1,63 +1,65 @@
-const {fontFamily} = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variableName}), ${opacityValue})`;
+    }
+    return `rgb(var(${variableName}))`;
+  };
+}
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-    darkMode: 'class',
-    theme: {
-        extend: {
-            lineHeight: {
-                11: '2.75rem',
-                12: '3rem',
-                13: '3.25rem',
-                14: '3.5rem',
-            },
-            fontFamily: {
-                sans: ['Space Grotesk', ...fontFamily.sans],
-            },
-            colors: {
-                primary: colors.pink,
-                gray: colors.gray,
-            },
-            typography: ({theme}) => ({
-                DEFAULT: {
-                    css: {
-                        a: {
-                            color: theme('colors.primary.500'),
-                            '&:hover': {
-                                color: `${theme('colors.primary.600')}`,
-                            },
-                            code: {color: theme('colors.primary.400')},
-                        },
-                        'h1,h2': {
-                            fontWeight: '700',
-                            letterSpacing: theme('letterSpacing.tight'),
-                        },
-                        h3: {
-                            fontWeight: '600',
-                        },
-                        code: {
-                            color: theme('colors.indigo.500'),
-                        },
-                    },
-                },
-                invert: {
-                    css: {
-                        a: {
-                            color: theme('colors.primary.500'),
-                            '&:hover': {
-                                color: `${theme('colors.primary.400')}`,
-                            },
-                            code: {color: theme('colors.primary.400')},
-                        },
-                        'h1,h2,h3,h4,h5,h6': {
-                            color: theme('colors.gray.100'),
-                        },
-                    },
-                },
-            }),
-        },
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  theme: {
+    // Remove the following screen breakpoint or add other breakpoints
+    // if one breakpoint is not enough for you
+    screens: {
+      sm: "640px",
     },
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
-}
+
+    // Uncomment the following extend
+    // if existing Tailwind color palette will be used
+
+    // extend: {
+    textColor: {
+      skin: {
+        base: withOpacity("--color-text-base"),
+        accent: withOpacity("--color-accent"),
+        inverted: withOpacity("--color-fill"),
+      },
+    },
+    backgroundColor: {
+      skin: {
+        fill: withOpacity("--color-fill"),
+        accent: withOpacity("--color-accent"),
+        inverted: withOpacity("--color-text-base"),
+        card: withOpacity("--color-card"),
+        "card-muted": withOpacity("--color-card-muted"),
+      },
+    },
+    outlineColor: {
+      skin: {
+        fill: withOpacity("--color-accent"),
+      },
+    },
+    borderColor: {
+      skin: {
+        line: withOpacity("--color-border"),
+        fill: withOpacity("--color-text-base"),
+        accent: withOpacity("--color-accent"),
+      },
+    },
+    fill: {
+      skin: {
+        base: withOpacity("--color-text-base"),
+        accent: withOpacity("--color-accent"),
+      },
+      transparent: "transparent",
+    },
+    fontFamily: {
+      mono: ["IBM Plex Mono", "monospace"],
+    },
+    // },
+  },
+  plugins: [require("@tailwindcss/typography")],
+};
