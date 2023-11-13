@@ -59,6 +59,23 @@ module.exports = {
     fontFamily: {
       mono: ["IBM Plex Mono", "monospace"],
     },
+    keyframes: {
+      'wave-hands': {
+        '0%, 60%, 100%': { transform: 'rotate(0)' },
+        '10%, 30%': { transform: 'rotate(14deg)' },
+        '20%': { transform: 'rotate(-8deg)' },
+        '40%': { transform: 'rotate(-4deg)' },
+        '50%': { transform: 'rotate(10deg)' },
+      },
+      'blink-text-cursor': {
+        '0%': { 'border-right-color': 'currentColor' },
+        '100%': { 'border-right-color': 'transparent' },
+      }
+    },
+    animation: {
+      'wave-hands': 'wave-hands 2.5s linear infinite',
+      'blink-text-cursor': 'blink-text-cursor 0.8s linear infinite'
+    }
     // },
   },
   plugins: [require("@tailwindcss/typography")],

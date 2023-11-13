@@ -3,11 +3,10 @@ author: wtto00
 pubDatetime: 2021-11-18T03:09:48.000Z
 title: 怎么解决国内 DNS 污染导致的某些站点访问失败
 postSlug: solve-the-DNS-pollution
-featured: true
+featured: false
 draft: false
 tags:
-  - DNS污染
-  - 网络相关
+  - 电脑相关
 description:
   通过修改 Hosts 解决一些国外站点由于国内 DNS 污染导致的访问失败。
 ---

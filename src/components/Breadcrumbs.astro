@@ -11,13 +11,13 @@ const breadcrumbList = currentUrlPath.split('/').slice(baseLen + 1)
 
 // if breadcrumb is Home > Posts > 1 <etc>
 // replace Posts with Posts (page number)
-breadcrumbList[0] === 'posts' && breadcrumbList.splice(0, baseLen + 2, `Posts (page ${breadcrumbList[1] || 1})`)
+breadcrumbList[0] === 'posts' && breadcrumbList.splice(0, baseLen + 2, `文章 (第 ${breadcrumbList[1] || 1} 页)`)
 ---
 
 <nav class='breadcrumb' aria-label='breadcrumb'>
   <ul>
     <li>
-      <a href={SITE.base}>Home</a>
+      <a href={SITE.base}>首页</a>
       <span aria-hidden='true'>&nbsp;&gt;&nbsp;</span>
     </li>
     {

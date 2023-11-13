@@ -1,28 +1,35 @@
 ---
-import { SOCIALS } from "@/config";
-import LinkButton from "./LinkButton.astro";
-import socialIcons from "@/assets/socialIcons";
+import { SITE, SOCIALS } from '@/config'
+import LinkButton from './LinkButton.astro'
+import socialIcons from '@/assets/socialIcons'
 
 export interface Props {
-  centered?: boolean;
+  centered?: boolean
 }
 
-const { centered = false } = Astro.props;
+const { centered = false } = Astro.props
 ---
 
-<div class={`social-icons ${centered ? "flex" : ""}`}>
+<div class={`social-icons ${centered ? 'flex' : ''}`}>
   {
-    SOCIALS.filter(social => social.active).map(social => (
-      <LinkButton
-        href={social.href}
-        className="link-button"
-        title={social.linkTitle}
-        target="_blank"
-      >
+    SOCIALS.filter((social) => social.active).map((social) => (
+      <LinkButton href={social.href} className='link-button' title={social.linkTitle} target='_blank'>
         <Fragment set:html={socialIcons[social.name]} />
       </LinkButton>
     ))
   }
+  <LinkButton
+    href={`${SITE.base}/rss.xml`}
+    className='link-button rss-link'
+    aria-label='rss feed'
+    title='RSS Feed'
+    target='_blank'
+  >
+    <svg xmlns='http://www.w3.org/2000/svg' class='rss-icon'
+      ><path d='M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z'></path><path
+        d='M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z'></path><circle cx='6' cy='18' r='2'></circle>
+    </svg>
+  </LinkButton>
 </div>
 
 <style>
