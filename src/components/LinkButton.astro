@@ -1,5 +1,5 @@
 ---
-import type { CSSProperty } from 'astro/types'
+import type { JSX } from 'solid-js'
 export interface Props {
   href: string
   className?: string
@@ -7,6 +7,7 @@ export interface Props {
   title?: string
   disabled?: boolean
   target?: astroHTML.JSX.HTMLAttributeAnchorTarget
+  children: JSX.Element
 }
 
 const { href, className, ariaLabel, title, disabled = false, target } = Astro.props
@@ -15,7 +16,7 @@ const { href, className, ariaLabel, title, disabled = false, target } = Astro.pr
 <a
   href={disabled ? '#' : href}
   tabindex={disabled ? '-1' : '0'}
-  class={`group inline-block ${className}`}
+  class={`group inline-block hover:c-accent ${className}`}
   aria-label={ariaLabel}
   title={title}
   aria-disabled={disabled}
@@ -23,9 +24,3 @@ const { href, className, ariaLabel, title, disabled = false, target } = Astro.pr
 >
   <slot />
 </a>
-
-<style>
-  a {
-    @apply hover:text-skin-accent;
-  }
-</style>

@@ -21,30 +21,31 @@ const socialCount = SOCIALS.filter((social) => social.active).length
 
 <Layout>
   <Header />
-  <main id='main-content'>
-    <section id='hero'>
+  <main id='home-main-content' class='mx-auto w-full max-w-3xl px-4 pb-12'>
+    <section id='hero' class='pb-6 pt-8'>
       <h1 class='text-3xl font-bold'>
         <span>
           Hi, I'm wtto.
           <span class='animate-wave-hands origin-[70%_70%] inline-block'> 👋</span></span
         >
       </h1>
-      <div class="mt-6 space-y-2">
-        <p class="flex items-center">
+      <div class='mt-6 space-y-2'>
+        <p class='flex items-center'>
           A JavaScript
           <span
-            class='transition-colors duration-300 ease-in font-mono inline-flex items-center hover:bg-#000/3 dark:hover:bg-#fff/3 w-13ch rounded-md px-2 py-0.5 relative after:absolute after:top-1/10 after:right-0.5 after:h-4/5 after:border-r-[currentColor] after:border-r-2 after:content-empty after:animate-blink-text-cursor'
+            class='shrink-0 transition-colors duration-300 ease-in font-mono flex items-center hover:bg-#000/3 dark:hover:bg-#fff/3 rd-md px-2 py-0.5 relative after:absolute after:top-1/10 after:right-0.5 after:h-4/5 after:b-r-[currentColor] after:b-r-2 after:content-empty after:animate-blink-text-cursor'
           >
             &lt;Developer /&gt;
           </span>
-        </p><p>Just coding with a spirited and love 🧡.</p>
+        </p>
+        <p>Just coding with a spirited and love 🧡.</p>
       </div>
 
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
-          <div class='social-wrapper'>
-            <Socials />
+          <div class='mt-4 flex flex-col sm:flex-row sm:items-center'>
+            <Socials class:list={'mb-1 mr-2 whitespace-nowrap sm:mb-0'} />
           </div>
         )
       }
@@ -55,8 +56,8 @@ const socialCount = SOCIALS.filter((social) => social.active).length
     {
       featuredPosts.length > 0 && (
         <>
-          <section id='featured'>
-            <h2>推荐</h2>
+          <section id='featured' class='pb-6 pt-12'>
+            <h2 class='text-2xl font-semibold tracking-wide'>推荐</h2>
             <ul>
               {featuredPosts.map(({ data }) => (
                 <Card href={`${SITE.base}/posts/${slugify(data)}`} frontmatter={data} secHeading={false} />
@@ -68,8 +69,8 @@ const socialCount = SOCIALS.filter((social) => social.active).length
       )
     }
 
-    <section id='recent-posts'>
-      <h2>最新</h2>
+    <section id='recent-posts' class='pb-6 pt-12'>
+      <h2 class='text-2xl font-semibold tracking-wide'>最新</h2>
       <ul>
         {
           sortedPosts
@@ -80,7 +81,7 @@ const socialCount = SOCIALS.filter((social) => social.active).length
             )
         }
       </ul>
-      <div class='all-posts-btn-wrapper'>
+      <div class='my-8 text-center'>
         <LinkButton href={`${SITE.base}/posts`}>
           查看所有
           <svg xmlns='http://www.w3.org/2000/svg'
@@ -93,41 +94,3 @@ const socialCount = SOCIALS.filter((social) => social.active).length
 
   <Footer />
 </Layout>
-
-<style>
-  /* ===== Hero Section ===== */
-  #hero {
-    @apply pb-6 pt-8;
-  }
-  /* #hero h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
-  } */
-  #hero .rss-link {
-    @apply mb-6;
-  }
-  #hero .rss-icon {
-    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
-  }
-  /* #hero p {
-    @apply my-2;
-  } */
-  .social-wrapper {
-    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
-  }
-  .social-links {
-    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
-  }
-
-  /* ===== Featured & Recent Posts Sections ===== */
-  #featured,
-  #recent-posts {
-    @apply pb-6 pt-12;
-  }
-  #featured h2,
-  #recent-posts h2 {
-    @apply text-2xl font-semibold tracking-wide;
-  }
-  .all-posts-btn-wrapper {
-    @apply my-8 text-center;
-  }
-</style>

@@ -6,18 +6,16 @@ export const SITE: Site = {
   author: "wtto",
   desc: "Record some issues encountered in daily work.",
   title: "WTTO'S BLOG",
-  // ogImage: "wtto-blog-og.jpg",
-  lightAndDarkMode: true,
   postPerPage: 6,
 };
 
 export const LOCALE = ["zh-CN"]; // set to [] to use the environment default
 
+// assets/logo.svg
 export const LOGO_IMAGE = {
-  enable: false,
-  svg: true,
-  width: 216,
-  height: 46,
+  enable: true,
+  width: 24,
+  height: 24,
 };
 
 export const SOCIALS: SocialObjects = [

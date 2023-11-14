@@ -43,7 +43,7 @@ const sortTagsPost = getSortedPosts(tagPosts);
   <Main
     pageTitle={[`Tag:`, `${tag}`]}
     titleTransition={tag}
-    pageDesc={`All the articles with the tag "${tag}".`}
+    pageDesc={`所有标签包含 "${tag}" 的文章：`}
   >
     <h1 slot="title" transition:name={tag}>{`Tag:${tag}`}</h1>
     <ul>

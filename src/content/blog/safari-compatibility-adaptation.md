@@ -11,7 +11,7 @@ description: IOS 浏览器适配。css 适配 iPhone 全面屏底部安全区域
 issue_number: 8
 ---
 
-## **overflow：scroll/auto 元素无法滑动**
+## **overflow：scroll:auto 元素无法滑动**
 
 参考 <https://blog.csdn.net/qq_30114149/article/details/80844346>
 
@@ -51,3 +51,11 @@ ios 低端版本，在 vue-cli 打包的时候，部分代码打出来生成了 
 ```html
 <script src="https://unpkg.com/@ungap/global-this@0.4.4/min.js"></script>
 ```
+
+## safari中input输入框弹出键盘回车键的显示文本
+
+在安卓中，`<input type="search" />`，弹出键盘的回车键显示文本为 **搜索**，但是在 safari 中却无效。
+
+在 safari 中，可以这样设置软键盘回车键的显示文本 `<input type="search" enterkeyhint="搜索" />`
+
+[MDN: enterkeyhint](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/enterkeyhint)

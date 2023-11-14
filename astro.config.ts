@@ -5,12 +5,14 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
+import unocss from 'unocss/astro'
 
 // https://astro.build/config
 export default defineConfig({
 	site: SITE.website,
 	base: SITE.base,
 	integrations: [
+		unocss({ injectReset: true }),
 		tailwind({
 			applyBaseStyles: false,
 		}),
@@ -30,5 +32,5 @@ export default defineConfig({
 			exclude: ["@resvg/resvg-js"],
 		},
 	},
-	scopedStyleStrategy: 'where'
+	// scopedStyleStrategy: 'where'
 });
