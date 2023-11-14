@@ -1,0 +1,29 @@
+---
+author: wtto00
+pubDatetime: 2021-08-16T04:23:39.000Z
+title: flex布局下img图片变形的解决方法
+postSlug: distorted-image-under-flex-layout
+featured: false
+draft: false
+tags:
+  - CSS
+description: flex布局下img图片变形的解决方法。给 img 设置 flex-shrink。在父元素没有设置高度的情况下，给图片设置 height。用div标签包裹图片。
+issue_number: 18
+---
+
+## 一、flex-shrink: 0
+
+给 img 设置 flex-shrink: 0;
+flex-shrink 的默认值为1，如果没有显示定义该属性，将会自动按照默认值1在所有因子相加之后计算比率来进行空间收缩。设置为0表示不收缩。
+flex 元素仅在默认宽度之和大于容器的时候才会发生收缩，其收缩的大小是依据 flex-shrink 的值。注意：如果元素不是弹性盒对象的元素，则 flex-shrink 属性不起作用。
+缺点：仅兼容IE11
+
+## 二、height: 100%
+
+在父元素没有设置高度的情况下，给图片设置 height: 100%;
+
+## 三、外层div标签包裹
+
+用div标签包裹图片，这种方案比较通用，缺点：产生无用标签。
+
+> 转自：<https://www.shuzhiduo.com/A/o75NEqvMJW/>

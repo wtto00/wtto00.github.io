@@ -9,6 +9,7 @@ tags:
   - 电脑相关
 description:
   通过修改 Hosts 解决一些国外站点由于国内 DNS 污染导致的访问失败。
+issue_number: 1
 ---
 
 ## 获取正确地 IP 地址
@@ -28,7 +29,7 @@ description:
 
 修改示例：
 
-```
+```txt
 140.82.114.4 gist.github.com
 199.232.96.133 camo.githubusercontent.com
 199.232.96.133 user-images.githubusercontent.com
