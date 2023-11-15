@@ -16,7 +16,7 @@ const { href, className, ariaLabel, title, disabled = false, target } = Astro.pr
 <a
   href={disabled ? '#' : href}
   tabindex={disabled ? '-1' : '0'}
-  class={`group inline-block hover:c-accent ${className}`}
+  class={`group inline-flex justify-center items-center ${disabled ? 'op-50 pointer-events-none' : 'hover:c-accent'} ${className}`}
   aria-label={ariaLabel}
   title={title}
   aria-disabled={disabled}

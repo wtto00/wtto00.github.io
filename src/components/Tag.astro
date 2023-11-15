@@ -1,4 +1,5 @@
 ---
+import { SITE } from '@/config'
 export interface Props {
   name: string
   size?: 'sm' | 'lg'
@@ -9,20 +10,14 @@ const { name, size = 'sm' } = Astro.props
 
 <li class={`inline-block ${size === 'sm' ? 'my-1 underline-offset-4' : 'my-3 mx-1 underline-offset-8'}`}>
   <a
-    href={`/tags/${name.toLowerCase()}`}
+    href={`${SITE.base}/tags/${name.toLowerCase()}`}
     transition:name={name.toLowerCase()}
     class:list={`${size === 'sm' ? 'text-sm' : 'text-lg'}`}
     class='relative underline decoration-dashed hover:-top-0.5 pr-2 group hover:c-accent focus-visible:p-1'
   >
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      class:list={`${size === 'sm' ? ' scale-75' : 'scale-110'}`}
-      class='-mr-5 h-6 w-6 scale-95 c-base op-80 group-hover:fill-accent'
-    >
-      <path
-        d='M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z'
-      ></path>
-    </svg>
+    <i
+      class='inline-block -mr-5 h-6 w-6 op-80 i-custom-topic origin-rb v-text-top'
+      class:list={`${size === 'sm' ? 'scale-75' : 'scale-95'}`}></i>
      &nbsp;<span>{name.toLowerCase()}</span>
   </a>
 </li>

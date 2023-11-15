@@ -49,21 +49,12 @@ devDependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.2
     version: 5.0.2(astro@3.5.3)(tailwindcss@3.3.5)
-  '@iconify/json':
-    specifier: ^2.2.142
-    version: 2.2.142
-  '@tailwindcss/typography':
-    specifier: ^0.5.10
-    version: 0.5.10(tailwindcss@3.3.5)
   '@unocss/astro':
     specifier: ^0.57.3
     version: 0.57.3(vite@4.5.0)
   '@unocss/preset-typography':
     specifier: ^0.57.4
     version: 0.57.4
-  '@unocss/preset-uno':
-    specifier: ^0.57.3
-    version: 0.57.3
   '@unocss/reset':
     specifier: ^0.57.3
     version: 0.57.3
@@ -76,9 +67,6 @@ devDependencies:
   '@unocss/transformer-variant-group':
     specifier: ^0.57.3
     version: 0.57.3
-  tailwindcss:
-    specifier: ^3.3.5
-    version: 3.3.5
   unocss:
     specifier: ^0.57.3
     version: 0.57.3(postcss@8.4.31)(vite@4.5.0)
@@ -930,13 +918,6 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@iconify/json@2.2.142:
-    resolution: {integrity: sha512-EfQv1GMGxOySdwaGR3+Diqudkwk4W299cNtcQhg7QAlH9x6FW9851raiYvdOsMZp0ya+Ye+evTTqxyZ4vEh5cw==}
-    dependencies:
-      '@iconify/types': 2.0.0
-      pathe: 1.1.1
-    dev: true
-
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
     dev: true
@@ -1153,18 +1134,6 @@ packages:
       fflate: 0.7.4
       string.prototype.codepointat: 0.2.1
     dev: false
-
-  /@tailwindcss/typography@0.5.10(tailwindcss@3.3.5):
-    resolution: {integrity: sha512-Pe8BuPJQJd3FfRnm6H0ulKIGoMEQS+Vq01R6M5aCrFB/ccR/shT+0kXLjouGC1gFLm9hopTFN+DMP0pfwRWzPw==}
-    peerDependencies:
-      tailwindcss: '>=3.0.0 || insiders'
-    dependencies:
-      lodash.castarray: 4.4.0
-      lodash.isplainobject: 4.0.6
-      lodash.merge: 4.6.2
-      postcss-selector-parser: 6.0.10
-      tailwindcss: 3.3.5
-    dev: true
 
   /@types/babel__core@7.20.4:
     resolution: {integrity: sha512-mLnSC22IC4vcWiuObSRjrLd9XcBTGf59vUSoq2jkQDJ/QQ8PMI9rSuzE+aEV8karUMbskw07bKYoUJCKTUaygg==}
@@ -1427,7 +1396,7 @@ packages:
     resolution: {integrity: sha512-koWXeRJHFt/SJdb3m7s/2+NrBCcUtl67SX7rSHJc99Z+dwZgIsPUfdfRKM4mZD43MayybvDrd1Wue2LNQg5R/g==}
     engines: {node: '>=14'}
     dependencies:
-      '@unocss/core': 0.57.3
+      '@unocss/core': 0.57.4
       magic-string: 0.30.5
     dev: true
 
@@ -2862,14 +2831,6 @@ packages:
     dependencies:
       p-locate: 5.0.0
 
-  /lodash.castarray@4.4.0:
-    resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
-    dev: true
-
-  /lodash.isplainobject@4.0.6:
-    resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
-    dev: true
-
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
@@ -3716,14 +3677,6 @@ packages:
       postcss-selector-parser: 6.0.13
     dev: true
 
-  /postcss-selector-parser@6.0.10:
-    resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}
-    engines: {node: '>=4'}
-    dependencies:
-      cssesc: 3.0.0
-      util-deprecate: 1.0.2
-    dev: true
-
   /postcss-selector-parser@6.0.13:
     resolution: {integrity: sha512-EaV1Gl4mUEV4ddhDnv/xtj7sxwrwxdetHdWUGnT4VJQf+4d05v6lHYZr8N573k5Z0BViss7BDhfWtKS3+sfAqQ==}
     engines: {node: '>=4'}
@@ -4562,7 +4515,7 @@ packages:
       '@unocss/core': '>= 0.52.0'
     dependencies:
       '@unocss/core': 0.57.4
-      '@unocss/rule-utils': 0.57.3
+      '@unocss/rule-utils': 0.57.4
     dev: true
 
   /unocss@0.57.3(postcss@8.4.31)(vite@4.5.0):

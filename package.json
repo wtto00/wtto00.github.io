@@ -27,16 +27,12 @@
   "devDependencies": {
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.2",
-    "@iconify/json": "^2.2.142",
-    "@tailwindcss/typography": "^0.5.10",
     "@unocss/astro": "^0.57.3",
     "@unocss/preset-typography": "^0.57.4",
-    "@unocss/preset-uno": "^0.57.3",
     "@unocss/reset": "^0.57.3",
     "@unocss/transformer-compile-class": "^0.57.3",
     "@unocss/transformer-directives": "^0.57.3",
     "@unocss/transformer-variant-group": "^0.57.3",
-    "tailwindcss": "^3.3.5",
     "unocss": "^0.57.3",
     "unocss-preset-theme": "^0.11.0"
   }

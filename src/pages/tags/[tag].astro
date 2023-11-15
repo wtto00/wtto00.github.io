@@ -45,11 +45,11 @@ const sortTagsPost = getSortedPosts(tagPosts);
     titleTransition={tag}
     pageDesc={`所有标签包含 "${tag}" 的文章：`}
   >
-    <h1 slot="title" transition:name={tag}>{`Tag:${tag}`}</h1>
+    <h1 slot="title" transition:name={tag}>{`标签: ${tag}`}</h1>
     <ul>
       {
         sortTagsPost.map(({ data }) => (
-          <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
+          <Card href={`${SITE.base}/posts/${slugify(data)}`} frontmatter={data} />
         ))
       }
     </ul>

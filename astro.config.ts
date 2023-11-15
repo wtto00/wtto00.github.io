@@ -13,9 +13,6 @@ export default defineConfig({
 	base: SITE.base,
 	integrations: [
 		unocss({ injectReset: true }),
-		tailwind({
-			applyBaseStyles: false,
-		}),
 		solid(),
 		sitemap()
 	],

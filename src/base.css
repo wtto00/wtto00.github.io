@@ -1,9 +1,10 @@
-:root {}
-
-:root.dark {}
-
 body {
   --at-apply: flex min-h-[100svh] flex-col bg-fill font-mono c-base selection:(bg-accent bg-op-70 c-fill);
+}
+
+section,
+footer {
+  --at-apply: mx-auto max-w-3xl px-4;
 }
 
 a {
@@ -15,7 +16,7 @@ svg {
 }
 
 svg.icon-tabler {
-  --at-apply: inline-block h-6 w-6 scale-125 fill-transparent stroke-current stroke-2 op-90 group-hover:fill-transparent sm:scale-110;
+  --at-apply: inline-block h-7.5 w-7.5 fill-transparent stroke-current stroke-2 op-90 group-hover:fill-transparent sm:(w-6.6 h-6.6);
 }
 
 #main-content p {

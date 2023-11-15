@@ -25,10 +25,9 @@ const ogUrl = new URL(ogImageUrl ?? `${SITE.base}/posts/${slugifyStr(title)}.png
 <Layout title={title} author={author} description={description} ogImage={ogUrl} canonicalURL={canonicalURL}>
   <Header />
   <div class='mx-auto flex w-full max-w-3xl justify-start px-2'>
-    <button class='focus-outline mb-2 mt-8 flex hover:op-75' onclick='history.back()'>
-      <svg xmlns='http://www.w3.org/2000/svg'
-        ><path d='M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z'></path>
-      </svg><span>返回</span>
+    <button class='focus-outline mb-2 mt-4 flex hover:op-75' onclick='history.back()'>
+      <i class="i-custom-back text-2xl"></i>
+      <span>返回</span>
     </button>
   </div>
   <main id='main-content' class='mx-auto w-full max-w-3xl px-4 pb-12'>
