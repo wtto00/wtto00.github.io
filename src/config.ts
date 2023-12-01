@@ -23,7 +23,6 @@ type SocialObjects = {
   href: string;
   active: boolean;
   linkTitle: string;
-  icon: string;
 }[];
 export const SOCIALS: SocialObjects = [
   {
@@ -31,13 +30,11 @@ export const SOCIALS: SocialObjects = [
     href: "https://github.com/wtto00/Blog",
     linkTitle: `${SITE.title} on Github`,
     active: true,
-    icon: 'i-mdi-github'
   },
   {
     name: "Mail",
     href: "mailto:wtto00@outlook.com",
     linkTitle: `Send an email to ${SITE.title}`,
     active: true,
-    icon: 'i-mdi-email-outline'
   }
 ];

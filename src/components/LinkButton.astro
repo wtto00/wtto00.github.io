@@ -19,7 +19,7 @@ const { href, className, ariaLabel, title, disabled = false, target } = Astro.pr
       title={title}
       tabindex='-1'
       aria-disabled={true}
-      class='group inline-flex justify-center items-center op-50 pointer-events-none'
+      class='group pointer-events-none inline-flex items-center justify-center op-50'
       class:list={[className]}
       aria-label={ariaLabel}
       aria-disabled={true}
@@ -30,7 +30,7 @@ const { href, className, ariaLabel, title, disabled = false, target } = Astro.pr
     <a
       href={href}
       tabindex='0'
-      class='group inline-flex justify-center items-center hover:c-accent'
+      class='group inline-flex items-center justify-center hover:c-accent'
       class:list={[className]}
       aria-label={ariaLabel}
       title={title}

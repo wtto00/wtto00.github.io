@@ -17,15 +17,16 @@ export default defineConfig({
 	// Enable Solid to support Solid JSX components.
 	integrations: [solid(), UnoCSS({ injectReset: true }), sitemap()],
 	markdown: {
-		// @ts-expect-error type error
 		remarkPlugins: [rehypeHeadingIds, [remarkToc, { tight: true, ordered: true }], [remarkCollapse, { test: 'Table of contents' }]],
 		rehypePlugins: [
-			// @ts-expect-error type error
 			rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'append' }], rehypeAccessibleEmojis
 		],
 		shikiConfig: {
-			theme: 'one-dark-pro',
-			wrap: true
+			wrap: true,
+			experimentalThemes: {
+				light: 'github-light',
+				dark: 'github-dark'
+			}
 		}
 	},
 	vite: {
