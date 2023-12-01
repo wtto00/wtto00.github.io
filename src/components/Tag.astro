@@ -8,16 +8,16 @@ export interface Props {
 const { name, size = 'sm' } = Astro.props
 ---
 
-<li class={`inline-block ${size === 'sm' ? 'my-1 underline-offset-4' : 'my-3 mx-1 underline-offset-8'}`}>
+<li class='inline-block' class:list={[size === 'sm' ? 'my-1 underline-offset-4' : 'my-3 mx-1 underline-offset-8']}>
   <a
     href={`${SITE.base}tags/${name.toLowerCase()}`}
     transition:name={name.toLowerCase()}
-    class:list={`${size === 'sm' ? 'text-sm' : 'text-lg'}`}
+    class:list={[size === 'sm' ? 'text-sm' : 'text-lg']}
     class='group relative pr-2 underline decoration-dashed focus-visible:p-1 hover:c-accent hover:-top-0.5'
   >
     <i
       class='i-custom-topic inline-block h-6 w-6 origin-rc v-mid op-80 -mr-4'
-      class:list={`${size === 'sm' ? 'scale-75' : 'scale-95'}`} />
+      class:list={[size === 'sm' ? 'scale-75' : 'scale-95']}></i>
      &nbsp;<span>{name.toLowerCase()}</span>
   </a>
 </li>

@@ -1,5 +1,4 @@
 ---
-import { For } from "solid-js";
 import Layout from '@/layouts/Layout.astro'
 import Header from '@/components/Header.astro'
 import Footer from '@/components/Footer.astro'
@@ -27,7 +26,7 @@ const ogUrl = new URL(ogImageUrl ?? `${SITE.base}posts/${slugifyStr(title)}.png`
   <Header />
   <div class='mx-auto max-w-3xl w-full flex justify-start px-2'>
     <button class='mb-2 mt-4 flex hover:op-75' onclick='history.back()'>
-      <i class='i-custom-back text-2xl' />
+      <i class='i-custom-back text-2xl'></i>
       <span>返回</span>
     </button>
   </div>
@@ -39,7 +38,7 @@ const ogUrl = new URL(ogImageUrl ?? `${SITE.base}posts/${slugifyStr(title)}.png`
     </article>
 
     <ul class='my-8'>
-      <For each={tags}>{(tag) => <Tag name={slugifyStr(tag)} />}</For>
+      {tags.map((tag) => <Tag name={slugifyStr(tag)} />)}
     </ul>
   </main>
 

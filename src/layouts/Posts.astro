@@ -1,5 +1,4 @@
 ---
-import { For } from "solid-js";
 import { SITE } from '@/config'
 import Layout from '@/layouts/Layout.astro'
 import Main from '@/layouts/Main.astro'
@@ -26,7 +25,7 @@ const next = pageNum < totalPages ? '' : 'disabled'
   <Header activeNav='posts' />
   <Main pageTitle='文章' pageDesc='所有我发布的文章：'>
     <ul>
-      <For each={posts}>{({ data }) => <Card href={`${SITE.base}posts/${slugify(data)}`} frontmatter={data} />}</For>
+      {posts.map(({ data }) => <Card href={`${SITE.base}posts/${slugify(data)}`} frontmatter={data} />)}
     </ul>
   </Main>
 
@@ -36,7 +35,7 @@ const next = pageNum < totalPages ? '' : 'disabled'
         <LinkButton
           disabled={prev === 'disabled'}
           href={`${SITE.base}posts${pageNum - 1 !== 1 ? '/' + (pageNum - 1) : ''}`}
-          class='mr-4 select-none'
+          className='mr-4 select-none'
           ariaLabel='Previous'
         >
           <i class='i-custom-arrow-left text-2xl' />
@@ -45,7 +44,7 @@ const next = pageNum < totalPages ? '' : 'disabled'
         <LinkButton
           disabled={next === 'disabled'}
           href={`${SITE.base}posts/${pageNum + 1}`}
-          class='ml-4 select-none'
+          className='ml-4 select-none'
           ariaLabel='Next'
         >
           下一页
