@@ -10,14 +10,9 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "extraFileExtensions": [
-      ".tsx",
-      ".ts"
-    ]
+    "extraFileExtensions": [".tsx", ".ts"]
   },
-  "plugins": [
-    "solid"
-  ],
+  "plugins": ["solid"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -27,26 +22,18 @@
   ],
   "overrides": [
     {
-      "files": [
-        "*.tsx"
-      ],
-      "extends": [
-        "plugin:solid/recommended"
-      ]
+      "files": ["*.tsx"],
+      "extends": ["plugin:solid/recommended"]
     },
     {
-      "files": [
-        "*.astro"
-      ],
+      "files": ["*.astro"],
       "globals": {
         "astroHTML": "readonly"
       },
       "parser": "astro-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
-        "extraFileExtensions": [
-          ".astro"
-        ]
+        "extraFileExtensions": [".astro"]
       },
       "rules": {}
     }

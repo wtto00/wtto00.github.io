@@ -18,10 +18,10 @@ issue_number: 14
   ```javascript
   var say = 'a bird in hand > two in the bush';
   var html = htmlEscape`<div>I would just like to say : ${say}</div>`;
-  
+
   function htmlEscape(literals, ...placeholders) {
     let result = '';
-    for (let i = 0;i < placeholders.length; i+=1) {
+    for (let i = 0; i < placeholders.length; i += 1) {
       result += literals[i];
       result += placeholders[i]
         .replace(/&/g, '&amp;')
@@ -31,13 +31,14 @@ issue_number: 14
         .replace(/>/g, '&gt;')
         .replace(/javascript/gi, '$&&rlm;');
     }
-  
+
     result += literals[literals.length - 1];
     return result;
   }
   ```
 
 ---
+
 `html`不占位不显示的转义符
 
 - `&rlm;`

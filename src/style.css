@@ -41,6 +41,7 @@ html {
 /* --------------------------------- 滚动条 End --------------------------------- */
 
 body {
+  /* prettier-ignore */
   --at-apply: flex min-h-100svh flex-col bg-fill font-mono c-base selection:(bg-accent bg-op-70 c-fill);
 }
 section,
@@ -48,12 +49,13 @@ footer {
   --at-apply: mx-auto max-w-3xl px-4;
 }
 a {
-  --at-apply: outline-2 outline-offset-1 outline-fill focus-visible:no-underline focus-visible:outline-dashed;
+  /* prettier-ignore */
+  --at-apply: outline-2 outline-offset-1 outline-fill focus-visible:(no-underline outline-dashed);
 }
 
 /* --------------------------------- prose Start --------------------------------- */
 .prose a {
-  --at-apply: decoration-dashed underline-offset-8 break-words hover:c-accent;
+  --at-apply: decoration-dashed underline-offset-8 break-words hover: c-accent;
 }
 .prose img {
   --at-apply: b-2 b-brd mx-auto mt-2 mb-2em;

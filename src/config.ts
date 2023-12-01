@@ -8,15 +8,15 @@ type Site = {
 };
 
 export const SITE: Site = {
-  website: "https://wtto00.github.io/",
+  website: 'https://wtto00.github.io/',
   base: '/Blog/',
-  author: "wtto",
-  desc: "Record some issues encountered in daily work.",
+  author: 'wtto',
+  desc: 'Record some issues encountered in daily work.',
   title: "WTTO'S BLOG",
   postPerPage: 6,
 };
 
-export const LOCALE = ["zh-CN"];
+export const LOCALE = ['zh-CN'];
 
 type SocialObjects = {
   name: string;
@@ -26,15 +26,15 @@ type SocialObjects = {
 }[];
 export const SOCIALS: SocialObjects = [
   {
-    name: "Github",
-    href: "https://github.com/wtto00/Blog",
+    name: 'Github',
+    href: 'https://github.com/wtto00/Blog',
     linkTitle: `${SITE.title} on Github`,
     active: true,
   },
   {
-    name: "Mail",
-    href: "mailto:wtto00@outlook.com",
+    name: 'Mail',
+    href: 'mailto:wtto00@outlook.com',
     linkTitle: `Send an email to ${SITE.title}`,
     active: true,
-  }
+  },
 ];

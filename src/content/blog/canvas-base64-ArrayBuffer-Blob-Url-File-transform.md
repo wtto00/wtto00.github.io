@@ -14,7 +14,7 @@ issue_number: 20
 ### canvas to base64
 
 ```javascript
-const dataurl = canvas.toDataURL("image/png");
+const dataurl = canvas.toDataURL('image/png');
 console.log(dataurl);
 ```
 
@@ -41,7 +41,7 @@ img.src = dataurl;
 浏览器环境下
 
 ```javascript
-const arr = base64.split(",");
+const arr = base64.split(',');
 const [, mime] = arr[0].match(/:(.*?);/);
 const bstr = window.atob(arr[1]);
 let n = bstr.length;
@@ -56,28 +56,28 @@ console.log(u8arr);
 Nodejs
 
 ```javascript
-const arr = dataurl.split(",");
-const buffer = Buffer.from(arr[1], "base64");
+const arr = dataurl.split(',');
+const buffer = Buffer.from(arr[1], 'base64');
 console.log(buffer);
 ```
 
 ### ArrayBuffer to base64
 
 ```javascript
-let binary = ''
-const bytes = new Uint8Array(buffer)
-const len = bytes.byteLength
+let binary = '';
+const bytes = new Uint8Array(buffer);
+const len = bytes.byteLength;
 for (let i = 0; i < len; i++) {
-  binary += String.fromCharCode(bytes[i])
+  binary += String.fromCharCode(bytes[i]);
 }
-const base64 = window.btoa(binary)
+const base64 = window.btoa(binary);
 console.log(`data:${mime};base64,${base64}`);
 ```
 
 ### ArrayBuffer to Blob
 
 ```javascript
-const arr = base64.split(",");
+const arr = base64.split(',');
 const [, mime] = arr[0].match(/:(.*?);/);
 
 const blob = new Blob([buffer], { type: mime });
@@ -138,13 +138,13 @@ var data =
   '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">' +
   '<foreignObject width="100%" height="100%">' +
   '<div xmlns="http://www.w3.org/1999/xhtml" style="font-size:50px">' +
-  "Simply Easy " +
+  'Simply Easy ' +
   '<span style="color:blue;">' +
-  "Learning</span>" +
-  "</div>" +
-  "</foreignObject>" +
-  "</svg>";
-var svg = new Blob([data], { type: "image/svg+xml" });
+  'Learning</span>' +
+  '</div>' +
+  '</foreignObject>' +
+  '</svg>';
+var svg = new Blob([data], { type: 'image/svg+xml' });
 ```
 
 > 外部样式无效

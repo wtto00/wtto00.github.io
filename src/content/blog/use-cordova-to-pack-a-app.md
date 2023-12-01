@@ -46,6 +46,7 @@ issue_number: 44
    |name|APP名称`HelloCordova`|
    |description|APP描述信息简介`Sample Apache Cordova App`|
    |author|APP作者/开发者/所有者/公司等信息|
+
 1. 创建 www 目录  
    已有此目录，忽略此步骤
 
@@ -53,16 +54,18 @@ issue_number: 44
    mkdir www
    ```
 
-1. 安装 Android Studio  
+1. 安装 Android Studio
 
    已安装可忽略此步骤
 
    主要是为了使用 `Android Studio` 安装 `Android SDK` 等开发工具
+
    - [官方网站](https://developer.android.google.cn/studio/) 下载并安装。
-   - 安装完成后，打开设置，搜索 `sdk`  
+   - 安装完成后，打开设置，搜索 `sdk`
      - 安装至少一个 `SDK Platforms`，一般选择最新的安装版本即可。
-     - 安装 `SDK Tools`, 勾选 `Android SDK Build-Tools`, `Android SDK Command-line Tools`, `Android SDK Platform-Tools`  
-     > 一般这些是默认安装的，没有安装的话，请手动安装。
+     - 安装 `SDK Tools`, 勾选 `Android SDK Build-Tools`, `Android SDK Command-line Tools`, `Android SDK Platform-Tools`
+       > 一般这些是默认安装的，没有安装的话，请手动安装。
+
 1. 设置环境变量
 
    ```shell
@@ -93,6 +96,7 @@ issue_number: 44
    ```
 
    如果还有其他问题，按照要求修复环境即可
+
 1. 生成缩略图
 
    ```shell
@@ -110,6 +114,7 @@ issue_number: 44
 
    事先在 `resources` 文件夹，准备文件 `icon.png` 图标文件，大小为 `1024x1024`。  
    如果要生成 `splashscreen`, 准备文件 `splash.png` 文件，大小为 `2732x2732`。
+
 1. 打包的前端文件，复制到 `www` 目录
 
    ```shell

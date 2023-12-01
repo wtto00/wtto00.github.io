@@ -1,13 +1,13 @@
-import Fuse from "fuse.js";
-import Card from "@/components/Card.astro";
-import slugify from "@/utils/slugify";
-import type { CollectionEntry } from "astro:content";
-import { createEffect, createMemo, createSignal, type JSX } from "solid-js";
+import Fuse from 'fuse.js';
+import Card from '@/components/Card.astro';
+import slugify from '@/utils/slugify';
+import type { CollectionEntry } from 'astro:content';
+import { createEffect, createMemo, createSignal, type JSX } from 'solid-js';
 
 export type SearchItem = {
   title: string;
   description: string;
-  data: CollectionEntry<"blog">["data"];
+  data: CollectionEntry<'blog'>['data'];
 };
 
 interface Props {
@@ -23,34 +23,34 @@ export default function SearchBar(props: Props) {
   let inputRef: HTMLInputElement;
 
   const [inputVal, setInputVal] = createSignal('');
-  const [searchResults, setSearchResults] = createSignal<SearchResult[] | null>(
-    null
-  );
+  const [searchResults, setSearchResults] = createSignal<SearchResult[] | null>(null);
 
   const handleChange: JSX.ChangeEventHandlerUnion<HTMLInputElement, Event> = (e) => {
     setInputVal(e.currentTarget.value);
   };
 
-  const fuse = createMemo(() => new Fuse(props.searchList, {
-    keys: ["title", "description"],
-    includeMatches: true,
-    minMatchCharLength: 2,
-    threshold: 0.5,
-  }));
+  const fuse = createMemo(
+    () =>
+      new Fuse(props.searchList, {
+        keys: ['title', 'description'],
+        includeMatches: true,
+        minMatchCharLength: 2,
+        threshold: 0.5,
+      }),
+  );
 
   createEffect(() => {
     // if URL has search query,
     // insert that search query in input field
     const searchUrl = new URLSearchParams(window.location.search);
-    const searchStr = searchUrl.get("q");
+    const searchStr = searchUrl.get('q');
     if (searchStr) setInputVal(searchStr);
 
     // put focus cursor at the end of the string
     setTimeout(function () {
-      inputRef.selectionStart = inputRef.selectionEnd =
-        searchStr?.length || 0;
+      inputRef.selectionStart = inputRef.selectionEnd = searchStr?.length || 0;
     }, 50);
-  })
+  });
 
   createEffect(() => {
     // Add search result only if
@@ -61,14 +61,13 @@ export default function SearchBar(props: Props) {
     // Update search string in URL
     if (inputVal().length > 0) {
       const searchParams = new URLSearchParams(window.location.search);
-      searchParams.set("q", inputVal());
-      const newRelativePathQuery =
-        window.location.pathname + "?" + searchParams.toString();
-      history.replaceState(history.state, "", newRelativePathQuery);
+      searchParams.set('q', inputVal());
+      const newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
+      history.replaceState(history.state, '', newRelativePathQuery);
     } else {
-      history.replaceState(history.state, "", window.location.pathname);
+      history.replaceState(history.state, '', window.location.pathname);
     }
-  })
+  });
 
   return (
     <>
@@ -85,7 +84,7 @@ export default function SearchBar(props: Props) {
           onChange={handleChange}
           auto-complete="off"
           auto-focus
-          ref={el => inputRef = el}
+          ref={(el) => (inputRef = el)}
         />
       </label>
 
@@ -98,10 +97,7 @@ export default function SearchBar(props: Props) {
       <ul>
         {searchResults() &&
           searchResults()!.map((props) => (
-            <Card
-              href={`/posts/${slugify(props.item.data)}`}
-              frontmatter={props.item.data}
-            />
+            <Card href={`/posts/${slugify(props.item.data)}`} frontmatter={props.item.data} />
           ))}
       </ul>
     </>

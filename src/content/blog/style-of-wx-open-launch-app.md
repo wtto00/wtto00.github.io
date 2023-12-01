@@ -29,14 +29,14 @@ export default defineComponent({
   },
   mounted() {
     const launchAppBtn = document.getElementById(this.id);
-    launchAppBtn.addEventListener('launch', e => {
+    launchAppBtn.addEventListener('launch', (e) => {
       console.log('success', e);
     });
-    launchAppBtn.addEventListener('error', e => {
+    launchAppBtn.addEventListener('error', (e) => {
       this.$emit('fail', e);
       console.log('fail', e);
     });
-    launchAppBtn.addEventListener('ready', e => {
+    launchAppBtn.addEventListener('ready', (e) => {
       console.log('ready', e);
     });
   },
@@ -45,7 +45,7 @@ export default defineComponent({
       <div style={{ position: 'relative' }}>
         {this.$slots.default()}
         <div
-          onClick={e => {
+          onClick={(e) => {
             // 非微信浏览器触发
             this.$emit('fail', e);
             console.log('fail', e);
@@ -66,7 +66,6 @@ export default defineComponent({
     );
   },
 });
-
 ```
 
 ```vue
@@ -125,5 +124,4 @@ const fail = (e) => {
   bottom: 0;
 }
 </style>
-
 ```

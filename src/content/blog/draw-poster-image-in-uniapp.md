@@ -51,7 +51,7 @@ function startDraw(canvas, data, callback) {
           color: '#1a1a1a',
           bold: true,
         },
-        1
+        1,
       );
       // 村庄地址
       renderText(
@@ -65,7 +65,7 @@ function startDraw(canvas, data, callback) {
           lineHeight: 40,
           color: '#1a1a1a',
         },
-        1
+        1,
       );
       // 扫码查看村庄名片
       renderText(
@@ -79,7 +79,7 @@ function startDraw(canvas, data, callback) {
           lineHeight: 40,
           color: '#999',
         },
-        1
+        1,
       );
       // 小三角
       ctx.beginPath();

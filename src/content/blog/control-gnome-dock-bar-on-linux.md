@@ -7,7 +7,7 @@ featured: false
 draft: false
 tags:
   - Linux
-description: "Linux的gnome桌面管理底部Dock bar: gnome-shell-extension-dash-to-dock gnome-extensions-app gnome-shell-extension-prefs"
+description: 'Linux的gnome桌面管理底部Dock bar: gnome-shell-extension-dash-to-dock gnome-extensions-app gnome-shell-extension-prefs'
 issue_number: 47
 ---
 

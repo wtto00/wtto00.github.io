@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "关于我"
+title: '关于我'
 ---
 
 目前在深圳从事前端开发工程师的工作。

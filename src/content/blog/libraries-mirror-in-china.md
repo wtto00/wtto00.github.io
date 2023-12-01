@@ -7,7 +7,7 @@ featured: false
 draft: false
 tags:
   - 镜像
-description: "一些常用库的国内镜像: npm,cargo,maven,flutter,homebrew,dnf,ruby,pip"
+description: '一些常用库的国内镜像: npm,cargo,maven,flutter,homebrew,dnf,ruby,pip'
 issue_number: 45
 ---
 

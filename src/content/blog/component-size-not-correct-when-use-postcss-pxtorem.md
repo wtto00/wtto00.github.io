@@ -40,16 +40,15 @@ module.exports = {
         plugins: [
           pxtorem({
             rootValue: ({ file }) => {
-              if (file.indexOf('node_modules/vant') > -1) return [设计稿宽度 / 10 * (设计稿宽度 / 1500)];
+              if (file.indexOf('node_modules/vant') > -1) return [(设计稿宽度 / 10) * (设计稿宽度 / 1500)];
               return [设计稿宽度 / 10];
             },
-          })
-        ]
-      }
-    }
-  }
-}
-
+          }),
+        ],
+      },
+    },
+  },
+};
 ```
 
-其中 `APP.less` 中的 *屏幕宽度 / 10* , *768 / 10* 和 `vue.config.js` 中的 *设计稿宽度 / 10* ，两个的倍数需要保持一致，不一定是10，也可以改成自己想要的倍数
+其中 `APP.less` 中的 _屏幕宽度 / 10_ , _768 / 10_ 和 `vue.config.js` 中的 _设计稿宽度 / 10_ ，两个的倍数需要保持一致，不一定是10，也可以改成自己想要的倍数

@@ -1,15 +1,13 @@
-
-export type ColorScheme = "Dark" | "Light";
-
+export type ColorScheme = 'Dark' | 'Light';
 
 /**
  * 获取当前主题设置
  * 默认 Dark
  */
 export function getCurrentTheme(): ColorScheme {
-  const localColorScheme = localStorage.getItem('colorScheme')
-  if (localColorScheme !== 'Light') return 'Dark'
-  return 'Light'
+  const localColorScheme = localStorage.getItem('colorScheme');
+  if (localColorScheme !== 'Light') return 'Dark';
+  return 'Light';
 }
 
 /**
@@ -17,13 +15,13 @@ export function getCurrentTheme(): ColorScheme {
  */
 export function initTheme() {
   if (getCurrentTheme() === 'Dark') {
-    document.documentElement.classList.add('dark')
+    document.documentElement.classList.add('dark');
   } else {
-    document.documentElement.classList.remove('dark')
+    document.documentElement.classList.remove('dark');
   }
   document
     .querySelector("meta[name='theme-color']")
-    ?.setAttribute('content', getComputedStyle(document.body).backgroundColor)
+    ?.setAttribute('content', getComputedStyle(document.body).backgroundColor);
 }
 
 /**
@@ -33,7 +31,7 @@ export function initTheme() {
  */
 export function toggleTheme(event?: MouseEvent) {
   const willDark = !isDark();
-  localStorage.setItem('colorScheme', willDark ? 'Dark' : 'Light')
+  localStorage.setItem('colorScheme', willDark ? 'Dark' : 'Light');
   // 浏览器新特性不支持 或者 开启了动画减弱
   if (!document.startViewTransition || isReducedMotion()) {
     toggleDark();
@@ -48,26 +46,18 @@ export function toggleTheme(event?: MouseEvent) {
   const x = event?.clientX ?? window.innerWidth;
   const y = event?.clientY ?? 0;
 
-  const endRadius = Math.hypot(
-    Math.max(x, innerWidth - x),
-    Math.max(y, innerHeight - y)
-  );
+  const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
   void transition.ready.then(() => {
-    const clipPath = [
-      `circle(0px at ${x}px ${y}px)`,
-      `circle(${endRadius}px at ${x}px ${y}px)`,
-    ];
+    const clipPath = [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`];
     document.documentElement.animate(
       {
         clipPath: willDark ? clipPath : [...clipPath].reverse(),
       },
       {
         duration: 500,
-        easing: "ease-in",
-        pseudoElement: willDark
-          ? "::view-transition-new(root)"
-          : "::view-transition-old(root)",
-      }
+        easing: 'ease-in',
+        pseudoElement: willDark ? '::view-transition-new(root)' : '::view-transition-old(root)',
+      },
     );
   });
 }
@@ -76,7 +66,7 @@ export function toggleTheme(event?: MouseEvent) {
  * 切换主题色，html标签切换dark类
  */
 function toggleDark() {
-  document.documentElement.classList.toggle("dark");
+  document.documentElement.classList.toggle('dark');
 }
 
 /**
@@ -91,5 +81,5 @@ function isReducedMotion() {
  * 当前主题色是否是暗色
  */
 function isDark() {
-  return document.documentElement.classList.contains("dark");
+  return document.documentElement.classList.contains('dark');
 }

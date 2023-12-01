@@ -47,8 +47,9 @@ div {
 <!-- html -->
 <div class="border-box border-bg">
   <div class="content">
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ratione necessitatibus numquam sunt nihil quos saepe sit
-    facere. Alias accusamus voluptate accusantium facere fugiat animi temporibus adipisci! Corporis, accusamus tempora.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ratione necessitatibus numquam sunt nihil quos saepe
+    sit facere. Alias accusamus voluptate accusantium facere fugiat animi temporibus adipisci! Corporis, accusamus
+    tempora.
   </div>
 </div>
 ```
@@ -85,8 +86,9 @@ div {
 <div class="border-box">
   <div class="border-bg"></div>
   <div class="content">
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ratione necessitatibus numquam sunt nihil quos saepe sit
-    facere. Alias accusamus voluptate accusantium facere fugiat animi temporibus adipisci! Corporis, accusamus tempora.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ratione necessitatibus numquam sunt nihil quos saepe
+    sit facere. Alias accusamus voluptate accusantium facere fugiat animi temporibus adipisci! Corporis, accusamus
+    tempora.
   </div>
 </div>
 ```
@@ -123,8 +125,9 @@ div {
 <!-- html -->
 <div class="border-box">
   <div class="content">
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ratione necessitatibus numquam sunt nihil quos saepe sit
-    facere. Alias accusamus voluptate accusantium facere fugiat animi temporibus adipisci! Corporis, accusamus tempora.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ratione necessitatibus numquam sunt nihil quos saepe
+    sit facere. Alias accusamus voluptate accusantium facere fugiat animi temporibus adipisci! Corporis, accusamus
+    tempora.
   </div>
 </div>
 ```
@@ -162,8 +165,9 @@ div {
 <!-- html -->
 <div class="border-box">
   <div class="content">
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ratione necessitatibus numquam sunt nihil quos saepe sit
-    facere. Alias accusamus voluptate accusantium facere fugiat animi temporibus adipisci! Corporis, accusamus tempora.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste ratione necessitatibus numquam sunt nihil quos saepe
+    sit facere. Alias accusamus voluptate accusantium facere fugiat animi temporibus adipisci! Corporis, accusamus
+    tempora.
   </div>
 </div>
 ```

@@ -33,40 +33,40 @@ sudo apt update
 
 - 首先使用命令禁用 PHP 7.2 模块：
 
-   ```bash
-   sudo a2dismod php7.4
-   ```
+  ```bash
+  sudo a2dismod php7.4
+  ```
 
 - 启用 PHP 5.6 模块：
 
-   ```bash
-   sudo a2enmod php5.6
-   ```
+  ```bash
+  sudo a2enmod php5.6
+  ```
 
 - 将 PHP 5.6 设置为默认版本：
 
-   ```bash
-   sudo update-alternatives --set php /usr/bin/php5.6
-   ```
+  ```bash
+  sudo update-alternatives --set php /usr/bin/php5.6
+  ```
 
-   或者，你可以运行以下命令来设置默认情况下要使用的全局 PHP 版本。
+  或者，你可以运行以下命令来设置默认情况下要使用的全局 PHP 版本。
 
-   ```bash
-   sudo update-alternatives --config php
-   # 输入选择的号码将其设置为默认版本，或者只需按回车键保持当前选择。
-   ```
+  ```bash
+  sudo update-alternatives --config php
+  # 输入选择的号码将其设置为默认版本，或者只需按回车键保持当前选择。
+  ```
 
 - 如果你已安装其他 PHP 扩展，请将它们设置为默认值。如果没有安装，可忽略此步骤。
 
-   ```bash
-   sudo update-alternatives --set phar /usr/bin/phar5.6
-   ```
+  ```bash
+  sudo update-alternatives --set phar /usr/bin/phar5.6
+  ```
 
 - 最后，重启 Apache Web 服务器：
 
-   ```bash
-   sudo service apache2 restart
-   ```
+  ```bash
+  sudo service apache2 restart
+  ```
 
 从 PHP 5.6 切换到 PHP 7.4
 

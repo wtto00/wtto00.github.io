@@ -24,9 +24,9 @@ Edge：<https://microsoftedge.microsoft.com/addons/detail/gjkddcofhiifldbllobcam
 
 > Chrome商店被墙，可以安装插件<https://iguge.app/>
 
-这里说下通过坚果云 WebDAV 协议来同步浏览器书签：  
+这里说下通过坚果云 WebDAV 协议来同步浏览器书签：
 
-1. 打开 [坚果云](https://www.jianguoyun.com/#/) 并登录  
+1. 打开 [坚果云](https://www.jianguoyun.com/#/) 并登录
 1. 添加坚果云 WebDAV 协议的应用，如下图所示
    ![image](https://user-images.githubusercontent.com/30424139/105606716-edbb1000-5d92-11eb-93ce-6a87fb114bfd.png)
    按照上图所示顺序，添加应用，获取应用密码。

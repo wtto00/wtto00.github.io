@@ -7,8 +7,7 @@ featured: false
 draft: false
 tags:
   - 电脑相关
-description:
-  通过修改 Hosts 解决一些国外站点由于国内 DNS 污染导致的访问失败。
+description: 通过修改 Hosts 解决一些国外站点由于国内 DNS 污染导致的访问失败。
 issue_number: 1
 ---
 

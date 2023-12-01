@@ -23,7 +23,7 @@ issue_number: 48
 
 ```ts
 /** 三种主题设置 */
-type ColorScheme = "OS" | "Dark" | "Light";
+type ColorScheme = 'OS' | 'Dark' | 'Light';
 /**
  * document.startViewTransition 新特性，ts暂不包括
  * @link https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition
@@ -41,16 +41,16 @@ let mediaQueryList: MediaQueryList;
  * 判断主题设置是否合法
  */
 function isColorScheme(color: string): color is ColorScheme {
-  return color === "OS" || color === "Dark" || color === "Light";
+  return color === 'OS' || color === 'Dark' || color === 'Light';
 }
 
 /**
  * 初始化
  */
 function initTheme() {
-  const localColorScheme = localStorage.getItem("colorScheme") ?? "";
-  const colorScheme = isColorScheme(localColorScheme) ? localColorScheme : "OS";
-  mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
+  const localColorScheme = localStorage.getItem('colorScheme') ?? '';
+  const colorScheme = isColorScheme(localColorScheme) ? localColorScheme : 'OS';
+  mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
   setColorScheme(colorScheme);
 }
 
@@ -59,10 +59,10 @@ function initTheme() {
  * 界面的点击事件执行此方法
  */
 function setColorScheme(scheme: ColorScheme, event?: MouseEvent) {
-  localStorage.setItem("colorScheme", scheme);
+  localStorage.setItem('colorScheme', scheme);
   const currentDark = isDark();
   switch (scheme) {
-    case "OS":
+    case 'OS':
       // 跟随系统
       const systemDark = systemIsDark();
       // 当前主题色与系统主题色不一致时，切换主题
@@ -72,14 +72,14 @@ function setColorScheme(scheme: ColorScheme, event?: MouseEvent) {
       // 监听系统主题色
       listenSystemTheme();
       break;
-    case "Dark":
+    case 'Dark':
       // 暗色模式
       if (!currentDark) {
         toggleTheme(event);
       }
       unListenSystemTheme();
       break;
-    case "Light":
+    case 'Light':
       // 亮色模式
       if (currentDark) {
         toggleTheme(event);
@@ -110,26 +110,18 @@ function toggleTheme(event?: MouseEvent) {
   const x = event?.clientX ?? window.innerWidth;
   const y = event?.clientY ?? 0;
 
-  const endRadius = Math.hypot(
-    Math.max(x, innerWidth - x),
-    Math.max(y, innerHeight - y)
-  );
+  const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
   void transition.ready.then(() => {
-    const clipPath = [
-      `circle(0px at ${x}px ${y}px)`,
-      `circle(${endRadius}px at ${x}px ${y}px)`,
-    ];
+    const clipPath = [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`];
     document.documentElement.animate(
       {
         clipPath: willDark ? clipPath : [...clipPath].reverse(),
       },
       {
         duration: 500,
-        easing: "ease-in",
-        pseudoElement: willDark
-          ? "::view-transition-new(root)"
-          : "::view-transition-old(root)",
-      }
+        easing: 'ease-in',
+        pseudoElement: willDark ? '::view-transition-new(root)' : '::view-transition-old(root)',
+      },
     );
   });
 }
@@ -138,7 +130,7 @@ function toggleTheme(event?: MouseEvent) {
  * 切换主题色，html标签切换dark类
  */
 function toggleDark() {
-  document.documentElement.classList.toggle("dark");
+  document.documentElement.classList.toggle('dark');
 }
 
 /**
@@ -153,7 +145,7 @@ function isReducedMotion() {
  * 当前主题色是否是暗色
  */
 function isDark() {
-  return document.documentElement.classList.contains("dark");
+  return document.documentElement.classList.contains('dark');
 }
 
 /**
@@ -172,7 +164,7 @@ function listenSystemTheme() {
     mediaQueryList.addListener(toggleTheme);
   } else {
     // 新版浏览器
-    mediaQueryList.addEventListener("change", toggleTheme);
+    mediaQueryList.addEventListener('change', toggleTheme);
   }
 }
 
@@ -185,7 +177,7 @@ function unListenSystemTheme() {
     mediaQueryList.removeListener(toggleTheme);
   } else {
     // 新版浏览器
-    mediaQueryList.removeEventListener("change", toggleTheme);
+    mediaQueryList.removeEventListener('change', toggleTheme);
   }
 }
 ```

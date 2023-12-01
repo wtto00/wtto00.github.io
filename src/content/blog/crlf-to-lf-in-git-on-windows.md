@@ -22,7 +22,7 @@ issue_number: 19
 
 ### 解决
 
-`git`  配置以下
+`git` 配置以下
 
 ```shell
 git config core.autocrlf false

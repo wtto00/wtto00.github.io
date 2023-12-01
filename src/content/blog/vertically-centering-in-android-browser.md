@@ -7,7 +7,7 @@ featured: false
 draft: false
 tags:
   - CSS
-description: "display: flex;align-items: center;line-height: normal;"
+description: 'display: flex;align-items: center;line-height: normal;'
 issue_number: 24
 ---
 

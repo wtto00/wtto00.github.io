@@ -102,10 +102,7 @@ module.exports = {
     'function-paren-newline': ['error', 'multiline'],
     'new-cap': ['error', { properties: false }],
     'no-mixed-operators': ['error', { allowSamePrecedence: true }],
-    'prefer-destructuring': [
-      'error',
-      { array: true, object: true }, { enforceForRenamedProperties: false },
-    ],
+    'prefer-destructuring': ['error', { array: true, object: true }, { enforceForRenamedProperties: false }],
     'vue/singleline-html-element-content-newline': ['off'],
     'vue/max-attributes-per-line': ['warn', { singleline: { max: 6, allowFirstLine: true } }],
     'vue/attributes-order': [
@@ -218,7 +215,7 @@ export default defineConfig({
       '/api/': {
         target: 'https://xxx/',
         changeOrigin: true,
-        rewrite: _path => _path.replace(/^\/api/, ''),
+        rewrite: (_path) => _path.replace(/^\/api/, ''),
       },
     },
   },

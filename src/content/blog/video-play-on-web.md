@@ -8,7 +8,7 @@ draft: false
 tags:
   - Javascript
   - Video
-description: "浏览器视频播放方案: m3u8/mp4/flv/http-flv/webrtc"
+description: '浏览器视频播放方案: m3u8/mp4/flv/http-flv/webrtc'
 issue_number: 35
 ---
 
