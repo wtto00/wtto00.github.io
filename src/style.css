@@ -1,0 +1,105 @@
+/* --------------------------------- 暗黑主题切换 Start --------------------------------- */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+.dark::view-transition-old(root) {
+  z-index: 1;
+}
+
+.dark::view-transition-new(root) {
+  z-index: 999;
+}
+
+::view-transition-old(root) {
+  z-index: 999;
+}
+
+::view-transition-new(root) {
+  z-index: 1;
+}
+
+/* --------------------------------- 暗黑主题切换 End --------------------------------- */
+
+/* --------------------------------- 滚动条 Start --------------------------------- */
+/* scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+  --at-apply: w-1.5 h-1.5;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  --at-apply: bg-fill;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  --at-apply: bg-card rd-full;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  --at-apply: bg-card-muted;
+}
+
+/* --------------------------------- 滚动条 End --------------------------------- */
+
+body {
+  --at-apply: flex min-h-100svh flex-col bg-fill font-mono c-base selection:(bg-accent bg-op-70 c-fill);
+}
+
+section,
+footer {
+  --at-apply: mx-auto max-w-3xl px-4;
+}
+
+a {
+  --at-apply: outline-2 outline-offset-1 outline-fill focus-visible:no-underline focus-visible:outline-dashed;
+}
+
+/* --------------------------------- prose Start --------------------------------- */
+.prose a {
+  --at-apply: decoration-dashed underline-offset-8 break-words hover:c-accent;
+}
+
+.prose img {
+  --at-apply: b-2 b-brd mx-auto mt-2 mb-2em;
+}
+
+.prose th,
+.prose td {
+  --at-apply: b-1;
+}
+
+.prose table {
+  --at-apply: border-spacing-0 border-collapse block w-[max-content] max-w-full overflow-auto;
+}
+
+.prose table th {
+  --at-apply: font-semibold;
+}
+
+.prose table td,
+.prose table th {
+  --at-apply: b-brd b-1 b-solid;
+}
+
+/* --------------------------------- prose End --------------------------------- */
+
+/* --------------------------------- code copy button Start --------------------------------- */
+.copy-code {
+  --at-apply: absolute top-0 right-0 bg-card px-2 py-1 text-xs c-base;
+}
+
+.copy-code:hover {
+  --at-apply: bg-card-muted;
+}
+
+/* --------------------------------- code copy button End --------------------------------- */

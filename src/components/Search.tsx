@@ -1,5 +1,5 @@
 import Fuse from "fuse.js";
-import Card from "@/components/Card";
+import Card from "@/components/Card.astro";
 import slugify from "@/utils/slugify";
 import type { CollectionEntry } from "astro:content";
 import { createEffect, createMemo, createSignal, type JSX } from "solid-js";
@@ -19,18 +19,19 @@ interface SearchResult {
   refIndex: number;
 }
 
-export default function SearchBar({ searchList }: Props) {
-  let inputRef: HTMLInputElement | null = null;
+export default function SearchBar(props: Props) {
+  let inputRef: HTMLInputElement;
+
   const [inputVal, setInputVal] = createSignal('');
   const [searchResults, setSearchResults] = createSignal<SearchResult[] | null>(
     null
   );
 
-  const handleChange: JSX.InputEventHandler<HTMLInputElement, InputEvent> = (e) => {
+  const handleChange: JSX.ChangeEventHandlerUnion<HTMLInputElement, Event> = (e) => {
     setInputVal(e.currentTarget.value);
   };
 
-  const fuse = createMemo(() => new Fuse(searchList, {
+  const fuse = createMemo(() => new Fuse(props.searchList, {
     keys: ["title", "description"],
     includeMatches: true,
     minMatchCharLength: 2,
@@ -54,7 +55,7 @@ export default function SearchBar({ searchList }: Props) {
   createEffect(() => {
     // Add search result only if
     // input value is more than one character
-    let inputResult = inputVal().length > 1 ? fuse().search(inputVal()) : [];
+    const inputResult = inputVal().length > 1 ? fuse().search(inputVal()) : [];
     setSearchResults(inputResult);
 
     // Update search string in URL
@@ -73,13 +74,10 @@ export default function SearchBar({ searchList }: Props) {
     <>
       <label class="relative block">
         <span class="absolute inset-y-0 left-0 flex items-center pl-2 op-75">
-          <i class="i-custom-search text-2xl"></i>
+          <i class="i-custom-search text-2xl" />
         </span>
         <input
-          class="block w-full rounded b b-fill 
-        b-op-40 bg-fill py-3 pl-10
-        pr-3 placeholder:italic placeholder:text-op-75 
-        focus:b-accent focus:outline-none"
+          class="block w-full b-1 b-base b-op-40 rounded bg-fill py-3 pl-10 pr-3 focus:b-accent placeholder:italic placeholder:text-op-75 focus:outline-none"
           placeholder="输入关键字搜索..."
           type="text"
           name="search"
@@ -87,26 +85,22 @@ export default function SearchBar({ searchList }: Props) {
           onChange={handleChange}
           auto-complete="off"
           auto-focus
-          ref={inputRef}
+          ref={el => inputRef = el}
         />
       </label>
 
       {inputVal().length > 1 && (
         <div class="mt-8">
-          Found {searchResults()?.length}
-          {searchResults()?.length && searchResults()?.length === 1
-            ? " result"
-            : " results"}{" "}
-          for '{inputVal()}'
+          关键词 '{inputVal()}'，找到 {searchResults()?.length} 个结果
         </div>
       )}
 
       <ul>
         {searchResults() &&
-          searchResults().map(({ item, refIndex }) => (
+          searchResults()!.map((props) => (
             <Card
-              href={`/posts/${slugify(item.data)}`}
-              frontmatter={item.data}
+              href={`/posts/${slugify(props.item.data)}`}
+              frontmatter={props.item.data}
             />
           ))}
       </ul>

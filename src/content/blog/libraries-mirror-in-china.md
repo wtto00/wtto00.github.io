@@ -74,7 +74,7 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
 `~/.gradle/init.gradle`
 
-```gradle
+```java
 allprojects {
     repositories {
         def ALIYUN_REPOSITORY_URL = 'https://maven.aliyun.com/repository/public'

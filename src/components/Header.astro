@@ -1,31 +1,25 @@
 ---
-import { LOGO_IMAGE, SITE } from '@/config'
+import { SITE } from '@/config'
 import Hr from './Hr.astro'
-import LinkButton from './LinkButton.astro'
 import logoSvg from '@/assets/logo.svg?url'
 import NavMenu from './NavMenu'
 
 export interface Props {
-  activeNav?: 'posts' | 'tags' | 'about' | 'search'
+  activeNav?: 'posts' | 'tags' | 'about' | 'search' | undefined
 }
 
 const { activeNav } = Astro.props
 ---
 
 <header>
-  <a
-    id='skip-to-content'
-    class='absolute -top-full left-16 z-50 bg-accent px-3 py-2 c-fill transition-all focus:top-4'
-    href='#main-content'>Skip to content</a
-  >
-  <div class='mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row'>
-    <div class='relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8'>
-      <a href={SITE.base} class='py-1 text-xl font-semibold sm:text-2xl flex items-center whitespace-nowrap'>
-        {LOGO_IMAGE.enable && <img src={logoSvg} alt={SITE.title} width={LOGO_IMAGE.width} height={LOGO_IMAGE.height} />}
+  <div class='mx-auto max-w-3xl flex flex-col items-center justify-between sm:flex-row'>
+    <div class='relative w-full flex items-start justify-between p-4 sm:items-center sm:py-8'>
+      <a href={SITE.base} class='absolute flex items-center whitespace-nowrap py-1 text-xl font-semibold sm:text-2xl'>
+        <img src={logoSvg} alt={SITE.title} class='h-6 w-6' />
         <span class='ml-2'>{SITE.title}</span>
       </a>
-      <NavMenu activeNav={activeNav} />
+      <NavMenu activeNav={activeNav} client:load />
     </div>
   </div>
-  <Hr />
+  <Hr className='pb-10' />
 </header>

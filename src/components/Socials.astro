@@ -1,30 +1,33 @@
 ---
+import { For } from "solid-js";
 import { SITE, SOCIALS } from '@/config'
 import LinkButton from './LinkButton.astro'
-import socialIcons from '@/assets/socialIcons'
 
 export interface Props {
   centered?: boolean
 }
 
 const { centered = false } = Astro.props
+
+const socialIcons: Record<string, string> = {
+  Github: 'i-mdi-github',
+  Mail: 'i-mdi-email-outline'
+}
 ---
 
-<div class='flex-wrap flex justify-center gap-1' class:list={{ flex: centered }}>
-  {
-    SOCIALS.filter((social) => social.active).map((social) => (
-      <LinkButton href={social.href} className='p-2 hover:rotate-6 sm:p-1 text-0' title={social.linkTitle} target='_blank'>
-        <Fragment set:html={socialIcons[social.name]} />
+<div class='flex-wrap justify-center gap-1' class:list={{ flex: centered }}>
+  <For each={SOCIALS.filter((social) => social.active)}>{(social) => (
+      <LinkButton href={social.href} class='p-2 text-0 hover:rotate-6 sm:p-1' title={social.linkTitle} target='_blank'>
+        <i class='h-7.5 w-7.5 sm:(h-6.6 w-6.6)' class:list={socialIcons[social.name] ?? ''} />
       </LinkButton>
-    ))
-  }
+    )}</For>
   <LinkButton
-    href={`${SITE.base}/rss.xml`}
-    className='p-2 hover:rotate-6 sm:p-1 text-0'
+    href={`${SITE.base}rss.xml`}
+    class='p-2 text-0 hover:rotate-6 sm:p-1'
     aria-label='rss feed'
     title='RSS Feed'
     target='_blank'
   >
-    <i class='i-custom-rss inline-block h-7.5 w-7.5 c-accent sm:(w-6.6 h-6.6)'></i>
+    <i class='i-custom-rss inline-block h-7.5 w-7.5 c-accent sm:(h-6.6 w-6.6)' />
   </LinkButton>
 </div>

@@ -29,7 +29,7 @@ issue_number: 1
 
 修改示例：
 
-```txt
+```plaintext
 140.82.114.4 gist.github.com
 199.232.96.133 camo.githubusercontent.com
 199.232.96.133 user-images.githubusercontent.com

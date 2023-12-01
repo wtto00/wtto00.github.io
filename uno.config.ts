@@ -1,8 +1,7 @@
-import { defineConfig, presetIcons, presetTypography, presetUno, } from 'unocss'
+import { defineConfig, presetIcons, presetTypography, presetUno } from 'unocss'
 import presetTheme from 'unocss-preset-theme'
 import transformerVariantGroup from '@unocss/transformer-variant-group'
 import transformerDirectives from '@unocss/transformer-directives'
-import transformerCompileClass from '@unocss/transformer-compile-class'
 
 export default defineConfig({
   presets: [
@@ -11,7 +10,7 @@ export default defineConfig({
     presetIcons({
       cdn: 'https://esm.sh/',
       customizations: {
-        iconCustomizer(collection, icon, props) {
+        iconCustomizer(collection, _icon, props) {
           if (collection === 'custom') {
             props.fill = 'currentColor'
           }
@@ -28,7 +27,7 @@ export default defineConfig({
         }
       }
     }),
-    // @ts-ignore
+    // @ts-expect-error: version not equal, so theme type error
     presetTheme({
       selectors: { dark: ':root.dark' },
       theme: {
@@ -37,15 +36,15 @@ export default defineConfig({
             fill: 'rgb(33, 39, 55)',
             base: 'rgb(234, 237, 243)',
             accent: 'rgb(255, 107, 1)',
-            card: 'rgb(52, 63, 960)',
+            card: 'rgb(52, 63, 96)',
             'card-muted': 'rgb(138, 51, 2)',
-            border: 'rgb(171, 75, 8)'
+            brd: 'rgb(171, 75, 8)'
           }
         }
       }
     })
   ],
-  content: { filesystem: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"] },
+  content: {filesystem:["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"]},
   theme: {
     breakpoints: {
       sm: '640px'
@@ -59,7 +58,7 @@ export default defineConfig({
       accent: 'rgb(0, 108, 172)',
       card: 'rgb(230, 230, 230)',
       'card-muted': 'rgb(205, 205, 205)',
-      border: 'rgb(236, 233, 233)',
+      brd: 'rgb(236, 233, 233)',
     },
     animation: {
       keyframes: {
@@ -89,9 +88,5 @@ export default defineConfig({
       }
     }
   },
-  transformers: [
-    transformerVariantGroup(),
-    transformerDirectives(),
-    transformerCompileClass()
-  ],
+  transformers: [transformerVariantGroup(), transformerDirectives()]
 })

@@ -143,7 +143,7 @@ module.exports = {
 
 ### .editorconfig
 
-```editorconfig
+```properties
 [*.{js,jsx,ts,tsx,vue}]
 indent_style = space
 indent_size = 2
@@ -155,7 +155,7 @@ max_line_length = 120
 
 ### .prettierignore
 
-```txt
+```plaintext
 theme/**/*.css
 ```
 

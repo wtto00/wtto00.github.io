@@ -4,7 +4,7 @@ import Layout from "@/layouts/Layout.astro";
 import Main from "@/layouts/Main.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import Card from "@/components/Card";
+import Card from "@/components/Card.astro";
 import getUniqueTags from "@/utils/getUniqueTags";
 import getPostsByTag from "@/utils/getPostsByTag";
 import slugify from "@/utils/slugify";
@@ -38,18 +38,18 @@ const tagPosts = getPostsByTag(posts, tag);
 const sortTagsPost = getSortedPosts(tagPosts);
 ---
 
-<Layout title={`Tag:${tag} | ${SITE.title}`}>
+<Layout title={`标签: ${tag} | ${SITE.title}`}>
   <Header activeNav="tags" />
   <Main
-    pageTitle={[`Tag:`, `${tag}`]}
+    pageTitle={[`标签: `, `${tag}`]}
     titleTransition={tag}
-    pageDesc={`所有标签包含 "${tag}" 的文章：`}
+    pageDesc={`标签包含 "${tag}" 的所有文章：`}
   >
     <h1 slot="title" transition:name={tag}>{`标签: ${tag}`}</h1>
     <ul>
       {
         sortTagsPost.map(({ data }) => (
-          <Card href={`${SITE.base}/posts/${slugify(data)}`} frontmatter={data} />
+          <Card href={`${SITE.base}posts/${slugify(data)}`} frontmatter={data} />
         ))
       }
     </ul>

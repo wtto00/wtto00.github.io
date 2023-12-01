@@ -1,0 +1,26 @@
+---
+import { LOCALE } from '@/config'
+interface Props {
+  datetime: string | Date
+}
+
+const { datetime } = Astro.props
+
+const myDatetime = new Date(datetime)
+
+const date = myDatetime.toLocaleDateString(LOCALE, {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+})
+
+const time = myDatetime.toLocaleTimeString(LOCALE, {
+  hour: '2-digit',
+  minute: '2-digit'
+})
+---
+
+{date}
+<span aria-hidden='true'> |</span>
+<span class='sr-only'>&nbsp;at</span>
+{time}

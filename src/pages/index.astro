@@ -1,15 +1,16 @@
 ---
-import { getCollection } from 'astro:content'
-import Layout from '@/layouts/Layout.astro'
-import Header from '@/components/Header.astro'
+import { For } from "solid-js";
+import Card from '@/components/Card.astro'
 import Footer from '@/components/Footer.astro'
-import LinkButton from '@/components/LinkButton.astro'
+import Header from '@/components/Header.astro'
 import Hr from '@/components/Hr.astro'
-import Card from '@/components/Card'
+import LinkButton from '@/components/LinkButton.astro'
 import Socials from '@/components/Socials.astro'
+import { SITE, SOCIALS } from '@/config'
+import Layout from '@/layouts/Layout.astro'
 import getSortedPosts from '@/utils/getSortedPosts'
 import slugify from '@/utils/slugify'
-import { SITE, SOCIALS } from '@/config'
+import { getCollection } from 'astro:content'
 
 const posts = await getCollection('blog')
 
@@ -21,19 +22,20 @@ const socialCount = SOCIALS.filter((social) => social.active).length
 
 <Layout>
   <Header />
-  <main id='home-main-content'>
-    <section id='hero' class='pb-6 pt-8'>
+
+  <main>
+    <section class='pb-6 pt-8'>
       <h1 class='text-3xl font-bold'>
         <span>
           Hi, I'm wtto.
-          <span class='animate-wave-hands origin-[70%_70%] inline-block'> 👋</span></span
+          <span class='inline-block origin-[70%_70%] animate-wave-hands'> 👋</span></span
         >
       </h1>
       <div class='mt-6 space-y-2'>
         <p class='flex items-center'>
           A JavaScript
           <span
-            class='shrink-0 transition-colors duration-300 ease-in font-mono flex items-center hover:bg-#000/3 dark:hover:bg-#fff/3 rd-md px-2 py-0.5 relative after:absolute after:top-1/10 after:right-0.5 after:h-4/5 after:b-r-[currentColor] after:b-r-2 after:content-empty after:animate-blink-text-cursor'
+            class='relative flex shrink-0 items-center rd-md px-2 py-0.5 font-mono transition-colors duration-300 ease-in after:absolute after:right-0.5 after:top-1/10 after:h-4/5 after:animate-blink-text-cursor after:b-r-2 after:b-r-[currentColor] hover:bg-#000/3 after:content-empty dark:hover:bg-#fff/3'
           >
             &lt;Developer /&gt;
           </span>
@@ -42,10 +44,9 @@ const socialCount = SOCIALS.filter((social) => social.active).length
       </div>
 
       {
-        // only display if at least one social link is enabled
         socialCount > 0 && (
           <div class='mt-4 flex flex-col sm:flex-row sm:items-center'>
-            <Socials class:list={'mb-1 mr-2 whitespace-nowrap sm:mb-0'} />
+            <Socials />
           </div>
         )
       }
@@ -56,12 +57,12 @@ const socialCount = SOCIALS.filter((social) => social.active).length
     {
       featuredPosts.length > 0 && (
         <>
-          <section id='featured' class='pb-6 pt-12'>
+          <section class='pb-6 pt-12'>
             <h2 class='text-2xl font-semibold tracking-wide'>推荐</h2>
             <ul>
-              {featuredPosts.map(({ data }) => (
-                <Card href={`${SITE.base}/posts/${slugify(data)}`} frontmatter={data} secHeading={false} />
-              ))}
+              <For each={featuredPosts}>{({ data }) => (
+                <Card href={`${SITE.base}posts/${slugify(data)}`} frontmatter={data} secHeading={false} />
+              )}</For>
             </ul>
           </section>
           <Hr />
@@ -69,7 +70,7 @@ const socialCount = SOCIALS.filter((social) => social.active).length
       )
     }
 
-    <section id='recent-posts' class='pb-6 pt-12'>
+    <section class='pb-6 pt-12'>
       <h2 class='text-2xl font-semibold tracking-wide'>最新</h2>
       <ul>
         {
@@ -77,14 +78,16 @@ const socialCount = SOCIALS.filter((social) => social.active).length
             .filter(({ data }) => !data.featured)
             .map(
               ({ data }, index) =>
-                index < 4 && <Card href={`${SITE.base}/posts/${slugify(data)}`} frontmatter={data} secHeading={false} />
+                index < SITE.postPerPage && (
+                  <Card href={`${SITE.base}posts/${slugify(data)}`} frontmatter={data} secHeading={false} />
+                )
             )
         }
       </ul>
       <div class='my-8 text-center'>
-        <LinkButton href={`${SITE.base}/posts`}>
+        <LinkButton href={`${SITE.base}posts`}>
           查看所有
-          <i class="i-custom-arrow-right text-2xl"></i>
+          <i class='i-custom-arrow-right text-2xl' />
         </LinkButton>
       </div>
     </section>

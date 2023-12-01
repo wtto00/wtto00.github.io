@@ -15,7 +15,7 @@ issue_number: 15
 
 在Windows的PowerShell中输入:
 
-```PowerShell
+```shell
 # 终止正在运行的分发或虚拟机：
 wsl --shutdown
 

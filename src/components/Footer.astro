@@ -11,13 +11,13 @@ export interface Props {
 const { noMarginTop = false } = Astro.props
 ---
 
-<footer class:list={{ 'mt-auto': !noMarginTop }} class=" w-full mx-auto max-w-3xl px-4">
+<footer class:list={{ 'mt-auto': !noMarginTop }} class="mx-auto max-w-3xl w-full px-4">
   <Hr noPadding />
-  <div class=' flex flex-col items-center justify-between py-6 sm:flex-row-reverse sm:py-4'>
+  <div class='flex flex-col items-center justify-between py-6 sm:flex-row-reverse sm:py-4'>
     <Socials centered />
-    <div class=' my-2 flex flex-col items-center whitespace-nowrap sm:flex-row'>
+    <div class='my-2 flex flex-col items-center whitespace-nowrap sm:flex-row'>
       <span>Copyright &#169; {currentYear}</span>
-      <span class=' hidden sm:inline'>&nbsp;|&nbsp;</span>
+      <span class='hidden sm:inline'>&nbsp;|&nbsp;</span>
       <span>All rights reserved.</span>
     </div>
   </div>

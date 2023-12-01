@@ -1,13 +1,16 @@
 {
-  "extends": "astro/tsconfigs/base",
+  "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
-    // Solid specific settings
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
+        "src/*"
       ]
     }
   }

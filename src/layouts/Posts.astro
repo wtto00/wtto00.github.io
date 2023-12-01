@@ -1,10 +1,11 @@
 ---
+import { For } from "solid-js";
 import { SITE } from '@/config'
 import Layout from '@/layouts/Layout.astro'
 import Main from '@/layouts/Main.astro'
 import Header from '@/components/Header.astro'
 import Footer from '@/components/Footer.astro'
-import Card from '@/components/Card'
+import Card from '@/components/Card.astro'
 import LinkButton from '@/components/LinkButton.astro'
 import slugify from '@/utils/slugify'
 import type { CollectionEntry } from 'astro:content'
@@ -25,7 +26,7 @@ const next = pageNum < totalPages ? '' : 'disabled'
   <Header activeNav='posts' />
   <Main pageTitle='文章' pageDesc='所有我发布的文章：'>
     <ul>
-      {posts.map(({ data }) => <Card href={`${SITE.base}/posts/${slugify(data)}`} frontmatter={data} />)}
+      <For each={posts}>{({ data }) => <Card href={`${SITE.base}posts/${slugify(data)}`} frontmatter={data} />}</For>
     </ul>
   </Main>
 
@@ -34,8 +35,8 @@ const next = pageNum < totalPages ? '' : 'disabled'
       <nav class='mb-8 mt-auto flex justify-center' aria-label='Pagination'>
         <LinkButton
           disabled={prev === 'disabled'}
-          href={`${SITE.base}/posts${pageNum - 1 !== 1 ? '/' + (pageNum - 1) : ''}`}
-          className='mr-4 select-none'
+          href={`${SITE.base}posts${pageNum - 1 !== 1 ? '/' + (pageNum - 1) : ''}`}
+          class='mr-4 select-none'
           ariaLabel='Previous'
         >
           <i class='i-custom-arrow-left text-2xl' />
@@ -43,8 +44,8 @@ const next = pageNum < totalPages ? '' : 'disabled'
         </LinkButton>
         <LinkButton
           disabled={next === 'disabled'}
-          href={`${SITE.base}/posts/${pageNum + 1}`}
-          className='ml-4 select-none'
+          href={`${SITE.base}posts/${pageNum + 1}`}
+          class='ml-4 select-none'
           ariaLabel='Next'
         >
           下一页

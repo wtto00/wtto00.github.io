@@ -13,14 +13,31 @@ export interface Props {
 const { href, className, ariaLabel, title, disabled = false, target } = Astro.props
 ---
 
-<a
-  href={disabled ? '#' : href}
-  tabindex={disabled ? '-1' : '0'}
-  class={`group inline-flex justify-center items-center ${disabled ? 'op-50 pointer-events-none' : 'hover:c-accent'} ${className}`}
-  aria-label={ariaLabel}
-  title={title}
-  aria-disabled={disabled}
-  target={target}
->
-  <slot />
-</a>
+{
+  disabled ? (
+    <button
+      title={title}
+      tabindex='-1'
+      aria-disabled={true}
+      class={`group inline-flex justify-center items-center op-50 pointer-events-none`}
+      class:list={[className]}
+      aria-label={ariaLabel}
+      aria-disabled={true}
+    >
+      <slot />
+    </button>
+  ) : (
+    <a
+      href={href}
+      tabindex='0'
+      class={`group inline-flex justify-center items-center hover:c-accent`}
+      class:list={[className]}
+      aria-label={ariaLabel}
+      title={title}
+      aria-disabled={false}
+      target={target}
+    >
+      <slot />
+    </a>
+  )
+}

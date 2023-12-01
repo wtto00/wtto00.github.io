@@ -1,39 +1,48 @@
 {
-  "name": "blog",
+  "name": "blog-next",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
-    "check": "astro check",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint --color --fix src/**/*.{ts,tsx,astro}"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.1",
+    "@astrojs/markdown-remark": "^3.5.0",
     "@astrojs/rss": "^3.0.0",
+    "@astrojs/sitemap": "^3.0.3",
     "@astrojs/solid-js": "^3.0.2",
     "@resvg/resvg-js": "^2.6.0",
-    "astro": "^3.5.3",
+    "astro": "^3.6.3",
     "fuse.js": "^7.0.0",
     "github-slugger": "^2.0.0",
+    "rehype-accessible-emojis": "^0.3.2",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
     "solid-js": "^1.7.11",
     "solid-satori": "^0.0.2",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.2"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.0.3",
-    "@astrojs/tailwind": "^5.0.2",
-    "@unocss/astro": "^0.57.3",
-    "@unocss/preset-typography": "^0.57.4",
-    "@unocss/reset": "^0.57.3",
-    "@unocss/transformer-compile-class": "^0.57.3",
-    "@unocss/transformer-directives": "^0.57.3",
-    "@unocss/transformer-variant-group": "^0.57.3",
-    "unocss": "^0.57.3",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "@unocss/eslint-config": "^0.57.7",
+    "@unocss/preset-typography": "^0.57.7",
+    "@unocss/reset": "^0.57.7",
+    "@unocss/transformer-directives": "^0.57.7",
+    "@unocss/transformer-variant-group": "^0.57.7",
+    "eslint": "^8.54.0",
+    "eslint-plugin-astro": "^0.30.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-solid": "^0.13.0",
+    "sharp": "^0.33.0",
+    "unocss": "^0.57.7",
     "unocss-preset-theme": "^0.11.0"
   }
 }

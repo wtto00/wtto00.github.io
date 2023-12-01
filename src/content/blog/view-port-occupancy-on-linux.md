@@ -24,7 +24,7 @@ lsof -i:端口号
 
 **示例：** 查看服务器 8000 端口的占用情况：
 
-```txt
+```plaintext
 # lsof -i:8000
 COMMAND   PID USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME
 nodejs  26993 root   10u  IPv4 37999514      0t0  TCP *:8000 (LISTEN)
@@ -63,7 +63,7 @@ netstat -tunlp | grep 端口号
 - -p 显示建立相关链接的程序名
   **示例：** 查看服务器 8000 端口的占用情况：
 
-```txt
+```plaintext
 # netstat -tunlp | grep 8000
 tcp        0      0 0.0.0.0:8000            0.0.0.0:*               LISTEN      26993/nodejs
 ```
@@ -96,7 +96,7 @@ netstat -ntulp | grep 3306   # 查看所有3306端口使用情况
 
   输出结果为：
 
-  ```txt
+  ```plaintext
   Proto  Local Address          Foreign   Address        State           PID
   TCP    0.0.0.0:5173           0.0.0.  0:0              LISTENING       1032
   ```
@@ -111,7 +111,7 @@ netstat -ntulp | grep 3306   # 查看所有3306端口使用情况
 
   输出结果为：
 
-  ```txt
+  ```plaintext
   Image Name                     PID Session Name        Session#    Mem Usage
   ========================= ======== ================ =========== ============
   svchost.exe                   1032 Services                   0     11,440 K

@@ -24,7 +24,7 @@ issue_number: 19
 
 `git`  配置以下
 
-```shel
+```shell
 git config core.autocrlf false
 git config core.eol lf
 ```

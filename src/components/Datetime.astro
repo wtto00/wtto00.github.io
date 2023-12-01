@@ -1,0 +1,20 @@
+---
+import FormattedDatetime from './FormattedDatetime.astro'
+
+interface Props {
+  datetime: string | Date
+  size?: 'sm' | 'lg'
+  className?: string
+}
+
+const { datetime, size = 'sm', className } = Astro.props
+---
+
+<div class={`flex items-center space-x-2 op-80 ${className}`}>
+  <i class={`i-material-symbols-calendar-month-rounded inline-block h-6 w-6 c-base ${size === 'sm' ? 'scale-90' : 'scale-100'}`}
+   />
+  <span class='sr-only'>Posted on:</span>
+  <span class={`italic ${size === 'sm' ? 'text-sm' : 'text-base'}`}>
+    <FormattedDatetime datetime={datetime} />
+  </span>
+</div>

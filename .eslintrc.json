@@ -1,0 +1,57 @@
+{
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "extraFileExtensions": [
+      ".tsx",
+      ".ts"
+    ]
+  },
+  "plugins": [
+    "solid"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:astro/recommended",
+    "plugin:astro/jsx-a11y-strict",
+    "@unocss"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.tsx"
+      ],
+      "extends": [
+        "plugin:solid/recommended"
+      ]
+    },
+    {
+      "files": [
+        "*.astro"
+      ],
+      "globals": {
+        "astroHTML": "readonly"
+      },
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [
+          ".astro"
+        ]
+      },
+      "rules": {}
+    }
+  ],
+  "rules": {
+    "@typescript-eslint/triple-slash-reference": "off"
+  }
+}

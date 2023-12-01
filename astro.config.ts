@@ -1,24 +1,28 @@
 import { defineConfig } from 'astro/config';
+import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 import solid from '@astrojs/solid-js';
-import { SITE } from './src/config';
-import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
-import remarkToc from "remark-toc";
+import UnoCSS from 'unocss/astro'
+import { SITE } from './src/config'
+import remarkToc from 'remark-toc';
 import remarkCollapse from "remark-collapse";
-import unocss from 'unocss/astro'
+import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 // https://astro.build/config
 export default defineConfig({
 	site: SITE.website,
 	base: SITE.base,
-	integrations: [
-		unocss({ injectReset: true }),
-		solid(),
-		sitemap()
-	],
+	// Enable Solid to support Solid JSX components.
+	integrations: [solid(), UnoCSS({ injectReset: true }), sitemap()],
 	markdown: {
-		// @ts-ignore
-		remarkPlugins: [remarkToc, [remarkCollapse, { test: 'Table of contents' }]],
+		// @ts-expect-error type error
+		remarkPlugins: [rehypeHeadingIds, [remarkToc, { tight: true, ordered: true }], [remarkCollapse, { test: 'Table of contents' }]],
+		rehypePlugins: [
+			// @ts-expect-error type error
+			rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'append' }], rehypeAccessibleEmojis
+		],
 		shikiConfig: {
 			theme: 'one-dark-pro',
 			wrap: true
@@ -29,5 +33,4 @@ export default defineConfig({
 			exclude: ["@resvg/resvg-js"],
 		},
 	},
-	// scopedStyleStrategy: 'where'
 });
