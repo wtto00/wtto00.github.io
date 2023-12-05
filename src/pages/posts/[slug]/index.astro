@@ -19,11 +19,11 @@ const { slug } = Astro.params;
 const post = await getEntry('blog', slug);
 if (!post) return Astro.redirect('/404');
 
-const { Content, headings, remarkPluginFrontmatter } = await post.render();
+const { Content, headings } = await post.render();
 
 const { title, author, description, ogImage, pubDatetime, tags, canonicalURL } = post.data;
 
-console.log(remarkPluginFrontmatter, headings, tags);
+console.log(headings);
 
 const ogImageUrl = typeof ogImage === 'string' ? ogImage : ogImage?.src;
 const ogUrl = new URL(ogImageUrl ?? `${SITE.base}posts/${slugifyStr(title)}.png`, Astro.url.origin).href;

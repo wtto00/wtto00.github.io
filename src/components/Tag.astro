@@ -13,11 +13,9 @@ const { name, size = 'sm' } = Astro.props;
     href={`${SITE.base}tags/${name.toLowerCase()}`}
     transition:name={name.toLowerCase()}
     class:list={[size === 'sm' ? 'text-sm' : 'text-lg']}
-    class="group relative pr-2 underline decoration-dashed focus-visible:p-1 hover:c-accent hover:-top-0.5"
+    class="mr-2 inline-flex items-center b-b-2 b-base b-dashed hover:(translate-y--2px b-accent c-accent) focus-visible:p-1"
   >
-    <i
-      class="i-custom-topic inline-block h-6 w-6 origin-rc v-mid op-80"
-      class:list={[size === 'sm' ? 'scale-75' : 'scale-95', size === 'sm' ? '-mr-4' : '-mr-5']}></i>
-     &nbsp;<span>{name.toLowerCase()}</span>
+    <i class="i-custom-topic inline-block translate-x--2px op-80" class:list={[size === 'sm' ? 'h-4 w-4' : 'h-5 w-5']}></i>
+    <span>{name.toLowerCase()}</span>
   </a>
 </li>

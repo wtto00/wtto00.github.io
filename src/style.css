@@ -42,7 +42,7 @@ html {
 
 body {
   /* prettier-ignore */
-  --at-apply: flex min-h-100svh flex-col bg-fill font-mono c-base selection:(bg-accent bg-op-70 c-fill);
+  --at-apply: flex min-h-100svh flex-col bg-fill c-base selection:(bg-accent bg-op-70 c-fill);
 }
 section,
 footer {
@@ -55,7 +55,7 @@ a {
 
 /* --------------------------------- prose Start --------------------------------- */
 .prose {
-  --un-prose-hr: rgb(var(--un-preset-theme-colors-brd));
+  --un-prose-hr: rgb(var(--un-preset-theme-colors-base) / 0.2);
 }
 .prose a:not(.group) {
   --at-apply: decoration-dashed underline-offset-8 break-words hover: c-accent;
@@ -80,6 +80,9 @@ a {
 .prose table td,
 .prose table th {
   --at-apply: b-brd b-1 b-solid;
+}
+.prose hr {
+  border-bottom-width: 0;
 }
 /* --------------------------------- prose End --------------------------------- */
 
