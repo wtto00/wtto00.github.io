@@ -29,7 +29,7 @@ hostnamectl | grep -i kernel
 
 得到结果类似这样：`Linux 5.3.7-301.fc31.x86_64`
 
-### 再查看内核开发工具`kernel-devel`的版本
+### 再查看内核开发工具 `kernel-devel` 的版本
 
 ```shell
 sudo rpm -qa kernel-devel
@@ -37,18 +37,18 @@ sudo rpm -qa kernel-devel
 
 得到结果类似这样：`kernel-devel-5.5.15-200.fc31.x86_64`
 
-如果`kernel-devel`的版本和系统内核版本不一致，那么删掉不一致的版本包，然后安装与系统内核版本一致的版本包：
+如果 `kernel-devel` 的版本和系统内核版本不一致，那么删掉不一致的版本包，然后安装与系统内核版本一致的版本包：
 
 ```shell
 sudo dnf remove kernel-devel-5.5.15-200.fc31.x86_64
 sudo dnf install kernel-devel-5.3.7-301.fc31.x86_64
 ```
 
-## 在VirtualBox中插入Guest Additions CD
+## 在 VirtualBox 中插入 Guest Additions CD
 
-在菜单栏中的`Devices` –> `Insert Guest Additions CD`
+在菜单栏中的 `Devices` –> `Insert Guest Additions CD`
 
-## 安装VirtualBox Guest Additions服务
+## 安装 VirtualBox Guest Additions 服务
 
 ```shell
 cd /run/media/username/VBox_GAs_6.0.18
@@ -57,7 +57,7 @@ sudo ./VBoxLinuxAdditions.run
 
 ## 错误处理
 
-### 安装时出现：ValueError: File context for /opt/VBoxGuestAdditions-6.0.18/other/mount.vboxsf already defined
+### 安装时出现：ValueError：File context for /opt/VBoxGuestAdditions-6.0.18/other/mount.vboxsf already defined
 
 ```shell
 sudo semanage fcontext -d /opt/VBoxGuestAdditions-6.0.18/other/mount.vboxsf
@@ -66,7 +66,7 @@ sudo restorecon /opt/VBoxGuestAdditions-6.0.18/other/mount.vboxsf
 
 执行完上述命令后，再重新执行安装，就不会报错了。
 
-在VirtualBox中的文件传输界面还是会出现红色错误提示`File manager cannot work since no guest additions were detected.`，但是在共享的文件夹中，已经可以成功看到共享的文件了。
+在 VirtualBox 中的文件传输界面还是会出现红色错误提示 `File manager cannot work since no guest additions were detected.`，但是在共享的文件夹中，已经可以成功看到共享的文件了。
 
 ### 共享文件夹的权限无法访问
 
