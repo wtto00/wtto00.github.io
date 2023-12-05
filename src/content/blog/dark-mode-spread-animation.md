@@ -19,7 +19,9 @@ issue_number: 48
 2. 主题设置后永久保存在本地，下次进入后，读取保存的设置
 3. 切换主题时，加载扩散渐变动画，如下图所示：
 
-   ![动画](../../assets/images/dark-mode-spread-animation.gif)
+![动画](../../assets/images/dark-mode-spread-animation.gif)
+
+## JS逻辑处理
 
 ```ts
 /** 三种主题设置 */
@@ -182,7 +184,7 @@ function unListenSystemTheme() {
 }
 ```
 
-别忘记了还有 CSS
+## 别忘记了还有 CSS
 
 ```css
 /**

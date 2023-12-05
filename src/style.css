@@ -54,11 +54,18 @@ a {
 }
 
 /* --------------------------------- prose Start --------------------------------- */
-.prose a {
+.prose {
+  --un-prose-hr: rgb(var(--un-preset-theme-colors-brd));
+}
+.prose a:not(.group) {
   --at-apply: decoration-dashed underline-offset-8 break-words hover: c-accent;
 }
 .prose img {
   --at-apply: b-2 b-brd mx-auto mt-2 mb-2em;
+}
+.prose ol,
+.prose ul {
+  --at-apply: pl-10;
 }
 .prose th,
 .prose td {

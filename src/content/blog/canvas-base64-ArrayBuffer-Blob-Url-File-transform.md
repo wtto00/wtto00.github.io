@@ -11,14 +11,14 @@ description: js中canvas、base64、ArrayBuffer、Blob、Url、File互转
 issue_number: 20
 ---
 
-### canvas to base64
+## canvas to base64
 
 ```javascript
 const dataurl = canvas.toDataURL('image/png');
 console.log(dataurl);
 ```
 
-### canvas to Blob
+## canvas to Blob
 
 ```javascript
 canvas.toBlob((blob) => {
@@ -26,7 +26,7 @@ canvas.toBlob((blob) => {
 });
 ```
 
-### base64 to canvas
+## base64 to canvas
 
 ```javascript
 var img = new Image();
@@ -36,7 +36,7 @@ img.onload = function () {
 img.src = dataurl;
 ```
 
-### base64 to ArrayBuffer
+## base64 to ArrayBuffer
 
 浏览器环境下
 
@@ -61,7 +61,7 @@ const buffer = Buffer.from(arr[1], 'base64');
 console.log(buffer);
 ```
 
-### ArrayBuffer to base64
+## ArrayBuffer to base64
 
 ```javascript
 let binary = '';
@@ -74,7 +74,7 @@ const base64 = window.btoa(binary);
 console.log(`data:${mime};base64,${base64}`);
 ```
 
-### ArrayBuffer to Blob
+## ArrayBuffer to Blob
 
 ```javascript
 const arr = base64.split(',');
@@ -84,7 +84,7 @@ const blob = new Blob([buffer], { type: mime });
 console.log(blob);
 ```
 
-### Blob to ArrayBuffer
+## Blob to ArrayBuffer
 
 ```javascript
 const blob = new Blob([1, 2, 3, 4]);
@@ -95,7 +95,7 @@ reader.onload = function (result) {
 reader.readAsArrayBuffer(blob);
 ```
 
-### Blob to File
+## Blob to File
 
 ```javascript
 // const file = new File([blob], `${fileName}`);
@@ -107,20 +107,20 @@ const file = formData.get(filename);
 console.log(file);
 ```
 
-### Blob to Url
+## Blob to Url
 
 ```javascript
 const url = URL.createObjectURL(blob);
 console.log(url);
 ```
 
-### Url to Blob
+## Url to Blob
 
 ```javascript
 const blob = await fetch(url).then((r) => r.blob());
 ```
 
-### File to base64 / Blob to base64
+## File to base64 / Blob to base64
 
 ```javascript
 const reader = new FileReader();
@@ -131,7 +131,7 @@ reader.readAsDataURL(file);
 // reader.readAsDataURL(blob);
 ```
 
-### svg to Blob
+## svg to Blob
 
 ```javascript
 var data =

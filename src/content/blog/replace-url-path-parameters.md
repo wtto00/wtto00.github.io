@@ -16,7 +16,7 @@ issue_number: 28
 
 ### Node.js v12+
 
-Node.js: version >= 12
+Node.js：version >= 12
 
 ```javascript
 /**
@@ -55,7 +55,7 @@ console.log(url);
 
 ### Node.js v12-
 
-Node.js: version < 12
+Node.js：version < 12
 
 ```javascript
 /**

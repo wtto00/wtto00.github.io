@@ -33,25 +33,25 @@ yarn add -D @typescript-eslint/parser \
 yarn eslint --init
 ```
 
-> ✔ How would you like to use ESLint? · style
-> ✔ What type of modules does your project use? · esm
-> ✔ Which framework does your project use? · vue
-> ✔ Does your project use TypeScript? · No / Yes
-> ✔ Where does your code run? · browser, node
-> ✔ How would you like to define a style for your project? · guide
-> ✔ Which style guide do you want to follow? · airbnb
-> ✔ What format do you want your config file to be in? · JavaScript
+> ✔ How would you like to use ESLint？ · style
+> ✔ What type of modules does your project use？ · esm
+> ✔ Which framework does your project use？ · vue
+> ✔ Does your project use TypeScript？ · No / Yes
+> ✔ Where does your code run？ · browser，node
+> ✔ How would you like to define a style for your project？ · guide
+> ✔ Which style guide do you want to follow？ · airbnb
+> ✔ What format do you want your config file to be in？ · JavaScript
 > Checking peerDependencies of eslint-config-airbnb-base@latest
-> The config that you've selected requires the following dependencies:
+> The config that you've selected requires the following dependencies：
 >
 > eslint-plugin-vue@latest eslint-config-airbnb-base@latest eslint@^5.16.0 || ^6.8.0 || ^7.2.0 eslint-plugin-import@^2.22.1
-> ✔ Would you like to install them now with npm? · No / Yes
+> ✔ Would you like to install them now with npm？ · No / Yes
 
 ```bash
 rm -rf package-lock.json
 ```
 
-### .eslintrc.js
+### 。eslintrc.js
 
 根据腾讯代码规范，添加以下规则
 
@@ -127,7 +127,7 @@ module.exports = {
 };
 ```
 
-### .prettierrc.js
+### 。prettierrc.js
 
 ```json
 {
@@ -138,7 +138,7 @@ module.exports = {
 }
 ```
 
-### .editorconfig
+### 。editorconfig
 
 ```properties
 [*.{js,jsx,ts,tsx,vue}]
@@ -150,7 +150,7 @@ insert_final_newline = true
 max_line_length = 120
 ```
 
-### .prettierignore
+### 。prettierignore
 
 ```plaintext
 theme/**/*.css
@@ -222,4 +222,4 @@ export default defineConfig({
 });
 ```
 
-> vscode报错 `ecmaVersion` 版本不对, 需要全局安装 `yarn global add eslint`
+> vscode 报错 `ecmaVersion` 版本不对，需要全局安装 `yarn global add eslint`

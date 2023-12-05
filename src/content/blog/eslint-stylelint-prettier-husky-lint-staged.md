@@ -27,9 +27,9 @@ npm pkg set scripts.lint="eslint --ignore-path .gitignore --fix --color ./**/*.{
 # npm set-script lint "eslint --ignore-path .gitignore --fix --color ./**/*.{js,jsx,ts,tsx}"
 ```
 
-## **Stylelint[可选]**
+## **Stylelint [可选]**
 
-此规范一般不用，`prettier`可格式化 style 文件
+此规范一般不用，`prettier` 可格式化 style 文件
 [stylelint 官方文档](https://stylelint.io/user-guide/get-started)
 
 ```shell
@@ -46,7 +46,7 @@ npm pkg set scripts.style="stylelint --fix --color ./**/*.{css,less}"
 # npm set-script style "stylelint --fix --color ./**/*.{css,less}"
 ```
 
-配置`stylelint.config.js`
+配置 `stylelint.config.js`
 
 ```javascript
 module.exports = {
@@ -71,7 +71,7 @@ npm pkg set scripts.format="prettier . --write --ignore-unknown"
 # npm set-script format "prettier . --write --ignore-unknown"
 ```
 
-配置`.prettierrc`
+配置 `.prettierrc`
 
 ```json
 {
@@ -91,7 +91,7 @@ npm pkg set scripts.format="prettier . --write --ignore-unknown"
 pnpm add lint-staged -D
 ```
 
-配置`package.json`
+配置 `package.json`
 
 ```json
 {

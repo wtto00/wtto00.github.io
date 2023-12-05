@@ -17,7 +17,7 @@ align-items: center;
 line-height: normal;
 ```
 
-> 重点是`line-height: normal;`
+> 重点是 `line-height: normal;`
 
 <https://segmentfault.com/a/1190000017088168>
 

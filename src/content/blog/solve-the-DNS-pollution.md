@@ -13,7 +13,7 @@ issue_number: 1
 
 ## 获取正确地 IP 地址
 
-访问 <https://www.ipaddress.com/> 查询域名所解析正确的 `ip` ，如下图所示
+访问 <https://www.ipaddress.com/> 查询域名所解析正确的 `ip`，如下图所示
 ![image](https://user-images.githubusercontent.com/30424139/104818580-5b5dbe00-5820-11eb-80a4-445fdc839fb8.png)
 
 > `ping gist.github.com` 命令获得的是被污染的 `ip`  
@@ -23,8 +23,8 @@ issue_number: 1
 
 `host` 文件所在位置：
 
-- **Windows:** `C:\Windows\System32\drivers\etc\hosts`
-- **Mac/Linux:** `/etc/hosts`
+- **Windows：**`C:\Windows\System32\drivers\etc\hosts`
+- **Mac/Linux：**`/etc/hosts`
 
 修改示例：
 
@@ -37,7 +37,7 @@ issue_number: 1
 
 如果不生效的话，可以刷新下网络 `DNS` 缓存
 
-- **Mac:** `sudo killall -HUP mDNSResponder`
-- **Windows:** `ipconfig /flushdns`
-- **Linux:** `sudo /etc/init.d/nscd restart` 或者重启网卡服务 `sudo /etc/init.d/networking restart`
+- **Mac：**`sudo killall -HUP mDNSResponder`
+- **Windows：**`ipconfig /flushdns`
+- **Linux：**`sudo /etc/init.d/nscd restart` 或者重启网卡服务 `sudo /etc/init.d/networking restart`
   > 也可以在 Chrome 浏览器中访问 `chrome://net-internals/#dns` 刷新缓存

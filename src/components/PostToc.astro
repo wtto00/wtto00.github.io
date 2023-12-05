@@ -1,0 +1,62 @@
+---
+import type { MarkdownHeading } from 'astro';
+import PostTocItem from '@/components/PostTocItem';
+
+interface Props {
+  data: MarkdownHeading[];
+}
+
+const { data } = Astro.props;
+
+interface ListItem {
+  depth: number;
+  slug: string;
+  text: string;
+  children: ListItem[];
+}
+const list: ListItem[] = [];
+
+function treeTocList(treeList: ListItem[], item: MarkdownHeading): ListItem[] {
+  if (treeList.length === 0) {
+    treeList.push({
+      depth: item.depth,
+      slug: item.slug,
+      text: item.text,
+      children: [],
+    });
+    return treeList;
+  }
+  const lastItem = treeList[treeList.length - 1]!;
+  if (item.depth <= lastItem.depth) {
+    treeList.push({
+      depth: item.depth,
+      slug: item.slug,
+      text: item.text,
+      children: [],
+    });
+    return treeList;
+  }
+  lastItem.children = treeTocList(lastItem.children, item);
+  return treeList;
+}
+
+data.forEach((item) => {
+  treeTocList(list, item);
+});
+
+console.log('list', list);
+---
+
+<div class="absolute left-full top-0 hidden h-full pl-10 lg:block">
+  <div class="sticky top-14 truncate text-sm leading-loose">
+    <ol class="max-h-65vh overflow-y-auto">
+      {
+        list.map((item, index) => (
+          <li>
+            <PostTocItem slug={item.slug} text={item.text} index={index} />
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</div>

@@ -11,7 +11,7 @@ description: Ubuntu下切换多个PHP版本
 issue_number: 16
 ---
 
-安装 PHP 7和PHP 5
+安装 PHP 7 和 PHP 5
 
 ```bash
 sudo apt search php7
@@ -21,7 +21,7 @@ sudo apt search php5
 sudo apt install php5.6
 ```
 
-如果搜索不到所要安装版本，添加PPA之后，再搜索安装
+如果搜索不到所要安装版本，添加 PPA 之后，再搜索安装
 
 ```bash
 sudo add-apt-repository -y ppa:ondrej/php

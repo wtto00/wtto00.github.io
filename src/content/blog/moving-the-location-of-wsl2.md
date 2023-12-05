@@ -11,9 +11,9 @@ description: 一直用WSL2作为开发环境，可是随着项目越来越多，
 issue_number: 15
 ---
 
-一直用WSL2作为开发环境，可是随着项目越来越多，越来越大，C盘空间所剩无几，所以迁移WSL2到其他分区成为必要
+一直用 WSL2 作为开发环境，可是随着项目越来越多，越来越大，C 盘空间所剩无几，所以迁移 WSL2 到其他分区成为必要
 
-在Windows的PowerShell中输入:
+在 Windows 的 PowerShell 中输入：
 
 ```shell
 # 终止正在运行的分发或虚拟机：

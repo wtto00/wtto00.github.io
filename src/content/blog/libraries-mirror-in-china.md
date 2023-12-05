@@ -51,7 +51,7 @@ export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 
 ## flutter
 
-使用[flutter-io](https://flutter-io.cn/)镜像
+使用 [flutter-io](https://flutter-io.cn/) 镜像
 
 ```shell
 # flutter 本身的地址
@@ -99,7 +99,7 @@ allprojects {
 }
 ```
 
-如果用了其他仓库，可以查看日志，然后到 [阿里云云效 Maven 官网](https://developer.aliyun.com/mvn/guide) 查看并替换
+如果用了其他仓库，可以查看日志，然后到[阿里云云效 Maven 官网](https://developer.aliyun.com/mvn/guide)查看并替换
 
 ## dnf-fedora
 
@@ -115,15 +115,15 @@ sudo sed -e 's|^metalink=|#metalink=|g' \
          /etc/yum.repos.d/fedora-updates-modular.repo
 ```
 
-更新请以 [官方文档](https://mirrors.tuna.tsinghua.edu.cn/help/fedora/) 为准。
+更新请以[官方文档](https://mirrors.tuna.tsinghua.edu.cn/help/fedora/)为准。
 
 ## python
 
-- `python`安装包下载
+- `python` 安装包下载
 
-  使用阿里云镜像: <https://registry.npmmirror.com/binary.html?path=python/>
+  使用阿里云镜像：<https://registry.npmmirror.com/binary.html?path=python/>
 
-- `pip`镜像源
+- `pip` 镜像源
 
   ```shell
   pip config --global set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple

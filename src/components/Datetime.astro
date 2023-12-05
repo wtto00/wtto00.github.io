@@ -15,7 +15,7 @@ const { datetime, size = 'sm', className } = Astro.props
     class='i-custom-calendar inline-block h-6 w-6 c-base'
     class:list={[size === 'sm' ? 'scale-90' : 'scale-100']}></i>
   <span class='sr-only'>Posted on:</span>
-  <span class='italic' class:list={[size === 'sm' ? 'text-sm' : 'text-base']}>
+  <span class='italic' class:list={[size === 'sm' ? 'text-sm' : 'text-4']}>
     <FormattedDatetime datetime={datetime} />
   </span>
 </div>

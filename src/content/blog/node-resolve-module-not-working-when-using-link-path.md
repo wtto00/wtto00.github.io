@@ -11,13 +11,11 @@ description: node resolve module not working when using link path
 issue_number: 42
 ---
 
-打算在 `Windows` 平台上使用 `Git Bash` 作为默认的 `Shell` 环境。
+## Failed to resolve module specifier “vue”
 
-首先根据知乎上面的文章配置 [Windows 下的 Git Bash 配置，提升你的终端操作体验](https://zhuanlan.zhihu.com/p/418321777)。
+在 `Windows` 系统上开发一个 `vue` 项目，在启动时，碰到了问题，浏览器报错如下
 
-然后，在启动一个 vue 项目时，碰到了问题，浏览器报错如下
-
-```
+```plaintext
 Uncaught TypeError: Failed to resolve module specifier "vue". Relative references must start with either "/", "./", or "../".
 ```
 
@@ -36,7 +34,7 @@ Uncaught TypeError: Failed to resolve module specifier "vue". Relative reference
 - 在 `Widnows Terminal` 中，我运行的目录是 `~/projects/demo/gitbash-node-module`
 - 而在 `VS Code` 中，默认打开的 `Git Bash` 所在目录是 `/e/projects/demo/gitbash-node-module`
 
-这是由于，我一开始想要在目录 home: `~` 中工作，然后又不想所有的项目文件全部保存在 `C盘`，所以在 Home 文件夹内建了个 `projects` 的目录软链接[符号链接]，如下所示：
+这是由于，我一开始想要在目录 home：`~` 中工作，然后又不想所有的项目文件全部保存在 `C盘`，所以在 Home 文件夹内建了个 `projects` 的目录软链接[符号链接](https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.management/new-item?view=powershell-7.4#7)，如下所示：
 
 ```shell
 # PowerShell

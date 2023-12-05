@@ -3,6 +3,14 @@
     "node": true,
     "browser": true
   },
+  "plugins": ["solid"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:astro/recommended",
+    "plugin:astro/jsx-a11y-strict",
+    "@unocss"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -12,14 +20,7 @@
     },
     "extraFileExtensions": [".tsx", ".ts"]
   },
-  "plugins": ["solid"],
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:astro/recommended",
-    "plugin:astro/jsx-a11y-strict",
-    "@unocss"
-  ],
+  "ignorePatterns": ["dist/*"],
   "overrides": [
     {
       "files": ["*.tsx"],

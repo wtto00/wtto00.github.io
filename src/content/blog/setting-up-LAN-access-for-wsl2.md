@@ -36,11 +36,11 @@ issue_number: 38
    #        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
    ```
 
-   获得 WSL2 中的 IP 地址为`172.21.157.28`
+   获得 WSL2 中的 IP 地址为 `172.21.157.28`
 
 1. **设置端口转发**
 
-   在 Windows 中，管理员打开`Power Shell`，执行以下命令：
+   在 Windows 中，管理员打开 `Power Shell`，执行以下命令：
 
    ```shell
    netsh interface portproxy add v4tov4 listenport=[宿主机windows平台监听端口] listenaddress=0.0.0.0 connectport=[wsl2平台监听端口] connectaddress=[wsl2平台ip] protocol=tcp
@@ -62,10 +62,10 @@ issue_number: 38
    netsh interface portproxy delete v4tov4 listenport=5173 listenaddress=0.0.0.0
    ```
 
-   > 上述命令中的`listenaddress=0.0.0.0`可以全部更改为`listenaddress=*`
+   > 上述命令中的 `listenaddress=0.0.0.0` 可以全部更改为 `listenaddress=*`
 
 1. **Windows 设置防火墙**  
-   在高级防火墙设置中（找不到的话可以在开始菜单搜索`防火墙`），新建入站规则，选择`端口-TCP,特定本机端口:5173-允许连接`，保存规则名称为`vite本机开发服务器`。
+   在高级防火墙设置中 (找不到的话可以在开始菜单搜索 `防火墙`)，新建入站规则，选择 `端口-TCP,特定本机端口:5173-允许连接`，保存规则名称为 `vite本机开发服务器`。
 
 1. **查看 Windows 主机在局域网中的 IP**  
    打开 PowerShell

@@ -11,7 +11,7 @@ description: 前端跨平台打包工具整理：Electron、Tauri、Wails、Reac
 issue_number: 41
 ---
 
-前端构建桌面端应用程序，首先想到的是 `Electron` ，但是 `Electron` 构建的桌面端应用程序有一些缺点无法避免：
+前端构建桌面端应用程序，首先想到的是 `Electron`，但是 `Electron` 构建的桌面端应用程序有一些缺点无法避免：
 
 - 包太大，因为 `electron` 会自动塞入 `Chromium` 和 `nodejs`，一个什么也不做的 `electron` 项目压缩后也大概要 50m。
 - 内存消耗过大，因为 `Chromium` 本身就很吃内存，再加上提供操作系统访问能力的 `nodejs`，很可观的内存消耗，对小工具类的项目不友好。

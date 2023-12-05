@@ -11,7 +11,7 @@ description: 'vue遇到Conflicting order. Following module has been added:（加
 issue_number: 6
 ---
 
-关于 [mini-css-extract-plugin](https://www.npmjs.com/package/mini-css-extract-plugin) Conflicting order. Following module has been added: 异常的参考资料 ：
+关于 [mini-css-extract-plugin](https://www.npmjs.com/package/mini-css-extract-plugin) Conflicting order。Following module has been added：异常的参考资料：
 <https://github.com/vuejs/vue-cli/issues/3771>
 
 ```js

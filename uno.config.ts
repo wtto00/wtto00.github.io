@@ -55,14 +55,18 @@ export default defineConfig({
     }),
   ],
   content: {
-    filesystem: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+    filesystem: ['./**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   },
   theme: {
     breakpoints: {
+      xs: '320px',
+      ds: '375px',
       sm: '640px',
-    },
-    fontFamily: {
-      mono: 'IBM Plex Mono, monospace',
+      md: '768px',
+      lg: '960px',
+      xl: '1024px',
+      '2xl': '1280px',
+      '3xl': '1536px',
     },
     colors: {
       fill: 'rgb(251, 254, 251)',

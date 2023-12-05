@@ -23,7 +23,7 @@ sudo dnf install gnome-shell-extension-dash-to-dock
 sudo dnf install gnome-extensions-app
 ```
 
-如果是 `Ubuntu/Debian`，执行下边的命令安装App:
+如果是 `Ubuntu/Debian`，执行下边的命令安装 App：
 
 ```shell
 sudo apt install gnome-shell-extension-prefs
@@ -31,6 +31,6 @@ sudo apt install gnome-shell-extension-prefs
 
 ## 打开 `扩展` App
 
-刚安装的扩展 `gnome-shell-extension-dash-to-dock` 还不能显示在 App 中，需要重启系统，才可以设置Dock bar一直显示。
+刚安装的扩展 `gnome-shell-extension-dash-to-dock` 还不能显示在 App 中，需要重启系统，才可以设置 Dock bar 一直显示。
 
 里面有很多相关的配置，包括透明效果，主题，任务栏分组，大小等等。

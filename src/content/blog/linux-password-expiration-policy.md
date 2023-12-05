@@ -11,7 +11,7 @@ description: Linux 服务器登录提示`You must change your password now and l
 issue_number: 3
 ---
 
-> Linux 服务器登录提示`You must change your password now and login again!`
+> Linux 服务器登录提示 `You must change your password now and login again!`
 
 查看密码策略：
 

@@ -11,7 +11,7 @@ description: cordova准备工作
 issue_number: 44
 ---
 
-如果已经有一个 H5 的前端项目，怎么使用 [cordova](https://cordova.apache.org/) 包装成移动端APP呢？
+如果已经有一个 H5 的前端项目，怎么使用 [cordova](https://cordova.apache.org/) 包装成移动端 APP 呢？
 
 1. 安装 cordova
 
@@ -19,7 +19,7 @@ issue_number: 44
    npm i -g cordova@latest
    ```
 
-   **注意**: 使用 **npm** 命令，不要使用 `pnpm`, `yarn`, `cnpm` 等，下同。
+   **注意**：使用 **npm** 命令，不要使用 `pnpm`，`yarn`，`cnpm` 等，下同。
 
 1. 创建 config.xml 文件  
    已有此文件，忽略此步骤
@@ -41,11 +41,11 @@ issue_number: 44
    修改上面的内容
    |标识|解释|
    |---|----|
-   |id|APP包名`io.cordova.hello_cordova`|
-   |version|APP版本号`1.0.0`|
-   |name|APP名称`HelloCordova`|
-   |description|APP描述信息简介`Sample Apache Cordova App`|
-   |author|APP作者/开发者/所有者/公司等信息|
+   |id|APP 包名 `io.cordova.hello_cordova`|
+   |version|APP 版本号 `1.0.0`|
+   |name|APP 名称 `HelloCordova`|
+   |description|APP 描述信息简介 `Sample Apache Cordova App`|
+   |author|APP 作者/开发者/所有者/公司等信息|
 
 1. 创建 www 目录  
    已有此目录，忽略此步骤
@@ -60,10 +60,10 @@ issue_number: 44
 
    主要是为了使用 `Android Studio` 安装 `Android SDK` 等开发工具
 
-   - [官方网站](https://developer.android.google.cn/studio/) 下载并安装。
+   - [官方网站](https://developer.android.google.cn/studio/)下载并安装。
    - 安装完成后，打开设置，搜索 `sdk`
      - 安装至少一个 `SDK Platforms`，一般选择最新的安装版本即可。
-     - 安装 `SDK Tools`, 勾选 `Android SDK Build-Tools`, `Android SDK Command-line Tools`, `Android SDK Platform-Tools`
+     - 安装 `SDK Tools`，勾选 `Android SDK Build-Tools`，`Android SDK Command-line Tools`，`Android SDK Platform-Tools`
        > 一般这些是默认安装的，没有安装的话，请手动安装。
 
 1. 设置环境变量
@@ -113,7 +113,7 @@ issue_number: 44
    ```
 
    事先在 `resources` 文件夹，准备文件 `icon.png` 图标文件，大小为 `1024x1024`。  
-   如果要生成 `splashscreen`, 准备文件 `splash.png` 文件，大小为 `2732x2732`。
+   如果要生成 `splashscreen`，准备文件 `splash.png` 文件，大小为 `2732x2732`。
 
 1. 打包的前端文件，复制到 `www` 目录
 

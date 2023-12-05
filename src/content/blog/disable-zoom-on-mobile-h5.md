@@ -11,7 +11,7 @@ description: 移动端 H5 禁止缩放。<meta name="viewport" content="width=de
 issue_number: 4
 ---
 
-安卓一般加个`meta`标签即可：
+## 安卓一般加个 `meta` 标签即可
 
 ```html
 <meta
@@ -20,7 +20,7 @@ issue_number: 4
 />
 ```
 
-ios 可以引入下面的js
+## ios 可以引入下面的 js
 
 ```javascript
 // 缩放

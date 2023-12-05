@@ -11,7 +11,7 @@ description: "vue-router 不创建页面，简写 rouer-view: render: () => h(re
 issue_number: 31
 ---
 
-vue-router 不创建页面，简写 rouer-view
+## vue-router 不创建页面，简写 rouer-view
 
 ```javascript
 import { h, resolveComponent } from 'vue';

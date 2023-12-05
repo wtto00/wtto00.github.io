@@ -15,14 +15,14 @@ Linux 查看端口占用情况可以使用 lsof 和 netstat 命令。
 
 ## lsof
 
-lsof(list open files)是一个列出当前系统打开文件的工具。
+lsof(list open files) 是一个列出当前系统打开文件的工具。
 lsof 查看端口占用语法格式：
 
 ```bash
 lsof -i:端口号
 ```
 
-**示例：** 查看服务器 8000 端口的占用情况：
+**示例：**查看服务器 8000 端口的占用情况：
 
 ```plaintext
 # lsof -i:8000
@@ -57,11 +57,11 @@ netstat -tunlp | grep 端口号
 ```
 
 - -t (tcp) 仅显示 tcp 相关选项
-- -u (udp)仅显示 udp 相关选项
+- -u (udp) 仅显示 udp 相关选项
 - -n 拒绝显示别名，能显示数字的全部转化为数字
-- -l 仅列出在 Listen(监听)的服务状态
+- -l 仅列出在 Listen (监听) 的服务状态
 - -p 显示建立相关链接的程序名
-  **示例：** 查看服务器 8000 端口的占用情况：
+  **示例：**查看服务器 8000 端口的占用情况：
 
 ```plaintext
 # netstat -tunlp | grep 8000
@@ -83,7 +83,7 @@ netstat -ntulp | grep 3306   # 查看所有3306端口使用情况
 
 ## Windows 下如何查看端口进程呢？
 
-- 打开 shell 终端`CMD`或者`PowerShell`或者`Git Bash`
+- 打开 shell 终端 `CMD` 或者 `PowerShell` 或者 `Git Bash`
 
   ```shell
   # 列出所有端口占用情况

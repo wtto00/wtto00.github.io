@@ -11,9 +11,9 @@ description: jQuery html() 怎么阻止xss攻击。如果是单纯的字符串�
 issue_number: 14
 ---
 
-- 如果是单纯的字符串，最好是使用text()方法
+- 如果是单纯的字符串，最好是使用 text() 方法
 
-- 如果必须要拼接html标签
+- 如果必须要拼接 html 标签
 
   ```javascript
   var say = 'a bird in hand > two in the bush';
@@ -39,11 +39,11 @@ issue_number: 14
 
 ---
 
-`html`不占位不显示的转义符
+`html` 不占位不显示的转义符
 
 - `&rlm;`
 - `&lrm;`
 - `&zwj;`
 - `&zwnj;`
 
-> 关于`string.replace`正则，可参见 <https://segmentfault.com/a/1190000008787668>
+> 关于 `string.replace` 正则，可参见 <https://segmentfault.com/a/1190000008787668>

@@ -11,9 +11,9 @@ description: clip-path 和 drop-shadow 生成自定义图形、阴影
 issue_number: 46
 ---
 
-当使用 `clip-path` 时，会导致 `box-shadow` 无效
-
 [CodePen](https://codepen.io/wtto00/pen/NWOJVbe?editors=1100)
+
+## 当使用 `clip-path` 时，会导致 `box-shadow` 无效
 
 ```html
 <style>

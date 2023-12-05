@@ -1,58 +1,60 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import Posts from "@/layouts/Posts.astro";
-import PostDetails from "@/layouts/PostDetails.astro";
-import getSortedPosts from "@/utils/getSortedPosts";
-import getPageNumbers from "@/utils/getPageNumbers";
-import slugify from "@/utils/slugify";
-import { SITE } from "@/config";
-
-export interface Props {
-  post: CollectionEntry<"blog">;
-}
+import { getCollection, getEntry } from 'astro:content';
+import slugify, { slugifyStr } from '@/utils/slugify';
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import Datetime from '@/components/Datetime.astro';
+import Footer from '@/components/Footer.astro';
+import Tag from '@/components/Tag.astro';
+import { SITE } from '@/config';
+import PostToc from '@/components/PostToc.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
-
-  const postResult = posts.map(post => ({
-    params: { slug: slugify(post.data) },
-    props: { post },
-  }));
-
-  const pagePaths = getPageNumbers(posts.length).map(pageNum => ({
-    params: { slug: String(pageNum) },
-  }));
-
-  return [...postResult, ...pagePaths];
+  const allBlogPosts = await getCollection('blog', ({ data }) => !data.draft);
+  return allBlogPosts.map((post) => ({ params: { slug: slugify(post.data) } }));
 }
 
 const { slug } = Astro.params;
-const { post } = Astro.props;
 
-const posts = await getCollection("blog");
+const post = await getEntry('blog', slug);
+if (!post) return Astro.redirect('/404');
 
-const sortedPosts = getSortedPosts(posts);
+const { Content, headings, remarkPluginFrontmatter } = await post.render();
 
-const totalPages = getPageNumbers(sortedPosts.length);
+const { title, author, description, ogImage, pubDatetime, tags, canonicalURL } = post.data;
 
-const currentPage =
-  slug && !isNaN(Number(slug)) && totalPages.includes(Number(slug))
-    ? Number(slug)
-    : 0;
-const lastPost = currentPage * SITE.postPerPage;
-const startPost = lastPost - SITE.postPerPage;
+console.log(remarkPluginFrontmatter, headings, tags);
 
-const paginatedPosts = sortedPosts.slice(startPost, lastPost);
+const ogImageUrl = typeof ogImage === 'string' ? ogImage : ogImage?.src;
+const ogUrl = new URL(ogImageUrl ?? `${SITE.base}posts/${slugifyStr(title)}.png`, Astro.url.origin).href;
 ---
 
-{
-  post ? (
-    <PostDetails post={post} />
-  ) : (
-    <Posts
-      posts={paginatedPosts}
-      pageNum={currentPage}
-      totalPages={totalPages.length}
-    />
-  )
-}
+<Layout title={title} author={author} description={description} ogImage={ogUrl} canonicalURL={canonicalURL}>
+  <Header />
+
+  <div class="mx-auto max-w-3xl w-full flex justify-start px-2">
+    <button class="mb-2 mt-4 flex hover:op-75" onclick="history.back()">
+      <i class="i-custom-back text-2xl"></i>
+      <span>返回</span>
+    </button>
+  </div>
+
+  <main class="mx-auto max-w-3xl w-full px-4 pb-12">
+    <h1 transition:name={slugifyStr(title)} class="text-2xl font-semibold c-accent">{title}</h1>
+
+    <Datetime datetime={pubDatetime} size="lg" className="my-2" />
+
+    <div class="relative mx-auto mt-8 max-w-3xl">
+      <article class="max-w-unset w-full prose">
+        <Content />
+      </article>
+      {headings.length > 0 && <PostToc data={headings} />}
+    </div>
+
+    <ul class="my-8">
+      {tags.map((tag) => <Tag name={slugifyStr(tag)} />)}
+    </ul>
+  </main>
+
+  <Footer />
+</Layout>

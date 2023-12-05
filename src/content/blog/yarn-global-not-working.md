@@ -20,7 +20,7 @@ issue_number: 2
 1. 使用 `yarn global bin` 命令，获得命令所在目录
 2. 将获得的目录路径加入到环境变量中
 
-Linux:
+Linux：
 
 ```shell
 echo export PATH="\"\$PATH:$(yarn global bin)\"" >> ~/.bashrc
