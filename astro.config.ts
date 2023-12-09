@@ -10,6 +10,7 @@ import remarkCollapse from 'remark-collapse';
 import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import githubLightTheme from './src/github-light';
 
 // https://astro.build/config
 export default defineConfig({
@@ -54,7 +55,7 @@ export default defineConfig({
     shikiConfig: {
       wrap: true,
       experimentalThemes: {
-        light: 'github-light',
+        light: githubLightTheme,
         dark: 'github-dark',
       },
     },
