@@ -1,5 +1,10 @@
+/**
+ * markdown渲染要执行的脚本
+ * 主要是在博客文章页面
+ */
+
 const copyButtonLabel = '复制代码';
-export async function addCopyCodeBtn() {
+async function addCopyCodeBtn() {
   const codeBlocks = Array.from(document.querySelectorAll('pre'));
 
   for (const codeBlock of codeBlocks) {
@@ -35,4 +40,9 @@ async function copyCode(block: HTMLPreElement, button: HTMLButtonElement) {
   setTimeout(() => {
     button.innerText = copyButtonLabel;
   }, 700);
+}
+
+export default function execScripts() {
+  // 代码片段添加`复制代码`按钮，并实现相应功能
+  addCopyCodeBtn();
 }

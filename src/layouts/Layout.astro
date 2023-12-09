@@ -67,15 +67,12 @@ const socialImageURL = ogImage || new URL(SITE.base + 'og.png', Astro.url.origin
   <body>
     <slot />
     <script>
-      import { addCopyCodeBtn } from '@/utils/code'
       import { initTheme } from '@/utils/theme'
 
       initTheme()
-      addCopyCodeBtn()
 
       document.addEventListener('astro:after-swap', () => {
         initTheme()
-        addCopyCodeBtn()
       })
     </script>
   </body>

@@ -23,8 +23,6 @@ const { Content, headings } = await post.render();
 
 const { title, author, description, ogImage, pubDatetime, tags, canonicalURL } = post.data;
 
-console.log(headings);
-
 const ogImageUrl = typeof ogImage === 'string' ? ogImage : ogImage?.src;
 const ogUrl = new URL(ogImageUrl ?? `${SITE.base}posts/${slugifyStr(title)}.png`, Astro.url.origin).href;
 ---
@@ -58,3 +56,13 @@ const ogUrl = new URL(ogImageUrl ?? `${SITE.base}posts/${slugifyStr(title)}.png`
 
   <Footer />
 </Layout>
+
+<script>
+  import execScripts from '@/utils/mdScripts';
+
+  execScripts();
+
+  document.addEventListener('astro:after-swap', () => {
+    execScripts();
+  });
+</script>
