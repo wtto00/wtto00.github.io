@@ -3,6 +3,7 @@
  * 主要是在博客文章页面
  */
 
+/* --------------------------------- 复制代码 Start --------------------------------- */
 const copyButtonLabel = '复制代码';
 async function addCopyCodeBtn() {
   const codeBlocks = Array.from(document.querySelectorAll('pre'));
@@ -41,8 +42,40 @@ async function copyCode(block: HTMLPreElement, button: HTMLButtonElement) {
     button.innerText = copyButtonLabel;
   }, 700);
 }
+/* --------------------------------- 复制代码 End --------------------------------- */
+
+/* --------------------------------- 标题链接复制 Start --------------------------------- */
+async function copyLink(headLink: HTMLLinkElement) {
+  const href = headLink.getAttribute('href');
+  if (!href) return;
+
+  const url = new URL(href, window.location.href);
+  await navigator.clipboard.writeText(url.href);
+
+  const label = document.createElement('label');
+  label.innerText = '已复制';
+  label.className = 'head-copy-label';
+  headLink.insertAdjacentElement('afterend', label);
+
+  setTimeout(() => {
+    label.remove();
+  }, 700);
+}
+
+function headLinkCopy() {
+  const allHeadLink = document.querySelectorAll<HTMLLinkElement>('.head-link');
+  allHeadLink.forEach((headLink) => {
+    headLink.addEventListener('click', (e: Event) => {
+      copyLink(headLink);
+      e.preventDefault();
+    });
+  });
+}
+/* --------------------------------- 标题链接复制 End --------------------------------- */
 
 export default function execScripts() {
   // 代码片段添加`复制代码`按钮，并实现相应功能
   addCopyCodeBtn();
+  // 标题链接点击是复制操作，而不是默认跳转
+  headLinkCopy();
 }

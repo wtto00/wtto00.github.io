@@ -29,15 +29,14 @@ export default defineConfig({
       [
         rehypeAutolinkHeadings,
         {
-          behavior: 'prepend',
+          behavior: 'append',
           headingProperties: {
-            className: 'group relative',
+            className: 'group flex items-center',
           },
           properties: {
             ariaHidden: 'true',
             tabIndex: -1,
-            className:
-              'h-full px-2 absolute left-0 top-6/12 translate-x--12/12 translate-y--6/12 op-0 group-hover:op-80',
+            className: 'head-link',
           },
           content: {
             type: 'element',

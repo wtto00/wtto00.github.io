@@ -105,3 +105,13 @@ a {
   --at-apply: bg-card-muted;
 }
 /* --------------------------------- code copy button End --------------------------------- */
+
+/* --------------------------------- markdown head link Start --------------------------------- */
+.head-link {
+  /* prettier-ignore */
+  --at-apply: px-2 op-0 group-hover:op-80;
+}
+.head-copy-label {
+  --at-apply: text-sm c-accent;
+}
+/* --------------------------------- markdown head link End --------------------------------- */
