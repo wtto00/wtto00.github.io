@@ -37,7 +37,7 @@ export default defineConfig({
             ariaHidden: 'true',
             tabIndex: -1,
             className:
-              'h-full px-2 absolute left-0 top-6/12 translate-x--12/12 translate-y--6/12 hidden group-hover:inline-block',
+              'h-full px-2 absolute left-0 top-6/12 translate-x--12/12 translate-y--6/12 op-0 group-hover:op-80',
           },
           content: {
             type: 'element',
