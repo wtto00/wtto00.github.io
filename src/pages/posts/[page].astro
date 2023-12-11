@@ -6,7 +6,12 @@ import { getCollection } from 'astro:content';
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const allBlogPosts = await getCollection('blog');
-  return paginate(allBlogPosts, { pageSize: SITE.postPerPage });
+  return paginate(
+    allBlogPosts.toSorted((a, b) =>
+      a.data.pubDatetime > b.data.pubDatetime ? 1 : a.data.pubDatetime < b.data.pubDatetime ? -1 : 0,
+    ),
+    { pageSize: SITE.postPerPage },
+  );
 }
 
 const { page } = Astro.props;
