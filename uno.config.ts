@@ -105,7 +105,4 @@ export default defineConfig({
     },
   },
   transformers: [transformerVariantGroup(), transformerDirectives()],
-  // preflights: [{
-  //   getCSS: ({theme}) => `--shiki-color-background: #333333;`
-  // }]
 });
