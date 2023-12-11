@@ -21,7 +21,7 @@ issue_number: 48
 
 ![动画](../../assets/images/dark-mode-spread-animation.gif)
 
-## JS逻辑处理
+## JS 逻辑处理
 
 ```ts
 /** 三种主题设置 */

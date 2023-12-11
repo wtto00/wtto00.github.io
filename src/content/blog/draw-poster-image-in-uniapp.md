@@ -11,7 +11,7 @@ description: uniapp利用canvas在小程序上面生成图片
 issue_number: 27
 ---
 
-## JS逻辑代码
+## JS 逻辑代码
 
 ```javascript
 /**
@@ -328,7 +328,7 @@ function savePosterFile(tempImgPath) {
 
 ## 可能遇到的问题
 
-### 1. 提示 `Tainted canvases may not be exported.`
+### 1。提示 `Tainted canvases may not be exported.`
 
 原因是画布跨域加载了非本域名的图片，导致画布被污染，无法导出为图片。解决办法添加 `crossOrigin` 属性
 
@@ -336,7 +336,7 @@ function savePosterFile(tempImgPath) {
 image.crossOrigin = 'anonymous';
 ```
 
-### 2. 图片加载的时候报错 `CORS` 跨域错误
+### 2。图片加载的时候报错 `CORS` 跨域错误
 
 如果服务端没有设置防盗链的话以及其他限制的话，这种情况很可能是浏览器缓存导致的，可以在图片链接后面加上随机数。
 
