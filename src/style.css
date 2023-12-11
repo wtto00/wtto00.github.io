@@ -58,7 +58,8 @@ a {
   --un-prose-hr: rgb(var(--un-preset-theme-colors-base) / 0.2);
 }
 .prose a:not(.group) {
-  --at-apply: decoration-dashed underline-offset-8 break-words hover: c-accent;
+  /* prettier-ignore */
+  --at-apply: decoration-dashed underline-offset-8 break-words c-base hover:c-accent;
 }
 .prose img {
   --at-apply: b-2 b-brd mx-auto mt-2 mb-2em;
