@@ -31,7 +31,7 @@ export default defineConfig({
         {
           behavior: 'append',
           headingProperties: {
-            className: 'group flex items-center',
+            className: 'group flex items-center flex-wrap',
           },
           properties: {
             ariaHidden: 'true',
