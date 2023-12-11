@@ -31,7 +31,7 @@ const next = pageNum < totalPages ? '' : 'disabled'
 
   {
     totalPages > 1 && (
-      <nav class='mb-8 mt-auto flex justify-center' aria-label='Pagination'>
+      <nav class='mx-auto mb-8 mt-auto max-w-3xl w-full flex justify-between px-4' aria-label='Pagination'>
         <LinkButton
           disabled={prev === 'disabled'}
           href={`${SITE.base}posts${pageNum - 1 !== 1 ? '/' + (pageNum - 1) : ''}`}
@@ -41,6 +41,7 @@ const next = pageNum < totalPages ? '' : 'disabled'
           <i class='i-custom-arrow-left text-2xl' />
           上一页
         </LinkButton>
+        <div>{pageNum}/{totalPages}</div>
         <LinkButton
           disabled={next === 'disabled'}
           href={`${SITE.base}posts/${pageNum + 1}`}
