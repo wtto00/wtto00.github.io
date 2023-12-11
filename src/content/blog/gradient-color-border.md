@@ -12,10 +12,10 @@ issue_number: 25
 ---
 
 利用 CSS 怎么创建渐变色边框？下面本篇文章给大家分享 CSS 实现渐变色边框的 5 种方法，希望对大家有所帮助！
-![gradient-color-border](https://img.php.cn/upload/article/000/000/024/616641f7ad8c5965.png)
+![gradient-color-border](../../assets/images/gradient-color-border.png)
 给 border 设置渐变色是很常见的效果，实现这个效果有很多思路，今天把我所知道的方法罗列于此供大家参考。(学习视频分享：[css 视频教程](https://www.php.cn/course/list/12.html))
 
-### 1。使用 `border-image`
+## 使用 `border-image`
 
 CSS 提供了 [border-image](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image) 属性用于给 border 绘制复杂图样，与 [background-image](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image) 类似，我们可以在 border 中展示 `image` 和 `linear-gradient`。
 
@@ -39,7 +39,7 @@ div {
 
 这种方式虽然简单但有个明显的缺陷，不支持设置 `border-radius`。接下来会介绍几种支持 `border-radius` 的方法。
 
-### 2。使用 `background-image`
+## 使用 `background-image`
 
 使用 `background-image` 绘制渐变色背景，并且把中间用纯色遮住应该是最容易想到的一种方法，思路是：使用两个盒子叠加，给下层的盒子设置渐变色背景和 padding，给上层盒子设置纯色背景。
 
@@ -77,7 +77,7 @@ div {
 
 这种方式的优点是容易理解，兼容性好，缺点是设置 content 的 border-radius 会比较 tricky，且不准确。
 
-### 3。两层元素、`background-image`、`background-clip`
+## 两层元素、`background-image`、`background-clip`
 
 为了解决方法 2 中 `border-radius` 不准确的问题，可以使用一个单独的元素作为渐变色背景放在最下层，上层设置一个透明的 border 和纯色的背景 (需要设置 `background-clip: padding-box` 以避免盖住下层元素的 border)，上下两层设置相同的 `border-radius`。
 
@@ -117,7 +117,7 @@ div {
 
 > [Codepen demo](https://codepen.io/mudontire/pen/yLoLrxL)
 
-### 4。伪元素、方法 3 的简化
+## 伪元素、方法 3 的简化
 
 我们可以使用伪元素替换 `div.border-bg` 以简化 HTML 结构。
 
@@ -157,7 +157,7 @@ div {
 
 > [Codepen demo](https://codepen.io/mudontire/pen/JjyjVwN)
 
-### 5。单层元素、`background-clip`、`background-origin`、`background-image`
+## 单层元素、`background-clip`、`background-origin`、`background-image`
 
 最后是我觉得最优雅的一种方法，只需要用到单层元素，为其分别设置 `background-clip`、`background-origin`、`background-image` 这三个属性，每个属性设置两组值，第一组用于设置 border 内的单色背景，第二组用于设置 border 上的渐变色。
 

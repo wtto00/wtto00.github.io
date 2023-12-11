@@ -11,7 +11,7 @@ description: Vite+Vue3中使用Eslint
 issue_number: 21
 ---
 
-### Install
+## Install
 
 ```bash
 yarn add -D @typescript-eslint/parser \
@@ -27,7 +27,7 @@ yarn add -D @typescript-eslint/parser \
     vue-eslint-parser
 ```
 
-### Init
+## Init
 
 ```bash
 yarn eslint --init
@@ -51,7 +51,7 @@ yarn eslint --init
 rm -rf package-lock.json
 ```
 
-### 。eslintrc.js
+## `.eslintrc.js`
 
 根据腾讯代码规范，添加以下规则
 
@@ -127,7 +127,7 @@ module.exports = {
 };
 ```
 
-### 。prettierrc.js
+## `.prettierrc.js`
 
 ```json
 {
@@ -138,7 +138,7 @@ module.exports = {
 }
 ```
 
-### 。editorconfig
+## `.editorconfig`
 
 ```properties
 [*.{js,jsx,ts,tsx,vue}]
@@ -150,13 +150,13 @@ insert_final_newline = true
 max_line_length = 120
 ```
 
-### 。prettierignore
+## `.prettierignore`
 
 ```plaintext
 theme/**/*.css
 ```
 
-### jsconfig.json
+## `.jsconfig.json`
 
 ```json
 {
@@ -173,7 +173,7 @@ theme/**/*.css
 }
 ```
 
-### package.json
+## `package.json`
 
 ```json
 {
@@ -184,7 +184,7 @@ theme/**/*.css
 }
 ```
 
-### vite.config.js
+## `vite.config.js`
 
 ```javascript
 import vue from '@vitejs/plugin-vue';

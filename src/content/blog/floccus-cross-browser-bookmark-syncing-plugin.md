@@ -17,12 +17,16 @@ Floccus 浏览插件是一款能够实现跨浏览器进行书签同步的浏览
 
 👉 官网 <https://floccus.org/>
 
+## 下载安装
+
 上面 👆 官网也有下载链接：  
 Firefox：<https://addons.mozilla.org/en-US/firefox/addon/floccus/>  
 Chrome：<https://chrome.google.com/webstore/detail/floccus/fnaicdffflnofjppbagibeoednhnbjhg>  
 Edge：<https://microsoftedge.microsoft.com/addons/detail/gjkddcofhiifldbllobcamllmanombji>
 
 > Chrome 商店被墙，可以安装插件 <https://iguge.app/>
+
+## 坚果云 WebDAV 同步浏览器书签
 
 这里说下通过坚果云 WebDAV 协议来同步浏览器书签：
 

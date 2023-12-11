@@ -11,6 +11,8 @@ description: 下载页面上的canvas
 issue_number: 34
 ---
 
+## JS 脚本下载 canvas 为本地图片
+
 许多文档类网站，文档的预览用的是 `canvas`，但是下载是收费的。  
 我们可以通过在控制台执行下述代码，保存预览的图片到本地。
 
@@ -49,6 +51,8 @@ async function download() {
 
 download();
 ```
+
+## 本地图片转 PDF 文档
 
 下载保存所有文档页到本地图片后，可以使用 [https://www.67tool.com/pdf/imgToPdf](https://www.67tool.com/pdf/imgToPdf) 把图片转为 pdf。
 如果页面特别多，不好一下子全部转成 pdf，可以分段转成多个 pdf 文件，然后使用 [https://www.67tool.com/pdf/merge](https://www.67tool.com/pdf/merge) 把多个 pdf 合并为一个。
