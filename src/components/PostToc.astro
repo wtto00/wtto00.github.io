@@ -1,6 +1,6 @@
 ---
 import type { MarkdownHeading } from 'astro';
-import PostTocItem from '@/components/PostTocItem';
+import PostTocList from './PostTocList.astro';
 
 interface Props {
   data: MarkdownHeading[];
@@ -8,7 +8,7 @@ interface Props {
 
 const { data } = Astro.props;
 
-interface ListItem {
+export interface ListItem {
   depth: number;
   slug: string;
   text: string;
@@ -43,20 +43,10 @@ function treeTocList(treeList: ListItem[], item: MarkdownHeading): ListItem[] {
 data.forEach((item) => {
   treeTocList(list, item);
 });
-
-console.log('list', list);
 ---
 
-<div class="absolute left-full top-0 hidden h-full pl-10 lg:block">
-  <div class="sticky top-14 truncate text-sm leading-loose">
-    <ol class="max-h-65vh overflow-y-auto">
-      {
-        list.map((item, index) => (
-          <li>
-            <PostTocItem slug={item.slug} text={item.text} index={index} />
-          </li>
-        ))
-      }
-    </ol>
+<div class="absolute left-full top-0 hidden h-full max-w-200 pl-10 lg:block">
+  <div class="sticky top-14 w-full truncate text-sm lh-loose">
+    <PostTocList data={list} />
   </div>
 </div>

@@ -3,22 +3,30 @@ import { createSignal } from 'solid-js';
 interface Props {
   slug: string;
   text: string;
-  index: number;
+  index: string | number;
 }
 
 export default function PostTocItem(props: Props) {
   const [active] = createSignal(false);
 
+  function goHead(e: MouseEvent) {
+    const head = document.querySelector(`#${props.slug}`);
+    if (head) {
+      head.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
+    e.preventDefault();
+  }
+
   return (
     <a
-      href={`#${props.slug}`}
       title={props.text}
       aria-hidden={active()}
       class={`${
-        active() ? 'text-neutral-700 dark:text-neutral ' : 'text-neutral dark:text-neutral-700'
-      } truncate inline-block max-w-full align-bottom hover:text-neutral`}
+        active() ? 'op-100' : 'op-50 hover:op-100'
+      } truncate text-sm inline-block max-w-full cursor-pointer c-base`}
+      onClick={goHead}
     >
-      {props.index + 1}. {props.text}
+      {props.index}. {props.text}
     </a>
   );
 }

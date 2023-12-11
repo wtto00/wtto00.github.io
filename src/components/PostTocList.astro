@@ -1,0 +1,27 @@
+---
+import type { ListItem } from './PostToc.astro';
+import PostTocItem from './PostTocItem';
+
+interface Props {
+  parent?: number;
+  data: ListItem[];
+}
+
+const { data, parent } = Astro.props;
+---
+
+<ol class="max-h-65vh w-full overflow-y-auto" class:list={{ 'ml-1em': parent }}>
+  {
+    data.map((item, index) => (
+      <li class="w-full">
+        <PostTocItem
+          slug={item.slug}
+          text={item.text}
+          index={parent ? `${parent}.${index + 1}` : index + 1}
+          client:only="solid-js"
+        />
+        {item.children.length > 0 && <Astro.self data={item.children} parent={index + 1} />}
+      </li>
+    ))
+  }
+</ol>
