@@ -1,6 +1,6 @@
 ---
 author: wtto00
-pubDatetime: 2021-08-16T04:23:39.000Z
+pubDatetime: 2021-01-23T06:29:00.000Z
 title: 'vue遇到Conflicting order. Following module has been added:（加载顺序冲突）'
 postSlug: conflicting-order-error-in-vue
 featured: false
@@ -9,7 +9,7 @@ labels:
   - Vue
 description: 'vue遇到Conflicting order. Following module has been added:（加载顺序冲突）'
 issue_number: 6
-updateTime: 2023-12-16T15:25:39.915Z
+updateTime: 2023-12-16T15:45:49.475Z
 ---
 
 关于 [mini-css-extract-plugin](https://www.npmjs.com/package/mini-css-extract-plugin) Conflicting order。Following module has been added：异常的参考资料：

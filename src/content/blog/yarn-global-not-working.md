@@ -1,6 +1,6 @@
 ---
 author: wtto00
-pubDatetime: 2021-08-16T04:23:39.000Z
+pubDatetime: 2021-01-16T18:26:00.000Z
 title: Yarn global 安装的命令无效
 postSlug: yarn-global-not-working
 featured: false
@@ -9,7 +9,7 @@ labels:
   - NPM
 description: 通过 `yarn global add xxx` 安装的模块，命令无法识别
 issue_number: 2
-updateTime: 2023-12-16T15:25:39.968Z
+updateTime: 2023-12-16T15:45:49.493Z
 ---
 
 ### 问题

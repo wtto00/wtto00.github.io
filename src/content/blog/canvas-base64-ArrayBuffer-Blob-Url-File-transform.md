@@ -1,6 +1,6 @@
 ---
 author: wtto00
-pubDatetime: 2021-08-16T04:23:39.000Z
+pubDatetime: 2021-08-03T04:26:00.000Z
 title: js中canvas、base64、ArrayBuffer、Blob、Url、File互转
 postSlug: canvas-base64-ArrayBuffer-Blob-Url-File-transform
 featured: false
@@ -9,7 +9,7 @@ labels:
   - Javascript
 description: js中canvas、base64、ArrayBuffer、Blob、Url、File互转
 issue_number: 20
-updateTime: 2023-12-16T15:25:39.911Z
+updateTime: 2023-12-16T15:45:49.469Z
 ---
 
 ## canvas to base64

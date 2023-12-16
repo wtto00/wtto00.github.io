@@ -1,6 +1,6 @@
 ---
 author: wtto00
-pubDatetime: 2021-08-16T04:23:39.000Z
+pubDatetime: 2021-01-23T08:07:00.000Z
 title: 使用postcss-pxtorem自适应后，vant组件大小样式不对
 postSlug: component-size-not-correct-when-use-postcss-pxtorem
 featured: false

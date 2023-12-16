@@ -1,6 +1,6 @@
 ---
 author: wtto00
-pubDatetime: 2021-08-16T04:23:39.000Z
+pubDatetime: 2021-01-21T19:22:00.000Z
 title: 移动端 H5 禁止缩放
 postSlug: disable-zoom-on-mobile-h5
 featured: false
@@ -12,7 +12,7 @@ description: >-
   content="width=device-width,initial-scale=1.0,minimum-scale=1.0,
   maximum-scale=1.0, user-scalable=no">
 issue_number: 4
-updateTime: 2023-12-16T15:25:39.922Z
+updateTime: 2023-12-16T15:45:49.477Z
 ---
 
 ## 安卓一般加个 `meta` 标签即可

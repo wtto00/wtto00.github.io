@@ -1,15 +1,14 @@
 ---
 import { SITE } from '@/config';
 import Posts from '@/layouts/Posts.astro';
+import getSortedPosts from '@/utils/getSortedPosts';
 import type { GetStaticPathsOptions } from 'astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const allBlogPosts = await getCollection('blog');
   return paginate(
-    allBlogPosts.toSorted((a, b) =>
-      a.data.pubDatetime > b.data.pubDatetime ? 1 : a.data.pubDatetime < b.data.pubDatetime ? -1 : 0,
-    ),
+  getSortedPosts(allBlogPosts),
     { pageSize: SITE.postPerPage },
   );
 }

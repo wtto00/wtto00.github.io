@@ -1,6 +1,6 @@
 ---
 author: wtto00
-pubDatetime: 2021-08-16T04:23:39.000Z
+pubDatetime: 2021-03-03T08:37:00.000Z
 title: Ubuntu下切换多个PHP版本
 postSlug: switching-multiple-php-versions-on-ubuntu
 featured: false
@@ -9,7 +9,7 @@ labels:
   - PHP
 description: Ubuntu下切换多个PHP版本
 issue_number: 16
-updateTime: 2023-12-16T15:25:39.961Z
+updateTime: 2023-12-16T15:45:49.490Z
 ---
 
 安装 PHP 7 和 PHP 5

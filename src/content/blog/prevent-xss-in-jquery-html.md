@@ -1,6 +1,6 @@
 ---
 author: wtto00
-pubDatetime: 2021-08-16T04:23:39.000Z
+pubDatetime: 2021-02-04T06:01:00.000Z
 title: jQuery html() 怎么阻止xss攻击
 postSlug: prevent-xss-in-jquery-html
 featured: false
@@ -11,7 +11,7 @@ description: >-
   jQuery html() 怎么阻止xss攻击。如果是单纯的字符串，最好是使用text()方法。如果必须要拼接html标签，使用 htmlEscape
   方法。
 issue_number: 14
-updateTime: 2023-12-16T15:25:39.956Z
+updateTime: 2023-12-16T15:45:49.483Z
 ---
 
 - 如果是单纯的字符串，最好是使用 text() 方法

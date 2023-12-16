@@ -1,6 +1,6 @@
 ---
 author: wtto00
-pubDatetime: 2021-08-16T04:23:39.000Z
+pubDatetime: 2021-03-15T02:03:00.000Z
 title: 记录一次svn迁移至git的过程
 postSlug: svn-to-git
 featured: false
@@ -11,7 +11,7 @@ labels:
 description: >-
   由于之前的svn仓库是非标准的，没有任何分支trunk，也没有任何tag，目录中直接就是项目的文件系统了。对于这种非标准的svn仓库，应该怎么保留完整commit迁移至git？
 issue_number: 17
-updateTime: 2023-12-16T15:25:39.960Z
+updateTime: 2023-12-16T15:45:49.490Z
 ---
 
 由于之前的 svn 仓库是非标准的，没有任何分支 trunk，也没有任何 tag，目录中直接就是项目的文件系统了。
