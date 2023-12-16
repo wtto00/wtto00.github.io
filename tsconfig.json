@@ -4,6 +4,8 @@
     "lib": ["DOM", "ESNext"],
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
+    "allowJs": true,
+    "checkJs": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
