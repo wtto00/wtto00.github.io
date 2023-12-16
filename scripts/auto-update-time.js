@@ -2,28 +2,35 @@
  * 修改文章时，commit提交的时候，自动更改文章的updateTime字段
  */
 
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, existsSync } from 'node:fs';
 import { extname } from 'node:path';
 import matter from 'gray-matter';
 
 const { read, stringify } = matter;
 
-const file = process.argv.slice(2)[0];
+const files = process.argv.slice(2);
 
-if (!file) {
-  console.error('未知的文件参数');
-  process.exit(-1);
-}
+for (const file of files) {
+  if (!file) {
+    console.error(`未知的文件 ${file}`);
+    continue;
+  }
 
-if (extname(file).toLocaleLowerCase() !== '.md') {
-  console.warn('文件参数非markdown文件');
-  process.exit(0);
-}
+  if (extname(file).toLocaleLowerCase() !== '.md') {
+    console.warn(`文件 ${file} 非markdown文件`);
+    continue;
+  }
 
-const { content, data } = read(file);
+  if (!existsSync(file)) {
+    console.error(`文件 ${file} 不存在`);
+    continue;
+  }
 
-if (data.title && data.pubDatetime) {
-  data.updateTime = new Date().toISOString();
+  const { content, data } = read(file);
 
-  writeFileSync(file, stringify({ content }, data));
+  if (data.title && data.pubDatetime) {
+    data.updateTime = new Date();
+
+    writeFileSync(file, stringify({ content }, data));
+  }
 }
