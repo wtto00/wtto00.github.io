@@ -1,13 +1,14 @@
-# Astro + Solid.js Example
+# WTTO'S BLOG
 
-```sh
-npm create astro@latest -- --template framework-solid
-```
+## TODO
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/framework-solid)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/framework-solid)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/framework-solid/devcontainer.json)
-
-This example showcases Astro working with [Solid](https://www.solidjs.com/)。
-
-Write your Solid components as `.jsx` or `.tsx` files in your project。
+- [ ] 文章显示 code 行内样式修改
+- [ ] 侧边的菜单导航还要再测试更多级别的展示
+- [ ] 阅读时的回到顶部按钮
+- [ ] 文章在宽屏时，展示一张二维码图片，可以让用户手机扫码在移动端观看
+- [ ] Github CI 部署
+- [ ] Github CI 自动更新相关联的 issue
+- [ ] 文章尾部添加版权说明
+- [ ] 文章链接到 Github 源文件以及相关联的 issue
+- [ ] 归档按照日期，只显示标题，单页显示全部
+- [ ] 评论插件 (可放到下期)
