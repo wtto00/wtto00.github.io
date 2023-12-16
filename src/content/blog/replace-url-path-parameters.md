@@ -5,10 +5,11 @@ title: js 匹配 url 路径参数，并替换变量
 postSlug: replace-url-path-parameters
 featured: false
 draft: false
-tags:
+labels:
   - Javascript
 description: js 使用正则匹配 url 路径参数，并替换变量
 issue_number: 28
+updateTime: 2023-12-16T15:25:39.957Z
 ---
 
 > <https://node.green/#ES2020-features-String-prototype-matchAll>

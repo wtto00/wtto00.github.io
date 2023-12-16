@@ -5,10 +5,11 @@ title: 调用微信JSSDK上传图片
 postSlug: upload-image-by-wechat-jssdk
 featured: false
 draft: false
-tags:
+labels:
   - 微信
 description: 调用微信JSSDK上传图片
 issue_number: 29
+updateTime: 2023-12-16T15:25:39.963Z
 ---
 
 ```javascript

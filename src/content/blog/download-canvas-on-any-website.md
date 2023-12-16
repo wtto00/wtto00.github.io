@@ -5,10 +5,11 @@ title: 下载页面上的canvas
 postSlug: download-canvas-on-any-website
 featured: false
 draft: false
-tags:
+labels:
   - Javascript
 description: 下载页面上的canvas
 issue_number: 34
+updateTime: 2023-12-16T15:25:39.924Z
 ---
 
 ## JS 脚本下载 canvas 为本地图片

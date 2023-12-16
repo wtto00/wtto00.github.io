@@ -5,10 +5,14 @@ title: 移动端 H5 禁止缩放
 postSlug: disable-zoom-on-mobile-h5
 featured: false
 draft: false
-tags:
+labels:
   - H5
-description: 移动端 H5 禁止缩放。<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+description: >-
+  移动端 H5 禁止缩放。<meta name="viewport"
+  content="width=device-width,initial-scale=1.0,minimum-scale=1.0,
+  maximum-scale=1.0, user-scalable=no">
 issue_number: 4
+updateTime: 2023-12-16T15:25:39.922Z
 ---
 
 ## 安卓一般加个 `meta` 标签即可

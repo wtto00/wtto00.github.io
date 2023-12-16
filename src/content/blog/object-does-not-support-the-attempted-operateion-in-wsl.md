@@ -5,10 +5,13 @@ title: WSL 提示 “参考的对象类型不支持尝试的操作。”
 postSlug: object-does-not-support-the-attempted-operateion-in-wsl
 featured: false
 draft: false
-tags:
+labels:
   - WSL
-description: "打开注册表，\\HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\WinSock2\\Parameters\\AppId_Catalog\\343305C9 新建 AppFullPath=C:\\Windows\\System32\\lsass.exe"
+description: >-
+  打开注册表，\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinSock2\Parameters\AppId_Catalog\343305C9
+  新建 AppFullPath=C:\Windows\System32\lsass.exe
 issue_number: 22
+updateTime: 2023-12-16T15:25:39.954Z
 ---
 
 参考 <https://github.com/microsoft/WSL/issues/4177#issuecomment-829196951>

@@ -5,10 +5,11 @@ title: UI组件库整理
 postSlug: ui-component-library-compilation
 featured: false
 draft: false
-tags:
+labels:
   - Javascript
 description: UI组件库整理
 issue_number: 39
+updateTime: 2023-12-16T15:25:39.962Z
 ---
 
 ## Vue3

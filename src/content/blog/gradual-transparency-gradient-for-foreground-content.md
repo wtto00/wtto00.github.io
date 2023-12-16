@@ -5,10 +5,11 @@ title: 使用mask实现前景内容透明度渐变
 postSlug: gradual-transparency-gradient-for-foreground-content
 featured: false
 draft: false
-tags:
+labels:
   - CSS
 description: 使用mask实现前景内容透明度渐变
 issue_number: 30
+updateTime: 2023-12-16T15:25:39.933Z
 ---
 
 ![使用mask实现前景内容透明度渐变](../../assets/images/gradual-transparency-gradient-for-foreground-content.gif)

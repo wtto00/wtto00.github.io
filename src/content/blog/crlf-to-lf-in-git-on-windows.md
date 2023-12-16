@@ -5,10 +5,13 @@ title: windows下vscode设置了eof=lf，但是git操作还是会自动把代码
 postSlug: crlf-to-lf-in-git-on-windows
 featured: false
 draft: false
-tags:
+labels:
   - Git
-description: windows下vscode设置了eof=lf，但是git操作还是会自动把代码变为crlf。git config core.autocrlf false，git config core.eol lf
+description: >-
+  windows下vscode设置了eof=lf，但是git操作还是会自动把代码变为crlf。git config core.autocrlf
+  false，git config core.eol lf
 issue_number: 19
+updateTime: 2023-12-16T15:25:39.918Z
 ---
 
 ## 背景

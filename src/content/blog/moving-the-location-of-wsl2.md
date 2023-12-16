@@ -5,10 +5,11 @@ title: WSL2迁移方法
 postSlug: moving-the-location-of-wsl2
 featured: false
 draft: false
-tags:
+labels:
   - WSL
 description: 一直用WSL2作为开发环境，可是随着项目越来越多，越来越大，C盘空间所剩无几，所以迁移WSL2到其他分区成为必要
 issue_number: 15
+updateTime: 2023-12-16T15:25:39.953Z
 ---
 
 一直用 WSL2 作为开发环境，可是随着项目越来越多，越来越大，C 盘空间所剩无几，所以迁移 WSL2 到其他分区成为必要

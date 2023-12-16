@@ -5,10 +5,11 @@ title: Linux 设置密码过期策略
 postSlug: linux-password-expiration-policy
 featured: false
 draft: false
-tags:
+labels:
   - Linux
 description: Linux 服务器登录提示`You must change your password now and login again!`
 issue_number: 3
+updateTime: 2023-12-16T15:25:39.951Z
 ---
 
 > Linux 服务器登录提示 `You must change your password now and login again!`

@@ -5,10 +5,11 @@ title: Android 浏览器下 垂直居中偏上
 postSlug: vertically-centering-in-android-browser
 featured: false
 draft: false
-tags:
+labels:
   - CSS
 description: 'display: flex;align-items: center;line-height: normal;'
 issue_number: 24
+updateTime: 2023-12-16T15:25:39.965Z
 ---
 
 ```css

@@ -5,10 +5,11 @@ title: 通过修改文件头来伪装文件
 postSlug: changing-file-header-to-disguise-file
 featured: false
 draft: false
-tags:
+labels:
   - Javascript
 description: 通过修改文件头来伪装文件
 issue_number: 36
+updateTime: 2023-12-16T15:25:39.912Z
 ---
 
 ## 获取文件真实类型

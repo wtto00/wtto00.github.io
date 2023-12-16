@@ -21,7 +21,7 @@ if (!post) return Astro.redirect('/404');
 
 const { Content, headings } = await post.render();
 
-const { title, author, description, ogImage, pubDatetime, tags, canonicalURL } = post.data;
+const { title, author, description, ogImage, pubDatetime, labels, canonicalURL } = post.data;
 
 const ogImageUrl = typeof ogImage === 'string' ? ogImage : ogImage?.src;
 const ogUrl = new URL(ogImageUrl ?? `${SITE.base}posts/${slugifyStr(title)}.png`, Astro.url.origin).href;
@@ -50,7 +50,7 @@ const ogUrl = new URL(ogImageUrl ?? `${SITE.base}posts/${slugifyStr(title)}.png`
     </div>
 
     <ul class="my-8">
-      {tags.map((tag) => <Tag name={slugifyStr(tag)} />)}
+      {labels.map((tag) => <Tag name={slugifyStr(tag)} />)}
     </ul>
   </main>
 

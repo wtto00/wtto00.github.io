@@ -5,10 +5,11 @@ title: WSL2设置局域网访问
 postSlug: setting-up-LAN-access-for-wsl2
 featured: false
 draft: false
-tags:
+labels:
   - WSL
 description: WSL2设置局域网访问
 issue_number: 38
+updateTime: 2023-12-16T15:25:39.959Z
 ---
 
 1. **首先查询 WSL2 中的 IP**

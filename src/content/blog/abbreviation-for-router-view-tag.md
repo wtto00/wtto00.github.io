@@ -5,10 +5,13 @@ title: vue-router 不创建页面，简写 rouer-view
 postSlug: abbreviation-for-router-view-tag
 featured: false
 draft: false
-tags:
+labels:
   - Vue
-description: "vue-router 不创建页面，简写 rouer-view: render: () => h(resolveComponent('router-view'))"
+description: >-
+  vue-router 不创建页面，简写 rouer-view: render: () =>
+  h(resolveComponent('router-view'))
 issue_number: 31
+updateTime: 2023-12-16T15:25:39.904Z
 ---
 
 ## vue-router 不创建页面，简写 rouer-view

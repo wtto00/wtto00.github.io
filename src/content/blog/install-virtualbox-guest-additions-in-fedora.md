@@ -5,10 +5,14 @@ title: 在 Fedora 中安装VirtualBox Guest Additions服务
 postSlug: install-virtualbox-guest-additions-in-fedora
 featured: false
 draft: false
-tags:
+labels:
   - Linux
-description: '首先安装依赖，再确保开发包与系统内核版本一致，最后安装Guest Additions CD的脚本。错误处理：ValueError: File context for /opt/VBoxGuestAdditions-6.0.18/other/mount.vboxsf already defined。共享文件夹的权限无法访问的解决办法。'
+description: >-
+  首先安装依赖，再确保开发包与系统内核版本一致，最后安装Guest Additions CD的脚本。错误处理：ValueError: File context
+  for /opt/VBoxGuestAdditions-6.0.18/other/mount.vboxsf already
+  defined。共享文件夹的权限无法访问的解决办法。
 issue_number: 50
+updateTime: 2023-12-16T15:25:39.947Z
 ---
 
 ## 首先安装依赖

@@ -5,10 +5,11 @@ title: Winsock module breaks WSL2
 postSlug: winsock-module-breaks-wsl2
 featured: false
 draft: false
-tags:
+labels:
   - WSL
 description: Winsock module breaks WSL2
 issue_number: 40
+updateTime: 2023-12-16T15:25:39.967Z
 ---
 
 [issues #4177](https://github.com/microsoft/WSL/issues/4177#issuecomment-1429113508)

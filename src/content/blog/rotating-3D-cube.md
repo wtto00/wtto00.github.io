@@ -5,10 +5,11 @@ title: css实现3D立方体旋转
 postSlug: rotating-3D-cube
 featured: false
 draft: false
-tags:
+labels:
   - CSS
 description: css实现3D立方体旋转
 issue_number: 37
+updateTime: 2023-12-16T15:25:39.957Z
 ---
 
 [codepen](https://codepen.io/wtto00/pen/LYdoPaQ?editors=1100)

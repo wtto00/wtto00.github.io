@@ -5,10 +5,11 @@ title: JS 产生服从均匀分布随机数
 postSlug: uniformly-distributed-random-numbers
 featured: false
 draft: false
-tags:
+labels:
   - Javascript
 description: JS 产生服从均匀分布随机数
 issue_number: 23
+updateTime: 2023-12-16T15:25:39.962Z
 ---
 
 - 如果想获得 `[min, max]`，可以使用 `Math.floor(Math.random() * (max - min + 1)) + min`；

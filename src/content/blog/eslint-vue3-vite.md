@@ -5,10 +5,11 @@ title: Vite+Vue3中使用Eslint
 postSlug: eslint-vue3-vite
 featured: false
 draft: false
-tags:
+labels:
   - Eslint
 description: Vite+Vue3中使用Eslint
 issue_number: 21
+updateTime: 2023-12-16T15:25:39.926Z
 ---
 
 ## Install

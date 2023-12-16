@@ -5,10 +5,13 @@ title: flex布局下img图片变形的解决方法
 postSlug: distorted-image-under-flex-layout
 featured: false
 draft: false
-tags:
+labels:
   - CSS
-description: flex布局下img图片变形的解决方法。给 img 设置 flex-shrink。在父元素没有设置高度的情况下，给图片设置 height。用div标签包裹图片。
+description: >-
+  flex布局下img图片变形的解决方法。给 img 设置 flex-shrink。在父元素没有设置高度的情况下，给图片设置
+  height。用div标签包裹图片。
 issue_number: 18
+updateTime: 2023-12-16T15:25:39.923Z
 ---
 
 ## flex-shrink：0

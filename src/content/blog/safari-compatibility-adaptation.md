@@ -5,10 +5,13 @@ title: IOS 浏览器适配
 postSlug: safari-compatibility-adaptation
 featured: false
 draft: false
-tags:
+labels:
   - H5
-description: IOS 浏览器适配。css 适配 iPhone 全面屏底部安全区域。低版本 safari 提示 globalThis 不存在。input 聚焦时页面自动放大。
+description: >-
+  IOS 浏览器适配。css 适配 iPhone 全面屏底部安全区域。低版本 safari 提示 globalThis 不存在。input
+  聚焦时页面自动放大。
 issue_number: 8
+updateTime: 2023-12-16T15:25:39.958Z
 ---
 
 ## **overflow：scroll:auto 元素无法滑动**

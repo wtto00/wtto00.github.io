@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Main from "@/layouts/Main.astro";
 import Header from "@/components/Header.astro";
@@ -12,7 +12,6 @@ import { SITE } from "@/config";
 import getSortedPosts from "@/utils/getSortedPosts";
 
 export interface Props {
-  post: CollectionEntry<"blog">;
   tag: string;
 }
 
