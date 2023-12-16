@@ -1,5 +1,8 @@
 import type { ShikiConfig } from 'astro';
 
+/**
+ * 修改shiki官方的github-light主题
+ */
 const githubLightTheme: Exclude<ShikiConfig['theme'], undefined> = {
   name: 'github-light',
   type: 'light',
