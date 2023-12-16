@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/AboutLayout.astro
+layout: ../layouts/About.astro
 title: '关于我'
 ---
 
