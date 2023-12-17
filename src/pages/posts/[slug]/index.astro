@@ -8,6 +8,7 @@ import Footer from '@/components/Footer.astro';
 import Tag from '@/components/Tag.astro';
 import { SITE } from '@/config';
 import PostToc from '@/components/PostToc.astro';
+import MdArticle from '@/components/MdArticle.astro';
 
 export async function getStaticPaths() {
   const allBlogPosts = await getCollection('blog', ({ data }) => !data.draft);
@@ -43,9 +44,9 @@ const ogUrl = new URL(ogImageUrl ?? `${SITE.base}posts/${slugifyStr(title)}.png`
     <Datetime datetime={pubDatetime} size="lg" className="my-2" />
 
     <div class="relative mx-auto mt-8 max-w-3xl">
-      <article class="prose-wtto max-w-unset w-full prose">
+      <MdArticle>
         <Content />
-      </article>
+      </MdArticle>
       {headings.length > 0 && <PostToc data={headings} />}
     </div>
 
@@ -56,13 +57,3 @@ const ogUrl = new URL(ogImageUrl ?? `${SITE.base}posts/${slugifyStr(title)}.png`
 
   <Footer />
 </Layout>
-
-<script>
-  import execScripts from '@/utils/mdScripts';
-
-  execScripts();
-
-  document.addEventListener('astro:after-swap', () => {
-    execScripts();
-  });
-</script>

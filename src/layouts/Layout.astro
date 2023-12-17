@@ -1,16 +1,16 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
-import { SITE } from '@/config'
-import '@/style.css'
+import { ViewTransitions } from 'astro:transitions';
+import { SITE } from '@/config';
+import '@/style.css';
 
-const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION
+const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export interface Props {
-  title?: string
-  author?: string
-  description?: string | undefined
-  ogImage?: string
-  canonicalURL?: string | undefined
+  title?: string;
+  author?: string;
+  description?: string | undefined;
+  ogImage?: string;
+  canonicalURL?: string | undefined;
 }
 
 const {
@@ -18,48 +18,48 @@ const {
   author = SITE.author,
   description = SITE.desc,
   ogImage,
-  canonicalURL = new URL(Astro.url.pathname, Astro.site).href
-} = Astro.props
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+} = Astro.props;
 
-const socialImageURL = ogImage || new URL(SITE.base + 'og.png', Astro.url.origin).href
+const socialImageURL = ogImage || new URL(SITE.base + 'og.png', Astro.url.origin).href;
 ---
 
 <!doctype html>
-<html lang='zh-cmn-Hans' class="dark">
+<html lang="zh-cmn-Hans" class="dark">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href={`${SITE.base}favicon.svg`} />
-    <link rel='canonical' href={canonicalURL} />
-    <meta name='generator' content={Astro.generator} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href={`${SITE.base}favicon.svg`} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="generator" content={Astro.generator} />
 
     <!-- General Meta Tags -->
     <title>{title}</title>
-    <meta name='title' content={title} />
-    <meta name='description' content={description} />
-    <meta name='author' content={author} />
-    <link rel='sitemap' href={`${SITE.base}sitemap-index.xml`} />
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+    <link rel="sitemap" href={`${SITE.base}sitemap-index.xml`} />
 
     <!-- Open Graph / Facebook -->
-    <meta property='og:title' content={title} />
-    <meta property='og:description' content={description} />
-    <meta property='og:url' content={canonicalURL} />
-    <meta property='og:image' content={socialImageURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImageURL} />
 
     <!-- Twitter -->
-    <meta property='twitter:card' content='summary_large_image' />
-    <meta property='twitter:url' content={canonicalURL} />
-    <meta property='twitter:title' content={title} />
-    <meta property='twitter:description' content={description} />
-    <meta property='twitter:image' content={socialImageURL} />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={socialImageURL} />
 
-    <meta name='theme-color' content='' />
+    <meta name="theme-color" content="" />
 
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
       // include google-site-verification tag in the heading
       // Learn more: https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag
-      googleSiteVerification && <meta name='google-site-verification' content={googleSiteVerification} />
+      googleSiteVerification && <meta name="google-site-verification" content={googleSiteVerification} />
     }
 
     <ViewTransitions />
@@ -67,13 +67,14 @@ const socialImageURL = ogImage || new URL(SITE.base + 'og.png', Astro.url.origin
   <body>
     <slot />
     <script>
-      import { initTheme } from '@/utils/theme'
-
-      initTheme()
-
+      import { initTheme } from '@/utils/theme';
+      
+      initTheme();
+      
+      // 每个页面都会执行
       document.addEventListener('astro:after-swap', () => {
-        initTheme()
-      })
+        initTheme();
+      });
     </script>
   </body>
 </html>

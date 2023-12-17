@@ -1,27 +1,28 @@
 ---
-import Header from '@/components/Header.astro'
-import Layout from './Layout.astro'
-import Footer from '@/components/Footer.astro'
-import { SITE } from '@/config'
+import Header from '@/components/Header.astro';
+import Layout from './Layout.astro';
+import Footer from '@/components/Footer.astro';
+import { SITE } from '@/config';
+import MdArticle from '@/components/MdArticle.astro';
 
 interface Props {
   frontmatter: {
-    title: string
-    description?: string
-  }
+    title: string;
+    description?: string;
+  };
 }
 
-const { frontmatter } = Astro.props
+const { frontmatter } = Astro.props;
 ---
 
 <Layout title={`${frontmatter.title} | ${SITE.title}`} description={frontmatter.description}>
-  <Header activeNav='about' />
+  <Header activeNav="about" />
 
-  <main>
-    <section class='prose-wtto mb-28 max-w-3xl prose'>
-      <h1 class='text-2xl tracking-wider sm:text-3xl'>{frontmatter.title}</h1>
+  <main class="mx-auto max-w-3xl w-full px-4 pb-12">
+    <MdArticle>
+      <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
       <slot />
-    </section>
+    </MdArticle>
   </main>
 
   <Footer />

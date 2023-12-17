@@ -35,7 +35,7 @@ export default defineConfig<Theme>({
           '--uno': 'b-b-0',
         },
         ':not(pre) > code': {
-          '--uno': 'bg-card bg-op-75 before:hidden after:hidden p-1 rd-1 text-sm',
+          '--uno': 'bg-card bg-op-75 before:hidden after:hidden p-1 rd-1 text-sm v-mid',
         },
       },
     }),

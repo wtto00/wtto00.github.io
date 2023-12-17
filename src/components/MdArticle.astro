@@ -1,0 +1,18 @@
+<astro-article class="prose-wtto max-w-unset w-full prose">
+  <slot />
+</astro-article>
+
+<script>
+  import { addCopyCodeBtn, headLinkCopy } from '@/utils/mdScripts';
+
+  class AstroArticle extends HTMLElement {
+    constructor() {
+      super();
+
+      addCopyCodeBtn();
+      headLinkCopy();
+    }
+  }
+
+  customElements.define('astro-article', AstroArticle);
+</script>
