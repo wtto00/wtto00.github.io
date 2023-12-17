@@ -1,0 +1,18 @@
+---
+interface Props {
+  slug: string;
+  text: string;
+  index: string | number;
+}
+
+const { slug, text, index } = Astro.props;
+---
+
+<span
+  title={text}
+  aria-hidden={false}
+  class={`op-50 hover:op-100 truncate text-sm inline-block max-w-full cursor-pointer c-base post-toc-item`}
+  data-id={slug}
+>
+  {index}. {text}
+</span>

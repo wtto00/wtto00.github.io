@@ -1,6 +1,6 @@
 ---
 import type { ListItem } from './PostToc.astro';
-import PostTocItem from './PostTocItem';
+import PostTocItem from './PostTocItem.astro';
 
 interface Props {
   parent?: string | number;
@@ -18,7 +18,6 @@ const { data, parent } = Astro.props;
           slug={item.slug}
           text={item.text}
           index={parent ? `${parent}.${index + 1}` : index + 1}
-          client:only="solid-js"
         />
         {item.children.length > 0 && (
           <Astro.self data={item.children} parent={parent ? `${parent}.${index + 1}` : index + 1} />
