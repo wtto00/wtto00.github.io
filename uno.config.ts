@@ -1,12 +1,41 @@
 import { defineConfig, presetIcons, presetTypography, presetUno } from 'unocss';
+import type { Theme } from '@unocss/preset-uno';
 import presetTheme from 'unocss-preset-theme';
 import transformerVariantGroup from '@unocss/transformer-variant-group';
 import transformerDirectives from '@unocss/transformer-directives';
+import { colorAddOpacity } from './scripts/uno-utils';
 
-export default defineConfig({
+export default defineConfig<Theme>({
   presets: [
     presetUno({ preflight: false }),
-    presetTypography(),
+    presetTypography({
+      cssExtend: {
+        a: {
+          '--uno': 'decoration-dashed underline-offset-8 break-words hover:c-accent',
+        },
+        img: {
+          '--uno': 'b-2 b-brd mx-auto mt-2 mb-2em',
+        },
+        'ol,ul': {
+          '--uno': 'pl-10',
+        },
+        table: {
+          '--uno': 'border-spacing-0 border-collapse block w-[max-content] max-w-full overflow-auto',
+        },
+        th: {
+          '--uno': 'font-semibold',
+        },
+        'td,th': {
+          '--uno': 'b-brd b-1',
+        },
+        'td > img, th > img': {
+          '--uno': 'm-0',
+        },
+        hr: {
+          '--uno': 'b-b-0',
+        },
+      },
+    }),
     presetIcons({
       cdn: 'https://esm.sh/',
       customizations: {
@@ -37,8 +66,7 @@ export default defineConfig({
         },
       },
     }),
-    // @ts-expect-error: version not equal, so theme type error
-    presetTheme({
+    presetTheme<Theme>({
       selectors: { dark: ':root.dark' },
       theme: {
         dark: {
@@ -105,4 +133,20 @@ export default defineConfig({
     },
   },
   transformers: [transformerVariantGroup(), transformerDirectives()],
+  preflights: [
+    {
+      layer: 'typography',
+      getCSS: ({ theme }) => `.prose-wtto{
+        --un-prose-body: ${theme.colors?.base};
+        --un-prose-headings: ${theme.colors?.base};
+        --un-prose-links: ${theme.colors?.base};
+        --un-prose-lists: ${theme.colors?.base};
+        --un-prose-hr: ${colorAddOpacity(theme.colors?.base, 0.2)};
+        --un-prose-captions: ${theme.colors?.base};
+        --un-prose-code: ${theme.colors?.base};
+        --un-prose-borders: ${theme.colors?.brd};
+        --un-prose-bg-soft: ${theme.colors?.fill};
+      }`,
+    },
+  ],
 });

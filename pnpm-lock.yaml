@@ -73,6 +73,9 @@ devDependencies:
   '@unocss/preset-typography':
     specifier: ^0.57.7
     version: 0.57.7
+  '@unocss/preset-uno':
+    specifier: ^0.57.7
+    version: 0.57.7
   '@unocss/reset':
     specifier: ^0.57.7
     version: 0.57.7

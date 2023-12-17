@@ -43,7 +43,7 @@ const ogUrl = new URL(ogImageUrl ?? `${SITE.base}posts/${slugifyStr(title)}.png`
     <Datetime datetime={pubDatetime} size="lg" className="my-2" />
 
     <div class="relative mx-auto mt-8 max-w-3xl">
-      <article class="max-w-unset w-full prose">
+      <article class="prose-wtto max-w-unset w-full prose">
         <Content />
       </article>
       {headings.length > 0 && <PostToc data={headings} />}
