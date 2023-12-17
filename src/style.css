@@ -79,6 +79,6 @@ a {
   --at-apply: px-2 op-0 group-hover:op-80;
 }
 .head-copy-label {
-  --at-apply: text-sm c-accent;
+  --at-apply: text-sm c-accent v-mid;
 }
 /* --------------------------------- markdown head link End --------------------------------- */

@@ -16,7 +16,9 @@ export interface ListItem {
 }
 const list: ListItem[] = [];
 
-function treeTocList(treeList: ListItem[], item: MarkdownHeading): ListItem[] {
+function treeTocList(treeList: ListItem[], item: MarkdownHeading, depth: number = 0): ListItem[] {
+  // 最多三级
+  if (depth > 2) return treeList;
   if (treeList.length === 0) {
     treeList.push({
       depth: item.depth,
@@ -36,7 +38,7 @@ function treeTocList(treeList: ListItem[], item: MarkdownHeading): ListItem[] {
     });
     return treeList;
   }
-  lastItem.children = treeTocList(lastItem.children, item);
+  lastItem.children = treeTocList(lastItem.children, item, depth + 1);
   return treeList;
 }
 
@@ -45,7 +47,7 @@ data.forEach((item) => {
 });
 ---
 
-<div class="absolute left-full top-0 hidden h-full max-w-200 pl-10 lg:block">
+<div class="absolute left-full top-0 hidden h-full max-w-200 w-[calc(50vw-24rem)] pl-10 lg:block">
   <div class="sticky top-14 w-full truncate text-sm lh-loose">
     <PostTocList data={list} />
   </div>

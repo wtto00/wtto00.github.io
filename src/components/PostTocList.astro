@@ -3,14 +3,14 @@ import type { ListItem } from './PostToc.astro';
 import PostTocItem from './PostTocItem';
 
 interface Props {
-  parent?: number;
+  parent?: string | number;
   data: ListItem[];
 }
 
 const { data, parent } = Astro.props;
 ---
 
-<ol class="max-h-65vh w-full overflow-y-auto" class:list={{ 'ml-1em': parent }}>
+<ol class="max-h-65vh overflow-y-auto" class:list={[parent ? 'ml-1em' : '']}>
   {
     data.map((item, index) => (
       <li class="w-full">
@@ -20,7 +20,9 @@ const { data, parent } = Astro.props;
           index={parent ? `${parent}.${index + 1}` : index + 1}
           client:only="solid-js"
         />
-        {item.children.length > 0 && <Astro.self data={item.children} parent={index + 1} />}
+        {item.children.length > 0 && (
+          <Astro.self data={item.children} parent={parent ? `${parent}.${index + 1}` : index + 1} />
+        )}
       </li>
     ))
   }
