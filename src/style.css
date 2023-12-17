@@ -67,7 +67,7 @@ a {
   --at-apply: relative;
 }
 .copy-code {
-  --at-apply: absolute top-0 right-0 bg-card px-2 py-1 text-xs c-base rd-tr-6px hover: bg-card-muted;
+  --at-apply: absolute top-0 right-0 bg-card px-2 py-1 text-xs c-base rd-tr-6px hover-bg-card-muted;
 }
 /* --------------------------------- code copy button End --------------------------------- */
 

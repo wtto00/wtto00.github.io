@@ -3,7 +3,7 @@ import { getCollection, getEntry } from 'astro:content';
 import slugify, { slugifyStr } from '@/utils/slugify';
 import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
-import Datetime from '@/components/Datetime.astro';
+import SubTitle from '@/components/SubTitle.astro';
 import Footer from '@/components/Footer.astro';
 import Tag from '@/components/Tag.astro';
 import { SITE } from '@/config';
@@ -41,7 +41,7 @@ const ogUrl = new URL(ogImageUrl ?? `${SITE.base}posts/${slugifyStr(title)}.png`
   <main class="mx-auto max-w-3xl w-full px-4 pb-12">
     <h1 transition:name={encodeURIComponent(slugifyStr(title))} class="text-2xl font-semibold c-accent">{title}</h1>
 
-    <Datetime datetime={pubDatetime} size="lg" className="my-2" />
+    <SubTitle datetime={pubDatetime} size="lg" className="my-2" title={title} />
 
     <div class="relative mx-auto mt-8 max-w-3xl">
       <MdArticle>
@@ -50,7 +50,7 @@ const ogUrl = new URL(ogImageUrl ?? `${SITE.base}posts/${slugifyStr(title)}.png`
       {headings.length > 0 && <PostToc data={headings} />}
     </div>
 
-    <ul class="my-8">
+    <ul class="mt-8">
       {labels.map((tag) => <Tag name={slugifyStr(tag)} />)}
     </ul>
   </main>
