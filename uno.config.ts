@@ -11,7 +11,7 @@ export default defineConfig<Theme>({
     presetTypography({
       cssExtend: {
         a: {
-          '--uno': 'decoration-dashed underline-offset-8 break-words hover:c-accent',
+          '--uno': 'decoration-dashed underline-offset-8 break-words hover:c-accent mx-1',
         },
         img: {
           '--uno': 'b-2 b-brd mx-auto mt-2 mb-2em',
@@ -33,6 +33,9 @@ export default defineConfig<Theme>({
         },
         hr: {
           '--uno': 'b-b-0',
+        },
+        ':not(pre) > code': {
+          '--uno': 'bg-card bg-op-75 before:hidden after:hidden p-1 rd-1 text-sm',
         },
       },
     }),
@@ -136,7 +139,7 @@ export default defineConfig<Theme>({
   preflights: [
     {
       layer: 'typography',
-      getCSS: ({ theme }) => `.prose-wtto{
+      getCSS: ({ theme }) => `.prose-wtto {
         --un-prose-body: ${theme.colors?.base};
         --un-prose-headings: ${theme.colors?.base};
         --un-prose-links: ${theme.colors?.base};
