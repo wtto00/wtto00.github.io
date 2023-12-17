@@ -138,6 +138,23 @@ export default defineConfig<Theme>({
   transformers: [transformerVariantGroup(), transformerDirectives()],
   preflights: [
     {
+      layer: 'root',
+      getCSS: () => `:root {
+        --un-translate-x: 0;
+        --un-translate-y: 0;
+        --un-translate-z: 0;
+        --un-rotate: 0;
+        --un-rotate-x: 0;
+        --un-rotate-y: 0;
+        --un-rotate-z: 0;
+        --un-skew-x: 0;
+        --un-skew-y: 0;
+        --un-scale-x: 1;
+        --un-scale-y: 1;
+        --un-scale-z: 1;
+      }`,
+    },
+    {
       layer: 'typography',
       getCSS: ({ theme }) => `.prose-wtto {
         --un-prose-body: ${theme.colors?.base};
