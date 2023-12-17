@@ -5,7 +5,7 @@ import transformerDirectives from '@unocss/transformer-directives';
 
 export default defineConfig({
   presets: [
-    presetUno(),
+    presetUno({ preflight: false }),
     presetTypography(),
     presetIcons({
       cdn: 'https://esm.sh/',
