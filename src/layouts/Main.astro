@@ -20,7 +20,7 @@ const { props } = Astro
     'titleTransition' in props ? (
       <h1 class='text-2xl font-semibold sm:text-3xl'>
         {props.pageTitle[0]}
-        <span transition:name={props.titleTransition}>{props.pageTitle[1]}</span>
+        <span transition:name={encodeURIComponent(props.titleTransition)}>{props.pageTitle[1]}</span>
       </h1>
     ) : (
       <h1 class="text-2xl font-semibold tracking-wider sm:text-3xl">{props.pageTitle}</h1>

@@ -44,7 +44,7 @@ const sortTagsPost = getSortedPosts(tagPosts);
     titleTransition={tag}
     pageDesc={`标签包含 "${tag}" 的所有文章：`}
   >
-    <h1 slot="title" transition:name={tag}>{`标签: ${tag}`}</h1>
+    <h1 slot="title" transition:name={encodeURIComponent(tag)}>{`标签: ${tag}`}</h1>
     <ul>
       {
         sortTagsPost.map(({ data }) => (

@@ -38,7 +38,7 @@ const ogUrl = new URL(ogImageUrl ?? `${SITE.base}posts/${slugifyStr(title)}.png`
   </div>
 
   <main class="mx-auto max-w-3xl w-full px-4 pb-12">
-    <h1 transition:name={slugifyStr(title)} class="text-2xl font-semibold c-accent">{title}</h1>
+    <h1 transition:name={encodeURIComponent(slugifyStr(title))} class="text-2xl font-semibold c-accent">{title}</h1>
 
     <Datetime datetime={pubDatetime} size="lg" className="my-2" />
 
