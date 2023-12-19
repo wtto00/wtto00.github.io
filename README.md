@@ -8,7 +8,9 @@
 - [x] 阅读时的回到顶部按钮
 - [x] 文章在宽屏时，展示一张二维码图片，可以让用户手机扫码在移动端观看
 - [ ] Github CI 部署
-- [ ] pre-commit 自动更新相关联的 issue
+- [ ] pre-commit 自动更新/创建相关联的 issue
+- [ ] pre-commit 自动更新发布日期pubDatetime，注意draft字段
+- [ ] 去掉作者字段
 - [ ] 文章尾部添加版权说明，参考 <https://luolei.org/what-i-use-chrome-extension-2023#chrome-%E6%8F%92%E4%BB%B6-%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95>
 - [ ] 文章链接到 Github 源文件以及相关联的 issue
 - [ ] 归档按照日期，只显示标题，单页显示全部
