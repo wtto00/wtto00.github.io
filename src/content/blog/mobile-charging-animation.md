@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2022-04-07T03:15:28.000Z
 title: 利用CSS制作手机充电动画
 postSlug: mobile-charging-animation
@@ -9,7 +8,7 @@ labels:
   - CSS
 description: 利用CSS制作手机充电动画
 issue_number: 33
-updateTime: 2023-12-16T15:25:39.952Z
+updateTime: 2023-12-21T16:14:55.695Z
 ---
 
 ![CSS充电动画](../../assets/images/mobile-charging-animation.gif)

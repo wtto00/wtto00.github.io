@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2022-12-01T18:27:41.000Z
 title: UI组件库整理
 postSlug: ui-component-library-compilation
@@ -9,7 +8,7 @@ labels:
   - Javascript
 description: UI组件库整理
 issue_number: 39
-updateTime: 2023-12-16T15:25:39.962Z
+updateTime: 2023-12-21T16:14:55.720Z
 ---
 
 ## Vue3

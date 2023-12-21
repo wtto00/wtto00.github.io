@@ -80,7 +80,7 @@ export default (post: CollectionEntry<'blog'>) => {
               >
                 "
               </span>
-              <span style={{ overflow: 'hidden', 'font-weight': 'bold' }}>{post.data.author}</span>
+              <span style={{ overflow: 'hidden', 'font-weight': 'bold' }}>{SITE.author}</span>
             </span>
 
             <span style={{ overflow: 'hidden', 'font-weight': 'bold' }}>{SITE.title}</span>

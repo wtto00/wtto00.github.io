@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2021-01-26T07:32:00.000Z
 title: Linux 查看端口占用情况
 postSlug: view-port-occupancy-on-linux
@@ -9,7 +8,7 @@ labels:
   - Linux
 description: Linux 查看端口占用情况可以使用 lsof 和 netstat 命令。
 issue_number: 12
-updateTime: 2023-12-16T15:45:49.492Z
+updateTime: 2023-12-21T16:14:55.746Z
 ---
 
 Linux 查看端口占用情况可以使用 lsof 和 netstat 命令。

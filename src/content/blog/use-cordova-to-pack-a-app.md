@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2023-05-14T12:27:36.000Z
 title: cordova准备工作
 postSlug: use-cordova-to-pack-a-app
@@ -9,7 +8,7 @@ labels:
   - Javascript
 description: cordova准备工作
 issue_number: 44
-updateTime: 2023-12-16T15:25:39.964Z
+updateTime: 2023-12-21T16:14:55.741Z
 ---
 
 如果已经有一个 H5 的前端项目，怎么使用 [cordova](https://cordova.apache.org/) 包装成移动端 APP 呢？

@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2022-06-07T09:50:27.000Z
 title: 浏览器视频播放方案
 postSlug: video-play-on-web
@@ -10,7 +9,7 @@ labels:
   - Video
 description: '浏览器视频播放方案: m3u8/mp4/flv/http-flv/webrtc'
 issue_number: 35
-updateTime: 2023-12-16T15:25:39.965Z
+updateTime: 2023-12-21T16:14:55.744Z
 ---
 
 ## 解决方案

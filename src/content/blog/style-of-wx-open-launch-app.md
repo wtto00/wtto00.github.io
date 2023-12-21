@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2021-01-22T03:47:00.000Z
 title: 微信 H5 开放标签 <wx-open-launch-app> 打开 APP，打开小程序，样式问题
 postSlug: style-of-wx-open-launch-app
@@ -9,7 +8,7 @@ labels:
   - 微信
 description: 微信 H5 开放标签 <wx-open-launch-app> 打开 APP，打开小程序，样式问题
 issue_number: 5
-updateTime: 2023-12-16T15:45:49.489Z
+updateTime: 2023-12-21T16:14:55.705Z
 ---
 
 官当文档 <https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_Open_Tag.html>

@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2021-01-23T16:11:00.000Z
 title: Floccus – 跨浏览器收藏夹同步插件
 postSlug: floccus-cross-browser-bookmark-syncing-plugin
@@ -9,7 +8,7 @@ labels:
   - 电脑相关
 description: 使用 Floccus 浏览器插件，实现跨浏览器收藏夹同步插件。通过坚果云 WebDAV 协议来同步浏览器书签
 issue_number: 11
-updateTime: 2023-12-16T15:45:49.480Z
+updateTime: 2023-12-21T16:14:55.689Z
 ---
 
 Floccus 浏览插件是一款能够实现跨浏览器进行书签同步的浏览插件。  

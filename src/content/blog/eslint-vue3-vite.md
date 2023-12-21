@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2021-08-10T12:40:00.000Z
 title: Vite+Vue3中使用Eslint
 postSlug: eslint-vue3-vite
@@ -9,7 +8,7 @@ labels:
   - Eslint
 description: Vite+Vue3中使用Eslint
 issue_number: 21
-updateTime: 2023-12-16T15:45:49.479Z
+updateTime: 2023-12-21T16:14:55.688Z
 ---
 
 ## Install

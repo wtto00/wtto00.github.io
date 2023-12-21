@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2023-04-01T13:16:20.000Z
 title: node resolve module not working when using link path
 postSlug: node-resolve-module-not-working-when-using-link-path
@@ -9,7 +8,7 @@ labels:
   - Javascript
 description: node resolve module not working when using link path
 issue_number: 42
-updateTime: 2023-12-16T15:25:39.954Z
+updateTime: 2023-12-21T16:14:55.696Z
 ---
 
 ## Failed to resolve module specifier “vue”

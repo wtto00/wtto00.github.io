@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2021-11-25T10:13:13.000Z
 title: Eslint+Stylelint+Prettier+Husky+lint-staged项目规范
 postSlug: eslint-stylelint-prettier-husky-lint-staged
@@ -9,7 +8,7 @@ labels:
   - Eslint
 description: Eslint+Stylelint+Prettier+Husky+lint-staged项目规范
 issue_number: 26
-updateTime: 2023-12-16T15:25:39.926Z
+updateTime: 2023-12-21T16:14:55.687Z
 ---
 
 ## **Eslint**

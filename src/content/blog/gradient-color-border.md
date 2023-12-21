@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2021-11-18T03:09:48.000Z
 title: 利用CSS怎么创建渐变色边框？
 postSlug: gradient-color-border
@@ -9,7 +8,7 @@ labels:
   - CSS
 description: 利用CSS怎么创建渐变色边框？
 issue_number: 25
-updateTime: 2023-12-16T15:25:39.931Z
+updateTime: 2023-12-21T16:14:55.690Z
 ---
 
 利用 CSS 怎么创建渐变色边框？下面本篇文章给大家分享 CSS 实现渐变色边框的 5 种方法，希望对大家有所帮助！

@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2023-05-29T02:25:11.000Z
 title: Linux的gnome桌面管理底部Dock bar
 postSlug: control-gnome-dock-bar-on-linux
@@ -11,7 +10,7 @@ description: >-
   Linux的gnome桌面管理底部Dock bar: gnome-shell-extension-dash-to-dock
   gnome-extensions-app gnome-shell-extension-prefs
 issue_number: 47
-updateTime: 2023-12-16T15:25:39.917Z
+updateTime: 2023-12-21T16:14:55.670Z
 ---
 
 ## 安装 Dash-to-Dock 扩展

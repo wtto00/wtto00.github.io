@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2023-05-14T12:27:04.000Z
 title: Windows下使用Git-Bash日常开发
 postSlug: use-git-bash-on-windows
@@ -9,7 +8,7 @@ labels:
   - Shell
 description: Windows下使用Git-Bash日常开发
 issue_number: 43
-updateTime: 2023-12-16T15:25:39.964Z
+updateTime: 2023-12-21T16:14:55.741Z
 ---
 
 参考[知乎：Windows 下的 Git Bash 配置，提升你的终端操作体验](https://zhuanlan.zhihu.com/p/418321777)

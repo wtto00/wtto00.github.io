@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2022-11-16T12:16:16.000Z
 title: WSL2设置局域网访问
 postSlug: setting-up-lan-access-for-wsl2
@@ -9,7 +8,7 @@ labels:
   - WSL
 description: WSL2设置局域网访问
 issue_number: 38
-updateTime: 2023-12-21T16:08:41.563Z
+updateTime: 2023-12-21T16:14:55.704Z
 ---
 
 1. **首先查询 WSL2 中的 IP**

@@ -7,7 +7,6 @@ const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export interface Props {
   title?: string;
-  author?: string;
   description?: string | undefined;
   ogImage?: string;
   canonicalURL?: string | undefined;
@@ -15,7 +14,6 @@ export interface Props {
 
 const {
   title = SITE.title,
-  author = SITE.author,
   description = SITE.desc,
   ogImage,
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
@@ -37,7 +35,7 @@ const socialImageURL = ogImage || new URL(SITE.base + 'og.png', Astro.url.origin
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="author" content={author} />
+    <meta name="author" content={SITE.author} />
     <link rel="sitemap" href={`${SITE.base}sitemap-index.xml`} />
 
     <!-- Open Graph / Facebook -->

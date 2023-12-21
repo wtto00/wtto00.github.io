@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2023-06-17T12:58:15.000Z
 title: 暗黑模式切换、跟随系统、扩散动画
 postSlug: dark-mode-spread-animation
@@ -9,7 +8,7 @@ labels:
   - CSS
 description: 暗黑模式切换、跟随系统、扩散动画：startViewTransition
 issue_number: 48
-updateTime: 2023-12-16T15:25:39.920Z
+updateTime: 2023-12-21T16:14:55.673Z
 ---
 
 [示例 CodePen](https://codepen.io/wtto00/pen/XWydaZx)

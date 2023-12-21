@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2023-05-26T09:52:29.000Z
 title: clip-path 和 drop-shadow 生成自定义图形、阴影
 postSlug: custom-shapes-shadows-by-clip-path-and-drop-shadow
@@ -9,7 +8,7 @@ labels:
   - CSS
 description: clip-path 和 drop-shadow 生成自定义图形、阴影
 issue_number: 46
-updateTime: 2023-12-16T15:25:39.919Z
+updateTime: 2023-12-21T16:14:55.672Z
 ---
 
 [CodePen](https://codepen.io/wtto00/pen/NWOJVbe?editors=1100)

@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2023-12-05T14:05:54.230Z
 title: 在 Fedora 中安装VirtualBox Guest Additions服务
 postSlug: install-virtualbox-guest-additions-in-fedora
@@ -12,7 +11,7 @@ description: >-
   for /opt/VBoxGuestAdditions-6.0.18/other/mount.vboxsf already
   defined。共享文件夹的权限无法访问的解决办法。
 issue_number: 50
-updateTime: 2023-12-16T15:25:39.947Z
+updateTime: 2023-12-21T16:14:55.692Z
 ---
 
 ## 首先安装依赖

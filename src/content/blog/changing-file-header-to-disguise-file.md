@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2022-06-28T18:08:15.000Z
 title: 通过修改文件头来伪装文件
 postSlug: changing-file-header-to-disguise-file
@@ -9,7 +8,7 @@ labels:
   - Javascript
 description: 通过修改文件头来伪装文件
 issue_number: 36
-updateTime: 2023-12-16T15:25:39.912Z
+updateTime: 2023-12-21T16:14:55.651Z
 ---
 
 ## 获取文件真实类型

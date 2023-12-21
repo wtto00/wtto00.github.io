@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2022-08-25T06:35:23.000Z
 title: css实现3D立方体旋转
 postSlug: rotating-3d-cube
@@ -9,7 +8,7 @@ labels:
   - CSS
 description: css实现3D立方体旋转
 issue_number: 37
-updateTime: 2023-12-21T16:08:41.561Z
+updateTime: 2023-12-21T16:14:55.703Z
 ---
 
 [codepen](https://codepen.io/wtto00/pen/LYdoPaQ?editors=1100)

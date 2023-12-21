@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2023-12-09T07:23:02.777Z
 title: MacOS下，一条命令设置全局系统代理
 postSlug: one-command-to-set-system-proxy-in-macos
@@ -12,7 +11,7 @@ description: >-
   https 代理：networksetup -setsecurewebproxy networkservices address port. 设置系统
   socks 代理：networksetup -setsocksfirewallproxy networkservices address port.
 issue_number: 51
-updateTime: 2023-12-16T15:25:39.955Z
+updateTime: 2023-12-21T16:14:55.697Z
 ---
 
 办公室里的一台电脑，运行了代理软件，连接同一个局域网的其他电脑想要使用这个代理来上网。

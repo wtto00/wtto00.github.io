@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2022-01-27T13:31:33.000Z
 title: 调用微信JSSDK上传图片
 postSlug: upload-image-by-wechat-jssdk
@@ -9,7 +8,7 @@ labels:
   - 微信
 description: 调用微信JSSDK上传图片
 issue_number: 29
-updateTime: 2023-12-16T15:25:39.963Z
+updateTime: 2023-12-21T16:14:55.740Z
 ---
 
 ```javascript

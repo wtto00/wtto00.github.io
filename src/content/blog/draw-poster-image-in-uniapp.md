@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2021-12-15T10:05:45.000Z
 title: uniapp利用canvas在小程序上面生成图片
 postSlug: draw-poster-image-in-uniapp
@@ -9,7 +8,7 @@ labels:
   - uniapp
 description: uniapp利用canvas在小程序上面生成图片
 issue_number: 27
-updateTime: 2023-12-16T15:25:39.925Z
+updateTime: 2023-12-21T16:14:55.686Z
 ---
 
 ## JS 逻辑代码

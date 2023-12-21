@@ -1,5 +1,4 @@
 ---
-author: wtto00
 pubDatetime: 2022-05-18T15:32:41.000Z
 title: 下载页面上的canvas
 postSlug: download-canvas-on-any-website
@@ -9,7 +8,7 @@ labels:
   - Javascript
 description: 下载页面上的canvas
 issue_number: 34
-updateTime: 2023-12-16T15:25:39.924Z
+updateTime: 2023-12-21T16:14:55.683Z
 ---
 
 ## JS 脚本下载 canvas 为本地图片
