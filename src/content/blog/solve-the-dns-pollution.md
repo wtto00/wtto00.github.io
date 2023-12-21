@@ -2,14 +2,14 @@
 author: wtto00
 pubDatetime: 2021-11-18T03:09:48.000Z
 title: 怎么解决国内 DNS 污染导致的某些站点访问失败
-postSlug: solve-the-DNS-pollution
+postSlug: solve-the-dns-pollution
 featured: false
 draft: false
 labels:
   - 电脑相关
 description: 通过修改 Hosts 解决一些国外站点由于国内 DNS 污染导致的访问失败。
 issue_number: 1
-updateTime: 2023-12-16T15:25:39.959Z
+updateTime: 2023-12-21T16:08:41.580Z
 ---
 
 ## 获取正确地 IP 地址
