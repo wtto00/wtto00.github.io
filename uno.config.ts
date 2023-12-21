@@ -10,6 +10,9 @@ export default defineConfig<Theme>({
     presetUno({ preflight: false }),
     presetTypography({
       cssExtend: {
+        h2: {
+          '--uno': 'mt-8',
+        },
         a: {
           '--uno': 'decoration-dashed underline-offset-8 break-words hover:c-accent mx-1',
         },

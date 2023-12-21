@@ -42,7 +42,7 @@ export default defineConfig({
             type: 'element',
             tagName: 'i',
             properties: {
-              className: 'h-4 w-4 i-ri:links-fill inline-block',
+              className: 'h-4 w-4 i-ri:links-fill inline-block v-mid',
             },
             children: [],
           },

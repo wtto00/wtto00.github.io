@@ -1,5 +1,6 @@
 {
-  "name": "blog-next",
+  "name": "blog",
+  "displayName": "Blog",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
