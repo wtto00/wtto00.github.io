@@ -3,10 +3,11 @@
   "displayName": "Blog",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@8.21.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint --color --fix . && zhlint --fix \"{,!(node_modules)/**/}*.md\"",
@@ -59,7 +60,8 @@
   },
   "lint-staged": {
     "*": [
-      "prettier --write --ignore-unknown"
+      "prettier --write --ignore-unknown",
+      "astro check"
     ],
     "*.{js,mjs,jsx,ts,mts,tsx,astro}": [
       "eslint --fix"

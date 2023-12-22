@@ -60,7 +60,7 @@ const socialCount = SOCIALS.filter((social) => social.active).length
             <h2 class='text-2xl font-semibold tracking-wide'>推荐</h2>
             <ul>
               {featuredPosts.map(({ data }) => (
-                <Card href={`${SITE.base}posts/${slugify(data)}`} frontmatter={data} secHeading={false} />
+                <Card href={`/posts/${slugify(data)}`} frontmatter={data} secHeading={false} />
               ))}
             </ul>
           </section>
@@ -78,13 +78,13 @@ const socialCount = SOCIALS.filter((social) => social.active).length
             .map(
               ({ data }, index) =>
                 index < SITE.postPerPage && (
-                  <Card href={`${SITE.base}posts/${slugify(data)}`} frontmatter={data} secHeading={false} />
+                  <Card href={`/posts/${slugify(data)}`} frontmatter={data} secHeading={false} />
                 )
             )
         }
       </ul>
       <div class='my-8 text-center'>
-        <LinkButton href={`${SITE.base}posts`}>
+        <LinkButton href={`/posts`}>
           查看所有
           <i class='i-custom-arrow-right text-2xl'></i>
         </LinkButton>

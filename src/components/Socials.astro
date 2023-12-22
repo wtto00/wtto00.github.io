@@ -1,5 +1,5 @@
 ---
-import { SITE, SOCIALS } from '@/config'
+import { SOCIALS } from '@/config'
 import LinkButton from './LinkButton.astro'
 
 export interface Props {
@@ -23,7 +23,7 @@ const socialIcons: Record<string, string> = {
     ))
   }
   <LinkButton
-    href={`${SITE.base}rss.xml`}
+    href={`/rss.xml`}
     className='p-2 text-0 hover:rotate-6 sm:p-1'
     aria-label='rss feed'
     title='RSS Feed'

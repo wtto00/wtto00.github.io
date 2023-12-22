@@ -1,4 +1,3 @@
-import { SITE } from '@/config';
 import { children, type JSXElement } from 'solid-js';
 
 interface Props {
@@ -15,7 +14,7 @@ export default function NavMenuItem(props: Props) {
   return (
     <li class={`flex items-center justify-center ${props.spanSingle ? 'col-span-1' : 'col-span-2'}`}>
       <a
-        href={`${SITE.base}${props.route}`}
+        href={`/${props.route}`}
         classList={{
           'underline decoration-wavy decoration-2 underline-offset-4': props.active,
         }}

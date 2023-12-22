@@ -76,7 +76,7 @@ export default () => {
               'font-size': '28px',
             }}
           >
-            <span style={{ overflow: 'hidden', 'font-weight': 'bold' }}>{new URL(SITE.base, SITE.website).href}</span>
+            <span style={{ overflow: 'hidden', 'font-weight': 'bold' }}>{new URL('/', SITE.website).href}</span>
           </div>
         </div>
       </div>

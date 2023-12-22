@@ -1,6 +1,5 @@
 type Site = {
   website: string;
-  base: string;
   author: string;
   desc: string;
   title: string;
@@ -8,8 +7,7 @@ type Site = {
 };
 
 export const SITE: Site = {
-  website: 'https://wtto00.github.io/',
-  base: '/Blog/',
+  website: 'https://wtto00.github.io',
   author: 'wtto',
   desc: 'Record some issues encountered in daily work.',
   title: "WTTO'S BLOG",
