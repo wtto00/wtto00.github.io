@@ -3,7 +3,7 @@ import { ViewTransitions } from 'astro:transitions';
 import { SITE } from '@/config';
 import '@/style.css';
 
-const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+const googleSiteVerification = process.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export interface Props {
   title?: string;
