@@ -47,6 +47,8 @@ jobs:
         run: pnpm install
 
       - name: Build site
+        env:
+          PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ secrets.PUBLIC_GOOGLE_SITE_VERIFICATION }}
         run: pnpm build
 
       - name: Upload artifact
