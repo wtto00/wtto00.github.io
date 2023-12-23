@@ -8,7 +8,7 @@ labels:
   - Mac
 description: 使用VS Code自带的命令，或者把code可执行文件添加到PATH中。或者把打开VS Code的命令alias为code命令。
 pubDatetime: 2023-12-19T14:01:36.337Z
-updateTime: 2023-12-21T16:14:55.698Z
+updateTime: 2023-12-23T16:18:19.580Z
 ---
 
 在 [VS Code](https://code.visualstudio.com/) 下载安装后，在终端中，`code .` 不能让 VS Code 打开当前目录。有以下几种解决办法：
@@ -24,7 +24,7 @@ updateTime: 2023-12-21T16:14:55.698Z
 在 `~/.zshrc` 或 `~/.zprofile` 文件中添加以下内容
 
 ```shell
-# Add Visual Studio Code (code)ß
+# Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 ```
 
