@@ -8,40 +8,7 @@ import { colorAddOpacity } from './scripts/uno-utils';
 export default defineConfig<Theme>({
   presets: [
     presetUno({ preflight: false }),
-    presetTypography({
-      cssExtend: {
-        h2: {
-          '--uno': 'mt-8',
-        },
-        a: {
-          '--uno': 'decoration-dashed underline-offset-8 break-words hover:c-accent mx-1',
-        },
-        img: {
-          '--uno': 'b-2 b-brd mx-auto mt-2 mb-2em',
-        },
-        'ol,ul': {
-          '--uno': 'pl-10',
-        },
-        table: {
-          '--uno': 'border-spacing-0 border-collapse block w-[max-content] max-w-full overflow-auto',
-        },
-        th: {
-          '--uno': 'font-semibold',
-        },
-        'td,th': {
-          '--uno': 'b-brd b-1',
-        },
-        'td > img, th > img': {
-          '--uno': 'm-0',
-        },
-        hr: {
-          '--uno': 'b-b-0',
-        },
-        ':not(pre) > code': {
-          '--uno': 'bg-card bg-op-75 before:hidden after:hidden p-1 rd-1 text-sm v-mid whitespace-pre-line',
-        },
-      },
-    }),
+    presetTypography(),
     presetIcons({
       cdn: 'https://esm.sh/',
       customizations: {
