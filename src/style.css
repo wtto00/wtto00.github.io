@@ -1,3 +1,16 @@
+body {
+  /* prettier-ignore */
+  --at-apply: flex min-h-100svh flex-col bg-fill c-base selection:(bg-accent bg-op-70 c-fill);
+}
+section,
+footer {
+  --at-apply: mx-auto max-w-3xl px-4;
+}
+a {
+  /* prettier-ignore */
+  --at-apply: outline-2 outline-offset-1 outline-fill focus-visible:(no-underline outline-dashed);
+}
+
 /* --------------------------------- 暗黑主题切换 Start --------------------------------- */
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -41,18 +54,43 @@ html {
 }
 /* --------------------------------- 滚动条 End --------------------------------- */
 
-body {
+/* --------------------------------- prose Start --------------------------------- */
+.prose h2 {
+  --uno: mt-8;
+}
+.prose a {
   /* prettier-ignore */
-  --at-apply: flex min-h-100svh flex-col bg-fill c-base selection:(bg-accent bg-op-70 c-fill);
+  --uno: decoration-dashed underline-offset-8 break-words hover:c-accent mx-1;
 }
-section,
-footer {
-  --at-apply: mx-auto max-w-3xl px-4;
+.prose img {
+  --uno: b-2 b-brd mx-auto mt-2 mb-2em;
 }
-a {
+.prose ol,
+.prose ul {
+  --uno: pl-10;
+}
+.prose table {
+  --uno: border-spacing-0 border-collapse block w-[max-content] max-w-full overflow-auto;
+}
+.prose th {
+  --uno: font-semibold;
+}
+.prose td,
+.prose th {
+  --uno: b-brd b-1;
+}
+.prose td > img,
+.prose th > img {
+  --uno: m-0;
+}
+.prose hr {
+  --uno: b-b-0;
+}
+.prose :not(pre) > code {
   /* prettier-ignore */
-  --at-apply: outline-2 outline-offset-1 outline-fill focus-visible:(no-underline outline-dashed);
+  --uno: bg-card bg-op-75 before:hidden after:hidden p-1 rd-1 text-sm v-mid whitespace-pre-line
 }
+/* --------------------------------- prose End --------------------------------- */
 
 /* --------------------------------- 代码高亮主题 Start --------------------------------- */
 :root.dark .astro-code,
@@ -67,7 +105,8 @@ a {
   --at-apply: relative;
 }
 .copy-code {
-  --at-apply: absolute top-0 right-0 bg-card px-2 py-1 text-xs c-base rd-tr-6px hover-bg-card-muted;
+  /* prettier-ignore */
+  --at-apply: absolute top-0 right-0 bg-card px-2 py-1 text-xs c-base rd-tr-6px hover:bg-card-muted;
 }
 /* --------------------------------- code copy button End --------------------------------- */
 
