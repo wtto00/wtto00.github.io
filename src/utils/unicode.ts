@@ -4,7 +4,7 @@ export function str2unicode(input: string) {
     .map(function (value) {
       const temp = value.charCodeAt(0).toString(16).toUpperCase();
       if (temp.length > 2) {
-        return '\\u' + temp;
+        return '_u' + temp;
       }
       return value;
     })
