@@ -15,6 +15,10 @@ import githubLightTheme from './scripts/github-light';
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport',
+  },
   // Enable Solid to support Solid JSX components.
   integrations: [solid(), UnoCSS({ injectReset: true }), sitemap()],
   markdown: {
