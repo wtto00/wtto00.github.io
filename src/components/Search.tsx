@@ -97,7 +97,7 @@ export default function SearchBar(props: Props) {
       <ul>
         {searchResults() &&
           searchResults()!.map((props) => (
-            <Card href={`/posts/${slugify(props.item.data)}`} frontmatter={props.item.data} />
+            <Card href={`/posts/${slugify(props.item.data)}/`} frontmatter={props.item.data} />
           ))}
       </ul>
     </>

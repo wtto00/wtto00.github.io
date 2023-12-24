@@ -25,7 +25,7 @@ const next = pageNum < totalPages ? '' : 'disabled'
   <Header activeNav='posts' />
   <Main pageTitle='文章' pageDesc='所有我发布的文章：'>
     <ul>
-      {posts.map(({ data }) => <Card href={`/posts/${slugify(data)}`} frontmatter={data} />)}
+      {posts.map(({ data }) => <Card href={`/posts/${slugify(data)}/`} frontmatter={data} />)}
     </ul>
   </Main>
 
@@ -34,7 +34,7 @@ const next = pageNum < totalPages ? '' : 'disabled'
       <nav class='mx-auto mb-8 mt-auto max-w-3xl w-full flex justify-between px-4' aria-label='Pagination'>
         <LinkButton
           disabled={prev === 'disabled'}
-          href={`/posts${pageNum - 1 !== 1 ? '/' + (pageNum - 1) : ''}`}
+          href={`/posts${pageNum - 1 !== 1 ? `/${pageNum - 1}/` : '/'}`}
           className='mr-4 select-none'
           ariaLabel='Previous'
         >
@@ -44,7 +44,7 @@ const next = pageNum < totalPages ? '' : 'disabled'
         <div>{pageNum}/{totalPages}</div>
         <LinkButton
           disabled={next === 'disabled'}
-          href={`/posts/${pageNum + 1}`}
+          href={`/posts/${pageNum + 1}/`}
           className='ml-4 select-none'
           ariaLabel='Next'
         >
