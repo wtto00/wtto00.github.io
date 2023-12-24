@@ -10,7 +10,7 @@ const { name, size = 'sm' } = Astro.props;
 
 <li class="inline-block" class:list={[size === 'sm' ? 'my-1 underline-offset-4' : 'my-3 mx-1 underline-offset-8']}>
   <a
-    href={`/tags/${name.toLowerCase()}`}
+    href={`/tags/${name.toLowerCase()}/`}
     transition:name={str2unicode(name.toLowerCase())}
     class:list={[size === 'sm' ? 'text-sm' : 'text-lg']}
     class="mr-2 inline-flex items-center b-b-2 b-base b-dashed hover:(translate-y--2px b-accent c-accent) focus-visible:p-1"

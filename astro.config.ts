@@ -16,7 +16,7 @@ import githubLightTheme from './scripts/github-light';
 export default defineConfig({
   site: SITE.website,
   prefetch: {
-    prefetchAll: true,
+    // 启用了<ViewTransitions />,默认prefetchAll: true
     defaultStrategy: 'viewport',
   },
   // Enable Solid to support Solid JSX components.
