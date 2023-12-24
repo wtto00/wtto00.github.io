@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint --color --fix . && zhlint --fix \"{,!(node_modules)/**/}*.md\"",
+    "lint": "eslint --color --fix . && zhlint --fix \"./src/content/blog/*.md\"",
     "format": "prettier . --write --ignore-unknown",
     "prepare": "husky install && husky set .husky/pre-commit \"npx lint-staged\""
   },

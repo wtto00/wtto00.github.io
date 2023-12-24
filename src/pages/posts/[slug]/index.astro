@@ -8,6 +8,7 @@ import Footer from '@/components/Footer.astro';
 import Tag from '@/components/Tag.astro';
 import PostToc from '@/components/PostToc.astro';
 import MdArticle from '@/components/MdArticle.astro';
+import { str2unicode } from '@/utils/unicode';
 
 export async function getStaticPaths() {
   const allBlogPosts = await getCollection('blog', ({ data }) => !data.draft);
@@ -38,7 +39,7 @@ const ogUrl = new URL(ogImageUrl ?? `/posts/${slugifyStr(title)}.png`, Astro.url
   </div>
 
   <main class="mx-auto max-w-3xl w-full px-4 pb-12">
-    <h1 transition:name={encodeURIComponent(slugifyStr(title))} class="text-2xl font-semibold c-accent">{title}</h1>
+    <h1 transition:name={str2unicode(slugifyStr(title))} class="text-2xl font-semibold c-accent">{title}</h1>
 
     <SubTitle datetime={pubDatetime} size="lg" className="my-2" title={title} />
 
