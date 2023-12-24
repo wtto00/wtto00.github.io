@@ -10,6 +10,7 @@ import getPostsByTag from "@/utils/getPostsByTag";
 import slugify from "@/utils/slugify";
 import { SITE } from "@/config";
 import getSortedPosts from "@/utils/getSortedPosts";
+import { str2unicode } from "@/utils/unicode";
 
 export interface Props {
   tag: string;
@@ -44,7 +45,7 @@ const sortTagsPost = getSortedPosts(tagPosts);
     titleTransition={tag}
     pageDesc={`标签包含 "${tag}" 的所有文章：`}
   >
-    <h1 slot="title" transition:name={encodeURIComponent(tag)}>{`标签: ${tag}`}</h1>
+    <h1 slot="title" transition:name={str2unicode(tag)}>{`标签: ${tag}`}</h1>
     <ul>
       {
         sortTagsPost.map(({ data }) => (
