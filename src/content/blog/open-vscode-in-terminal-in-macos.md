@@ -8,7 +8,7 @@ labels:
   - Mac
 description: 使用VS Code自带的命令，或者把code可执行文件添加到PATH中。或者把打开VS Code的命令alias为code命令。
 pubDatetime: 2023-12-19T14:01:36.337Z
-updateTime: 2023-12-23T16:18:19.580Z
+updateTime: 2023-12-24T11:26:22.594Z
 ---
 
 在 [VS Code](https://code.visualstudio.com/) 下载安装后，在终端中，`code .` 不能让 VS Code 打开当前目录。有以下几种解决办法：
@@ -17,7 +17,7 @@ updateTime: 2023-12-23T16:18:19.580Z
 
 打开 VS Code，使用快捷键 `cmd+shift+p` 或菜单栏点击 `查看-命令面板`，打开命令面板，输入 `shell`，选择 `在PATH中安装"code"命令`。按照提示输入密码即可。立即生效。
 
-**这种方法会创建多个实例，即程序坞中出现多个 VS Code 的图标**
+> **这种方法会创建多个实例，即程序坞中出现多个 VS Code 的图标**
 
 ## 把 code 可执行文件所在目录添加到 PATH 中
 
@@ -30,7 +30,7 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 
 在已打开的终端中 `source` 配置文件后，立即生效。或者新开终端立即生效。
 
-**这种方法会创建多个实例，即程序坞中出现多个 VS Code 的图标**
+> **这种方法会创建多个实例，即程序坞中出现多个 VS Code 的图标**
 
 ## alias code 可执行文件 (不推荐)
 
@@ -42,7 +42,7 @@ alias code="/Applications/Visual\ Studio\ Code.app/contents/Resources/app/bin/co
 
 在已打开的终端中 `source` 配置文件后，立即生效。或者新开终端立即生效。
 
-**这种方法会创建多个实例，即程序坞中出现多个 VS Code 的图标**
+> **这种方法会创建多个实例，即程序坞中出现多个 VS Code 的图标**
 
 ## alias 打开 VS Code 的命令
 
@@ -56,7 +56,7 @@ alias code='open -a "Visual Studio Code"'
 
 在已打开的终端中 `source` 配置文件后，立即生效。或者新开终端立即生效。
 
-**这种方法不会创建多个实例，即程序坞中只会有一个 VS Code 的图标**
+> **这种方法不会创建多个实例，即程序坞中只会有一个 VS Code 的图标**
 
 ## 总结
 
