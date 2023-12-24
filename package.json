@@ -68,7 +68,7 @@
     ],
     "*.md": [
       "zhlint --fix",
-      "node scripts/auto-update-time.js"
+      "node scripts/md-hook.js"
     ]
   }
 }
