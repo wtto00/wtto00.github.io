@@ -4,6 +4,7 @@ import Layout from './Layout.astro';
 import Footer from '@/components/Footer.astro';
 import { SITE } from '@/config';
 import MdArticle from '@/components/MdArticle.astro';
+import Main from './Main.astro';
 
 interface Props {
   frontmatter: {
@@ -18,12 +19,11 @@ const { frontmatter } = Astro.props;
 <Layout title={`${frontmatter.title} | ${SITE.title}`} description={frontmatter.description}>
   <Header activeNav="about" />
 
-  <main class="mx-auto max-w-3xl w-full px-4 pb-12">
+  <Main pageTitle={frontmatter.title}>
     <MdArticle>
-      <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
       <slot />
     </MdArticle>
-  </main>
+  </Main>
 
   <Footer />
 </Layout>

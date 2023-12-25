@@ -1,0 +1,58 @@
+---
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import { LOCALE, SITE } from '@/config';
+import Layout from '@/layouts/Layout.astro';
+import Main from '@/layouts/Main.astro';
+import getSortedPosts from '@/utils/getSortedPosts';
+import { unicodeSlugify } from '@/utils/slugify';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+const posts = await getCollection('blog');
+
+const archivedPosts = getSortedPosts(posts).reduce((acc, post) => {
+  const year = post.data.pubDatetime.getFullYear();
+  if (acc.has(year)) {
+    acc.set(year, [...acc.get(year)!, post]);
+  } else {
+    acc.set(year, [post]);
+  }
+  return acc;
+}, new Map<number, CollectionEntry<'blog'>[]>());
+
+function formateDate(datetime: Date) {
+  return datetime.toLocaleDateString(LOCALE, {
+    month: '2-digit',
+    day: '2-digit',
+  });
+}
+---
+
+<Layout title={`归档 | ${SITE.title}`}>
+  <Header activeNav="archives" />
+  <Main pageTitle="归档">
+    {
+      Array.from(archivedPosts.entries()).map(([year, posts]) => (
+        <div class="mt-4">
+          <div class="mb-2 text-xl font-semibold">
+            <span class="relative z-0 after:(absolute bottom--1.5 left-0 h-1 w-full rd-999 bg-base content-empty)">
+              {year}
+            </span>
+          </div>
+          <ul class="mt-4 font-medium space-y-1">
+            {posts.map((post) => (
+              <li class="flex items-center">
+                <a href={`/posts/${post.data.postSlug}/`}>
+                  <span class="mr-1 c-card-muted">【{formateDate(post.data.pubDatetime)}】</span>
+                  <span transition:name={unicodeSlugify(post.data.title)}>{post.data.title}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </Main>
+
+  <Footer />
+</Layout>

@@ -3,9 +3,22 @@ import type { CollectionEntry } from 'astro:content';
 
 export const slugifyStr = (str: string) => slugger(str || '');
 
-const slugify = (post: CollectionEntry<'blog'>['data']) =>
+export const slugify = (post: CollectionEntry<'blog'>['data']) =>
   post.postSlug ? slugger(post.postSlug || '') : slugger(post.title || '');
 
 export const slugifyAll = (arr: string[]) => arr.map((str) => slugifyStr(str || ''));
 
-export default slugify;
+export function str2unicode(input: string) {
+  return input
+    .split('')
+    .map(function (value) {
+      const temp = value.charCodeAt(0).toString(16).toUpperCase();
+      if (temp.length > 2) {
+        return `u_${temp}`;
+      }
+      return value;
+    })
+    .join('');
+}
+
+export const unicodeSlugify = (str: string) => str2unicode(slugifyStr(str));

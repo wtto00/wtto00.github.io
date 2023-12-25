@@ -2,7 +2,6 @@ body {
   /* prettier-ignore */
   --at-apply: flex min-h-100svh flex-col bg-fill c-base selection:(bg-accent bg-op-70 c-fill);
 }
-section,
 footer {
   --at-apply: mx-auto max-w-3xl px-4;
 }

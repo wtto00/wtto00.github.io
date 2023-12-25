@@ -1,40 +1,41 @@
 ---
-import Card from '@/components/Card.astro'
-import Footer from '@/components/Footer.astro'
-import Header from '@/components/Header.astro'
-import Hr from '@/components/Hr.astro'
-import LinkButton from '@/components/LinkButton.astro'
-import Socials from '@/components/Socials.astro'
-import { SITE, SOCIALS } from '@/config'
-import Layout from '@/layouts/Layout.astro'
-import getSortedPosts from '@/utils/getSortedPosts'
-import slugify from '@/utils/slugify'
-import { getCollection } from 'astro:content'
+import Card from '@/components/Card.astro';
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import Hr from '@/components/Hr.astro';
+import LinkButton from '@/components/LinkButton.astro';
+import Socials from '@/components/Socials.astro';
+import { SITE, SOCIALS } from '@/config';
+import Layout from '@/layouts/Layout.astro';
+import Main from '@/layouts/Main.astro';
+import getSortedPosts from '@/utils/getSortedPosts';
+import { slugify } from '@/utils/slugify';
+import { getCollection } from 'astro:content';
 
-const posts = await getCollection('blog')
+const posts = await getCollection('blog');
 
-const sortedPosts = getSortedPosts(posts)
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
+const sortedPosts = getSortedPosts(posts);
+const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
-const socialCount = SOCIALS.filter((social) => social.active).length
+const socialCount = SOCIALS.filter((social) => social.active).length;
 ---
 
 <Layout>
   <Header />
 
-  <main>
-    <section class='pb-6 pt-8'>
-      <h1 class='text-3xl font-bold'>
+  <Main>
+    <section class="pb-6 pt-8">
+      <h1 class="text-3xl font-bold">
         <span>
           Hi, I'm wtto.
-          <span class='inline-block origin-[70%_70%] animate-wave-hands'> 👋</span></span
+          <span class="inline-block origin-[70%_70%] animate-wave-hands"> 👋</span></span
         >
       </h1>
-      <div class='mt-6 space-y-2'>
-        <p class='flex items-center'>
+      <div class="mt-6 space-y-2">
+        <p class="flex items-center">
           A JavaScript
           <span
-            class='relative ml-1 flex shrink-0 items-center rd-md px-2 py-0.5 font-mono transition-colors duration-300 ease-in after:absolute after:right-0.5 after:top-1/10 after:h-4/5 after:animate-blink-text-cursor after:b-r-2 after:b-r-[currentColor] hover:bg-card after:content-empty'
+            class="relative ml-1 flex shrink-0 items-center rd-md px-2 py-0.5 font-mono transition-colors duration-300 ease-in after:absolute after:right-0.5 after:top-1/10 after:h-4/5 after:animate-blink-text-cursor after:b-r-2 after:b-r-[currentColor] hover:bg-card after:content-empty"
           >
             &lt;Developer /&gt;
           </span>
@@ -44,33 +45,33 @@ const socialCount = SOCIALS.filter((social) => social.active).length
 
       {
         socialCount > 0 && (
-          <div class='mt-4 flex flex-col sm:flex-row sm:items-center'>
+          <div class="mt-4 flex flex-col sm:flex-row sm:items-center">
             <Socials />
           </div>
         )
       }
     </section>
 
-    <Hr />
+    <Hr noPadding />
 
     {
       featuredPosts.length > 0 && (
         <>
-          <section class='pb-6 pt-12'>
-            <h2 class='text-2xl font-semibold tracking-wide'>推荐</h2>
+          <section class="pb-6 pt-12">
+            <h2 class="text-2xl font-semibold tracking-wide">推荐</h2>
             <ul>
               {featuredPosts.map(({ data }) => (
                 <Card href={`/posts/${slugify(data)}/`} frontmatter={data} secHeading={false} />
               ))}
             </ul>
           </section>
-          <Hr />
+          <Hr noPadding />
         </>
       )
     }
 
-    <section class='pb-6 pt-12'>
-      <h2 class='text-2xl font-semibold tracking-wide'>最新</h2>
+    <section class="pt-12">
+      <h2 class="text-2xl font-semibold tracking-wide">最新</h2>
       <ul>
         {
           sortedPosts
@@ -79,18 +80,18 @@ const socialCount = SOCIALS.filter((social) => social.active).length
               ({ data }, index) =>
                 index < SITE.postPerPage && (
                   <Card href={`/posts/${slugify(data)}/`} frontmatter={data} secHeading={false} />
-                )
+                ),
             )
         }
       </ul>
-      <div class='my-8 text-center'>
+      <div class="mt-8 text-center">
         <LinkButton href={`/posts/`}>
           查看所有
-          <i class='i-custom-arrow-right text-2xl'></i>
+          <i class="i-custom-arrow-right text-2xl"></i>
         </LinkButton>
       </div>
     </section>
-  </main>
+  </Main>
 
   <Footer />
 </Layout>

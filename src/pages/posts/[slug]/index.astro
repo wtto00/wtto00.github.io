@@ -1,6 +1,6 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
-import slugify, { slugifyStr } from '@/utils/slugify';
+import { slugify, unicodeSlugify, slugifyStr } from '@/utils/slugify';
 import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
 import SubTitle from '@/components/SubTitle.astro';
@@ -8,7 +8,7 @@ import Footer from '@/components/Footer.astro';
 import Tag from '@/components/Tag.astro';
 import PostToc from '@/components/PostToc.astro';
 import MdArticle from '@/components/MdArticle.astro';
-import { str2unicode } from '@/utils/unicode';
+import Main from '@/layouts/Main.astro';
 
 export async function getStaticPaths() {
   const allBlogPosts = await getCollection('blog', ({ data }) => !data.draft);
@@ -31,15 +31,15 @@ const ogUrl = new URL(ogImageUrl ?? `/posts/${slugifyStr(title)}.png`, Astro.url
 <Layout title={title} description={description} ogImage={ogUrl} canonicalURL={canonicalURL}>
   <Header />
 
-  <div class="mx-auto max-w-3xl w-full flex justify-start px-2">
-    <button class="mb-2 mt-4 flex hover:op-75" onclick="history.back()">
-      <i class="i-custom-back text-2xl"></i>
-      <span>返回</span>
-    </button>
-  </div>
+  <Main>
+    <div class="mb-2 w-full flex justify-start">
+      <button class="flex hover:op-75" onclick="history.back()">
+        <i class="i-custom-back text-2xl"></i>
+        <span>返回</span>
+      </button>
+    </div>
 
-  <main class="mx-auto max-w-3xl w-full px-4 pb-12">
-    <h1 transition:name={str2unicode(slugifyStr(title))} class="text-2xl font-semibold c-accent">{title}</h1>
+    <h1 transition:name={unicodeSlugify(title)} class="text-2xl font-semibold c-accent">{title}</h1>
 
     <SubTitle datetime={pubDatetime} size="lg" className="my-2" title={title} />
 
@@ -53,7 +53,7 @@ const ogUrl = new URL(ogImageUrl ?? `/posts/${slugifyStr(title)}.png`, Astro.url
     <ul class="mt-8">
       {labels.map((tag) => <Tag name={slugifyStr(tag)} />)}
     </ul>
-  </main>
+  </Main>
 
   <Footer />
 </Layout>

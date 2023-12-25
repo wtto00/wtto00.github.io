@@ -4,7 +4,7 @@ import { createSignal } from 'solid-js';
 import Theme from './Theme';
 
 interface Props {
-  activeNav?: 'posts' | 'tags' | 'about' | 'search' | undefined;
+  activeNav?: 'posts' | 'archives' | 'tags' | 'about' | 'search' | undefined;
 }
 export default function NavMenu(props: Props) {
   const [menuExpanded, setMenuExpanded] = createSignal(false);
@@ -18,6 +18,9 @@ export default function NavMenu(props: Props) {
       >
         <NavMenuItem active={props.activeNav === 'posts'} route="posts">
           文章
+        </NavMenuItem>
+        <NavMenuItem active={props.activeNav === 'archives'} route="archives">
+          归档
         </NavMenuItem>
         <NavMenuItem active={props.activeNav === 'tags'} route="tags">
           标签

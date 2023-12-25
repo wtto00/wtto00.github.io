@@ -1,32 +1,34 @@
 ---
-import { str2unicode } from '@/utils/unicode'
+import { unicodeSlugify } from '@/utils/slugify';
 interface StringTitleProp {
-  pageTitle: string
-  pageDesc?: string
+  pageTitle?: string;
+  pageDesc?: string;
+  className?: string;
 }
 
 interface ArrayTitleProp {
-  pageTitle: [string, string]
-  titleTransition: string
-  pageDesc?: string
+  pageTitle: [string, string];
+  titleTransition: string;
+  pageDesc?: string;
+  className?: string;
 }
 
-export type Props = StringTitleProp | ArrayTitleProp
+export type Props = StringTitleProp | ArrayTitleProp;
 
-const { props } = Astro
+const { props } = Astro;
 ---
 
-<main class='mx-auto max-w-3xl w-full px-4 pb-12'>
+<main class={`mx-auto max-w-3xl w-full px-4 pb-12 ${props.className || ''}`}>
   {
     'titleTransition' in props ? (
-      <h1 class='text-2xl font-semibold sm:text-3xl'>
+      <h1 class="text-2xl font-semibold sm:text-3xl">
         {props.pageTitle[0]}
-        <span transition:name={str2unicode(props.titleTransition)}>{props.pageTitle[1]}</span>
+        <span transition:name={unicodeSlugify(props.titleTransition)}>{props.pageTitle[1]}</span>
       </h1>
     ) : (
-      <h1 class="text-2xl font-semibold tracking-wider sm:text-3xl">{props.pageTitle}</h1>
+      props.pageTitle && <h1 class="text-2xl font-semibold tracking-wider sm:text-3xl">{props.pageTitle}</h1>
     )
   }
-  <p class="mb-6 mt-2 font-italic">{props.pageDesc}</p>
+  {props.pageDesc && <p class="mb-6 mt-2 font-italic">{props.pageDesc}</p>}
   <slot />
 </main>

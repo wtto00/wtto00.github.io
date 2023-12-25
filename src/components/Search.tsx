@@ -1,6 +1,6 @@
 import Fuse from 'fuse.js';
 import Card from '@/components/Card.astro';
-import slugify from '@/utils/slugify';
+import { slugify } from '@/utils/slugify';
 import type { CollectionEntry } from 'astro:content';
 import { createEffect, createMemo, createSignal, type JSX } from 'solid-js';
 

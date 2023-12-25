@@ -1,8 +1,7 @@
 ---
-import { slugifyStr } from '@/utils/slugify';
+import { unicodeSlugify } from '@/utils/slugify';
 import type { CollectionEntry } from 'astro:content';
 import SubTitle from './SubTitle.astro';
-import { str2unicode } from '@/utils/unicode';
 
 export interface Props {
   href?: string;
@@ -14,7 +13,7 @@ const { href = '', frontmatter, secHeading = true } = Astro.props;
 const { title, pubDatetime, description } = frontmatter;
 
 const headerProps = {
-  style: { viewTransitionName: str2unicode(slugifyStr(title)) },
+  style: { viewTransitionName: unicodeSlugify(title) },
   class: 'text-lg font-medium decoration-dashed hover:underline',
 };
 ---
