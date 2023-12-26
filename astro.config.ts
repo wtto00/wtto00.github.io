@@ -19,7 +19,6 @@ export default defineConfig({
     // 启用了<ViewTransitions />,默认prefetchAll: true
     defaultStrategy: 'viewport',
   },
-  // Enable Solid to support Solid JSX components.
   integrations: [solid(), UnoCSS({ injectReset: true }), sitemap()],
   markdown: {
     remarkPlugins: [

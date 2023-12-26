@@ -17,7 +17,7 @@ const { activeNav } = Astro.props;
         <img src={`/favicon.svg`} alt={SITE.title} class="h-6 w-6" />
         <span class="ml-2">{SITE.title}</span>
       </a>
-      <NavMenu activeNav={activeNav} client:load />
+      <NavMenu activeNav={activeNav} client:only="solid-js" />
     </div>
   </div>
 </header>

@@ -1,21 +1,15 @@
 import Fuse from 'fuse.js';
-import Card from '@/components/Card.astro';
-import { slugify } from '@/utils/slugify';
+import { slugify, unicodeSlugify } from '@/utils/slugify';
 import type { CollectionEntry } from 'astro:content';
-import { createEffect, createMemo, createSignal, type JSX } from 'solid-js';
-
-export type SearchItem = {
-  title: string;
-  description: string;
-  data: CollectionEntry<'blog'>['data'];
-};
+import { createEffect, createMemo, createSignal, type JSX, For } from 'solid-js';
+import { LOCALE } from '@/config';
 
 interface Props {
-  searchList: SearchItem[];
+  searchList: CollectionEntry<'blog'>['data'][];
 }
 
 interface SearchResult {
-  item: SearchItem;
+  item: CollectionEntry<'blog'>['data'];
   refIndex: number;
 }
 
@@ -95,10 +89,41 @@ export default function SearchBar(props: Props) {
       )}
 
       <ul>
-        {searchResults() &&
-          searchResults()!.map((props) => (
-            <Card href={`/posts/${slugify(props.item.data)}/`} frontmatter={props.item.data} />
-          ))}
+        <For each={searchResults()}>
+          {(props) => (
+            <li class="my-6">
+              <a
+                href={`/posts/${slugify(props.item)}/`}
+                class="inline-block text-lg font-medium c-accent underline-offset-4 decoration-dashed focus-visible:underline-offset-0 focus-visible:no-underline"
+              >
+                {/* eslint-disable-next-line solid/style-prop */}
+                <h3
+                  class="text-lg font-medium decoration-dashed hover:underline"
+                  style={{ 'view-transition-name': unicodeSlugify(props.item.title) }}
+                >
+                  {props.item.title}
+                </h3>
+              </a>
+              <div class="relative z-1 flex items-center space-x-2">
+                <i class="i-custom-calendar h-6 w-6 op-80" />
+                <span class="text-4 italic op-80">
+                  {props.item.pubDatetime.toLocaleDateString(LOCALE, {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                  <span aria-hidden="true"> |</span>
+                  <span class="sr-only">&nbsp;at</span>
+                  {props.item.pubDatetime.toLocaleTimeString(LOCALE, {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })}
+                </span>
+              </div>
+              <p>{props.item.description}</p>
+            </li>
+          )}
+        </For>
       </ul>
     </>
   );

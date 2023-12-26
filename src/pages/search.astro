@@ -9,18 +9,14 @@ import SearchBar from '@/components/Search'
 
 const posts = await getCollection('blog', ({ data }) => !data.draft)
 
-const searchList = posts.map(({ data }) => ({
-  title: data.title,
-  description: data.description,
-  data
-}))
+const searchList = posts.map(({ data }) => data)
 ---
 
 <Layout title={`搜索 | ${SITE.title}`}>
   <Header activeNav='search' />
 
   <Main pageTitle='搜索' pageDesc='搜索任意文章 ...'>
-    <SearchBar client:load searchList={searchList} />
+    <SearchBar client:only="solid-js" searchList={searchList} />
   </Main>
 
   <Footer />
