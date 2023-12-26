@@ -44,9 +44,9 @@ for (const file of files) {
   const now = new Date();
 
   if (!data.pubDatetime) {
-    data.pubDatetime = now();
+    data.pubDatetime = now;
   }
-  data.updateTime = new Date();
+  data.updateTime = now;
 
   writeFileSync(file, stringify({ content }, data));
 }
