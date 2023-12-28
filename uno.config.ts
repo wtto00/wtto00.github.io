@@ -1,8 +1,9 @@
-import { defineConfig, presetIcons, presetTypography, presetUno } from 'unocss';
 import type { Theme } from '@unocss/preset-uno';
-import presetTheme from 'unocss-preset-theme';
-import transformerVariantGroup from '@unocss/transformer-variant-group';
 import transformerDirectives from '@unocss/transformer-directives';
+import transformerVariantGroup from '@unocss/transformer-variant-group';
+import { defineConfig, presetIcons, presetTypography, presetUno } from 'unocss';
+import presetTheme from 'unocss-preset-theme';
+
 import { colorAddOpacity } from './scripts/uno-utils';
 
 export default defineConfig<Theme>({

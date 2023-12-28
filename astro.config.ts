@@ -1,16 +1,17 @@
-import { defineConfig } from 'astro/config';
 import { rehypeHeadingIds } from '@astrojs/markdown-remark';
-import solid from '@astrojs/solid-js';
 import sitemap from '@astrojs/sitemap';
-import UnoCSS from 'unocss/astro';
-import { SITE } from './src/config';
-import remarkToc from 'remark-toc';
-import rehypeExternalLinks from 'rehype-external-links';
-import remarkCollapse from 'remark-collapse';
+import solid from '@astrojs/solid-js';
+import { defineConfig } from 'astro/config';
 import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
-import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeExternalLinks from 'rehype-external-links';
+import rehypeSlug from 'rehype-slug';
+import remarkCollapse from 'remark-collapse';
+import remarkToc from 'remark-toc';
+import UnoCSS from 'unocss/astro';
+
 import githubLightTheme from './scripts/github-light';
+import { SITE } from './src/config';
 
 // https://astro.build/config
 export default defineConfig({

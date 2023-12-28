@@ -1,4 +1,6 @@
 ---
+import { type CollectionEntry,getCollection } from 'astro:content';
+
 import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
 import { LOCALE, SITE } from '@/config';
@@ -6,7 +8,6 @@ import Layout from '@/layouts/Layout.astro';
 import Main from '@/layouts/Main.astro';
 import getSortedPosts from '@/utils/getSortedPosts';
 import { unicodeSlugify } from '@/utils/slugify';
-import { getCollection, type CollectionEntry } from 'astro:content';
 
 const posts = await getCollection('blog');
 

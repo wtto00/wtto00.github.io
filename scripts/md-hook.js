@@ -3,8 +3,9 @@
  * 新创建的文章，commit提交的时候，自动添加文章的pubDatetime和updateTime字段
  */
 
-import { writeFileSync, existsSync } from 'node:fs';
-import { extname, resolve, basename, dirname } from 'node:path';
+import { existsSync, writeFileSync } from 'node:fs';
+import { basename, dirname, extname, resolve } from 'node:path';
+
 import matter from 'gray-matter';
 
 const { read, stringify } = matter;

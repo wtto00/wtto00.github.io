@@ -1,6 +1,7 @@
-import NavMenuItem from './NavMenuItem';
-import NavMenuBtn from './NavMenuBtn';
 import { createSignal } from 'solid-js';
+
+import NavMenuBtn from './NavMenuBtn';
+import NavMenuItem from './NavMenuItem';
 import Theme from './Theme';
 
 interface Props {

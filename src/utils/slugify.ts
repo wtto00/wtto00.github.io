@@ -1,5 +1,5 @@
-import { slug as slugger } from 'github-slugger';
 import type { CollectionEntry } from 'astro:content';
+import { slug as slugger } from 'github-slugger';
 
 export const slugifyStr = (str: string) => slugger(str || '');
 

@@ -1,6 +1,7 @@
-import getSortedPosts from '@/utils/getSortedPosts';
 import { getCollection } from 'astro:content';
 import Fuse from 'fuse.js';
+
+import getSortedPosts from '@/utils/getSortedPosts';
 
 export async function GET() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);

@@ -3,7 +3,7 @@
     "node": true,
     "browser": true
   },
-  "plugins": ["solid"],
+  "plugins": ["solid", "simple-import-sort"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -40,6 +40,8 @@
     }
   ],
   "rules": {
-    "@typescript-eslint/triple-slash-reference": "off"
+    "@typescript-eslint/triple-slash-reference": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
   }
 }

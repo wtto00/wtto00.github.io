@@ -1,14 +1,15 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
-import { slugify, unicodeSlugify, slugifyStr } from '@/utils/slugify';
-import Layout from '@/layouts/Layout.astro';
-import Header from '@/components/Header.astro';
-import SubTitle from '@/components/SubTitle.astro';
+
 import Footer from '@/components/Footer.astro';
-import Tag from '@/components/Tag.astro';
-import PostToc from '@/components/PostToc.astro';
+import Header from '@/components/Header.astro';
 import MdArticle from '@/components/MdArticle.astro';
+import PostToc from '@/components/PostToc.astro';
+import SubTitle from '@/components/SubTitle.astro';
+import Tag from '@/components/Tag.astro';
+import Layout from '@/layouts/Layout.astro';
 import Main from '@/layouts/Main.astro';
+import { slugify, slugifyStr,unicodeSlugify } from '@/utils/slugify';
 
 export async function getStaticPaths() {
   const allBlogPosts = await getCollection('blog', ({ data }) => !data.draft);

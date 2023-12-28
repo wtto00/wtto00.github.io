@@ -1,8 +1,9 @@
-import Fuse from 'fuse.js';
-import { slugify, unicodeSlugify } from '@/utils/slugify';
 import type { CollectionEntry } from 'astro:content';
-import { createEffect, createMemo, createSignal, type JSX, For, Show } from 'solid-js';
+import Fuse from 'fuse.js';
+import { createEffect, createMemo, createSignal, For, type JSX, Show } from 'solid-js';
+
 import { getLocalDate, getLocalTime } from '@/utils/datetime';
+import { slugify, unicodeSlugify } from '@/utils/slugify';
 
 type Post = CollectionEntry<'blog'>['data'];
 

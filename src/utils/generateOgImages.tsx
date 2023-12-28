@@ -1,10 +1,12 @@
-import { renderToSvg, type SatoriOptions } from 'solid-satori';
-import { Resvg } from '@resvg/resvg-js';
-import { type CollectionEntry } from 'astro:content';
-import postOgImage from './og-templates/post';
-import siteOgImage from './og-templates/site';
 import { readFileSync } from 'node:fs';
 import { URL } from 'node:url';
+
+import { Resvg } from '@resvg/resvg-js';
+import { type CollectionEntry } from 'astro:content';
+import { renderToSvg, type SatoriOptions } from 'solid-satori';
+
+import postOgImage from './og-templates/post';
+import siteOgImage from './og-templates/site';
 
 const fontBasePath = import.meta.env.DEV ? '../assets/fonts' : '../../../src/assets/fonts';
 
