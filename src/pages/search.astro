@@ -1,22 +1,17 @@
 ---
-import { getCollection } from 'astro:content'
 import { SITE } from '@/config'
 import Layout from '@/layouts/Layout.astro'
 import Main from '@/layouts/Main.astro'
 import Header from '@/components/Header.astro'
 import Footer from '@/components/Footer.astro'
 import SearchBar from '@/components/Search'
-
-const posts = await getCollection('blog', ({ data }) => !data.draft)
-
-const searchList = posts.map(({ data }) => data)
 ---
 
 <Layout title={`搜索 | ${SITE.title}`}>
   <Header activeNav='search' />
 
   <Main pageTitle='搜索' pageDesc='搜索任意文章 ...'>
-    <SearchBar client:only="solid-js" searchList={searchList} />
+    <SearchBar client:only="solid-js" />
   </Main>
 
   <Footer />

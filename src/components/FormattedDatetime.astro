@@ -1,26 +1,15 @@
 ---
-import { LOCALE } from '@/config'
+import { getLocalDate, getLocalTime } from '@/utils/datetime';
 interface Props {
-  datetime: string | Date
+  datetime: string | Date;
 }
 
-const { datetime } = Astro.props
+const { datetime } = Astro.props;
 
-const myDatetime = new Date(datetime)
-
-const date = myDatetime.toLocaleDateString(LOCALE, {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric'
-})
-
-const time = myDatetime.toLocaleTimeString(LOCALE, {
-  hour: '2-digit',
-  minute: '2-digit'
-})
+const myDatetime = new Date(datetime);
 ---
 
-{date}
-<span aria-hidden='true'> |</span>
-<span class='sr-only'>&nbsp;at</span>
-{time}
+{getLocalDate(myDatetime)}
+<span aria-hidden="true"> |</span>
+<span class="sr-only">&nbsp;at</span>
+{getLocalTime(myDatetime)}

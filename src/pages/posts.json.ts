@@ -1,12 +1,15 @@
+import getSortedPosts from '@/utils/getSortedPosts';
 import { getCollection } from 'astro:content';
 import Fuse from 'fuse.js';
 
 export async function GET() {
-  const posts = (await getCollection('blog', ({ data }) => !data.draft)).map((post) => post.data);
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
 
-  const postsIndex = Fuse.createIndex(['title', 'description'], posts);
+  const sortedPosts = getSortedPosts(posts).map((post) => post.data);
 
-  return new Response(JSON.stringify({ posts, index: postsIndex.toJSON() }), {
+  const postsIndex = Fuse.createIndex(['title', 'description'], sortedPosts);
+
+  return new Response(JSON.stringify({ posts: sortedPosts, index: postsIndex.toJSON() }), {
     status: 200,
     headers: {
       'Content-Type': 'application/json',

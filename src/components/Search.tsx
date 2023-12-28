@@ -1,37 +1,49 @@
 import Fuse from 'fuse.js';
 import { slugify, unicodeSlugify } from '@/utils/slugify';
 import type { CollectionEntry } from 'astro:content';
-import { createEffect, createMemo, createSignal, type JSX, For } from 'solid-js';
-import { LOCALE } from '@/config';
+import { createEffect, createMemo, createSignal, type JSX, For, Show } from 'solid-js';
+import { getLocalDate, getLocalTime } from '@/utils/datetime';
 
-interface Props {
-  searchList: CollectionEntry<'blog'>['data'][];
-}
+type Post = CollectionEntry<'blog'>['data'];
 
 interface SearchResult {
-  item: CollectionEntry<'blog'>['data'];
+  item: Post;
   refIndex: number;
 }
 
-export default function SearchBar(props: Props) {
+export default function SearchBar() {
   let inputRef: HTMLInputElement;
 
+  const [posts, setPosts] = createSignal<Post[]>([]);
+  const [index, setIndex] = createSignal(null);
   const [inputVal, setInputVal] = createSignal('');
-  const [searchResults, setSearchResults] = createSignal<SearchResult[] | null>(null);
+  const [searchResults, setSearchResults] = createSignal<SearchResult[]>([]);
 
   const handleChange: JSX.ChangeEventHandlerUnion<HTMLInputElement, Event> = (e) => {
     setInputVal(e.currentTarget.value);
   };
 
-  const fuse = createMemo(
-    () =>
-      new Fuse(props.searchList, {
+  const fuse = createMemo(() => {
+    const parsedIndex = index() ? Fuse.parseIndex(index()) : undefined;
+    return new Fuse<Post>(
+      posts(),
+      {
         keys: ['title', 'description'],
         includeMatches: true,
         minMatchCharLength: 2,
         threshold: 0.5,
-      }),
-  );
+      },
+      parsedIndex,
+    );
+  });
+  createEffect(() => {
+    fetch('/posts.json')
+      .then((resp) => resp.json())
+      .then(({ posts, index }) => {
+        setPosts(posts);
+        setIndex(index);
+      });
+  });
 
   createEffect(() => {
     // if URL has search query,
@@ -82,45 +94,38 @@ export default function SearchBar(props: Props) {
         />
       </label>
 
-      {inputVal().length > 1 && (
+      <Show when={inputVal().length > 1}>
         <div class="mt-8">
           关键词 '{inputVal()}'，找到 {searchResults()?.length} 个结果
         </div>
-      )}
+      </Show>
 
       <ul>
         <For each={searchResults()}>
-          {(props) => (
+          {({ item: post }) => (
             <li class="my-6">
               <a
-                href={`/posts/${slugify(props.item)}/`}
+                href={`/posts/${slugify(post)}/`}
                 class="inline-block text-lg font-medium c-accent underline-offset-4 decoration-dashed focus-visible:underline-offset-0 focus-visible:no-underline"
               >
-                {/* eslint-disable-next-line solid/style-prop */}
                 <h3
+                  // eslint-disable-next-line solid/style-prop
+                  style={{ 'view-transition-name': unicodeSlugify(post.title) }}
                   class="text-lg font-medium decoration-dashed hover:underline"
-                  style={{ 'view-transition-name': unicodeSlugify(props.item.title) }}
                 >
-                  {props.item.title}
+                  {post.title}
                 </h3>
               </a>
               <div class="relative z-1 flex items-center space-x-2">
                 <i class="i-custom-calendar h-6 w-6 op-80" />
                 <span class="text-4 italic op-80">
-                  {props.item.pubDatetime.toLocaleDateString(LOCALE, {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
-                  <span aria-hidden="true"> |</span>
+                  {getLocalDate(post.pubDatetime)}
+                  <span aria-hidden="true"> | </span>
                   <span class="sr-only">&nbsp;at</span>
-                  {props.item.pubDatetime.toLocaleTimeString(LOCALE, {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                  })}
+                  {getLocalTime(post.pubDatetime)}
                 </span>
               </div>
-              <p>{props.item.description}</p>
+              <p>{post.description}</p>
             </li>
           )}
         </For>
