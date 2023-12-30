@@ -7,8 +7,7 @@ draft: false
 labels:
   - uniapp
 description: uniapp利用canvas在小程序上面生成图片
-issue_number: 27
-updateTime: 2023-12-21T16:14:55.686Z
+updateTime: 2023-12-30T17:48:17.273Z
 ---
 
 ## JS 逻辑代码

@@ -8,8 +8,7 @@ labels:
   - Javascript
   - Video
 description: '浏览器视频播放方案: m3u8/mp4/flv/http-flv/webrtc'
-issue_number: 35
-updateTime: 2023-12-21T16:14:55.744Z
+updateTime: 2023-12-30T17:48:17.374Z
 ---
 
 ## 解决方案

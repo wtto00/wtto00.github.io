@@ -89,6 +89,9 @@ html {
   /* prettier-ignore */
   --uno: bg-card bg-op-75 before:hidden after:hidden p-1 rd-1 text-sm v-mid whitespace-pre-line
 }
+.prose blockquote {
+  --uno: c-base c-op-60;
+}
 /* --------------------------------- prose End --------------------------------- */
 
 /* --------------------------------- 代码高亮主题 Start --------------------------------- */

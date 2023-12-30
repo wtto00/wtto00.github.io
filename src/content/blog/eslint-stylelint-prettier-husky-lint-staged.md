@@ -7,8 +7,7 @@ draft: false
 labels:
   - Eslint
 description: Eslint+Stylelint+Prettier+Husky+lint-staged项目规范
-issue_number: 26
-updateTime: 2023-12-21T16:14:55.687Z
+updateTime: 2023-12-30T17:48:17.274Z
 ---
 
 ## **Eslint**

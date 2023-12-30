@@ -10,8 +10,7 @@ description: >-
   首先安装依赖，再确保开发包与系统内核版本一致，最后安装Guest Additions CD的脚本。错误处理：ValueError: File context
   for /opt/VBoxGuestAdditions-6.0.18/other/mount.vboxsf already
   defined。共享文件夹的权限无法访问的解决办法。
-issue_number: 50
-updateTime: 2023-12-21T16:14:55.692Z
+updateTime: 2023-12-30T17:48:17.278Z
 ---
 
 ## 首先安装依赖

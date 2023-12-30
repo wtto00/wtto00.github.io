@@ -9,8 +9,7 @@ labels:
 description: >-
   IOS 浏览器适配。css 适配 iPhone 全面屏底部安全区域。低版本 safari 提示 globalThis 不存在。input
   聚焦时页面自动放大。
-issue_number: 8
-updateTime: 2023-12-21T16:14:55.704Z
+updateTime: 2023-12-30T17:48:17.270Z
 ---
 
 ## **overflow：scroll:auto 元素无法滑动**

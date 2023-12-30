@@ -7,8 +7,7 @@ draft: false
 labels:
   - Javascript
 description: js 使用正则匹配 url 路径参数，并替换变量
-issue_number: 28
-updateTime: 2023-12-21T16:14:55.702Z
+updateTime: 2023-12-30T17:48:17.268Z
 ---
 
 > <https://node.green/#ES2020-features-String-prototype-matchAll>

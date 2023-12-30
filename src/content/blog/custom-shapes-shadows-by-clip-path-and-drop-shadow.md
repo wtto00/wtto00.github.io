@@ -7,8 +7,7 @@ draft: false
 labels:
   - CSS
 description: clip-path 和 drop-shadow 生成自定义图形、阴影
-issue_number: 46
-updateTime: 2023-12-21T16:14:55.672Z
+updateTime: 2023-12-30T17:48:17.268Z
 ---
 
 [CodePen](https://codepen.io/wtto00/pen/NWOJVbe?editors=1100)

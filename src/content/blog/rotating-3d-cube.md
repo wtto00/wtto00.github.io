@@ -7,8 +7,7 @@ draft: false
 labels:
   - CSS
 description: css实现3D立方体旋转
-issue_number: 37
-updateTime: 2023-12-21T16:14:55.703Z
+updateTime: 2023-12-30T17:48:17.269Z
 ---
 
 [codepen](https://codepen.io/wtto00/pen/LYdoPaQ?editors=1100)

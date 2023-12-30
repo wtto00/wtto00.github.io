@@ -5,10 +5,9 @@ postSlug: canvas-base64-arraybuffer-blob-url-file-transform
 featured: false
 draft: false
 labels:
-  - Javascript
-description: js中canvas、base64、ArrayBuffer、Blob、Url、File互转
-issue_number: 20
-updateTime: 2023-12-21T16:14:55.648Z
+  - javascript
+description: js中canvas、base64、ArrayBuffer、Blob、Url、File之间的互相转换
+updateTime: 2023-12-30T17:48:17.263Z
 ---
 
 ## canvas to base64
@@ -147,4 +146,4 @@ var data =
 var svg = new Blob([data], { type: 'image/svg+xml' });
 ```
 
-> 外部样式无效
+注意：如果这里的 `svg` 使用了外部样式的话，那么这些样式都将无效

@@ -9,8 +9,7 @@ labels:
 description: >-
   Linux的gnome桌面管理底部Dock bar: gnome-shell-extension-dash-to-dock
   gnome-extensions-app gnome-shell-extension-prefs
-issue_number: 47
-updateTime: 2023-12-21T16:14:55.670Z
+updateTime: 2023-12-30T17:48:17.266Z
 ---
 
 ## 安装 Dash-to-Dock 扩展

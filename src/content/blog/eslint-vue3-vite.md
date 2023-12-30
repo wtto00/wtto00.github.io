@@ -7,8 +7,7 @@ draft: false
 labels:
   - Eslint
 description: Vite+Vue3中使用Eslint
-issue_number: 21
-updateTime: 2023-12-21T16:14:55.688Z
+updateTime: 2023-12-30T17:48:17.275Z
 ---
 
 ## Install

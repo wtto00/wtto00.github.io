@@ -9,8 +9,7 @@ labels:
 description: >-
   jQuery html() 怎么阻止xss攻击。如果是单纯的字符串，最好是使用text()方法。如果必须要拼接html标签，使用 htmlEscape
   方法。
-issue_number: 14
-updateTime: 2023-12-21T16:14:55.701Z
+updateTime: 2023-12-30T17:48:17.265Z
 ---
 
 - 如果是单纯的字符串，最好是使用 text() 方法

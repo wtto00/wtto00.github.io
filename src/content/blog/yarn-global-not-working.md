@@ -7,8 +7,7 @@ draft: false
 labels:
   - NPM
 description: 通过 `yarn global add xxx` 安装的模块，命令无法识别
-issue_number: 2
-updateTime: 2023-12-21T16:14:55.747Z
+updateTime: 2023-12-30T17:48:17.406Z
 ---
 
 ### 问题

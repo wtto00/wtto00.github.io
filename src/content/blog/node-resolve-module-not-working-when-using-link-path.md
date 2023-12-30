@@ -7,8 +7,7 @@ draft: false
 labels:
   - Javascript
 description: node resolve module not working when using link path
-issue_number: 42
-updateTime: 2023-12-21T16:14:55.696Z
+updateTime: 2023-12-30T17:48:17.282Z
 ---
 
 ## Failed to resolve module specifier “vue”

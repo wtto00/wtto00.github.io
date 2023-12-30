@@ -8,8 +8,7 @@ labels:
   - Git
 description: >-
   由于之前的svn仓库是非标准的，没有任何分支trunk，也没有任何tag，目录中直接就是项目的文件系统了。对于这种非标准的svn仓库，应该怎么保留完整commit迁移至git？
-issue_number: 17
-updateTime: 2023-12-21T16:14:55.706Z
+updateTime: 2023-12-30T17:48:17.291Z
 ---
 
 由于之前的 svn 仓库是非标准的，没有任何分支 trunk，也没有任何 tag，目录中直接就是项目的文件系统了。

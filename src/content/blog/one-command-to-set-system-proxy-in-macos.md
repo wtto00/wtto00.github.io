@@ -10,8 +10,7 @@ description: >-
   设置系统 http 代理：networksetup -setwebproxy networkservices address port. 设置系统
   https 代理：networksetup -setsecurewebproxy networkservices address port. 设置系统
   socks 代理：networksetup -setsocksfirewallproxy networkservices address port.
-issue_number: 51
-updateTime: 2023-12-21T16:14:55.697Z
+updateTime: 2023-12-30T17:48:17.264Z
 ---
 
 办公室里的一台电脑，运行了代理软件，连接同一个局域网的其他电脑想要使用这个代理来上网。

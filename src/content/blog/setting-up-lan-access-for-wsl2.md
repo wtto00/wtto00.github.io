@@ -7,8 +7,7 @@ draft: false
 labels:
   - WSL
 description: WSL2设置局域网访问
-issue_number: 38
-updateTime: 2023-12-21T16:14:55.704Z
+updateTime: 2023-12-30T17:48:17.270Z
 ---
 
 1. **首先查询 WSL2 中的 IP**

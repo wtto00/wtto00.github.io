@@ -7,8 +7,7 @@ draft: false
 labels:
   - Shell
 description: Windows下使用Git-Bash日常开发
-issue_number: 43
-updateTime: 2023-12-21T16:14:55.741Z
+updateTime: 2023-12-30T17:48:17.369Z
 ---
 
 参考[知乎：Windows 下的 Git Bash 配置，提升你的终端操作体验](https://zhuanlan.zhihu.com/p/418321777)

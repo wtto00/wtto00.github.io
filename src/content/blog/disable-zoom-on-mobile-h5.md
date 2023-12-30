@@ -10,8 +10,7 @@ description: >-
   移动端 H5 禁止缩放。<meta name="viewport"
   content="width=device-width,initial-scale=1.0,minimum-scale=1.0,
   maximum-scale=1.0, user-scalable=no">
-issue_number: 4
-updateTime: 2023-12-21T16:14:55.674Z
+updateTime: 2023-12-30T17:48:17.270Z
 ---
 
 ## 安卓一般加个 `meta` 标签即可

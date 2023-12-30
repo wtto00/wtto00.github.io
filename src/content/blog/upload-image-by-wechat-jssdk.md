@@ -7,8 +7,7 @@ draft: false
 labels:
   - 微信
 description: 调用微信JSSDK上传图片
-issue_number: 29
-updateTime: 2023-12-21T16:14:55.740Z
+updateTime: 2023-12-30T17:48:17.352Z
 ---
 
 ```javascript

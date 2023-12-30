@@ -7,8 +7,7 @@ draft: false
 labels:
   - WSL
 description: Winsock module breaks WSL2
-issue_number: 40
-updateTime: 2023-12-21T16:14:55.746Z
+updateTime: 2023-12-30T17:48:17.387Z
 ---
 
 [issues #4177](https://github.com/microsoft/WSL/issues/4177#issuecomment-1429113508)

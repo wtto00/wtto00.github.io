@@ -7,8 +7,7 @@ draft: false
 labels:
   - Javascript
 description: cordova准备工作
-issue_number: 44
-updateTime: 2023-12-21T16:14:55.741Z
+updateTime: 2023-12-30T17:48:17.353Z
 ---
 
 如果已经有一个 H5 的前端项目，怎么使用 [cordova](https://cordova.apache.org/) 包装成移动端 APP 呢？

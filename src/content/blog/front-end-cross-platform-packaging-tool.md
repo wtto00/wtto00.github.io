@@ -7,8 +7,7 @@ draft: false
 labels:
   - Javascript
 description: 前端跨平台打包工具整理：Electron、Tauri、Wails、React Native、Cordova、uniapp
-issue_number: 41
-updateTime: 2023-12-21T16:14:55.689Z
+updateTime: 2023-12-30T17:48:17.276Z
 ---
 
 前端构建桌面端应用程序，首先想到的是 `Electron`，但是 `Electron` 构建的桌面端应用程序有一些缺点无法避免：

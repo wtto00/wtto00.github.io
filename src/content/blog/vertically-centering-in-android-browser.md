@@ -7,8 +7,7 @@ draft: false
 labels:
   - CSS
 description: 'display: flex;align-items: center;line-height: normal;'
-issue_number: 24
-updateTime: 2023-12-21T16:14:55.742Z
+updateTime: 2023-12-30T17:48:17.373Z
 ---
 
 ```css

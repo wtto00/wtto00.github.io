@@ -7,8 +7,7 @@ draft: false
 labels:
   - Linux
 description: Linux 查看端口占用情况可以使用 lsof 和 netstat 命令。
-issue_number: 12
-updateTime: 2023-12-21T16:14:55.746Z
+updateTime: 2023-12-30T17:48:17.382Z
 ---
 
 Linux 查看端口占用情况可以使用 lsof 和 netstat 命令。

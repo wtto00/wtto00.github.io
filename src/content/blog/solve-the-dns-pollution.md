@@ -7,8 +7,7 @@ draft: false
 labels:
   - 电脑相关
 description: 通过修改 Hosts 解决一些国外站点由于国内 DNS 污染导致的访问失败。
-issue_number: 1
-updateTime: 2023-12-21T16:14:55.705Z
+updateTime: 2023-12-30T17:48:17.271Z
 ---
 
 ## 获取正确地 IP 地址

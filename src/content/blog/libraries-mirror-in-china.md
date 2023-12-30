@@ -7,8 +7,7 @@ draft: false
 labels:
   - 镜像
 description: '一些常用库的国内镜像: npm,cargo,maven,flutter,homebrew,dnf,ruby,pip'
-issue_number: 45
-updateTime: 2023-12-21T16:14:55.692Z
+updateTime: 2023-12-30T17:48:17.279Z
 ---
 
 ## npm-JavaScript

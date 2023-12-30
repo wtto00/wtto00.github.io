@@ -7,8 +7,7 @@ draft: false
 labels:
   - CSS
 description: 暗黑模式切换、跟随系统、扩散动画：startViewTransition
-issue_number: 48
-updateTime: 2023-12-21T16:14:55.673Z
+updateTime: 2023-12-30T17:48:17.270Z
 ---
 
 [示例 CodePen](https://codepen.io/wtto00/pen/XWydaZx)

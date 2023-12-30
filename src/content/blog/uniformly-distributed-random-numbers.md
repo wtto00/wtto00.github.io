@@ -7,8 +7,7 @@ draft: false
 labels:
   - Javascript
 description: JS 产生服从均匀分布随机数
-issue_number: 23
-updateTime: 2023-12-21T16:14:55.739Z
+updateTime: 2023-12-30T17:48:17.351Z
 ---
 
 - 如果想获得 `[min, max]`，可以使用 `Math.floor(Math.random() * (max - min + 1)) + min`；

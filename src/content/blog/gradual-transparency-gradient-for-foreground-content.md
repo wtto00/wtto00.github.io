@@ -7,8 +7,7 @@ draft: false
 labels:
   - CSS
 description: 使用mask实现前景内容透明度渐变
-issue_number: 30
-updateTime: 2023-12-21T16:14:55.691Z
+updateTime: 2023-12-30T17:48:17.278Z
 ---
 
 ![使用mask实现前景内容透明度渐变](../../assets/images/gradual-transparency-gradient-for-foreground-content.gif)

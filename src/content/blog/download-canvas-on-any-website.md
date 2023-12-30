@@ -7,8 +7,7 @@ draft: false
 labels:
   - Javascript
 description: 下载页面上的canvas
-issue_number: 34
-updateTime: 2023-12-21T16:14:55.683Z
+updateTime: 2023-12-30T17:48:17.272Z
 ---
 
 ## JS 脚本下载 canvas 为本地图片
