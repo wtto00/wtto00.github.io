@@ -9,7 +9,7 @@ labels:
 description: >-
   vue-router 不创建页面，简写 rouer-view: render: () =>
   h(resolveComponent('router-view'))
-updateTime: 2023-12-30T17:48:17.259Z
+updateTime: 2023-12-30T17:51:48.417Z
 ---
 
 项目中有太多嵌套的路由，其实只是为了分级作用，父级路由并不处理任何逻辑。
@@ -23,6 +23,8 @@ updateTime: 2023-12-30T17:48:17.259Z
 ```
 
 这样就显得有点繁琐，所以有没有办法，可以不新建组件，直接在路由中一笔带过呢？
+
+[stackblitz 示例](https://stackblitz.com/edit/vitejs-vite-dtkyky?file=package.json,src%2Froutes%2Findex.ts&terminal=dev)
 
 ## vue-router 不创建页面，简写 rouer-view
 
@@ -54,9 +56,9 @@ import { RouterView } from 'vue-router';
 }
 ```
 
-注意这里不能用 `resolveComponent('transition')`，而是`import { Transition } from 'vue'`。
+注意这里不能用 `resolveComponent('transition')`，而是 `import { Transition } from 'vue'`。
 
-这是因为`vue`的内置组件，诸如：`<KeepAlive>`、`<Transition>`、`<TransitionGroup>`、`<Teleport>` 和 `<Suspense>`这些并没有注册为全局组件，是为了打包工具的 `tree-shake`。
+这是因为 `vue` 的内置组件，诸如：`<KeepAlive>`、`<Transition>`、`<TransitionGroup>`、`<Teleport>` 和 `<Suspense>` 这些并没有注册为全局组件，是为了打包工具的 `tree-shake`。
 
 所以上面的 `resolveComponent('router-view')`，可以直接改写为引入的 `RouterView`。
 
