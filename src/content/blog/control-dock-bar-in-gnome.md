@@ -1,16 +1,16 @@
 ---
 pubDatetime: 2023-05-29T02:25:11.000Z
-title: Linux的gnome桌面管理底部Dock bar
-postSlug: control-gnome-dock-bar-on-linux
+title: 在gnome桌面上管理底部Dock bar
+postSlug: control-dock-bar-in-gnome
 featured: false
 draft: false
 labels:
-  - Linux
-description: >-
-  Linux的gnome桌面管理底部Dock bar: gnome-shell-extension-dash-to-dock
-  gnome-extensions-app gnome-shell-extension-prefs
-updateTime: 2023-12-30T17:48:17.266Z
+  - linux
+description: 在Linux上，怎么修改`gnome`桌面的底部Dock bar？比如图标的大小，以及是否自动隐藏等等相关功能。
+updateTime: 2023-12-31T17:56:35.673Z
 ---
+
+怎么修改 `gnome` 桌面的底部 Dock bar？比如图标的大小，以及是否自动隐藏等等相关功能。
 
 ## 安装 Dash-to-Dock 扩展
 

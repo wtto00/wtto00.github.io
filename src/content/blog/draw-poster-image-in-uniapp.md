@@ -6,18 +6,19 @@ featured: false
 draft: false
 labels:
   - uniapp
+  - canvas
 description: uniapp利用canvas在小程序上面生成图片
-updateTime: 2023-12-30T17:48:17.273Z
+updateTime: 2023-12-31T17:56:35.716Z
 ---
 
-## JS 逻辑代码
+## 画布准备
 
-```javascript
+```js
 /**
- * 从这里开始画图
+ * 开始画图
  * @param {object} canvas 画布对象
  * @param {object} data 渲染需要用的的数据
- * @param {function} callback 画布对象
+ * @param {function} callback 完成后的回调
  */
 function startDraw(canvas, data, callback) {
   // 定义画布大小
@@ -28,76 +29,13 @@ function startDraw(canvas, data, callback) {
   // 清空画布
   ctx.clearRect(0, 0, 1080, 1826);
 
-  // 画海报图片
-  drawImage(canvas, data.posterImg, 0, 0, 1080, 1440, 0, 'cover', () => {
-    // 画底部矩形 填充白色背景
-    ctx.beginPath();
-    ctx.fillStyle = '#fff';
-    drawRoundedRect(ctx, 0, 1382, 1080, 444, [34, 34, 0, 0]);
-    ctx.fill();
-    ctx.closePath();
-
-    // 画小程序码
-    drawImage(canvas, data.codeImg, 727, 1472, 266, 266, 0, 'cover', () => {
-      // 村庄名称
-      renderText(
-        ctx,
-        80,
-        1468,
-        647,
-        data.villageName,
-        {
-          fontSize: 98,
-          lineHeight: 98,
-          color: '#1a1a1a',
-          bold: true,
-        },
-        1,
-      );
-      // 村庄地址
-      renderText(
-        ctx,
-        80,
-        1606,
-        647,
-        data.villageAddress,
-        {
-          fontSize: 40,
-          lineHeight: 40,
-          color: '#1a1a1a',
-        },
-        1,
-      );
-      // 扫码查看村庄名片
-      renderText(
-        ctx,
-        80,
-        1686,
-        647,
-        '扫码查看村庄名片',
-        {
-          fontSize: 40,
-          lineHeight: 40,
-          color: '#999',
-        },
-        1,
-      );
-      // 小三角
-      ctx.beginPath();
-      ctx.fillStyle = '#D8D8D8';
-      ctx.moveTo(412, 1692);
-      ctx.lineTo(434, 1706.5);
-      ctx.lineTo(412, 1721);
-      ctx.fill();
-      ctx.closePath();
-      // 导出画布到本地临时文件
-      saveCanvas(canvas, (tempImgPath) => {
-        if (callback) callback(tempImgPath);
-      });
-    });
-  });
+  // 根据数据 `data` 开始画图
 }
+```
 
+## 画图片
+
+```js
 /**
  * 画图片
  * @param {object} canvas 画布对象
@@ -151,7 +89,11 @@ function drawImage(canvas, src, x, y, width, height, radius, fit, callback) {
   };
   image.src = src || '';
 }
+```
 
+## 画圆角矩形
+
+```js
 /**
  * 画圆角矩形
  * @param {object} ctx 画笔
@@ -183,7 +125,15 @@ function drawRoundedRect(ctx, x, y, width, height, _radius = 0) {
   // 左上角圆角
   ctx.arc(x + lt, y + lt, lt, 1 * Math.PI, 1.5 * Math.PI);
 }
+```
 
+## 画文本
+
+需要支持超出最大宽度后，显示省略号。
+
+### 根据显示宽度拆分文本
+
+```js
 /**
  * 根据宽度计算要显示文字
  * @param {object} ctx 画笔
@@ -227,7 +177,11 @@ function splitText(ctx, text = '', fontSize, bold, width, maxLines) {
   }
   return textArr;
 }
+```
 
+### 渲染文本
+
+```js
 /**
  * 渲染显示文字
  * @param {object} ctx 画笔
@@ -248,7 +202,11 @@ function renderText(ctx, x, y, width, text, style, maxLines) {
     ctx.fillText(item.text, x, y + index * lineHeight + (lineHeight - fontSize) / 2);
   });
 }
+```
 
+## 导出画布
+
+```js
 /**
  * 导出画布到本地临时文件
  * @param {object} canvas 画布
@@ -265,7 +223,11 @@ function saveCanvas(canvas, callback) {
     },
   });
 }
+```
 
+## 保存临时文件到相册
+
+```js
 /**
  * 保存文件到相册
  * @param {string} tempImgPath 临时文件路径
@@ -322,8 +284,6 @@ function savePosterFile(tempImgPath) {
   });
 }
 ```
-
----
 
 ## 可能遇到的问题
 

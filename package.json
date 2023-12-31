@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint --color --fix . && zhlint --fix \"./src/content/blog/*.md\"",
+    "lint": "eslint --color --fix .",
+    "zhlint:all": "zhlint \"./src/content/blog/*.md\" --fix",
     "format": "prettier . --write --ignore-unknown",
     "prepare": "husky install && husky set .husky/pre-commit \"npx lint-staged\""
   },
@@ -68,7 +69,7 @@
       "eslint --fix"
     ],
     "*.md": [
-      "zhlint --fix",
+      "pnpm zhlint:all",
       "node scripts/md-hook.js"
     ]
   }

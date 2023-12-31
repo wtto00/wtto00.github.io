@@ -5,11 +5,11 @@ postSlug: crlf-to-lf-in-git-on-windows
 featured: false
 draft: false
 labels:
-  - Git
+  - git
 description: >-
   windows下vscode设置了eof=lf，但是git操作还是会自动把代码变为crlf。git config core.autocrlf
   false，git config core.eol lf
-updateTime: 2023-12-30T17:48:17.267Z
+updateTime: 2023-12-31T17:56:35.676Z
 ---
 
 ## 背景
@@ -29,3 +29,5 @@ updateTime: 2023-12-30T17:48:17.267Z
 git config core.autocrlf false
 git config core.eol lf
 ```
+
+如果要全局配置，需要加上 `--global` 参数。

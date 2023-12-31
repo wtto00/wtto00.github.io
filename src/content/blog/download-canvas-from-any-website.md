@@ -1,13 +1,14 @@
 ---
 pubDatetime: 2022-05-18T15:32:41.000Z
 title: 下载页面上的canvas
-postSlug: download-canvas-on-any-website
+postSlug: download-canvas-from-any-website
 featured: false
 draft: false
 labels:
-  - Javascript
+  - javascript
+  - canvas
 description: 下载页面上的canvas
-updateTime: 2023-12-30T17:48:17.272Z
+updateTime: 2023-12-31T17:56:35.712Z
 ---
 
 ## JS 脚本下载 canvas 为本地图片
@@ -54,4 +55,5 @@ download();
 ## 本地图片转 PDF 文档
 
 下载保存所有文档页到本地图片后，可以使用 [https://www.67tool.com/pdf/imgToPdf](https://www.67tool.com/pdf/imgToPdf) 把图片转为 pdf。
+
 如果页面特别多，不好一下子全部转成 pdf，可以分段转成多个 pdf 文件，然后使用 [https://www.67tool.com/pdf/merge](https://www.67tool.com/pdf/merge) 把多个 pdf 合并为一个。

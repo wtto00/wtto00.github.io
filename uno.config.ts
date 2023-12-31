@@ -9,7 +9,68 @@ import { colorAddOpacity } from './scripts/uno-utils';
 export default defineConfig<Theme>({
   presets: [
     presetUno({ preflight: false }),
-    presetTypography(),
+    presetTypography({
+      cssExtend: (theme) => ({
+        h2: {
+          'margin-top': '2rem',
+        },
+        a: {
+          'text-decoration-style': 'dashed',
+          'text-underline-offset': '8px',
+          'overflow-wrap': 'break-word',
+          'margin-left': '0.25rem',
+          'margin-right': '0.25rem',
+        },
+        'a:hover': {
+          color: colorAddOpacity(theme.colors?.['accent']),
+        },
+        img: {
+          'border-width': '2px',
+          'border-color': colorAddOpacity(theme.colors?.['brd']),
+          margin: '0.5rem auto 2em',
+        },
+        'ol,ul': {
+          'padding-left': '2.5rem',
+        },
+        table: {
+          'border-spacing': '0 0',
+          'border-collapse': 'collapse',
+          display: 'block',
+          width: 'max-content',
+          'max-width': '100%',
+          overflow: 'auto',
+        },
+        th: {
+          'font-weight': 600,
+        },
+        'td,th': {
+          'border-width': '1px',
+          'border-color': colorAddOpacity(theme.colors?.['brd']),
+        },
+        'td > img,th > img': {
+          margin: 0,
+        },
+        hr: {
+          'border-bottom-width': '0px',
+        },
+        pre: {
+          'line-height': 1.5,
+        },
+        ':not(pre) > code': {
+          'background-color': colorAddOpacity(theme.colors?.['card'], 0.75),
+          padding: '0.25rem',
+          'border-radius': '0.25rem',
+          'vertical-align': 'middle',
+          'white-space': 'pre-line',
+        },
+        ':not(pre) > code::before,:not(pre) > code::after': {
+          display: 'none',
+        },
+        blockquote: {
+          color: colorAddOpacity(theme.colors?.['base'], 0.8),
+        },
+      }),
+    }),
     presetIcons({
       cdn: 'https://esm.sh/',
       customizations: {

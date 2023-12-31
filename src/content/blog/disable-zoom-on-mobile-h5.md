@@ -5,15 +5,15 @@ postSlug: disable-zoom-on-mobile-h5
 featured: false
 draft: false
 labels:
-  - H5
+  - html
 description: >-
   移动端 H5 禁止缩放。<meta name="viewport"
   content="width=device-width,initial-scale=1.0,minimum-scale=1.0,
   maximum-scale=1.0, user-scalable=no">
-updateTime: 2023-12-30T17:48:17.270Z
+updateTime: 2023-12-31T17:56:35.680Z
 ---
 
-## 安卓一般加个 `meta` 标签即可
+## 在 `<head>` 头中添加 `meta` 标签
 
 ```html
 <meta
@@ -22,7 +22,9 @@ updateTime: 2023-12-30T17:48:17.270Z
 />
 ```
 
-## ios 可以引入下面的 js
+## iOS 在某些情况下 `meta` 标签不生效
+
+`<meta />` 标签不生效的话，可以尝试添加下边的 js 代码：
 
 ```javascript
 // 缩放

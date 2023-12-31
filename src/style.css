@@ -33,6 +33,7 @@ a {
 /* --------------------------------- 滚动条 Start --------------------------------- */
 html {
   overflow-y: scroll;
+  scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
 }
 /* width */
@@ -52,47 +53,6 @@ html {
   --at-apply: bg-card-muted;
 }
 /* --------------------------------- 滚动条 End --------------------------------- */
-
-/* --------------------------------- prose Start --------------------------------- */
-.prose h2 {
-  --uno: mt-8;
-}
-.prose a {
-  /* prettier-ignore */
-  --uno: decoration-dashed underline-offset-8 break-words hover:c-accent mx-1;
-}
-.prose img {
-  --uno: b-2 b-brd mx-auto mt-2 mb-2em;
-}
-.prose ol,
-.prose ul {
-  --uno: pl-10;
-}
-.prose table {
-  --uno: border-spacing-0 border-collapse block w-[max-content] max-w-full overflow-auto;
-}
-.prose th {
-  --uno: font-semibold;
-}
-.prose td,
-.prose th {
-  --uno: b-brd b-1;
-}
-.prose td > img,
-.prose th > img {
-  --uno: m-0;
-}
-.prose hr {
-  --uno: b-b-0;
-}
-.prose :not(pre) > code {
-  /* prettier-ignore */
-  --uno: bg-card bg-op-75 before:hidden after:hidden p-1 rd-1 text-sm v-mid whitespace-pre-line
-}
-.prose blockquote {
-  --uno: c-base c-op-60;
-}
-/* --------------------------------- prose End --------------------------------- */
 
 /* --------------------------------- 代码高亮主题 Start --------------------------------- */
 :root.dark .astro-code,
