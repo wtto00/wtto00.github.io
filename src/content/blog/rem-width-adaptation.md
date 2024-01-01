@@ -4,10 +4,10 @@ title: 使用rem实现宽度自适应
 postSlug: rem-width-adaptation
 featured: false
 draft: false
-labels:
+tags:
   - css
 description: 使用rem实现元素大小随宽度自适应，关键是根字体的大小。合理的设置根字体大小随宽度变化而变化，就可以轻易的实现这一点。
-updateTime: 2024-01-01T16:05:24.578Z
+updateTime: 2024-01-01T16:14:23.678Z
 ---
 
 rem 单位是相对于根字体大小的。

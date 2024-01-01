@@ -4,13 +4,13 @@ title: 移动端 H5 禁止缩放
 postSlug: disable-zoom-on-mobile-h5
 featured: false
 draft: false
-labels:
+tags:
   - html
 description: >-
   移动端 H5 禁止缩放。<meta name="viewport"
   content="width=device-width,initial-scale=1.0,minimum-scale=1.0,
   maximum-scale=1.0, user-scalable=no">
-updateTime: 2024-01-01T16:05:24.325Z
+updateTime: 2024-01-01T16:14:23.738Z
 ---
 
 ## 在 `<head>` 头中添加 `meta` 标签

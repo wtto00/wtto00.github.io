@@ -4,11 +4,11 @@ title: 浏览器视频播放方案
 postSlug: video-play-on-web
 featured: false
 draft: false
-labels:
+tags:
   - javascript
   - video
 description: '浏览器视频播放方案: m3u8/mp4/flv/http-flv/webrtc'
-updateTime: 2024-01-01T16:05:24.638Z
+updateTime: 2024-01-01T16:14:23.706Z
 ---
 
 ## 解决方案

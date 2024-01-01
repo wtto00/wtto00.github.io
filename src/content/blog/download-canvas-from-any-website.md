@@ -4,11 +4,11 @@ title: 下载页面上的canvas
 postSlug: download-canvas-from-any-website
 featured: false
 draft: false
-labels:
+tags:
   - javascript
   - canvas
 description: 在控制台输入代码快速下载页面上的canvas
-updateTime: 2024-01-01T16:05:24.326Z
+updateTime: 2024-01-01T16:14:23.739Z
 ---
 
 ## JS 脚本下载 canvas 为本地图片

@@ -4,10 +4,10 @@ title: 使用mask实现前景内容透明度渐变
 postSlug: gradual-transparency-gradient-for-foreground-content
 featured: false
 draft: false
-labels:
+tags:
   - css
 description: 使用mask实现前景内容透明度渐变。mask 遮罩，使用一张图片或者渐变色做为遮罩，所在元素的透明度会跟随遮罩的透明度。
-updateTime: 2024-01-01T16:05:24.331Z
+updateTime: 2024-01-01T16:14:23.746Z
 ---
 
 ![使用mask实现前景内容透明度渐变](../../assets/images/gradual-transparency-gradient-for-foreground-content.gif)

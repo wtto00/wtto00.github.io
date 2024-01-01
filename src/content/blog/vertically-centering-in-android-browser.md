@@ -4,10 +4,10 @@ title: Android 浏览器下 垂直居中偏上
 postSlug: vertically-centering-in-android-browser
 featured: false
 draft: false
-labels:
+tags:
   - css
 description: '在某些情况下，安卓浏览器上，使用flex的垂直居中，实际显示有偏移，并不是垂直居中。添加line-height: normal;即可解决。'
-updateTime: 2024-01-01T16:05:24.637Z
+updateTime: 2024-01-01T16:14:23.705Z
 ---
 
 在某些情况下，安卓浏览器上，使用 flex 的垂直居中，实际显示有偏移，并不是垂直居中。

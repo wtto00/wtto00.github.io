@@ -4,11 +4,11 @@ title: node resolve module not working when using link path
 postSlug: node-resolve-module-not-working-when-using-link-path
 featured: false
 draft: false
-labels:
+tags:
   - javascript
   - windows
 description: 由于 `nodejs` 在windows软链接的路径中，无法找到对应的模块。我们只能更改一下项目路径，不要用链接的路径，就可以正常开发了。
-updateTime: 2024-01-01T16:05:24.739Z
+updateTime: 2024-01-01T16:14:23.752Z
 ---
 
 ## Failed to resolve module specifier “vue”

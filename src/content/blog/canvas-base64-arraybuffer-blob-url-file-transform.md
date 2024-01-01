@@ -4,10 +4,10 @@ title: js中canvas、base64、ArrayBuffer、Blob、Url、File互转
 postSlug: canvas-base64-arraybuffer-blob-url-file-transform
 featured: false
 draft: false
-labels:
+tags:
   - javascript
 description: js中canvas、base64、ArrayBuffer、Blob、Url、File之间的互相转换
-updateTime: 2024-01-01T16:05:24.264Z
+updateTime: 2024-01-01T16:14:23.731Z
 ---
 
 ## canvas to base64

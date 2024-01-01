@@ -4,12 +4,12 @@ title: 使用 clip-path 和 drop-shadow 生成自定义图形、阴影
 postSlug: custom-shapes-shadows-by-clip-path-and-drop-shadow
 featured: false
 draft: false
-labels:
+tags:
   - css
 description: >-
   不规则形状 clip-path 导致 box-shadow
   阴影无效。那么怎么给clip-path切出的不规则形状容器添加阴影呢？使用drop-shadow。
-updateTime: 2024-01-01T16:05:24.304Z
+updateTime: 2024-01-01T16:14:23.736Z
 ---
 
 不规则形状 `clip-path` 导致 `box-shadow` 阴影无效。那么怎么给 `clip-path` 切出的不规则形状容器添加阴影呢？使用 `drop-shadow`。

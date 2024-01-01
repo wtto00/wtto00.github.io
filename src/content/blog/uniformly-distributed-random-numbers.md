@@ -4,10 +4,10 @@ title: JS 产生服从均匀分布随机数
 postSlug: uniformly-distributed-random-numbers
 featured: false
 draft: false
-labels:
+tags:
   - javascript
 description: JS 产生服从均匀分布随机数
-updateTime: 2024-01-01T16:05:24.629Z
+updateTime: 2024-01-01T16:14:23.702Z
 ---
 
 ## `[min, max]`

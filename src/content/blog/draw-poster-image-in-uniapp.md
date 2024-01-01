@@ -4,11 +4,11 @@ title: uniapp利用canvas在小程序上面生成图片
 postSlug: draw-poster-image-in-uniapp
 featured: false
 draft: false
-labels:
+tags:
   - uniapp
   - canvas
 description: uniapp利用canvas在小程序上面生成图片
-updateTime: 2024-01-01T16:05:24.327Z
+updateTime: 2024-01-01T16:14:23.740Z
 ---
 
 ## 画布准备

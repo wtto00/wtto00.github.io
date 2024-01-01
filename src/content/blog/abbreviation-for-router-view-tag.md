@@ -4,12 +4,12 @@ title: vue-router 不创建页面，简写 rouer-view
 postSlug: abbreviation-for-router-view-tag
 featured: false
 draft: false
-labels:
+tags:
   - vue
 description: >-
   vue-router 不创建页面，简写 rouer-view: render: () =>
   h(resolveComponent('router-view'))
-updateTime: 2024-01-01T16:05:24.256Z
+updateTime: 2024-01-01T16:14:23.726Z
 ---
 
 项目中有太多嵌套的路由，其实只是为了分级作用，父级路由并不处理任何逻辑。

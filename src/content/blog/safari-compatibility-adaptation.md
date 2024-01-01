@@ -4,13 +4,13 @@ title: IOS 浏览器适配
 postSlug: safari-compatibility-adaptation
 featured: false
 draft: false
-labels:
+tags:
   - h5
   - safari
 description: >-
   IOS 浏览器适配。css 适配 iPhone 全面屏底部安全区域。低版本 safari 提示 globalThis 不存在。input
   聚焦时页面自动放大。
-updateTime: 2024-01-01T16:05:24.581Z
+updateTime: 2024-01-01T16:14:23.685Z
 ---
 
 ## overflow：scroll:auto 元素无法滑动

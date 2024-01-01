@@ -4,12 +4,12 @@ title: 安全的使用 innerHTML 插入 DOM
 postSlug: safely-insert--dom-using-innerhtml
 featured: false
 draft: false
-labels:
+tags:
   - xss
 description: >-
   使用innerHTML插入DOM元素时，如果HTML字符串中包含一些不确定的内容，比如js的代码，就会造成xss攻击。如果是单纯的字符串，最好是使用innerText赋值。如果必须要拼接html标签，使用
   htmlEscape 方法拼接字符串，或使用DOMPurify库处理。
-updateTime: 2024-01-01T16:05:24.582Z
+updateTime: 2024-01-01T16:14:23.687Z
 ---
 
 前端项目一般应该尽量避免直接插入 `html` 字符串，因为这样很容易造成 [xss](https://developer.mozilla.org/zh-CN/docs/Glossary/Cross-site_scripting) 攻击。

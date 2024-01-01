@@ -4,10 +4,10 @@ title: 一些常用库的国内镜像
 postSlug: libraries-mirror-in-china
 featured: false
 draft: false
-labels:
+tags:
   - 镜像
 description: '一些常用库的国内镜像: npm,cargo,maven,flutter,homebrew,dnf,ruby,pip'
-updateTime: 2024-01-01T11:50:27.432Z
+updateTime: 2024-01-01T16:14:23.750Z
 ---
 
 ## npm-JavaScript

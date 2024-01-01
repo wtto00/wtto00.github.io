@@ -4,10 +4,10 @@ title: Winsock module breaks WSL2
 postSlug: winsock-module-breaks-wsl2
 featured: false
 draft: false
-labels:
+tags:
   - wsl
 description: WSL 提示 “参考的对象类型不支持尝试的操作。” Winsock module breaks WSL2
-updateTime: 2024-01-01T16:05:24.651Z
+updateTime: 2024-01-01T16:14:23.708Z
 ---
 
 `WSL` 启动时，提示 “参考的对象类型不支持尝试的操作。”

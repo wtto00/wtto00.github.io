@@ -4,10 +4,10 @@ title: WSL2设置局域网访问
 postSlug: setting-up-lan-access-for-wsl2
 featured: false
 draft: false
-labels:
+tags:
   - wsl
 description: 在WSL2中设置局域网访问
-updateTime: 2024-01-01T16:05:24.583Z
+updateTime: 2024-01-01T16:14:23.688Z
 ---
 
 ## 首先查询 WSL2 中的 IP

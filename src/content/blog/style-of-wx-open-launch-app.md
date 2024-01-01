@@ -4,11 +4,11 @@ title: 微信<wx-open-launch-app>元素的自定义样式
 postSlug: style-of-wx-open-launch-app
 featured: false
 draft: false
-labels:
+tags:
   - 微信
   - 小程序
 description: 微信 H5 开放标签 <wx-open-launch-app> 打开 APP，打开小程序，样式问题
-updateTime: 2024-01-01T16:05:24.585Z
+updateTime: 2024-01-01T16:14:23.689Z
 ---
 
 官当文档 <https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_Open_Tag.html>

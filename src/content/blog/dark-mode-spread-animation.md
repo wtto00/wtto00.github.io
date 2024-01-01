@@ -4,10 +4,10 @@ title: 暗黑模式切换、跟随系统、扩散动画
 postSlug: dark-mode-spread-animation
 featured: false
 draft: false
-labels:
+tags:
   - css
 description: 暗黑模式切换、跟随系统、扩散动画：startViewTransition
-updateTime: 2024-01-01T16:05:24.321Z
+updateTime: 2024-01-01T16:14:23.737Z
 ---
 
 实现功能：

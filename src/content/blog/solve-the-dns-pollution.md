@@ -4,11 +4,11 @@ title: 怎么解决国内 DNS 污染导致的某些站点访问失败
 postSlug: solve-the-dns-pollution
 featured: false
 draft: false
-labels:
+tags:
   - 电脑相关
   - dns
 description: 通过修改 Hosts 解决一些国外站点由于国内 DNS 污染导致的访问失败。
-updateTime: 2024-01-01T16:05:24.584Z
+updateTime: 2024-01-01T16:14:23.688Z
 ---
 
 ## 获取正确地 IP 地址

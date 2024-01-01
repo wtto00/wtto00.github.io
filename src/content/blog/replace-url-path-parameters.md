@@ -4,10 +4,10 @@ title: js 匹配 url 路径参数，并替换变量
 postSlug: replace-url-path-parameters
 featured: false
 draft: false
-labels:
+tags:
   - javascript
 description: js 使用正则匹配动态 url 路径参数，并替换变量，得到完整的 url 路径
-updateTime: 2024-01-01T16:05:24.580Z
+updateTime: 2024-01-01T16:14:23.683Z
 ---
 
 对于一个动态的 url 地址 ‘/yearpost/settop/{1}/{num}/1’`，怎么传入参数值，得到具体完整的 url 地址呢？

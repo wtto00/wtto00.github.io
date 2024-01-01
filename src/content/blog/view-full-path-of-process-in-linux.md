@@ -4,13 +4,13 @@ title: Linux查看进程运行的完整路径方法
 postSlug: view-full-path-of-process-in-linux
 featured: false
 draft: false
-labels:
+tags:
   - linux
 description: >-
   通过 `ps` 及 `top` 命令查看进程信息时，只能查到相对路径，查不到的进程的详细信息，如绝对路径等。Linux在启动一个进程时，系统会在
   `/proc` 下创建一个以PID命名的文件夹，在该文件夹下会有我们的进程的信息，其中包括一个名为exe的文件即记录了绝对路径，通过 `ll` 或 `ls
   –l` 命令即可查看。
-updateTime: 2024-01-01T16:05:24.645Z
+updateTime: 2024-01-01T16:14:23.706Z
 ---
 
 通过 `ps` 及 `top` 命令查看进程信息时，只能查到相对路径，查不到的进程的详细信息，如绝对路径等。这时，我们需要通过以下的方法来查看进程的详细信息：

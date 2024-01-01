@@ -4,12 +4,12 @@ title: MacOS下在终端中打开VS Code
 postSlug: open-vscode-in-terminal-in-macos
 featured: false
 draft: false
-labels:
+tags:
   - mac
   - vscode
 description: 使用VS Code自带的命令，或者把code可执行文件添加到PATH中。或者把打开VS Code的命令alias为code命令。
 pubDatetime: 2023-12-19T14:01:36.337Z
-updateTime: 2024-01-01T16:05:24.527Z
+updateTime: 2024-01-01T16:14:23.765Z
 ---
 
 在 [VS Code](https://code.visualstudio.com/) 下载安装后，在终端中，`code .` 不能让 VS Code 打开当前目录。有以下几种解决办法：

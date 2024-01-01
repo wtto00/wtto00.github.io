@@ -4,10 +4,10 @@ title: 利用CSS制作手机充电动画
 postSlug: mobile-charging-animation
 featured: false
 draft: false
-labels:
+tags:
   - css
 description: 仅使用CSS仿制华为手机的充电动画。
-updateTime: 2024-01-01T16:05:24.367Z
+updateTime: 2024-01-01T16:14:23.751Z
 ---
 
 ![CSS充电动画](../../assets/images/mobile-charging-animation.gif)

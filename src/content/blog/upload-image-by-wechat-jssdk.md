@@ -4,10 +4,10 @@ title: 调用微信JSSDK上传图片
 postSlug: upload-image-by-wechat-jssdk
 featured: false
 draft: false
-labels:
+tags:
   - 微信
 description: 调用微信JSSDK上传图片
-updateTime: 2024-01-01T16:05:24.635Z
+updateTime: 2024-01-01T16:14:23.703Z
 ---
 
 引入 JSSDK 可以使用 [jweixin-esm](https://github.com/wtto00/jweixin-esm) 这个库

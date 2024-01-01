@@ -4,11 +4,11 @@ title: 系统查看端口占用情况
 postSlug: view-port-occupancy
 featured: false
 draft: false
-labels:
+tags:
   - linux
   - windows
 description: Linux 查看端口占用情况可以使用 lsof 和 netstat 命令。 Windows 下使用netstat查看端口进程。
-updateTime: 2024-01-01T16:05:24.646Z
+updateTime: 2024-01-01T16:14:23.708Z
 ---
 
 `Linux` 查看端口占用情况可以使用 `lsof` 和 `netstat` 命令。

@@ -4,11 +4,11 @@ title: Windows下使用Git-Bash日常开发
 postSlug: use-git-bash-on-windows
 featured: false
 draft: false
-labels:
+tags:
   - shell
   - git
 description: Windows下使用Git-Bash日常开发
-updateTime: 2024-01-01T16:05:24.636Z
+updateTime: 2024-01-01T16:14:23.704Z
 ---
 
 参考[知乎：Windows 下的 Git Bash 配置，提升你的终端操作体验](https://zhuanlan.zhihu.com/p/418321777)

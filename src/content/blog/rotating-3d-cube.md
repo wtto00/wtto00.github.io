@@ -4,10 +4,10 @@ title: css实现3D立方体旋转
 postSlug: rotating-3d-cube
 featured: false
 draft: false
-labels:
+tags:
   - css
 description: css实现3D立方体旋转动画
-updateTime: 2024-01-01T16:05:24.580Z
+updateTime: 2024-01-01T16:14:23.684Z
 ---
 
 ## 效果

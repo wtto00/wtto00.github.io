@@ -4,10 +4,10 @@ title: Eslint+Stylelint+Prettier+Husky+lint-staged项目规范
 postSlug: eslint-stylelint-prettier-husky-lint-staged
 featured: false
 draft: false
-labels:
+tags:
   - eslint
 description: 'EditorConfig,Eslint,Stylelint,Prettier,Husky,lint-staged,zhlint,commitlint'
-updateTime: 2024-01-01T16:05:24.328Z
+updateTime: 2024-01-01T16:14:23.742Z
 ---
 
 ## EditorConfig

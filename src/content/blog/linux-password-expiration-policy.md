@@ -4,12 +4,12 @@ title: Linux 设置密码过期策略
 postSlug: linux-password-expiration-policy
 featured: false
 draft: false
-labels:
+tags:
   - linux
 description: >-
   Linux 服务器登录提示`You must change your password now and login
   again!`，使用`chage`命令修改最后一次修改密码的时间。
-updateTime: 2024-01-01T16:05:24.346Z
+updateTime: 2024-01-01T16:14:23.750Z
 ---
 
 > Linux 服务器登录提示 `You must change your password now and login again!`

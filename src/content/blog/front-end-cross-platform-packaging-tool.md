@@ -4,10 +4,10 @@ title: 前端跨平台打包工具整理
 postSlug: front-end-cross-platform-packaging-tool
 featured: false
 draft: false
-labels:
+tags:
   - javascript
 description: 前端跨平台打包工具整理：Electron、Tauri、Wails、React Native、Cordova、uniapp
-updateTime: 2024-01-01T16:05:24.330Z
+updateTime: 2024-01-01T16:14:23.743Z
 ---
 
 前端构建桌面端应用程序，首先想到的是 `Electron`，但是 `Electron` 构建的桌面端应用程序有一些缺点无法避免：
