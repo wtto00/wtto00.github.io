@@ -5,9 +5,11 @@ postSlug: linux-password-expiration-policy
 featured: false
 draft: false
 labels:
-  - Linux
-description: Linux 服务器登录提示`You must change your password now and login again!`
-updateTime: 2023-12-30T17:48:17.280Z
+  - linux
+description: >-
+  Linux 服务器登录提示`You must change your password now and login
+  again!`，使用`chage`命令修改最后一次修改密码的时间。
+updateTime: 2024-01-01T11:50:27.433Z
 ---
 
 > Linux 服务器登录提示 `You must change your password now and login again!`
@@ -49,4 +51,4 @@ chage -M -1 wtto
 |-E|帐号到期的日期。过了这天，此帐号将不可用。|
 |-d|上一次更改的日期。|
 |-i|停滞时期。如果一个密码已过期这些天，那么此帐号将不可用。|
-|-l|例出当前的设置。由非特权用户来确定他们的密码或帐号何时过期。|
+|-l|列出当前的设置。由非特权用户来确定他们的密码或帐号何时过期。|

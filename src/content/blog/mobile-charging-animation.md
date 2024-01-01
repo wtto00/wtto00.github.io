@@ -5,20 +5,22 @@ postSlug: mobile-charging-animation
 featured: false
 draft: false
 labels:
-  - CSS
-description: 利用CSS制作手机充电动画
-updateTime: 2023-12-30T17:48:17.280Z
+  - css
+description: 仅使用CSS仿制华为手机的充电动画。
+updateTime: 2024-01-01T11:50:27.434Z
 ---
 
 ![CSS充电动画](../../assets/images/mobile-charging-animation.gif)
 
-[codepen](https://codepen.io/wtto00/pen/wvpmdqW?editors=1100)
+## html
 
 ```html
 <div class="mask">
   <div class="circle"></div>
 </div>
 ```
+
+## css
 
 ```css
 .mask {
@@ -74,3 +76,7 @@ updateTime: 2023-12-30T17:48:17.280Z
   }
 }
 ```
+
+## 完整示例
+
+[CodePen 示例](https://codepen.io/wtto00/pen/wvpmdqW?editors=1100)

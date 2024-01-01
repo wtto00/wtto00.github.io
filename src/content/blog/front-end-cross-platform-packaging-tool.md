@@ -5,9 +5,9 @@ postSlug: front-end-cross-platform-packaging-tool
 featured: false
 draft: false
 labels:
-  - Javascript
+  - javascript
 description: 前端跨平台打包工具整理：Electron、Tauri、Wails、React Native、Cordova、uniapp
-updateTime: 2023-12-30T17:48:17.276Z
+updateTime: 2024-01-01T11:50:27.427Z
 ---
 
 前端构建桌面端应用程序，首先想到的是 `Electron`，但是 `Electron` 构建的桌面端应用程序有一些缺点无法避免：
@@ -15,11 +15,9 @@ updateTime: 2023-12-30T17:48:17.276Z
 - 包太大，因为 `electron` 会自动塞入 `Chromium` 和 `nodejs`，一个什么也不做的 `electron` 项目压缩后也大概要 50m。
 - 内存消耗过大，因为 `Chromium` 本身就很吃内存，再加上提供操作系统访问能力的 `nodejs`，很可观的内存消耗，对小工具类的项目不友好。
 
----
-
 那么有什么框架可以代替 `Electron` 吗？
 
-## 代替 `Electron` 的几种方案
+## 桌面端打包框架
 
 | 框架                                                              | 前端实现                                                           | 后端实现 | 热度                                                                                      | 备注             |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------ | -------- | ----------------------------------------------------------------------------------------- | ---------------- |
@@ -32,8 +30,6 @@ updateTime: 2023-12-30T17:48:17.276Z
 
 以上的这些框架，基本都是轻量级的 `Electron`。打包体积大幅减小，但是对于**系统级的 API** 支持程度没有 `Electron` 完备。
 
----
-
 ## 移动端打包框架
 
 前面说的是一些打包到桌面端的框架，那么打包到移动端的框架有哪些呢？
@@ -45,7 +41,7 @@ updateTime: 2023-12-30T17:48:17.276Z
 |[uniapp](https://uniapp.dcloud.net.cn/#)|![stars](https://img.shields.io/github/stars/dcloudio/uni-app?style=flat-square) |小程序首选。Native 使用的基于 weex 改进原生渲染引擎|
 |[Taro](https://taro.jd.com/)|![stars](https://img.shields.io/github/stars/NervJS/taro?style=flat-square)|支持小程序。Native 使用的 RN|
 
----
+## Flutter
 
 另外还有一个要说的就是 [Flutter](https://docs.flutter.dev/) ![stars](https://img.shields.io/github/stars/flutter/flutter?style=flat-square)，但是他不是 JavaScript 技术栈了。
 

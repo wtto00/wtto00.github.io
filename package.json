@@ -11,7 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint --color --fix .",
-    "zhlint:all": "zhlint \"./src/content/blog/*.md\" --fix",
+    "zhlint:all": "zhlint \"{,!(node_modules)/**/}*.md\" --fix",
     "format": "prettier . --write --ignore-unknown",
     "prepare": "husky install && husky set .husky/pre-commit \"npx lint-staged\""
   },

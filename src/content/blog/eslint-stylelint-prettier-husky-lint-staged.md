@@ -7,7 +7,7 @@ draft: false
 labels:
   - eslint
 description: 'EditorConfig,Eslint,Stylelint,Prettier,Husky,lint-staged,'
-updateTime: 2023-12-31T17:56:35.723Z
+updateTime: 2024-01-01T11:50:27.421Z
 ---
 
 ## EditorConfig
@@ -156,7 +156,7 @@ module.exports = {
 pnpm add zhlint -D
 
 # 添加执行脚本
-npm pkg set scripts['zhlint:all']="zhlint \"./src/content/blog/*.md\" --fix"
+npm pkg set scripts['zhlint:all']="zhlint \"{,!(node_modules)/**/}*.md\" --fix"
 ```
 
 `lint-staged` 中可配置
@@ -167,7 +167,7 @@ npm pkg set scripts['zhlint:all']="zhlint \"./src/content/blog/*.md\" --fix"
 }
 ```
 
-由于 `zhlint` 不接受多个文件路径的参数，如果传入多个文件路径，`zhlint` 指挥处理第一个文件。所以这里 `lint-staged` 是全量检查，而不是差量检查。
+由于 `zhlint` 不接受多个文件路径的参数，如果传入多个文件路径，`zhlint` 只会处理第一个文件。所以这里 `lint-staged` 是全量检查，而不是差量检查。
 
 ## commitlint (可选)
 

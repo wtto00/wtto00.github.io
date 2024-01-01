@@ -7,7 +7,7 @@ draft: false
 labels:
   - 镜像
 description: '一些常用库的国内镜像: npm,cargo,maven,flutter,homebrew,dnf,ruby,pip'
-updateTime: 2023-12-30T17:48:17.279Z
+updateTime: 2024-01-01T11:50:27.432Z
 ---
 
 ## npm-JavaScript
@@ -67,7 +67,7 @@ export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 ```
 
-## gradle
+## gradle-java
 
 使用阿里云的镜像
 
@@ -116,7 +116,7 @@ sudo sed -e 's|^metalink=|#metalink=|g' \
 
 更新请以[官方文档](https://mirrors.tuna.tsinghua.edu.cn/help/fedora/)为准。
 
-## python
+## pip-python
 
 - `python` 安装包下载
 

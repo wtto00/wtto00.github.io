@@ -5,14 +5,16 @@ postSlug: gradual-transparency-gradient-for-foreground-content
 featured: false
 draft: false
 labels:
-  - CSS
-description: 使用mask实现前景内容透明度渐变
-updateTime: 2023-12-30T17:48:17.278Z
+  - css
+description: 使用mask实现前景内容透明度渐变。mask 遮罩，使用一张图片或者渐变色做为遮罩，所在元素的透明度会跟随遮罩的透明度。
+updateTime: 2024-01-01T11:50:27.429Z
 ---
 
 ![使用mask实现前景内容透明度渐变](../../assets/images/gradual-transparency-gradient-for-foreground-content.gif)
 
 > mask 遮罩，使用一张图片或者渐变色做为遮罩，所在元素的透明度会跟随遮罩的透明度。
+
+## html
 
 ```html
 <div class="wrap">
@@ -38,6 +40,8 @@ updateTime: 2023-12-30T17:48:17.278Z
   </ul>
 </div>
 ```
+
+## css
 
 ```css
 .wrap {
@@ -71,4 +75,6 @@ updateTime: 2023-12-30T17:48:17.278Z
 }
 ```
 
-[codepen](https://codepen.io/wtto00/pen/OJOGMpm?editors=1100)
+## 完整示例
+
+[CodePen 示例](https://codepen.io/wtto00/pen/OJOGMpm?editors=1100)

@@ -6,11 +6,11 @@ draft: false
 labels:
   - 微信
 description: >-
-  那么就`访问iOS App Store链接直接打开App
+  在微信浏览器中，就`访问iOS App Store链接直接打开App
   Store`这一个功能，能不能做个判断，当用户从公众号菜单，以及二维码扫描进入的页面时，则直接访问iOS App
   Store链接，让微信提示用户是否前往App Store；当用户直接点击url链接进入的页面，则弹出遮罩，提示用户前往浏览器打开。
 pubDatetime: 2023-12-26T07:06:58.781Z
-updateTime: 2023-12-26T07:06:58.781Z
+updateTime: 2024-01-01T11:50:27.431Z
 ---
 
 微信在2021年底更改了外部链接的策略，直接点击链接 url 进入的页面，不能调用微信提供的 API，例如：分享给朋友，分享到朋友圈，以及包括访问 iOS App Store 链接直接打开 App Store 的功能。但是从公众号菜单，以及二维码扫描进入的页面，上述功能都能正常使用。
