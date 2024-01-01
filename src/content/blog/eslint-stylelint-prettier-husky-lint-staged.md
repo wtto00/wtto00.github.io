@@ -7,7 +7,7 @@ draft: false
 tags:
   - eslint
 description: 'EditorConfig,Eslint,Stylelint,Prettier,Husky,lint-staged,zhlint,commitlint'
-updateTime: 2024-01-01T16:14:23.742Z
+updateTime: 2024-01-01T16:46:54.381Z
 ---
 
 ## EditorConfig
@@ -52,6 +52,7 @@ npm pkg set scripts.lint="eslint --cache --fix --color --ext .js,.jsx,.ts,.tsx .
 - [eslint-plugin-astro](https://github.com/ota-meshi/eslint-plugin-astro)
 - [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort)
 - [eslint-plugin-solid](https://github.com/solidjs-community/eslint-plugin-solid#readme)
+- [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
 - ...
 
 ## Stylelint (可选)

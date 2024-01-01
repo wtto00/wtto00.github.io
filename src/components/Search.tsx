@@ -78,7 +78,7 @@ export default function SearchBar() {
 
   return (
     <>
-      <label class="relative block">
+      <div class="relative">
         <span class="absolute inset-y-0 left-0 flex items-center pl-2 op-75">
           <i class="i-custom-search text-2xl" />
         </span>
@@ -93,7 +93,7 @@ export default function SearchBar() {
           auto-focus
           ref={(el) => (inputRef = el)}
         />
-      </label>
+      </div>
 
       <Show when={inputVal().length > 1}>
         <div class="mt-8">

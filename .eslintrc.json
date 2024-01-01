@@ -24,7 +24,7 @@
   "overrides": [
     {
       "files": ["*.tsx"],
-      "extends": ["plugin:solid/recommended"]
+      "extends": ["plugin:solid/recommended", "plugin:jsx-a11y/strict"]
     },
     {
       "files": ["*.astro"],
