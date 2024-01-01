@@ -8,7 +8,7 @@ labels:
   - uniapp
   - canvas
 description: uniapp利用canvas在小程序上面生成图片
-updateTime: 2023-12-31T17:56:35.716Z
+updateTime: 2024-01-01T16:05:24.327Z
 ---
 
 ## 画布准备

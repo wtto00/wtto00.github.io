@@ -20,9 +20,13 @@ export default defineConfig<Theme>({
           'overflow-wrap': 'break-word',
           'margin-left': '0.25rem',
           'margin-right': '0.25rem',
+          color: colorAddOpacity(theme.colors?.['accent']),
         },
         'a:hover': {
-          color: colorAddOpacity(theme.colors?.['accent']),
+          color: colorAddOpacity(theme.colors?.['accent'], 0.8),
+        },
+        'sup a': {
+          'text-underline-offset': '2px',
         },
         img: {
           'border-width': '2px',

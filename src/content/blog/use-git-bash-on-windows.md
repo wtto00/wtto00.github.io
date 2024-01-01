@@ -5,9 +5,10 @@ postSlug: use-git-bash-on-windows
 featured: false
 draft: false
 labels:
-  - Shell
+  - shell
+  - git
 description: Windows下使用Git-Bash日常开发
-updateTime: 2023-12-30T17:48:17.369Z
+updateTime: 2024-01-01T16:05:24.636Z
 ---
 
 参考[知乎：Windows 下的 Git Bash 配置，提升你的终端操作体验](https://zhuanlan.zhihu.com/p/418321777)
@@ -101,14 +102,22 @@ export PATH="$PATH:/d/Program Files/Python310"
 ### 把 code 添加到 PATH 中，执行 code 不能打开 vscode
 
 ```shell
-export PATH="$PATH:/d/software/Microsoft VS Code/bin"
-```
-
-上面设置的环境变量不能打开 vscode，是因为目录 `/d/software/Microsoft VS Code/bin` 中有两个同名的 code 文件：`code` 和 `code.cmd`。`code` 是 `wsl` 中执行的，`code.cmd` 才是我们需要执行的。
-
-改成下方的环境设置即可：
-
-```shell
 # export PATH="$PATH:/d/software/Microsoft VS Code/bin"
 alias code="/d/software/Microsoft\ VS\ Code/bin/code.cmd"
+```
+
+把 `/d/software/Microsoft VS Code/bin` 添加到 `PATH` 中，并不能打开 `vscode`，是因为该目录中有两个同名的 code 文件：`code` 和 `code.cmd`。`code` 是 `wsl` 中执行的，`code.cmd` 才是我们需要执行的。
+
+## 设置终端标题为当前路径
+
+```shell
+PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
+```
+
+## 执行 sudo 命令
+
+需要先安装 [gsudo](https://github.com/gerardog/gsudo)，然后把 `gsudo` 的安装目录添加到 `PATH` 中：
+
+```shell
+export PATH="$PATH:/d/Program Files/gsudo/Current"
 ```

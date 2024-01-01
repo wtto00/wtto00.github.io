@@ -10,7 +10,7 @@ description: >-
   首先安装依赖，再确保开发包与系统内核版本一致，最后安装Guest Additions CD的脚本。错误处理：ValueError: File context
   for /opt/VBoxGuestAdditions-6.0.18/other/mount.vboxsf already
   defined。共享文件夹的权限无法访问的解决办法。
-updateTime: 2024-01-01T11:50:27.430Z
+updateTime: 2024-01-01T16:05:24.332Z
 ---
 
 在 `VirtualBox` 种安装 `Fedora` 操作系统，`VirtualBox Guest Additions` 服务一直安装不成功，导致剪切板以及文件夹不能同步。网上搜索了好久，最终在这里记录下来成功的步骤。

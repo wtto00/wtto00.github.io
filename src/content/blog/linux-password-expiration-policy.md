@@ -9,7 +9,7 @@ labels:
 description: >-
   Linux 服务器登录提示`You must change your password now and login
   again!`，使用`chage`命令修改最后一次修改密码的时间。
-updateTime: 2024-01-01T11:50:27.433Z
+updateTime: 2024-01-01T16:05:24.346Z
 ---
 
 > Linux 服务器登录提示 `You must change your password now and login again!`

@@ -7,8 +7,8 @@ draft: false
 labels:
   - javascript
   - canvas
-description: 下载页面上的canvas
-updateTime: 2023-12-31T17:56:35.712Z
+description: 在控制台输入代码快速下载页面上的canvas
+updateTime: 2024-01-01T16:05:24.326Z
 ---
 
 ## JS 脚本下载 canvas 为本地图片

@@ -6,8 +6,8 @@ featured: false
 draft: false
 labels:
   - css
-description: 使用rem实现元素大小随宽度自适应，关键是根字体的大小。合理的设置根字体大小随宽度变化而变化，就可以轻易的实现这一点，
-updateTime: 2023-12-31T17:56:35.729Z
+description: 使用rem实现元素大小随宽度自适应，关键是根字体的大小。合理的设置根字体大小随宽度变化而变化，就可以轻易的实现这一点。
+updateTime: 2024-01-01T16:05:24.578Z
 ---
 
 rem 单位是相对于根字体大小的。

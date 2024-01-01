@@ -7,8 +7,12 @@ draft: false
 labels:
   - 微信
 description: 调用微信JSSDK上传图片
-updateTime: 2023-12-30T17:48:17.352Z
+updateTime: 2024-01-01T16:05:24.635Z
 ---
+
+引入 JSSDK 可以使用 [jweixin-esm](https://github.com/wtto00/jweixin-esm) 这个库
+
+获取到的 base64 数据转为文件类型，可以参考 [js 中 canvas、base64、ArrayBuffer、Blob、Url、File 互转](https://github.com/wtto00/wtto00.github.io/blob/main/src/content/blog/canvas-base64-arraybuffer-blob-url-file-transform.md)
 
 ```javascript
 window.wx.chooseImage({

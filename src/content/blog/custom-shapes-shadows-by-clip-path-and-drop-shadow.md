@@ -7,9 +7,9 @@ draft: false
 labels:
   - css
 description: >-
-  不规则形状 clip-path 导致 drop-shadow
+  不规则形状 clip-path 导致 box-shadow
   阴影无效。那么怎么给clip-path切出的不规则形状容器添加阴影呢？使用drop-shadow。
-updateTime: 2023-12-31T17:56:35.677Z
+updateTime: 2024-01-01T16:05:24.304Z
 ---
 
 不规则形状 `clip-path` 导致 `box-shadow` 阴影无效。那么怎么给 `clip-path` 切出的不规则形状容器添加阴影呢？使用 `drop-shadow`。

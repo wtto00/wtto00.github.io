@@ -9,7 +9,7 @@ labels:
 description: >-
   vue-router 不创建页面，简写 rouer-view: render: () =>
   h(resolveComponent('router-view'))
-updateTime: 2023-12-30T17:51:48.417Z
+updateTime: 2024-01-01T16:05:24.256Z
 ---
 
 项目中有太多嵌套的路由，其实只是为了分级作用，父级路由并不处理任何逻辑。

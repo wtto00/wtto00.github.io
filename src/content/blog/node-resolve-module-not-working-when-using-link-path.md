@@ -5,9 +5,10 @@ postSlug: node-resolve-module-not-working-when-using-link-path
 featured: false
 draft: false
 labels:
-  - Javascript
-description: node resolve module not working when using link path
-updateTime: 2023-12-30T17:48:17.282Z
+  - javascript
+  - windows
+description: 由于 `nodejs` 在windows软链接的路径中，无法找到对应的模块。我们只能更改一下项目路径，不要用链接的路径，就可以正常开发了。
+updateTime: 2024-01-01T16:05:24.739Z
 ---
 
 ## Failed to resolve module specifier “vue”
@@ -40,4 +41,8 @@ Uncaught TypeError: Failed to resolve module specifier "vue". Relative reference
 New-Item -ItemType SymbolicLink -Path ~\projects -Target E:\projects
 ```
 
-至此，该问题找到了，**是由于 `Nodejs` 在链接的路径中，无法找到对应的模块。我们更改一下项目路径，不要用链接的路径，就可以正常开发了。**
+至此，该问题找到了，**是由于 `nodejs` 在链接的路径中，无法找到对应的模块。**
+
+硬链接 `New-Item -ItemType HardLink -Path XXX -Target XXX` 应该没问题，但是硬链接只能链接文件，无法链接目录。
+
+所以我们只能更改一下项目路径，不要用链接的路径，就可以正常开发了。

@@ -7,7 +7,7 @@ draft: false
 labels:
   - javascript
 description: js中canvas、base64、ArrayBuffer、Blob、Url、File之间的互相转换
-updateTime: 2023-12-30T17:48:17.263Z
+updateTime: 2024-01-01T16:05:24.264Z
 ---
 
 ## canvas to base64

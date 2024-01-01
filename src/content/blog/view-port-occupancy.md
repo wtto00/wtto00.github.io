@@ -1,21 +1,23 @@
 ---
 pubDatetime: 2021-01-26T07:32:00.000Z
-title: Linux 查看端口占用情况
-postSlug: view-port-occupancy-on-linux
+title: 系统查看端口占用情况
+postSlug: view-port-occupancy
 featured: false
 draft: false
 labels:
-  - Linux
-description: Linux 查看端口占用情况可以使用 lsof 和 netstat 命令。
-updateTime: 2023-12-30T17:48:17.382Z
+  - linux
+  - windows
+description: Linux 查看端口占用情况可以使用 lsof 和 netstat 命令。 Windows 下使用netstat查看端口进程。
+updateTime: 2024-01-01T16:05:24.646Z
 ---
 
-Linux 查看端口占用情况可以使用 lsof 和 netstat 命令。
+`Linux` 查看端口占用情况可以使用 `lsof` 和 `netstat` 命令。
 
 ## lsof
 
 lsof(list open files) 是一个列出当前系统打开文件的工具。
-lsof 查看端口占用语法格式：
+
+`lsof` 查看端口占用语法格式：
 
 ```bash
 lsof -i:端口号
@@ -29,9 +31,9 @@ COMMAND   PID USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME
 nodejs  26993 root   10u  IPv4 37999514      0t0  TCP *:8000 (LISTEN)
 ```
 
-可以看到 8000 端口已经被轻 nodejs 服务占用。
+可以看到 8000 端口已经被轻 `nodejs` 服务占用。
 lsof -i 需要 root 用户的权限来执行，如下图：
-![image](https://user-images.githubusercontent.com/30424139/105813174-6c5dba80-5fea-11eb-9f0f-996ad6a8e908.png)
+![lsof](../../assets/images/view-port-occupancy-on-linux.png)
 更多 lsof 的命令如下：
 
 ```shell
@@ -75,53 +77,55 @@ netstat -ntulp | grep 80   # 查看所有80端口使用情况
 netstat -ntulp | grep 3306   # 查看所有3306端口使用情况
 ```
 
-> 在查到端口占用的进程后，如果你要杀掉对应的进程可以使用 kill 命令：
+> 在查到端口占用的进程后，如果你要杀掉对应的进程可以使用 kill 命令：  
 > kill -9 PID
 
 ---
 
-## Windows 下如何查看端口进程呢？
+## Windows 下查看端口进程
 
-- 打开 shell 终端 `CMD` 或者 `PowerShell` 或者 `Git Bash`
+### 打开 shell 终端
 
-  ```shell
-  # 列出所有端口占用情况
-  netstat -ano
-  # 精确找到被占用的端口对应的PID
-  netstat -ano | findstr "port"
-  # 示例
-  netstat -ano | findstr "5173"
-  ```
+在终端 `CMD` 或者 `PowerShell` 或者 `Git Bash` 中输入
 
-  输出结果为：
+```shell
+# 列出所有端口占用情况
+netstat -ano
+# 精确找到被占用的端口对应的PID
+netstat -ano | findstr "port"
+# 示例
+netstat -ano | findstr "5173"
+```
 
-  ```plaintext
-  Proto  Local Address          Foreign   Address        State           PID
-  TCP    0.0.0.0:5173           0.0.0.  0:0              LISTENING       1032
-  ```
+输出结果为：
 
-- 查看是哪个进程或程序占用了端口
+```plaintext
+Proto  Local Address          Foreign   Address        State           PID
+TCP    0.0.0.0:5173           0.0.0.  0:0              LISTENING       1032
+```
 
-  ```shell
-  tasklist | findstr "PID"
-  # 示例
-  tasklist | findstr "1032"
-  ```
+### 查看是哪个进程或程序占用了端口
 
-  输出结果为：
+```shell
+tasklist | findstr "PID"
+# 示例
+tasklist | findstr "1032"
+```
 
-  ```plaintext
-  Image Name                     PID Session Name        Session#    Mem Usage
-  ========================= ======== ================ =========== ============
-  svchost.exe                   1032 Services                   0     11,440 K
-  ```
+输出结果为：
 
-- 杀掉占用端口的程序
+```plaintext
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+svchost.exe                   1032 Services                   0     11,440 K
+```
 
-  ```shell
-  taskkill /f /t /im xx进程
-  # 示例
-  taskkill /f /t /im System
-  ```
+### 杀掉占用端口的程序
 
-  或者也可以打开任务管理器，通过进程/程序名称或者 PID 找到，并手动关闭进程。
+```shell
+taskkill /f /t /im xx进程
+# 示例
+taskkill /f /t /im System
+```
+
+或者也可以打开任务管理器，通过进程/程序名称或者 PID 找到，并手动关闭进程。

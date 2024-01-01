@@ -5,13 +5,29 @@ postSlug: uniformly-distributed-random-numbers
 featured: false
 draft: false
 labels:
-  - Javascript
+  - javascript
 description: JS 产生服从均匀分布随机数
-updateTime: 2023-12-30T17:48:17.351Z
+updateTime: 2024-01-01T16:05:24.629Z
 ---
 
-- 如果想获得 `[min, max]`，可以使用 `Math.floor(Math.random() * (max - min + 1)) + min`；
-- 如果想获得 `[min, max）`，可以使用 `Math.floor(Math.random() * (max - min )) + min`；
-- 如果想获得 `(min, max]`，可以使用 `Math.ceil(Math.random() * (max - min )) + min`；
+## `[min, max]`
+
+```js
+Math.floor(Math.random() * (max - min + 1)) + min;
+```
+
+## `[min, max)`
+
+```js
+Math.floor(Math.random() * (max - min)) + min;
+```
+
+## `(min, max]`
+
+```js
+Math.ceil(Math.random() * (max - min)) + min;
+```
+
+---
 
 > 摘自：<https://www.cnblogs.com/zztt/p/4024906.html>

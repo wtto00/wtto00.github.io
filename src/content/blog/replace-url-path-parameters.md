@@ -5,17 +5,14 @@ postSlug: replace-url-path-parameters
 featured: false
 draft: false
 labels:
-  - Javascript
-description: js 使用正则匹配 url 路径参数，并替换变量
-updateTime: 2023-12-30T17:48:17.268Z
+  - javascript
+description: js 使用正则匹配动态 url 路径参数，并替换变量，得到完整的 url 路径
+updateTime: 2024-01-01T16:05:24.580Z
 ---
 
-> <https://node.green/#ES2020-features-String-prototype-matchAll>
-> matchAll 在 nodejs，v12 版本才支持
+对于一个动态的 url 地址 ‘/yearpost/settop/{1}/{num}/1’`，怎么传入参数值，得到具体完整的 url 地址呢？
 
-### Node.js v12+
-
-Node.js：version >= 12
+## 使用正则匹配
 
 ```javascript
 /**
@@ -52,9 +49,11 @@ console.log(url);
 // /yearpost/settop/222/444/1
 ```
 
-### Node.js v12-
+## 对于 Node.js 版本小于 12
 
-Node.js：version < 12
+> <https://node.green/#ES2020-features-String-prototype-matchAll>
+>
+> matchAll 在 nodejs，v12 版本才支持
 
 ```javascript
 /**

@@ -6,8 +6,8 @@ featured: false
 draft: false
 labels:
   - eslint
-description: 'EditorConfig,Eslint,Stylelint,Prettier,Husky,lint-staged,'
-updateTime: 2024-01-01T11:50:27.421Z
+description: 'EditorConfig,Eslint,Stylelint,Prettier,Husky,lint-staged,zhlint,commitlint'
+updateTime: 2024-01-01T16:05:24.328Z
 ---
 
 ## EditorConfig

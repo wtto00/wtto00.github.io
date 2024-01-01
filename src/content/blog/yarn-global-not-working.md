@@ -5,21 +5,20 @@ postSlug: yarn-global-not-working
 featured: false
 draft: false
 labels:
-  - NPM
+  - npm
 description: 通过 `yarn global add xxx` 安装的模块，命令无法识别
-updateTime: 2023-12-30T17:48:17.406Z
+updateTime: 2024-01-01T16:05:24.652Z
 ---
-
-### 问题
 
 通过 `yarn global add xxx` 安装的模块，命令无法识别
 
-### 解决
+## 获得 yarn 命令所在目录
 
-1. 使用 `yarn global bin` 命令，获得命令所在目录
-2. 将获得的目录路径加入到环境变量中
+```shell
+yarn global bin
+```
 
-Linux：
+## 将获得的目录路径加入到环境变量中
 
 ```shell
 echo export PATH="\"\$PATH:$(yarn global bin)\"" >> ~/.bashrc

@@ -7,7 +7,7 @@ draft: false
 labels:
   - wsl
 description: 一直用WSL2作为开发环境，可是随着项目越来越多，越来越大，C盘空间所剩无几，所以迁移WSL2到其他分区成为必要。
-updateTime: 2024-01-01T11:50:27.435Z
+updateTime: 2024-01-01T16:05:24.720Z
 ---
 
 一直用 WSL2 作为开发环境，可是随着项目越来越多，越来越大，C 盘空间所剩无几，所以迁移 WSL2 到其他分区成为必要。
@@ -60,5 +60,4 @@ ubuntu2004 config --default-user wtto
 
 ```shell
 del D:\wsl-Ubuntu-20.04
-``
 ```

@@ -5,12 +5,18 @@ postSlug: rotating-3d-cube
 featured: false
 draft: false
 labels:
-  - CSS
-description: css实现3D立方体旋转
-updateTime: 2023-12-30T17:48:17.269Z
+  - css
+description: css实现3D立方体旋转动画
+updateTime: 2024-01-01T16:05:24.580Z
 ---
 
-[codepen](https://codepen.io/wtto00/pen/LYdoPaQ?editors=1100)
+## 效果
+
+![3D立方体旋转](../../assets/images/rotating-3d-cube.gif)
+
+## 完整代码
+
+### html
 
 ```html
 <p class="core">
@@ -22,6 +28,8 @@ updateTime: 2023-12-30T17:48:17.269Z
   <i id="👻"></i>
 </p>
 ```
+
+### css
 
 ```css
 .core {
@@ -88,3 +96,7 @@ updateTime: 2023-12-30T17:48:17.269Z
   transform: rotateX(90deg) translateZ(-40px);
 }
 ```
+
+## CodePen 示例
+
+[CodePen 示例](https://codepen.io/wtto00/pen/LYdoPaQ?editors=1100)

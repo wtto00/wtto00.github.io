@@ -9,7 +9,7 @@ labels:
 description: >-
   windows下vscode设置了eof=lf，但是git操作还是会自动把代码变为crlf。git config core.autocrlf
   false，git config core.eol lf
-updateTime: 2023-12-31T17:56:35.676Z
+updateTime: 2024-01-01T16:05:24.287Z
 ---
 
 ## 背景

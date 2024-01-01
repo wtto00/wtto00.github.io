@@ -7,7 +7,7 @@ draft: false
 labels:
   - css
 description: 仅使用CSS仿制华为手机的充电动画。
-updateTime: 2024-01-01T11:50:27.434Z
+updateTime: 2024-01-01T16:05:24.367Z
 ---
 
 ![CSS充电动画](../../assets/images/mobile-charging-animation.gif)

@@ -7,7 +7,7 @@ draft: false
 labels:
   - css
 description: 利用CSS怎么创建渐变色边框？这里介绍5种方法创建渐变色边框
-updateTime: 2024-01-01T11:50:27.428Z
+updateTime: 2024-01-01T16:05:24.331Z
 ---
 
 利用 CSS 怎么创建渐变色边框？下面本篇文章给大家分享 CSS 实现渐变色边框的 5 种方法，希望对大家有所帮助！

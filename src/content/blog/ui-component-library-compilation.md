@@ -5,9 +5,9 @@ postSlug: ui-component-library-compilation
 featured: false
 draft: false
 labels:
-  - Javascript
-description: UI组件库整理
-updateTime: 2023-12-30T17:48:17.338Z
+  - javascript
+description: UI组件库整理：vue3、react、vue2、angular、flutter、web component、uniapp、小程序、css
+updateTime: 2024-01-01T16:05:24.616Z
 ---
 
 ## Vue3

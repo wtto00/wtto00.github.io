@@ -7,7 +7,7 @@ draft: false
 labels:
   - linux
 description: 在Linux上，怎么修改`gnome`桌面的底部Dock bar？比如图标的大小，以及是否自动隐藏等等相关功能。
-updateTime: 2023-12-31T17:56:35.673Z
+updateTime: 2024-01-01T16:05:24.272Z
 ---
 
 怎么修改 `gnome` 桌面的底部 Dock bar？比如图标的大小，以及是否自动隐藏等等相关功能。
