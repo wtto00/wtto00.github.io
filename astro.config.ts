@@ -2,7 +2,6 @@ import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 import sitemap from '@astrojs/sitemap';
 import solid from '@astrojs/solid-js';
 import { defineConfig } from 'astro/config';
-import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeSlug from 'rehype-slug';
@@ -38,7 +37,6 @@ export default defineConfig({
           },
           properties: {
             ariaHidden: 'true',
-            tabIndex: -1,
             className: 'head-link',
           },
           content: {
@@ -46,12 +44,12 @@ export default defineConfig({
             tagName: 'i',
             properties: {
               className: 'h-4 w-4 i-ri:links-fill inline-block v-mid',
+              'aria-hidden': 'true',
             },
             children: [],
           },
         } as Parameters<typeof rehypeAutolinkHeadings>[0],
       ],
-      rehypeAccessibleEmojis,
       [rehypeExternalLinks, { target: '_blank', rel: 'noreferrer' } as Parameters<typeof rehypeExternalLinks>[0]],
     ],
     shikiConfig: {

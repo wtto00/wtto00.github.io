@@ -80,10 +80,10 @@ export default function SearchBar() {
     <>
       <div class="relative">
         <span class="absolute inset-y-0 left-0 flex items-center pl-2 op-75">
-          <i class="i-custom-search text-2xl" />
+          <i class="i-custom-search text-2xl" aria-hidden="true" />
         </span>
         <input
-          class="block w-full b-1 b-base b-op-40 rounded bg-fill py-3 pl-10 pr-3 focus:b-accent placeholder:italic placeholder:text-op-75 focus:outline-none"
+          class="block w-full b-1 b-base b-op-40 rounded bg-fill py-3 pl-10 pr-3 focus:b-accent placeholder:text-op-75 placeholder:italic focus:outline-none"
           placeholder="输入关键字搜索..."
           type="text"
           name="search"
@@ -107,7 +107,7 @@ export default function SearchBar() {
             <li class="my-6">
               <a
                 href={`/posts/${slugify(post)}/`}
-                class="inline-block text-lg font-medium c-accent underline-offset-4 decoration-dashed focus-visible:underline-offset-0 focus-visible:no-underline"
+                class="inline-block text-lg c-accent font-medium underline-offset-4 decoration-dashed focus-visible:underline-offset-0 focus-visible:no-underline"
               >
                 <h3
                   // eslint-disable-next-line solid/style-prop
@@ -118,7 +118,7 @@ export default function SearchBar() {
                 </h3>
               </a>
               <div class="relative z-1 flex items-center space-x-2">
-                <i class="i-custom-calendar h-6 w-6 op-80" />
+                <i class="i-custom-calendar h-6 w-6 op-80" aria-hidden="true" />
                 <span class="text-4 italic op-80">
                   {getLocalDate(post.pubDatetime)}
                   <span aria-hidden="true"> | </span>

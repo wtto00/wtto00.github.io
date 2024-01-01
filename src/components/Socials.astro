@@ -19,7 +19,7 @@ const socialIcons: Record<string, string> = {
   {
     SOCIALS.filter((social) => social.active).map((social) => (
       <LinkButton href={social.href} className='p-2 text-0 hover:rotate-6 sm:p-1' title={social.linkTitle} target='_blank'>
-        <i class='h-7.5 w-7.5 sm:(h-6.6 w-6.6)' class:list={socialIcons[social.name] ?? ''} />
+        <i class='h-7.5 w-7.5 sm:(h-6.6 w-6.6)' aria-hidden="true" class:list={socialIcons[social.name] ?? ''} />
       </LinkButton>
     ))
   }
@@ -30,6 +30,6 @@ const socialIcons: Record<string, string> = {
     title='RSS Feed'
     target='_blank'
   >
-    <i class='i-custom-rss inline-block h-7.5 w-7.5 c-accent sm:(h-6.6 w-6.6)'></i>
+    <i class='i-custom-rss inline-block h-7.5 w-7.5 c-accent sm:(h-6.6 w-6.6)' aria-hidden="true"></i>
   </LinkButton>
 </div>

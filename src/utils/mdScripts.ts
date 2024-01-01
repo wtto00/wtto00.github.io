@@ -17,7 +17,6 @@ export async function addCopyCodeBtn() {
     copyButton.className = 'copy-code';
     copyButton.innerHTML = copyButtonLabel;
 
-    codeBlock.setAttribute('tabindex', '0');
     if (!codeBlock.parentNode) continue;
     codeBlock.parentNode.replaceChild(wrapper, codeBlock);
     wrapper.appendChild(codeBlock);

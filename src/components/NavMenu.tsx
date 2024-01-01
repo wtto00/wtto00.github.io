@@ -34,7 +34,6 @@ export default function NavMenu(props: Props) {
           route="search"
           spanSingle
           aProps={{
-            tabindex: '0',
             'aria-label': 'search',
             title: 'Search',
             'aria-disabled': 'false',
