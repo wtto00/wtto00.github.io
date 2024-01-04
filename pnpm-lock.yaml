@@ -18,8 +18,8 @@ dependencies:
     specifier: ^3.0.4
     version: 3.0.4
   '@astrojs/solid-js':
-    specifier: ^3.0.3
-    version: 3.0.3(solid-js@1.8.8)(vite@5.0.10)
+    specifier: ^4.0.0
+    version: 4.0.0(solid-js@1.8.8)(vite@5.0.10)
   '@resvg/resvg-js':
     specifier: ^2.6.0
     version: 2.6.0
@@ -265,12 +265,12 @@ packages:
       zod: 3.22.4
     dev: false
 
-  /@astrojs/solid-js@3.0.3(solid-js@1.8.8)(vite@5.0.10):
+  /@astrojs/solid-js@4.0.0(solid-js@1.8.8)(vite@5.0.10):
     resolution:
-      { integrity: sha512-MS/SoKUNByBjclhXn004DEsfi4rDNrg0LVbjgSnVfGHrdjP1dQd5bnm0wah04QuhqJCfsIF0ba9c02qJhaj/2w== }
+      { integrity: sha512-b7295Z/z0Db28kyd/v5vQqXbsoZM+Gjz7BEWNQNb+0QRb/+2HCvB8T83LFtrVYHzj6V6NOup+vhf59yNRtZu/w== }
     engines: { node: '>=18.14.1' }
     peerDependencies:
-      solid-js: ^1.4.3
+      solid-js: ^1.8.5
     dependencies:
       solid-js: 1.8.8
       vite-plugin-solid: 2.8.0(solid-js@1.8.8)(vite@5.0.10)
@@ -2656,9 +2656,9 @@ packages:
       dequal: 2.0.3
     dev: false
 
-  /babel-plugin-jsx-dom-expressions@0.37.9(@babel/core@7.23.7):
+  /babel-plugin-jsx-dom-expressions@0.37.11(@babel/core@7.23.7):
     resolution:
-      { integrity: sha512-6w+zs2i14fVanj4e1hXCU5cp+x0U0LJ5jScknpMZZUteHhwFRGJflHMVJ+xAcW7ku41FYjr7DgtK9mnc2SXlJg== }
+      { integrity: sha512-0NaWy4sFsE0AWlucvL/myEiZ851BgjeLwhtctOFmyVCK6fPXqQHQUBB5SrrrmvOiw/BZCmMe8dOy7JL3FSyTtQ== }
     peerDependencies:
       '@babel/core': ^7.20.12
     dependencies:
@@ -2670,14 +2670,14 @@ packages:
       validate-html-nesting: 1.2.2
     dev: false
 
-  /babel-preset-solid@1.8.6(@babel/core@7.23.7):
+  /babel-preset-solid@1.8.8(@babel/core@7.23.7):
     resolution:
-      { integrity: sha512-Ened42CHjU4EFkvNeS042/3Pm21yvMWn8p4G4ddzQTlKaMwSGGD1VciA/e7EshBVHJCcBj9vHiUd/r3A4qLPZA== }
+      { integrity: sha512-m+sFxzriUgMiyUPz/oWxU+N6PwY2bVsZVlc4Jxx+5XhDt5lGE/meg+ZL/kLgSAZ75YuU9AJZr444Un1bO0vhJQ== }
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
       '@babel/core': 7.23.7
-      babel-plugin-jsx-dom-expressions: 0.37.9(@babel/core@7.23.7)
+      babel-plugin-jsx-dom-expressions: 0.37.11(@babel/core@7.23.7)
     dev: false
 
   /bail@1.0.5:
@@ -8142,7 +8142,7 @@ packages:
       '@babel/core': 7.23.7
       '@babel/preset-typescript': 7.23.3(@babel/core@7.23.7)
       '@types/babel__core': 7.20.5
-      babel-preset-solid: 1.8.6(@babel/core@7.23.7)
+      babel-preset-solid: 1.8.8(@babel/core@7.23.7)
       merge-anything: 5.1.7
       solid-js: 1.8.8
       solid-refresh: 0.5.3(solid-js@1.8.8)
