@@ -1,0 +1,42 @@
+---
+import { SITE } from '@/config';
+import { getLocalDate } from '@/utils/datetime';
+
+interface Props {
+  title: string;
+  fileName: string;
+  pubDatetime: Date;
+  updateTime: Date | undefined;
+}
+
+const { title, fileName, pubDatetime, updateTime } = Astro.props;
+const fileUrl = `https://github.com/wtto00/wtto00.github.io/blob/main/src/content/blog/${fileName}`;
+---
+
+<div class="relative z-0 mt-5 b-1 b-base b-op-10 rd-2 p-5 text-sm space-y-2">
+  <i class="i-ic-outline-copyright absolute right-5 top-5 z-1 block text-xl c-base"></i>
+  <div class="flex items-center">
+    作者: <a class="ml-2 c-accent hover:op-75" href={Astro.site?.href}>{SITE.author}</a>
+  </div>
+  <div class="flex items-center">
+    文章标题:
+    <a class="ml-2 flex items-center hover:c-accent" href={fileUrl} target="_blank">
+      {title}<i class="i-tabler-markdown ml-1 text-4"></i>
+    </a>
+  </div>
+  <div class="flex items-center">发表时间: <span class="ml-2">{getLocalDate(pubDatetime)}</span></div>
+  <div class="flex items-center">最后更新时间: <span class="ml-2">{getLocalDate(updateTime || pubDatetime)}</span></div>
+  <div class="flex items-center">
+    文章链接: <a class="ml-2 c-accent hover:op-75" href={Astro.url.href}>{Astro.url.href}</a>
+  </div>
+  <div class="flex items-center">
+    版权说明:
+    <a
+      class="ml-2 c-accent hover:op-75"
+      href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans"
+      target="_blank"
+    >
+      CC BY-NC-ND 4.0 DEED
+    </a>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 
+import CopyRight from '@/components/CopyRight.astro';
 import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
 import MdArticle from '@/components/MdArticle.astro';
@@ -9,7 +10,7 @@ import SubTitle from '@/components/SubTitle.astro';
 import Tag from '@/components/Tag.astro';
 import Layout from '@/layouts/Layout.astro';
 import Main from '@/layouts/Main.astro';
-import { slugify, slugifyStr,unicodeSlugify } from '@/utils/slugify';
+import { slugify, slugifyStr, unicodeSlugify } from '@/utils/slugify';
 
 export async function getStaticPaths() {
   const allBlogPosts = await getCollection('blog', ({ data }) => !data.draft);
@@ -23,10 +24,13 @@ if (!post) return Astro.redirect('/404');
 
 const { Content, headings } = await post.render();
 
-const { title, description, ogImage, pubDatetime, tags, canonicalURL } = post.data;
+const { title, description, ogImage, pubDatetime, tags, canonicalURL, updateTime } = post.data;
 
 const ogImageUrl = typeof ogImage === 'string' ? ogImage : ogImage?.src;
 const ogUrl = new URL(ogImageUrl ?? `/posts/${slugifyStr(title)}.png`, Astro.url.origin).href;
+
+// 86400000ms/day
+const updateDays = Math.floor((new Date().valueOf() - (updateTime || pubDatetime).valueOf()) / 86400000);
 ---
 
 <Layout title={title} description={description} ogImage={ogUrl} canonicalURL={canonicalURL}>
@@ -44,6 +48,15 @@ const ogUrl = new URL(ogImageUrl ?? `/posts/${slugifyStr(title)}.png`, Astro.url
 
     <SubTitle datetime={pubDatetime} size="lg" className="my-2" title={title} />
 
+    {
+      updateDays > 365 && (
+        <div class="mt-5 flex items-center rd-1 bg-accent bg-op-20 p-4">
+          <i class="i-material-symbols-alarm mr-2 text-xl" />
+          这是一篇发布于 {updateDays} 天以前的旧文，其中的部分内容可能已经过时。
+        </div>
+      )
+    }
+
     <div class="relative mx-auto mt-8 max-w-3xl">
       <MdArticle>
         <Content />
@@ -54,6 +67,8 @@ const ogUrl = new URL(ogImageUrl ?? `/posts/${slugifyStr(title)}.png`, Astro.url
     <ul class="mt-8">
       {tags.map((tag) => <Tag name={slugifyStr(tag)} />)}
     </ul>
+
+    <CopyRight title={title} fileName={post.id} pubDatetime={pubDatetime} updateTime={updateTime} />
   </Main>
 
   <Footer />
