@@ -28,7 +28,7 @@ if (title) qrImg = await QRCode.toDataURL(Astro.url.href, { type: 'image/jpeg', 
         <i class="i-ic-round-qr-code block h-6 w-6 op-80" aria-hidden="true" />
         <img
           id="qr-code"
-          class="absolute left-full top-0 z-1 hidden h-30 max-w-30 w-30 group-hover-block"
+          class="absolute left-full top-0 z-1 h-30 max-w-30 w-30 origin-lt scale-0 transition group-hover-scale-100"
           src={qrImg}
           alt={title}
         />
