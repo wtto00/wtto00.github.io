@@ -1,6 +1,6 @@
 import { SITE } from '@/config';
 
-export default () => {
+export default (logoUrl: string) => {
   return (
     <div
       style={{
@@ -63,7 +63,20 @@ export default () => {
               'text-align': 'center',
             }}
           >
-            <p style={{ 'font-size': '72px', 'font-weight': 'bold' }}>{SITE.title}</p>
+            <div style={{ display: 'flex', 'align-items': 'center' }}>
+              <img
+                src={logoUrl}
+                alt={SITE.title}
+                style={{
+                  width: '80px',
+                  height: '80px',
+                  display: 'block',
+                  'margin-right': '24px',
+                  'margin-top': '20px',
+                }}
+              />
+              <p style={{ 'font-size': '72px', 'font-weight': 'bold' }}>{SITE.title}</p>
+            </div>
             <p style={{ 'font-size': '28px' }}>{SITE.desc}</p>
           </div>
 

@@ -2,7 +2,7 @@ import type { CollectionEntry } from 'astro:content';
 
 import { SITE } from '@/config';
 
-export default (post: CollectionEntry<'blog'>) => {
+export default (post: CollectionEntry<'blog'>, logoUrl: string) => {
   return (
     <div
       style={{
@@ -84,7 +84,14 @@ export default (post: CollectionEntry<'blog'>) => {
               <span style={{ overflow: 'hidden', 'font-weight': 'bold' }}>{SITE.author}</span>
             </span>
 
-            <span style={{ overflow: 'hidden', 'font-weight': 'bold' }}>{SITE.title}</span>
+            <div style={{ display: 'flex', 'align-items': 'center' }}>
+              <img
+                src={logoUrl}
+                alt={SITE.title}
+                style={{ width: '28px', height: '28px', 'margin-right': '12px', 'margin-top': '6px' }}
+              />
+              <span style={{ overflow: 'hidden', 'font-weight': 'bold' }}>{SITE.title}</span>
+            </div>
           </div>
         </div>
       </div>
