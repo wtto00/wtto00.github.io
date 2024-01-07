@@ -69,7 +69,44 @@ const updateDays = Math.floor((new Date().valueOf() - (updateTime || pubDatetime
     </ul>
 
     <CopyRight title={title} fileName={post.id} pubDatetime={pubDatetime} updateTime={updateTime} />
+
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="wtto00/wtto00.github.io"
+      data-repo-id="MDEwOlJlcG9zaXRvcnkzMzAyMTM3ODI="
+      data-category="Announcements"
+      data-category-id="DIC_kwDOE66pls4CcQSR"
+      data-mapping="og:title"
+      data-strict="1"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="dark"
+      data-lang="zh-CN"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async></script>
   </Main>
 
   <Footer />
 </Layout>
+
+<script>
+  import { setGiscusTheme } from '@/utils/theme';
+
+  let giscusHeight = 0;
+
+  function handleMessage(event: MessageEvent) {
+    if (event.origin !== 'https://giscus.app') return;
+    if (!(typeof event.data === 'object' && event.data.giscus)) return;
+
+    const giscusData = event.data.giscus;
+    if (giscusHeight === 0 && (giscusData?.resizeHeight || 0) > 0) {
+      // 初始化之后，立即同步主题
+      setGiscusTheme();
+    }
+    giscusHeight = giscusData?.resizeHeight || 0;
+  }
+
+  window.addEventListener('message', handleMessage);
+</script>

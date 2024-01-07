@@ -1,10 +1,20 @@
 export type ColorScheme = 'Dark' | 'Light';
 
+export function setGiscusTheme() {
+  const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
+  if (!iframe) return;
+  if (iframe.classList.contains('giscus-frame--loading')) return;
+  iframe.contentWindow?.postMessage(
+    { giscus: { setConfig: { theme: isDark() ? 'dark' : 'light' } } },
+    'https://giscus.app',
+  );
+}
+
 /**
  * 获取当前主题设置
  * 默认 Dark
  */
-export function getCurrentTheme(): ColorScheme {
+export function getLocalTheme(): ColorScheme {
   const localColorScheme = localStorage.getItem('colorScheme');
   if (localColorScheme !== 'Light') return 'Dark';
   return 'Light';
@@ -14,10 +24,11 @@ export function getCurrentTheme(): ColorScheme {
  * Layout中使用
  */
 export function initTheme() {
-  if (getCurrentTheme() === 'Dark') {
+  if (getLocalTheme() === 'Dark') {
     document.documentElement.classList.add('dark');
   } else {
     document.documentElement.classList.remove('dark');
+    setGiscusTheme();
   }
   document
     .querySelector("meta[name='theme-color']")
@@ -67,6 +78,7 @@ export function toggleTheme(event?: MouseEvent) {
  */
 function toggleDark() {
   document.documentElement.classList.toggle('dark');
+  setGiscusTheme();
 }
 
 /**

@@ -1,4 +1,4 @@
-import { Blob, Buffer } from 'node:buffer';
+import { Buffer } from 'node:buffer';
 import { readFileSync } from 'node:fs';
 import { URL } from 'node:url';
 
@@ -10,10 +10,7 @@ import logo from '../assets/logo.svg?raw';
 import postOgImage from './og-templates/post';
 import siteOgImage from './og-templates/site';
 
-const logoBlob = new Blob([logo], { type: 'image/svg+xml' });
-const res = await fetch(URL.createObjectURL(logoBlob));
-const buffer = await res.arrayBuffer();
-const base64 = Buffer.from(buffer).toString('base64');
+const base64 = Buffer.from(logo).toString('base64');
 const logoUrl = `data:image/svg+xml;base64,${base64}`;
 
 const fontBasePath = import.meta.env.DEV ? '../assets/fonts' : '../../../src/assets/fonts';
