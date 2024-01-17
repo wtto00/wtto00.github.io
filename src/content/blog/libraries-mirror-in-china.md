@@ -7,7 +7,7 @@ draft: false
 tags:
   - 镜像
 description: '一些常用库的国内镜像: npm,cargo,maven,flutter,homebrew,dnf,ruby,pip'
-updateTime: 2024-01-01T16:14:23.750Z
+updateTime: 2024-01-17T18:05:00.117Z
 ---
 
 ## npm-JavaScript
@@ -16,6 +16,15 @@ updateTime: 2024-01-01T16:14:23.750Z
 
 ```shell
 npm config set registry https://registry.npmmirror.com
+```
+
+## nodejs
+
+使用[北京外国语大学](https://mirrors.bfsu.edu.cn/help/nodejs-release/)的镜像
+
+```shell
+# 使用fnm下载nodejs
+export FNM_NODE_DIST_MIRROR="https://mirrors.bfsu.edu.cn/nodejs-release/"
 ```
 
 ## cargo-Rust
