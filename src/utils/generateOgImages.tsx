@@ -13,7 +13,7 @@ import siteOgImage from './og-templates/site';
 const base64 = Buffer.from(logo).toString('base64');
 const logoUrl = `data:image/svg+xml;base64,${base64}`;
 
-const fontBasePath = import.meta.env.DEV ? '../assets/fonts' : '../../../src/assets/fonts';
+const fontBasePath = import.meta.env.DEV ? '../assets/fonts' : '../../src/assets/fonts';
 
 const fetchFonts = async () => {
   const fontRegular: ArrayBuffer = readFileSync(new URL(`${fontBasePath}/ibm-plex-mono.regular.ttf`, import.meta.url));
