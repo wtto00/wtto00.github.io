@@ -13,7 +13,7 @@
     "lint": "eslint --color --fix .",
     "zhlint:all": "zhlint \"{,!(node_modules)/**/}*.md\" --fix",
     "format": "prettier . --write --ignore-unknown",
-    "prepare": "husky install && husky set .husky/pre-commit \"npx lint-staged\""
+    "prepare": "husky && echo npx lint-staged > .husky/pre-commit"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
@@ -51,7 +51,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-solid": "^0.13.1",
     "gray-matter": "^4.0.3",
-    "husky": "^8.0.3",
+    "husky": "^9.0.0",
     "lint-staged": "^15.2.0",
     "prettier": "^3.1.1",
     "sharp": "^0.33.1",
