@@ -37,6 +37,7 @@ export default defineConfig({
           },
           properties: {
             ariaHidden: 'true',
+            ariaLabel: 'Copy link',
             className: 'head-link',
           },
           content: {

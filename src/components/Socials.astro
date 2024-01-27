@@ -18,7 +18,7 @@ const socialIcons: Record<string, string> = {
 <div class='flex-wrap justify-center gap-1' class:list={{ flex: centered }}>
   {
     SOCIALS.filter((social) => social.active).map((social) => (
-      <LinkButton href={social.href} className='p-2 text-0 hover:rotate-6 sm:p-1' title={social.linkTitle} target='_blank'>
+      <LinkButton href={social.href} className='p-2 text-0 hover:rotate-6 sm:p-1' title={social.linkTitle} ariaLabel={social.linkTitle} target='_blank'>
         <i class='h-7.5 w-7.5 sm:(h-6.6 w-6.6)' aria-hidden="true" class:list={socialIcons[social.name] ?? ''} />
       </LinkButton>
     ))
@@ -26,7 +26,7 @@ const socialIcons: Record<string, string> = {
   <LinkButton
     href='/rss.xml'
     className='p-2 text-0 hover:rotate-6 sm:p-1'
-    aria-label='rss feed'
+    ariaLabel='rss feed'
     title='RSS Feed'
     target='_blank'
   >
