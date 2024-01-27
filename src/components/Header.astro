@@ -15,7 +15,7 @@ const { activeNav } = Astro.props;
   <div class="mx-auto max-w-3xl flex flex-col items-center justify-between sm:flex-row">
     <div class="relative w-full flex items-start justify-between p-4 sm:items-center sm:py-8">
       <a href='/' class="absolute flex items-center whitespace-nowrap py-1 text-xl font-semibold sm:text-2xl">
-        <img src={`/favicon.svg`} alt={SITE.title} class="h-6 w-6" />
+        <img src={`/favicon.svg`} alt={SITE.author} class="h-6 w-6" />
         <span class="ml-2">{SITE.title}</span>
       </a>
       <NavMenu activeNav={activeNav} client:only="solid-js" />

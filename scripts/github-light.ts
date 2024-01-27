@@ -308,7 +308,6 @@ const githubLightTheme: Exclude<ShikiConfig['theme'], undefined> = {
         fontStyle: 'italic underline',
         background: '#d73a49',
         foreground: '#fafbfc',
-        content: '^M',
       },
     },
     {

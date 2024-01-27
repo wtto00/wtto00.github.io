@@ -65,7 +65,7 @@ const updateDays = Math.floor((new Date().valueOf() - (updateTime || pubDatetime
     </div>
 
     <ul class="mt-8">
-      {tags.map((tag) => <Tag name={slugifyStr(tag)} />)}
+      {tags.map((tag: string) => <Tag name={slugifyStr(tag)} />)}
     </ul>
 
     <CopyRight title={title} fileName={post.id} pubDatetime={pubDatetime} updateTime={updateTime} />
