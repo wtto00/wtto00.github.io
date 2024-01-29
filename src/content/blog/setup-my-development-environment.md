@@ -7,7 +7,7 @@ tags:
   - 电脑相关
 description: 新买的电脑，或重新安装的系统，从头开始搭建我自己的开发环境。
 pubDatetime: 2024-01-28T18:11:12.094Z
-updateTime: 2024-01-29T16:32:57.780Z
+updateTime: 2024-01-29T17:29:15.067Z
 ---
 
 新买的电脑，或重新安装的系统，从头开始搭建我自己的开发环境。
@@ -17,6 +17,8 @@ updateTime: 2024-01-29T16:32:57.780Z
 Windows 下我使用 `Git-Bash` 来进行开发。
 
 ### Git
+
+#### 安装
 
 在[清华大学镜像站](https://mirrors.tuna.tsinghua.edu.cn/github-release/git-for-windows/git/)，下载安装包，并安装。
 
@@ -211,7 +213,7 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/late
 
 添加完成后执行 `source ~/.bash_profile`
 
-#### 移动 `android` 目录
+#### 移动 `.android` 目录
 
 默认在 C 盘的 `~/.android` 目录中，储存的是模拟器的文件。如果创建了多个模拟器，该文件夹会占用很大空间。
 
@@ -257,6 +259,25 @@ export PATH="$PATH:$GRADLE_USER_HOME/wrapper/dists/gradle-6.5-all/2oz4ud9k3tuxjg
 ```
 
 添加完成后执行 `source ~/.bash_profile`
+
+#### 配置 Java
+
+- 下载
+
+  到[清华大学镜像站](https://mirrors.tuna.tsinghua.edu.cn/Adoptium/)，下载对应版本 JDK。解压到目录 `/d/home/.jdks/` 中。
+
+- 配置 shell
+
+  添加以下内容到 `~/.bash_profile` 中：
+
+  ```shell
+  export JAVA_HOME="/d/home/.jdks/jdk8u402-b06" # 使用自己下载的Java版本
+  # export JAVA_HOME="/d/Program Files/Android/Android Studio/jbr" # 使用Android Studio中自带的Java版本
+  ```
+
+  添加完成后执行 `source ~/.bash_profile`
+
+- Android Studio 使用的 Java 版本，在 Android Studio 的设置中，搜索 `gradle`，在 `Gradle JDK` 选项中设置。
 
 #### 配置镜像
 
