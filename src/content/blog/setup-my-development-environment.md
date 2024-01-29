@@ -7,7 +7,7 @@ tags:
   - 电脑相关
 description: 新买的电脑，或重新安装的系统，从头开始搭建我自己的开发环境。
 pubDatetime: 2024-01-28T18:11:12.094Z
-updateTime: 2024-01-28T18:16:45.911Z
+updateTime: 2024-01-29T16:32:57.780Z
 ---
 
 新买的电脑，或重新安装的系统，从头开始搭建我自己的开发环境。
@@ -211,7 +211,7 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/late
 
 添加完成后执行 `source ~/.bash_profile`
 
-#### 移动。android 目录
+#### 移动 `android` 目录
 
 默认在 C 盘的 `~/.android` 目录中，储存的是模拟器的文件。如果创建了多个模拟器，该文件夹会占用很大空间。
 
@@ -229,7 +229,7 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/late
 
   打开 Windows 的环境变量设置，添加环境变量 `ANDROID_SDK_HOME="D:\home"`
 
-#### 移动。gradle 目录
+#### 移动 `.gradle` 目录
 
 由 C 盘的 `~/.gradle` 移动到 `/d/home/.gradle`
 
