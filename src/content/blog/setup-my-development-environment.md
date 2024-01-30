@@ -7,7 +7,7 @@ tags:
   - 电脑相关
 description: 新买的电脑，或重新安装的系统，从头开始搭建我自己的开发环境。
 pubDatetime: 2024-01-28T18:11:12.094Z
-updateTime: 2024-01-29T17:29:15.067Z
+updateTime: 2024-01-30T10:13:16.558Z
 ---
 
 新买的电脑，或重新安装的系统，从头开始搭建我自己的开发环境。
@@ -306,4 +306,94 @@ allprojects {
         maven { url ALIYUN_GOOGLE_URL }
     }
 }
+```
+
+## MacOS
+
+### Terminal
+
+使用系统自带的终端，但是需要配置一下：
+
+#### oh-my-zsh
+
+[官网](https://ohmyz.sh/#install)
+
+```shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+#### 配置 OMZ 主题
+
+```shell
+nano ~/.zshrc
+```
+
+找到 `ZSH_THEME`，并修改为 `ZSH_THEME="af-magic"`
+
+#### 配置终端
+
+- 到 [Github](https://github.com/sindresorhus/terminal-snazzy) 下载 Snazzy 颜色配置。
+- 打开终端的设置，点击导入下载的颜色配置
+
+### Homebrew
+
+#### 安装
+
+根据[官网](https://brew.sh/zh-cn/)说明，执行一下命令安装。
+
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+#### 添加到 shell 中
+
+```shell
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile
+```
+
+#### 配置镜像
+
+```shell
+echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"' >> ~/.zprofile # Homebrew
+echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"' >> ~/.zprofile # Homebrew Core
+
+source ~/.zprofile
+brew update
+
+echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"' >> ~/.zprofile # Homebrew Bottles
+echo 'export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"' >> ~/.zprofile # Homebrew Bottles
+
+# brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git # Homebrew Cask
+brew tap --custom-remote --force-auto-update homebrew/cask-versions https://mirrors.ustc.edu.cn/homebrew-cask-versions.git # Homebrew Cask Versions
+brew tap --custom-remote --force-auto-update homebrew/services https://mirrors.ustc.edu.cn/homebrew-services.git # Homebrew Services
+```
+
+### Ruby
+
+#### 安装
+
+系统自带的版本较老，某些包无法安装，安装并使用最新版本：
+
+```shell
+brew install ruby
+```
+
+#### 配置 shell
+
+```shell
+echo 'export PATH="/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"' >> ~/.zprofile
+```
+
+#### 配置镜像
+
+```shell
+gem sources  #列出默认源
+gem sources --remove https://rubygems.org/  #移除默认源
+gem sources -a https://mirrors.ustc.edu.cn/rubygems/  #添加科大源ß
+```
+
+#### cocoapods
+
+```shell
+sudo gem install cocoapods
 ```
