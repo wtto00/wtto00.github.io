@@ -10,7 +10,7 @@ interface Props {
 const { data, parent } = Astro.props;
 ---
 
-<ol class="max-h-65vh" class:list={[parent ? 'ml-1em' : 'overflow-y-auto']}>
+<ol class:list={[parent ? 'ml-1em' : 'overflow-y-auto max-h-65vh']}>
   {
     data.map((item, index) => (
       <li class="w-full">
