@@ -7,7 +7,7 @@ draft: false
 tags:
   - 镜像
 description: '一些常用库的国内镜像: npm,cargo,maven,flutter,homebrew,dnf,ruby,pip'
-updateTime: 2024-01-17T18:13:12.231Z
+updateTime: 2024-01-31T16:22:29.606Z
 ---
 
 ## npm-JavaScript
@@ -77,7 +77,18 @@ export PUB_HOSTED_URL=https://pub.flutter-io.cn
 使用[中科大镜像](https://mirrors.ustc.edu.cn/)
 
 ```shell
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"' >> ~/.zprofile # Homebrew
+echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"' >> ~/.zprofile # Homebrew Core
+
+source ~/.zprofile
+brew update
+
+echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"' >> ~/.zprofile # Homebrew Bottles
+echo 'export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"' >> ~/.zprofile # Homebrew Bottles
+
+# brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git # Homebrew Cask
+brew tap --custom-remote --force-auto-update homebrew/cask-versions https://mirrors.ustc.edu.cn/homebrew-cask-versions.git # Homebrew Cask Versions
+brew tap --custom-remote --force-auto-update homebrew/services https://mirrors.ustc.edu.cn/homebrew-services.git # Homebrew Services
 ```
 
 ## gradle-java
