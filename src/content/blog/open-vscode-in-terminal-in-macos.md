@@ -1,15 +1,17 @@
 ---
 slug: open-vscode-in-terminal-in-macos
-title: MacOS下在终端中打开VS Code
+title: MacOS下在终端中打开VS Code，右键菜单使用VS Code打开
 postSlug: open-vscode-in-terminal-in-macos
 featured: false
 draft: false
 tags:
   - mac
   - vscode
-description: 使用VS Code自带的命令，或者把code可执行文件添加到PATH中。或者把打开VS Code的命令alias为code命令。
+description: >-
+  使用VS Code自带的命令，或者把code可执行文件添加到PATH中。或者把打开VS
+  Code的命令alias为code命令。Finder（访达）中的右键菜单添加使用VS Code打开的菜单项。
 pubDatetime: 2023-12-19T14:01:36.337Z
-updateTime: 2024-01-01T16:14:23.765Z
+updateTime: 2024-02-04T10:29:19.486Z
 ---
 
 在 [VS Code](https://code.visualstudio.com/) 下载安装后，在终端中，`code .` 不能让 VS Code 打开当前目录。有以下几种解决办法：
@@ -66,3 +68,15 @@ alias code='open -a "Visual Studio Code"'
 如果想要保持 `VS Code` 的多个窗口，始终保持在程序坞种的一个图标内，则使用第四种方法。
 
 特别说明：在 `VS Code` 中的菜单上点击 `文件-新建窗口` 或快捷键 `cmd+shift+n` 新建窗口时，都会始终保持在程序坞的一个图标内。所以为了保持一致的行为，建议选择第四种方法，始终保持程序坞中只有一个 `VS Code` 的图标。
+
+---
+
+## 右键菜单添加使用 VS Code 打开
+
+访达中的右键菜单添加 `使用VS Code打开` 的菜单项。
+
+1. `command+space` 打开全局搜索，输入 “自动操作”，打开 `自动操作` 应用。
+1. 新建 `快速操作`。
+1. 按照下图所示配置：
+   ![open-vscode-in-terminal-in-macos](../../assets/images/open-vscode-in-terminal-in-macos.png)
+1. 配置完成后，保存为 “使用 VS Code” 打开。
