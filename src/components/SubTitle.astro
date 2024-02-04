@@ -17,7 +17,7 @@ if (title) qrImg = await QRCode.toDataURL(Astro.url.href, { type: 'image/jpeg', 
 ---
 
 <div class="relative z-1 flex items-center space-x-2" class:list={[className]}>
-  <i class="i-custom-calendar h-6 w-6 op-80" aria-hidden="true" class:list={[size === 'sm' ? 'scale-90' : 'scale-100']}></i>
+  <i class="i-custom:calendar h-6 w-6 op-80" aria-hidden="true" class:list={[size === 'sm' ? 'scale-90' : 'scale-100']}></i>
   <span class="sr-only op-80">Posted on:</span>
   <span class="italic op-80" class:list={[size === 'sm' ? 'text-sm' : 'text-4']}>
     <FormattedDatetime datetime={datetime} />
@@ -25,7 +25,7 @@ if (title) qrImg = await QRCode.toDataURL(Astro.url.href, { type: 'image/jpeg', 
   {
     qrImg && (
       <div class="group relative z-0 lt-sm:hidden">
-        <i class="i-ic-round-qr-code block h-6 w-6 op-80" aria-hidden="true" />
+        <i class="i-ic:round-qr-code block h-6 w-6 op-80" aria-hidden="true" />
         <img
           id="qr-code"
           class="absolute left-full top-0 z-1 h-30 max-w-30 w-30 origin-lt scale-0 transition group-hover-scale-100"

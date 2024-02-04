@@ -39,7 +39,7 @@ const updateDays = Math.floor((new Date().valueOf() - (updateTime || pubDatetime
   <Main>
     <div class="mb-2 w-full flex justify-start">
       <button class="flex hover:op-75" onclick="history.back()">
-        <i class="i-custom-back text-2xl" aria-hidden="true"></i>
+        <i class="i-custom:back text-2xl" aria-hidden="true"></i>
         <span>返回</span>
       </button>
     </div>
@@ -51,7 +51,7 @@ const updateDays = Math.floor((new Date().valueOf() - (updateTime || pubDatetime
     {
       updateDays > 365 && (
         <div class="mt-5 flex items-center rd-1 bg-accent bg-op-20 p-4">
-          <i class="i-material-symbols-alarm mr-2 text-xl" />
+          <i class="i-material-symbols:alarm mr-2 text-xl" />
           这是一篇发布于 {updateDays} 天以前的旧文，其中的部分内容可能已经过时。
         </div>
       )

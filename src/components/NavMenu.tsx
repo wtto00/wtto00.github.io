@@ -40,7 +40,7 @@ export default function NavMenu(props: Props) {
           }}
         >
           <i
-            class="i-custom-search mx-auto block scale-125 text-2xl sm:scale-100"
+            class="i-custom:search mx-auto block scale-125 text-2xl sm:scale-100"
             classList={{ 'fill-accent': props.activeNav === 'search' }}
           />
         </NavMenuItem>

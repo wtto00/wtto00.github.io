@@ -10,8 +10,8 @@ export interface Props {
 const { centered = false } = Astro.props
 
 const socialIcons: Record<string, string> = {
-  Github: 'i-custom-github',
-  Mail: 'i-custom-email'
+  Github: 'i-custom:github',
+  Mail: 'i-custom:email'
 }
 ---
 
@@ -30,6 +30,6 @@ const socialIcons: Record<string, string> = {
     title='RSS Feed'
     target='_blank'
   >
-    <i class='i-custom-rss inline-block h-7.5 w-7.5 c-accent sm:(h-6.6 w-6.6)' aria-hidden="true"></i>
+    <i class='i-custom:rss inline-block h-7.5 w-7.5 c-accent sm:(h-6.6 w-6.6)' aria-hidden="true"></i>
   </LinkButton>
 </div>
