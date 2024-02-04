@@ -7,7 +7,7 @@ draft: false
 tags:
   - 镜像
 description: '一些常用库的国内镜像: npm,cargo,maven,flutter,homebrew,dnf,ruby,pip'
-updateTime: 2024-01-31T16:22:29.606Z
+updateTime: 2024-02-02T10:43:27.015Z
 ---
 
 ## npm-JavaScript
@@ -102,6 +102,7 @@ allprojects {
     repositories {
         def ALIYUN_REPOSITORY_URL = 'https://maven.aliyun.com/repository/public'
         def ALIYUN_GOOGLE_URL = 'https://maven.aliyun.com/repository/google'
+        def HUAWEIYUN_MAVEN_URL = 'https://mirrors.huaweicloud.com/repository/maven'
         all { ArtifactRepository repo ->
             if(repo instanceof MavenArtifactRepository){
                 def url = repo.url.toString()
@@ -118,11 +119,14 @@ allprojects {
         }
         maven { url ALIYUN_REPOSITORY_URL }
         maven { url ALIYUN_GOOGLE_URL }
+        maven { url HUAWEIYUN_MAVEN_URL }
     }
 }
 ```
 
 如果用了其他仓库，可以查看日志，然后到[阿里云云效 Maven 官网](https://developer.aliyun.com/mvn/guide)查看并替换
+
+由于阿里云的镜像无法下载微信 openSDK6.8.26(<https://maven.aliyun.com/repository/public/com/tencent/mm/opensdk/wechat-sdk-android/6.8.26/wechat-sdk-android-6.8.26.pom)> 版本，所以后面加个[华为云 maven 镜像](https://mirrors.huaweicloud.com/mirrorDetail/5ea0025f2ab89b484a4dd5ce)。
 
 ## dnf-fedora
 
