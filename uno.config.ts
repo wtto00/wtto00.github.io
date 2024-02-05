@@ -1,10 +1,10 @@
-import type { Theme } from '@unocss/preset-uno';
-import transformerDirectives from '@unocss/transformer-directives';
-import transformerVariantGroup from '@unocss/transformer-variant-group';
-import { defineConfig, presetIcons, presetTypography, presetUno } from 'unocss';
-import presetTheme from 'unocss-preset-theme';
+import type { Theme } from '@unocss/preset-uno'
+import transformerDirectives from '@unocss/transformer-directives'
+import transformerVariantGroup from '@unocss/transformer-variant-group'
+import { defineConfig, presetIcons, presetTypography, presetUno } from 'unocss'
+import presetTheme from 'unocss-preset-theme'
 
-import { colorAddOpacity } from './scripts/uno-utils';
+import { colorAddOpacity } from './scripts/uno-utils'
 
 export default defineConfig<Theme>({
   presets: [
@@ -80,7 +80,7 @@ export default defineConfig<Theme>({
       customizations: {
         iconCustomizer(collection, _icon, props) {
           if (collection === 'custom') {
-            props.fill = 'currentColor';
+            props.fill = 'currentColor'
           }
         },
       },
@@ -205,4 +205,4 @@ export default defineConfig<Theme>({
       }`,
     },
   ],
-});
+})

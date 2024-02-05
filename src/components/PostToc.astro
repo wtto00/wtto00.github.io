@@ -1,54 +1,54 @@
 ---
-import type { MarkdownHeading } from 'astro';
+import type { MarkdownHeading } from 'astro'
 
-import PostTocList from './PostTocList.astro';
+import PostTocList from './PostTocList.astro'
 
 interface Props {
-  data: MarkdownHeading[];
+  data: MarkdownHeading[]
 }
 
-const { data } = Astro.props;
+const { data } = Astro.props
 
 export interface ListItem {
-  depth: number;
-  slug: string;
-  text: string;
-  children: ListItem[];
+  depth: number
+  slug: string
+  text: string
+  children: ListItem[]
 }
-const treeList: ListItem[] = [];
-const list: string[] = [];
+const treeList: ListItem[] = []
+const list: string[] = []
 
 function treeTocList(originList: ListItem[], item: MarkdownHeading, depth: number = 0): ListItem[] {
   // 最多三级: any: string
-  if (depth > 2) return originList;
+  if (depth > 2) return originList
   if (originList.length === 0) {
     originList.push({
       depth: item.depth,
       slug: item.slug,
       text: item.text,
       children: [],
-    });
-    list.push(item.slug);
-    return originList;
+    })
+    list.push(item.slug)
+    return originList
   }
-  const lastItem = originList[originList.length - 1]!;
+  const lastItem = originList[originList.length - 1]!
   if (item.depth <= lastItem.depth) {
     originList.push({
       depth: item.depth,
       slug: item.slug,
       text: item.text,
       children: [],
-    });
-    list.push(item.slug);
-    return originList;
+    })
+    list.push(item.slug)
+    return originList
   }
-  lastItem.children = treeTocList(lastItem.children, item, depth + 1);
-  return originList;
+  lastItem.children = treeTocList(lastItem.children, item, depth + 1)
+  return originList
 }
 
 data.forEach((item) => {
-  treeTocList(treeList, item);
-});
+  treeTocList(treeList, item)
+})
 ---
 
 <astro-post-toc
@@ -62,67 +62,67 @@ data.forEach((item) => {
 
 <script>
   class AstroPostToc extends HTMLElement {
-    observer: IntersectionObserver;
+    observer: IntersectionObserver
 
     constructor() {
-      super();
+      super()
 
-      const list: string[] = JSON.parse(this.dataset.list || '[]');
+      const list: string[] = JSON.parse(this.dataset.list || '[]')
       this.observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((item) => {
             if (item.isIntersecting) {
-              this.activeToc(item.target.id);
+              this.activeToc(item.target.id)
             }
-          });
+          })
         },
         {
           rootMargin: '0% 0px -90% 0px',
         },
-      );
+      )
       list.forEach((item) => {
-        const ele = document.querySelector(`#${item}`);
-        if (ele) this.observer.observe(ele);
-      });
+        const ele = document.querySelector(`#${item}`)
+        if (ele) this.observer.observe(ele)
+      })
 
-      this.listenTocClick();
+      this.listenTocClick()
     }
 
     /** 卸载时 */
     disconnectedCallback() {
-      this.observer.disconnect();
+      this.observer.disconnect()
     }
 
     /**
      * 侧边栏导航项选中
      */
     activeToc(id: string) {
-      const tocList = document.querySelectorAll<HTMLLinkElement>('.post-toc-item');
+      const tocList = document.querySelectorAll<HTMLLinkElement>('.post-toc-item')
       tocList.forEach((ele) => {
         if (ele.dataset.id === id) {
-          ele.classList.add('!op-100');
-          ele.setAttribute('aria-hidden', 'true');
+          ele.classList.add('!op-100')
+          ele.setAttribute('aria-hidden', 'true')
         } else if (ele.classList.contains('!op-100')) {
-          ele.classList.remove('!op-100');
-          ele.setAttribute('aria-hidden', 'false');
+          ele.classList.remove('!op-100')
+          ele.setAttribute('aria-hidden', 'false')
         }
-      });
+      })
     }
 
     /** 监听侧边栏导航的点击 */
     listenTocClick() {
-      const links = document.querySelectorAll<HTMLLinkElement>('.post-toc-item');
+      const links = document.querySelectorAll<HTMLLinkElement>('.post-toc-item')
 
       links.forEach((link) => {
         link.addEventListener('click', () => {
-          const head = document.querySelector(`#${link.dataset.id}`);
+          const head = document.querySelector(`#${link.dataset.id}`)
           if (head) {
-            head.scrollIntoView({ behavior: 'auto', block: 'start' });
+            head.scrollIntoView({ behavior: 'auto', block: 'start' })
           }
-        });
-      });
+        })
+      })
     }
   }
 
-  customElements.define('astro-post-toc', AstroPostToc);
+  customElements.define('astro-post-toc', AstroPostToc)
 </script>

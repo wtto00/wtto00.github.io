@@ -1,36 +1,36 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content'
 
-import CopyRight from '@/components/CopyRight.astro';
-import Footer from '@/components/Footer.astro';
-import Header from '@/components/Header.astro';
-import MdArticle from '@/components/MdArticle.astro';
-import PostToc from '@/components/PostToc.astro';
-import SubTitle from '@/components/SubTitle.astro';
-import Tag from '@/components/Tag.astro';
-import Layout from '@/layouts/Layout.astro';
-import Main from '@/layouts/Main.astro';
-import { slugify, slugifyStr, unicodeSlugify } from '@/utils/slugify';
+import CopyRight from '@/components/CopyRight.astro'
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import MdArticle from '@/components/MdArticle.astro'
+import PostToc from '@/components/PostToc.astro'
+import SubTitle from '@/components/SubTitle.astro'
+import Tag from '@/components/Tag.astro'
+import Layout from '@/layouts/Layout.astro'
+import Main from '@/layouts/Main.astro'
+import { slugify, slugifyStr, unicodeSlugify } from '@/utils/slugify'
 
 export async function getStaticPaths() {
-  const allBlogPosts = await getCollection('blog', ({ data }) => !data.draft);
-  return allBlogPosts.map((post) => ({ params: { slug: slugify(post.data) } }));
+  const allBlogPosts = await getCollection('blog', ({ data }) => !data.draft)
+  return allBlogPosts.map((post) => ({ params: { slug: slugify(post.data) } }))
 }
 
-const { slug } = Astro.params;
+const { slug } = Astro.params
 
-const post = await getEntry('blog', slug);
-if (!post) return Astro.redirect('/404');
+const post = await getEntry('blog', slug)
+if (!post) return Astro.redirect('/404')
 
-const { Content, headings } = await post.render();
+const { Content, headings } = await post.render()
 
-const { title, description, ogImage, pubDatetime, tags, canonicalURL, updateTime } = post.data;
+const { title, description, ogImage, pubDatetime, tags, canonicalURL, updateTime } = post.data
 
-const ogImageUrl = typeof ogImage === 'string' ? ogImage : ogImage?.src;
-const ogUrl = new URL(ogImageUrl ?? `/posts/${slugifyStr(title)}.png`, Astro.url.origin).href;
+const ogImageUrl = typeof ogImage === 'string' ? ogImage : ogImage?.src
+const ogUrl = new URL(ogImageUrl ?? `/posts/${slugifyStr(title)}.png`, Astro.url.origin).href
 
 // 86400000ms/day
-const updateDays = Math.floor((new Date().valueOf() - (updateTime || pubDatetime).valueOf()) / 86400000);
+const updateDays = Math.floor((new Date().valueOf() - (updateTime || pubDatetime).valueOf()) / 86400000)
 ---
 
 <Layout title={title} description={description} ogImage={ogUrl} canonicalURL={canonicalURL}>
@@ -92,21 +92,21 @@ const updateDays = Math.floor((new Date().valueOf() - (updateTime || pubDatetime
 </Layout>
 
 <script>
-  import { setGiscusTheme } from '@/utils/theme';
+  import { setGiscusTheme } from '@/utils/theme'
 
-  let giscusHeight = 0;
+  let giscusHeight = 0
 
   function handleMessage(event: MessageEvent) {
-    if (event.origin !== 'https://giscus.app') return;
-    if (!(typeof event.data === 'object' && event.data.giscus)) return;
+    if (event.origin !== 'https://giscus.app') return
+    if (!(typeof event.data === 'object' && event.data.giscus)) return
 
-    const giscusData = event.data.giscus;
+    const giscusData = event.data.giscus
     if (giscusHeight === 0 && (giscusData?.resizeHeight || 0) > 0) {
       // 初始化之后，立即同步主题
-      setGiscusTheme();
+      setGiscusTheme()
     }
-    giscusHeight = giscusData?.resizeHeight || 0;
+    giscusHeight = giscusData?.resizeHeight || 0
   }
 
-  window.addEventListener('message', handleMessage);
+  window.addEventListener('message', handleMessage)
 </script>

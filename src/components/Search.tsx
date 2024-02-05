@@ -1,31 +1,31 @@
-import type { CollectionEntry } from 'astro:content';
-import Fuse from 'fuse.js';
-import { createEffect, createMemo, createSignal, For, type JSX, Show } from 'solid-js';
+import type { CollectionEntry } from 'astro:content'
+import Fuse from 'fuse.js'
+import { createEffect, createMemo, createSignal, For, type JSX, Show } from 'solid-js'
 
-import { getLocalDate, getLocalTime } from '@/utils/datetime';
-import { slugify, unicodeSlugify } from '@/utils/slugify';
+import { getLocalDate, getLocalTime } from '@/utils/datetime'
+import { slugify, unicodeSlugify } from '@/utils/slugify'
 
-type Post = CollectionEntry<'blog'>['data'];
+type Post = CollectionEntry<'blog'>['data']
 
 interface SearchResult {
-  item: Post;
-  refIndex: number;
+  item: Post
+  refIndex: number
 }
 
 export default function SearchBar() {
-  let inputRef: HTMLInputElement;
+  let inputRef: HTMLInputElement
 
-  const [posts, setPosts] = createSignal<Post[]>([]);
-  const [index, setIndex] = createSignal(null);
-  const [inputVal, setInputVal] = createSignal('');
-  const [searchResults, setSearchResults] = createSignal<SearchResult[]>([]);
+  const [posts, setPosts] = createSignal<Post[]>([])
+  const [index, setIndex] = createSignal(null)
+  const [inputVal, setInputVal] = createSignal('')
+  const [searchResults, setSearchResults] = createSignal<SearchResult[]>([])
 
   const handleChange: JSX.ChangeEventHandlerUnion<HTMLInputElement, Event> = (e) => {
-    setInputVal(e.currentTarget.value);
-  };
+    setInputVal(e.currentTarget.value)
+  }
 
   const fuse = createMemo(() => {
-    const parsedIndex = index() ? Fuse.parseIndex(index()) : undefined;
+    const parsedIndex = index() ? Fuse.parseIndex(index()) : undefined
     return new Fuse<Post>(
       posts(),
       {
@@ -35,46 +35,46 @@ export default function SearchBar() {
         threshold: 0.5,
       },
       parsedIndex,
-    );
-  });
+    )
+  })
   createEffect(() => {
     fetch('/posts.json')
       .then((resp) => resp.json())
       .then(({ posts, index }) => {
-        setPosts(posts);
-        setIndex(index);
-      });
-  });
+        setPosts(posts)
+        setIndex(index)
+      })
+  })
 
   createEffect(() => {
     // if URL has search query,
     // insert that search query in input field
-    const searchUrl = new URLSearchParams(window.location.search);
-    const searchStr = searchUrl.get('q');
-    if (searchStr) setInputVal(searchStr);
+    const searchUrl = new URLSearchParams(window.location.search)
+    const searchStr = searchUrl.get('q')
+    if (searchStr) setInputVal(searchStr)
 
     // put focus cursor at the end of the string
     setTimeout(function () {
-      inputRef.selectionStart = inputRef.selectionEnd = searchStr?.length || 0;
-    }, 50);
-  });
+      inputRef.selectionStart = inputRef.selectionEnd = searchStr?.length || 0
+    }, 50)
+  })
 
   createEffect(() => {
     // Add search result only if
     // input value is more than one character
-    const inputResult = inputVal().length > 1 ? fuse().search(inputVal()) : [];
-    setSearchResults(inputResult);
+    const inputResult = inputVal().length > 1 ? fuse().search(inputVal()) : []
+    setSearchResults(inputResult)
 
     // Update search string in URL
     if (inputVal().length > 0) {
-      const searchParams = new URLSearchParams(window.location.search);
-      searchParams.set('q', inputVal());
-      const newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
-      history.replaceState(history.state, '', newRelativePathQuery);
+      const searchParams = new URLSearchParams(window.location.search)
+      searchParams.set('q', inputVal())
+      const newRelativePathQuery = window.location.pathname + '?' + searchParams.toString()
+      history.replaceState(history.state, '', newRelativePathQuery)
     } else {
-      history.replaceState(history.state, '', window.location.pathname);
+      history.replaceState(history.state, '', window.location.pathname)
     }
-  });
+  })
 
   return (
     <>
@@ -132,5 +132,5 @@ export default function SearchBar() {
         </For>
       </ul>
     </>
-  );
+  )
 }

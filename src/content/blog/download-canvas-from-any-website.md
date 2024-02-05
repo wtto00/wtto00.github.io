@@ -8,7 +8,7 @@ tags:
   - javascript
   - canvas
 description: 在控制台输入代码快速下载页面上的canvas
-updateTime: 2024-01-01T16:14:23.739Z
+updateTime: 2024-02-05T15:59:21.295Z
 ---
 
 ## JS 脚本下载 canvas 为本地图片
@@ -22,34 +22,34 @@ updateTime: 2024-01-01T16:14:23.739Z
 function getFileUrls(canvas) {
   return new Promise((resolve) => {
     canvas.toBlob((blob) => {
-      const url = URL.createObjectURL(blob);
-      resolve(url);
-    });
-  });
+      const url = URL.createObjectURL(blob)
+      resolve(url)
+    })
+  })
 }
 
 function delay() {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(0);
-    }, 1000);
-  });
+      resolve(0)
+    }, 1000)
+  })
 }
 
 async function download() {
   // 这里的.inner_page是所有文档页的canvas元素选择，根据实际更改
-  let canvas = document.querySelectorAll('.inner_page');
+  let canvas = document.querySelectorAll('.inner_page')
   for (let i = 0; i < canvas.length; i++) {
-    const url = await getFileUrls(canvas[i]);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${i}.png`;
-    a.click();
-    await delay();
+    const url = await getFileUrls(canvas[i])
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `${i}.png`
+    a.click()
+    await delay()
   }
 }
 
-download();
+download()
 ```
 
 ## 本地图片转 PDF 文档

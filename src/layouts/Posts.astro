@@ -1,25 +1,25 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content'
 
-import Card from '@/components/Card.astro';
-import Footer from '@/components/Footer.astro';
-import Header from '@/components/Header.astro';
-import LinkButton from '@/components/LinkButton.astro';
-import { SITE } from '@/config';
-import Layout from '@/layouts/Layout.astro';
-import Main from '@/layouts/Main.astro';
-import { slugify } from '@/utils/slugify';
+import Card from '@/components/Card.astro'
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import LinkButton from '@/components/LinkButton.astro'
+import { SITE } from '@/config'
+import Layout from '@/layouts/Layout.astro'
+import Main from '@/layouts/Main.astro'
+import { slugify } from '@/utils/slugify'
 
 export interface Props {
-  pageNum: number;
-  totalPages: number;
-  posts: CollectionEntry<'blog'>[];
+  pageNum: number
+  totalPages: number
+  posts: CollectionEntry<'blog'>[]
 }
 
-const { pageNum, totalPages, posts } = Astro.props;
+const { pageNum, totalPages, posts } = Astro.props
 
-const prev = pageNum > 1 ? '' : 'disabled';
-const next = pageNum < totalPages ? '' : 'disabled';
+const prev = pageNum > 1 ? '' : 'disabled'
+const next = pageNum < totalPages ? '' : 'disabled'
 ---
 
 <Layout title={`文章 | ${SITE.title}`}>

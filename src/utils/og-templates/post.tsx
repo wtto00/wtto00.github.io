@@ -1,6 +1,6 @@
-import type { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content'
 
-import { SITE } from '@/config';
+import { SITE } from '@/config'
 
 export default (post: CollectionEntry<'blog'>, logoUrl: string) => {
   return (
@@ -96,5 +96,5 @@ export default (post: CollectionEntry<'blog'>, logoUrl: string) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

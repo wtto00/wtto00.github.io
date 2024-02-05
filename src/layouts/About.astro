@@ -1,20 +1,20 @@
 ---
-import Footer from '@/components/Footer.astro';
-import Header from '@/components/Header.astro';
-import MdArticle from '@/components/MdArticle.astro';
-import { SITE } from '@/config';
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import MdArticle from '@/components/MdArticle.astro'
+import { SITE } from '@/config'
 
-import Layout from './Layout.astro';
-import Main from './Main.astro';
+import Layout from './Layout.astro'
+import Main from './Main.astro'
 
 interface Props {
   frontmatter: {
-    title: string;
-    description?: string;
-  };
+    title: string
+    description?: string
+  }
 }
 
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props
 ---
 
 <Layout title={`${frontmatter.title} | ${SITE.title}`} description={frontmatter.description}>

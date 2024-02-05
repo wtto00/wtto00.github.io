@@ -1,10 +1,10 @@
 type Site = {
-  website: string;
-  author: string;
-  desc: string;
-  title: string;
-  postPerPage: number;
-};
+  website: string
+  author: string
+  desc: string
+  title: string
+  postPerPage: number
+}
 
 export const SITE: Site = {
   website: 'https://wtto00.github.io',
@@ -12,16 +12,16 @@ export const SITE: Site = {
   desc: 'Record some issues encountered in daily work.',
   title: "WTTO'S BLOG",
   postPerPage: 6,
-};
+}
 
-export const LOCALE = ['zh-CN'];
+export const LOCALE = ['zh-CN']
 
 type SocialObjects = {
-  name: string;
-  href: string;
-  active: boolean;
-  linkTitle: string;
-}[];
+  name: string
+  href: string
+  active: boolean
+  linkTitle: string
+}[]
 export const SOCIALS: SocialObjects = [
   {
     name: 'Github',
@@ -35,4 +35,4 @@ export const SOCIALS: SocialObjects = [
     linkTitle: `Send an email to ${SITE.title}`,
     active: true,
   },
-];
+]

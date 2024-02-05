@@ -1,24 +1,20 @@
 ---
-import type { ListItem } from './PostToc.astro';
-import PostTocItem from './PostTocItem.astro';
+import type { ListItem } from './PostToc.astro'
+import PostTocItem from './PostTocItem.astro'
 
 interface Props {
-  parent?: string | number;
-  data: ListItem[];
+  parent?: string | number
+  data: ListItem[]
 }
 
-const { data, parent } = Astro.props;
+const { data, parent } = Astro.props
 ---
 
 <ol class:list={[parent ? 'ml-1em' : 'overflow-y-auto max-h-65vh']}>
   {
     data.map((item, index) => (
       <li class="w-full">
-        <PostTocItem
-          slug={item.slug}
-          text={item.text}
-          index={parent ? `${parent}.${index + 1}` : index + 1}
-        />
+        <PostTocItem slug={item.slug} text={item.text} index={parent ? `${parent}.${index + 1}` : index + 1} />
         {item.children.length > 0 && (
           <Astro.self data={item.children} parent={parent ? `${parent}.${index + 1}` : index + 1} />
         )}

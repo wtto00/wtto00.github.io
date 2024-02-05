@@ -1,23 +1,23 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content'
 
-import { unicodeSlugify } from '@/utils/slugify';
+import { unicodeSlugify } from '@/utils/slugify'
 
-import SubTitle from './SubTitle.astro';
+import SubTitle from './SubTitle.astro'
 
 export interface Props {
-  href?: string;
-  frontmatter: CollectionEntry<'blog'>['data'];
-  secHeading?: boolean;
+  href?: string
+  frontmatter: CollectionEntry<'blog'>['data']
+  secHeading?: boolean
 }
 
-const { href = '', frontmatter, secHeading = true } = Astro.props;
-const { title, pubDatetime, description } = frontmatter;
+const { href = '', frontmatter, secHeading = true } = Astro.props
+const { title, pubDatetime, description } = frontmatter
 
 const headerProps = {
   style: { viewTransitionName: unicodeSlugify(title) },
   class: 'text-lg font-medium decoration-dashed hover:underline',
-};
+}
 ---
 
 <li class="my-6">

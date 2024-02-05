@@ -1,13 +1,13 @@
-import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
+import rss from '@astrojs/rss'
+import { getCollection } from 'astro:content'
 
-import { SITE } from '@/config';
-import getSortedPosts from '@/utils/getSortedPosts';
-import { slugify } from '@/utils/slugify';
+import { SITE } from '@/config'
+import getSortedPosts from '@/utils/getSortedPosts'
+import { slugify } from '@/utils/slugify'
 
 export async function GET() {
-  const posts = await getCollection('blog');
-  const sortedPosts = getSortedPosts(posts);
+  const posts = await getCollection('blog')
+  const sortedPosts = getSortedPosts(posts)
   return rss({
     title: SITE.title,
     description: SITE.desc,
@@ -18,5 +18,5 @@ export async function GET() {
       description: data.description,
       pubDate: new Date(data.pubDatetime),
     })),
-  });
+  })
 }

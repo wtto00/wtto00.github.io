@@ -1,15 +1,15 @@
-import { children, type JSXElement } from 'solid-js';
+import { children, type JSXElement } from 'solid-js'
 
 interface Props {
-  active?: boolean;
-  route: string;
-  spanSingle?: boolean;
-  aProps?: Record<string, string>;
-  children?: JSXElement;
+  active?: boolean
+  route: string
+  spanSingle?: boolean
+  aProps?: Record<string, string>
+  children?: JSXElement
 }
 
 export default function NavMenuItem(props: Props) {
-  const c = children(() => props.children);
+  const c = children(() => props.children)
 
   return (
     <li class={`flex items-center justify-center ${props.spanSingle ? 'col-span-1' : 'col-span-2'}`}>
@@ -24,5 +24,5 @@ export default function NavMenuItem(props: Props) {
         {c()}
       </a>
     </li>
-  );
+  )
 }

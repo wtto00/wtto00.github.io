@@ -1,6 +1,6 @@
-import type { APIRoute } from 'astro';
+import type { APIRoute } from 'astro'
 
-import { SITE } from '@/config';
+import { SITE } from '@/config'
 
 const robots = `
 User-agent: Googlebot
@@ -10,9 +10,9 @@ User-agent: *
 Allow: /
 
 Sitemap: ${new URL('sitemap-index.xml', SITE.website).href}
-`.trim();
+`.trim()
 
 export const GET: APIRoute = () =>
   new Response(robots, {
     headers: { 'Content-Type': 'text/plain' },
-  });
+  })

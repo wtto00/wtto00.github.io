@@ -1,21 +1,21 @@
 ---
-import { unicodeSlugify } from '@/utils/slugify';
+import { unicodeSlugify } from '@/utils/slugify'
 interface StringTitleProp {
-  pageTitle?: string;
-  pageDesc?: string;
-  className?: string;
+  pageTitle?: string
+  pageDesc?: string
+  className?: string
 }
 
 interface ArrayTitleProp {
-  pageTitle: [string, string];
-  titleTransition: string;
-  pageDesc?: string;
-  className?: string;
+  pageTitle: [string, string]
+  titleTransition: string
+  pageDesc?: string
+  className?: string
 }
 
-export type Props = StringTitleProp | ArrayTitleProp;
+export type Props = StringTitleProp | ArrayTitleProp
 
-const { props } = Astro;
+const { props } = Astro
 ---
 
 <main class={`mx-auto max-w-3xl w-full px-4 pb-12 ${props.className || ''}`}>

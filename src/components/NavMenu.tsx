@@ -1,14 +1,14 @@
-import { createSignal } from 'solid-js';
+import { createSignal } from 'solid-js'
 
-import NavMenuBtn from './NavMenuBtn';
-import NavMenuItem from './NavMenuItem';
-import Theme from './Theme';
+import NavMenuBtn from './NavMenuBtn'
+import NavMenuItem from './NavMenuItem'
+import Theme from './Theme'
 
 interface Props {
-  activeNav?: 'posts' | 'archives' | 'tags' | 'about' | 'search' | undefined;
+  activeNav?: 'posts' | 'archives' | 'tags' | 'about' | 'search' | undefined
 }
 export default function NavMenu(props: Props) {
-  const [menuExpanded, setMenuExpanded] = createSignal(false);
+  const [menuExpanded, setMenuExpanded] = createSignal(false)
 
   return (
     <nav class="w-full flex flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:py-0 sm:space-x-4">
@@ -50,5 +50,5 @@ export default function NavMenu(props: Props) {
         </li>
       </ul>
     </nav>
-  );
+  )
 }

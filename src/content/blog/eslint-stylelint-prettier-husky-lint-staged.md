@@ -7,7 +7,7 @@ draft: false
 tags:
   - eslint
 description: 'EditorConfig,Eslint,Stylelint,Prettier,Husky,lint-staged,zhlint,commitlint'
-updateTime: 2024-01-01T16:46:54.381Z
+updateTime: 2024-02-05T15:59:21.297Z
 ---
 
 ## EditorConfig
@@ -82,7 +82,7 @@ module.exports = {
   // customSyntax: postcss-less | postcss-sass
   customSyntax: 'postcss-less',
   rules: {},
-};
+}
 ```
 
 ## Prettier
@@ -141,7 +141,7 @@ module.exports = {
   '*': ['prettier --write --ignore-unknown'],
   '*.{js,mjs,jsx,ts,mts,tsx,vue}': ['eslint --cache --fix'],
   '*.{ts,mts,tsx,vue}': [() => 'vue-tsc --noEmit -p ./tsconfig.json'],
-};
+}
 ```
 
 > 使用 VS Code 的 Git GUI 进行 commit 操作，错误信息不管是在输出中查看还是在结果文件中查看，都会出现乱码。是因为 eslint 的--color 参数以及 tsc 的--pretty 参数，会使输出结果包含有 shell 的字体颜色，这些颜色在输出中以及结果文件中不被识别。可以去掉这里的这两个参数来解决这个问题。

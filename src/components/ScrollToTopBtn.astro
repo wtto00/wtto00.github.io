@@ -10,29 +10,29 @@
 
 <script>
   class AstroScrollToTop extends HTMLElement {
-    observer: IntersectionObserver;
+    observer: IntersectionObserver
     constructor() {
-      super();
+      super()
 
       this.addEventListener('click', () => {
-        window.scrollTo({ behavior: 'auto', top: 0 });
-      });
+        window.scrollTo({ behavior: 'auto', top: 0 })
+      })
 
       this.observer = new IntersectionObserver((entries) => {
         if (entries[0]?.isIntersecting) {
-          this.classList.add('translate-x-18');
+          this.classList.add('translate-x-18')
         } else {
-          this.classList.remove('translate-x-18');
+          this.classList.remove('translate-x-18')
         }
-      });
+      })
 
-      const header = document.querySelector('header');
-      if (header) this.observer.observe(header);
+      const header = document.querySelector('header')
+      if (header) this.observer.observe(header)
     }
 
     disconnectedCallback() {
-      this.observer.disconnect();
+      this.observer.disconnect()
     }
   }
-  customElements.define('astro-scroll-to-top', AstroScrollToTop);
+  customElements.define('astro-scroll-to-top', AstroScrollToTop)
 </script>

@@ -7,25 +7,25 @@ draft: false
 tags:
   - javascript
 description: JS 产生服从均匀分布随机数
-updateTime: 2024-01-01T16:14:23.702Z
+updateTime: 2024-02-05T15:59:21.305Z
 ---
 
 ## `[min, max]`
 
 ```js
-Math.floor(Math.random() * (max - min + 1)) + min;
+Math.floor(Math.random() * (max - min + 1)) + min
 ```
 
 ## `[min, max)`
 
 ```js
-Math.floor(Math.random() * (max - min)) + min;
+Math.floor(Math.random() * (max - min)) + min
 ```
 
 ## `(min, max]`
 
 ```js
-Math.ceil(Math.random() * (max - min)) + min;
+Math.ceil(Math.random() * (max - min)) + min
 ```
 
 ---

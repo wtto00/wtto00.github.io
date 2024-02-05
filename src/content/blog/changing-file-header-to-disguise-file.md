@@ -8,7 +8,7 @@ tags:
   - 文件
 description: >-
   黑产通过修改文件头来伪装文件，为了节省成本，把公开的视频切片文件上传到其他公司的云服务储存上面。然后自己产品从其他公司的云服务器储存上拉取视频切片文件，从而节省云服务器成本。
-updateTime: 2024-01-01T16:14:23.733Z
+updateTime: 2024-02-05T15:59:21.292Z
 ---
 
 工作中遇到一种情况，黑产通过调用我们公开的上传图片接口，把自己的视频切片文件上传到我们公司的服务器储存上面，然后他们的用户在他们的产品中看视频，消耗的是我们公司的 CDN 流量。导致我们每次的云服务费用都很高。
@@ -24,9 +24,9 @@ updateTime: 2024-01-01T16:14:23.733Z
 ## 获取文件真实类型
 
 ```javascript
-import { fileTypeFromFile } from 'file-type';
+import { fileTypeFromFile } from 'file-type'
 
-console.log(await fileTypeFromFile('./source/0.ts'));
+console.log(await fileTypeFromFile('./source/0.ts'))
 
 // { ext: 'mts', mime: 'video/mp2t' }
 ```
@@ -34,9 +34,9 @@ console.log(await fileTypeFromFile('./source/0.ts'));
 ## 获取文件表面的类型
 
 ```javascript
-import mime from 'mime';
+import mime from 'mime'
 
-console.log(mime.getType('./source/0.ts'));
+console.log(mime.getType('./source/0.ts'))
 
 // video/mp2t
 ```
@@ -44,11 +44,11 @@ console.log(mime.getType('./source/0.ts'));
 ## 获取文件的 Buffer
 
 ```javascript
-import fs from 'fs';
+import fs from 'fs'
 
-const bytes = fs.readFileSync('./source/0.ts');
+const bytes = fs.readFileSync('./source/0.ts')
 
-console.log(bytes);
+console.log(bytes)
 
 // <Buffer 47 40 11 10 00 42 f0 25 00 01 c1 00 00 ff 01 ff 00 01 fc 80 14 48 12 01 06 46 46 6d 70 65 67 09 53 65 72 76 69 63 65 30 31 77 7c 43 ca ff ff ff ff ff ... 2931246 more bytes>
 ```
@@ -56,8 +56,8 @@ console.log(bytes);
 这里打印的 Buffer 可以看作是一个十六进制的数组
 
 ```javascript
-console.log(bytes.at(0));
-console.log(bytes[0]);
+console.log(bytes.at(0))
+console.log(bytes[0])
 // 71
 ```
 
@@ -78,25 +78,25 @@ const prefix = [
   0x12, 0x74, 0x01, 0xde, 0x66, 0x1f, 0x78, 0x00, 0x00, 0x00, 0x0d, 0x49, 0x44, 0x41, 0x54, 0x18, 0x57, 0x63, 0xf8,
   0xff, 0xff, 0xff, 0x7f, 0x00, 0x09, 0xfb, 0x03, 0xfd, 0x05, 0x43, 0x45, 0xca, 0x00, 0x00, 0x00, 0x00, 0x49, 0x45,
   0x4e, 0x44, 0xae, 0x42, 0x60, 0x82,
-];
-const prefixLen = prefix.length;
-const buffer = Buffer.alloc(bytes.length + prefixLen);
+]
+const prefixLen = prefix.length
+const buffer = Buffer.alloc(bytes.length + prefixLen)
 prefix.forEach((b, i) => {
-  buffer[i] = b;
-});
+  buffer[i] = b
+})
 bytes.forEach((b, i) => {
-  buffer[prefixLen + i] = b;
-});
+  buffer[prefixLen + i] = b
+})
 ```
 
 ## 保存 buffer 到新的伪装文件
 
 ```javascript
-fs.writeFileSync('./target/0.png', buffer);
+fs.writeFileSync('./target/0.png', buffer)
 
-console.log(await fileTypeFromFile('./target/0.ts'));
+console.log(await fileTypeFromFile('./target/0.ts'))
 // { ext: 'png', mime: 'image/png' }
-console.log(mime.getType('./target/0.ts'));
+console.log(mime.getType('./target/0.ts'))
 // image/png
 ```
 
@@ -110,8 +110,8 @@ console.log(mime.getType('./target/0.ts'));
 - image/png
 
   ```javascript
-  const HEX = [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a];
-  const DEC = [137, 80, 78, 71, 13, 10, 26, 10];
+  const HEX = [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]
+  const DEC = [137, 80, 78, 71, 13, 10, 26, 10]
   ```
 
 - video/mp2t

@@ -1,31 +1,31 @@
 ---
-import { type CollectionEntry,getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection } from 'astro:content'
 
-import Footer from '@/components/Footer.astro';
-import Header from '@/components/Header.astro';
-import { LOCALE, SITE } from '@/config';
-import Layout from '@/layouts/Layout.astro';
-import Main from '@/layouts/Main.astro';
-import getSortedPosts from '@/utils/getSortedPosts';
-import { unicodeSlugify } from '@/utils/slugify';
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import { LOCALE, SITE } from '@/config'
+import Layout from '@/layouts/Layout.astro'
+import Main from '@/layouts/Main.astro'
+import getSortedPosts from '@/utils/getSortedPosts'
+import { unicodeSlugify } from '@/utils/slugify'
 
-const posts = await getCollection('blog');
+const posts = await getCollection('blog')
 
 const archivedPosts = getSortedPosts(posts).reduce((acc, post) => {
-  const year = post.data.pubDatetime.getFullYear();
+  const year = post.data.pubDatetime.getFullYear()
   if (acc.has(year)) {
-    acc.set(year, [...acc.get(year)!, post]);
+    acc.set(year, [...acc.get(year)!, post])
   } else {
-    acc.set(year, [post]);
+    acc.set(year, [post])
   }
-  return acc;
-}, new Map<number, CollectionEntry<'blog'>[]>());
+  return acc
+}, new Map<number, CollectionEntry<'blog'>[]>())
 
 function formateDate(datetime: Date) {
   return datetime.toLocaleDateString(LOCALE, {
     month: '2-digit',
     day: '2-digit',
-  });
+  })
 }
 ---
 

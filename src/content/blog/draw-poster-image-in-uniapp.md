@@ -8,7 +8,7 @@ tags:
   - uniapp
   - canvas
 description: uniapp利用canvas在小程序上面生成图片
-updateTime: 2024-01-01T16:14:23.740Z
+updateTime: 2024-02-05T15:59:21.296Z
 ---
 
 ## 画布准备
@@ -22,12 +22,12 @@ updateTime: 2024-01-01T16:14:23.740Z
  */
 function startDraw(canvas, data, callback) {
   // 定义画布大小
-  canvas.width = 1080;
-  canvas.height = 1826;
+  canvas.width = 1080
+  canvas.height = 1826
 
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d')
   // 清空画布
-  ctx.clearRect(0, 0, 1080, 1826);
+  ctx.clearRect(0, 0, 1080, 1826)
 
   // 根据数据 `data` 开始画图
 }
@@ -49,45 +49,45 @@ function startDraw(canvas, data, callback) {
  * @param {funciton} callback 回调函数
  */
 function drawImage(canvas, src, x, y, width, height, radius, fit, callback) {
-  const ctx = canvas.getContext('2d');
-  ctx.save();
-  ctx.globalCompositeOperation = 'source-over';
+  const ctx = canvas.getContext('2d')
+  ctx.save()
+  ctx.globalCompositeOperation = 'source-over'
   if (radius > 0) {
-    ctx.beginPath();
-    drawRoundedRect(ctx, x, y, width, height, radius);
-    ctx.clip();
-    ctx.closePath();
+    ctx.beginPath()
+    drawRoundedRect(ctx, x, y, width, height, radius)
+    ctx.clip()
+    ctx.closePath()
   }
-  const image = canvas.createImage();
+  const image = canvas.createImage()
   image.onload = (res) => {
-    const imgWidth = image.width;
-    const imgHeight = image.height;
-    let startX = 0;
-    let startY = 0;
-    let imgW = imgWidth;
-    let imgH = imgHeight;
+    const imgWidth = image.width
+    const imgHeight = image.height
+    let startX = 0
+    let startY = 0
+    let imgW = imgWidth
+    let imgH = imgHeight
     if (fit === 'cover') {
       // 实现object-fit:cover图片裁切效果
       if (imgHeight / imgWidth > height / width) {
-        imgH = (height * imgWidth) / width;
-        startY = (imgHeight - imgH) / 2;
+        imgH = (height * imgWidth) / width
+        startY = (imgHeight - imgH) / 2
       } else {
-        imgW = (width * imgHeight) / height;
-        startX = (imgWidth - imgW) / 2;
+        imgW = (width * imgHeight) / height
+        startX = (imgWidth - imgW) / 2
       }
     } else if (fit === 'contain') {
       if (imgHeight / imgWidth > height / width) {
-        imgH = (height * imgWidth) / width;
+        imgH = (height * imgWidth) / width
       }
     }
-    ctx.drawImage(image, startX, startY, imgW, imgH, x, y, width, height);
-    ctx.restore();
-    if (callback) callback(image);
-  };
+    ctx.drawImage(image, startX, startY, imgW, imgH, x, y, width, height)
+    ctx.restore()
+    if (callback) callback(image)
+  }
   image.onerror = (err) => {
-    showError(err.message || '加载图片失败: ' + src);
-  };
-  image.src = src || '';
+    showError(err.message || '加载图片失败: ' + src)
+  }
+  image.src = src || ''
 }
 ```
 
@@ -104,26 +104,26 @@ function drawImage(canvas, src, x, y, width, height, radius, fit, callback) {
  * @param {number|array} _radius 矩形圆角弧度
  */
 function drawRoundedRect(ctx, x, y, width, height, _radius = 0) {
-  let radius = [];
+  let radius = []
   if (Array.isArray(radius)) {
-    radius = _radius;
+    radius = _radius
   } else {
-    radius = [_radius, _radius, _radius, _radius];
+    radius = [_radius, _radius, _radius, _radius]
   }
-  const [lt, rt, rb, lb] = radius;
-  ctx.moveTo(x + lt, y);
-  ctx.lineTo(x + width - lt, y);
+  const [lt, rt, rb, lb] = radius
+  ctx.moveTo(x + lt, y)
+  ctx.lineTo(x + width - lt, y)
   // 右上角圆角
-  ctx.arc(x + width - rt, y + rt, rt, 1.5 * Math.PI, 2 * Math.PI);
-  ctx.lineTo(x + width, y + height - rb);
+  ctx.arc(x + width - rt, y + rt, rt, 1.5 * Math.PI, 2 * Math.PI)
+  ctx.lineTo(x + width, y + height - rb)
   // 右下角圆角
-  ctx.arc(x + width - rb, y + height - rb, rb, 0, 0.5 * Math.PI);
-  ctx.lineTo(x + lb, y + height);
+  ctx.arc(x + width - rb, y + height - rb, rb, 0, 0.5 * Math.PI)
+  ctx.lineTo(x + lb, y + height)
   // 左下角圆角
-  ctx.arc(x + lb, y + height - lb, lb, 0.5 * Math.PI, 1 * Math.PI);
-  ctx.lineTo(x, y + radius);
+  ctx.arc(x + lb, y + height - lb, lb, 0.5 * Math.PI, 1 * Math.PI)
+  ctx.lineTo(x, y + radius)
   // 左上角圆角
-  ctx.arc(x + lt, y + lt, lt, 1 * Math.PI, 1.5 * Math.PI);
+  ctx.arc(x + lt, y + lt, lt, 1 * Math.PI, 1.5 * Math.PI)
 }
 ```
 
@@ -144,38 +144,38 @@ function drawRoundedRect(ctx, x, y, width, height, _radius = 0) {
  * @param {number} maxLines 文字最多显示几行
  */
 function splitText(ctx, text = '', fontSize, bold, width, maxLines) {
-  const textArr = [];
-  let remainText = text;
-  ctx.font = `normal ${bold ? 'bold' : 'normal'} ${fontSize}px sans-serif`;
+  const textArr = []
+  let remainText = text
+  ctx.font = `normal ${bold ? 'bold' : 'normal'} ${fontSize}px sans-serif`
 
   while (textArr.length < maxLines && remainText) {
     // while (textArr.length < maxLines && ctx.measureText(remainText).width > width) {
     // 估算一行能容纳多少文字
-    let assumTextNum = Math.floor(width / fontSize);
+    let assumTextNum = Math.floor(width / fontSize)
     // 计算假定文字的宽度
-    let { width: assumTextWidth } = ctx.measureText(remainText.substr(0, assumTextNum));
+    let { width: assumTextWidth } = ctx.measureText(remainText.substr(0, assumTextNum))
 
     if (assumTextWidth > width) {
       while (assumTextWidth > width) {
-        assumTextWidth = ctx.measureText(remainText.substr(0, --assumTextNum)).width;
+        assumTextWidth = ctx.measureText(remainText.substr(0, --assumTextNum)).width
       }
     } else {
       while (assumTextWidth <= width && assumTextNum <= remainText.length) {
-        assumTextWidth = ctx.measureText(remainText.substr(0, ++assumTextNum)).width;
+        assumTextWidth = ctx.measureText(remainText.substr(0, ++assumTextNum)).width
       }
-      assumTextWidth = ctx.measureText(remainText.substr(0, --assumTextNum)).width;
+      assumTextWidth = ctx.measureText(remainText.substr(0, --assumTextNum)).width
     }
-    let thisText = remainText.substr(0, assumTextNum);
-    remainText = remainText.substr(assumTextNum);
+    let thisText = remainText.substr(0, assumTextNum)
+    remainText = remainText.substr(assumTextNum)
     if (textArr.length === maxLines - 1 && remainText.length > 0) {
-      thisText = thisText.substring(0, thisText.length - 2) + '...';
+      thisText = thisText.substring(0, thisText.length - 2) + '...'
     }
     textArr.push({
       text: thisText,
       width: assumTextWidth,
-    });
+    })
   }
-  return textArr;
+  return textArr
 }
 ```
 
@@ -193,14 +193,14 @@ function splitText(ctx, text = '', fontSize, bold, width, maxLines) {
  * @param {number} maxLines 文字最多显示几行
  */
 function renderText(ctx, x, y, width, text, style, maxLines) {
-  if (!text) return;
-  const { fontSize, lineHeight, color, bold } = style;
-  const textArr = splitText(ctx, text, fontSize, bold, width, maxLines);
+  if (!text) return
+  const { fontSize, lineHeight, color, bold } = style
+  const textArr = splitText(ctx, text, fontSize, bold, width, maxLines)
   textArr.forEach((item, index) => {
-    ctx.fillStyle = color;
-    ctx.textBaseline = 'top';
-    ctx.fillText(item.text, x, y + index * lineHeight + (lineHeight - fontSize) / 2);
-  });
+    ctx.fillStyle = color
+    ctx.textBaseline = 'top'
+    ctx.fillText(item.text, x, y + index * lineHeight + (lineHeight - fontSize) / 2)
+  })
 }
 ```
 
@@ -216,12 +216,12 @@ function saveCanvas(canvas, callback) {
     canvas,
     success: (res) => {
       if (res.errMsg === 'canvasToTempFilePath:ok') {
-        if (callback) callback(res.tempFilePath);
+        if (callback) callback(res.tempFilePath)
       } else {
-        showError(res.errMsg);
+        showError(res.errMsg)
       }
     },
-  });
+  })
 }
 ```
 
@@ -233,7 +233,7 @@ function saveCanvas(canvas, callback) {
  * @param {string} tempImgPath 临时文件路径
  */
 function savePosterFile(tempImgPath) {
-  if (!tempImgPath) return;
+  if (!tempImgPath) return
 
   uni.saveImageToPhotosAlbum({
     filePath: tempImgPath,
@@ -241,7 +241,7 @@ function savePosterFile(tempImgPath) {
       uni.showToast({
         title: '保存成功',
         icon: 'success',
-      });
+      })
     },
     fail: (res) => {
       if (res.errMsg === 'saveImageToPhotosAlbum:fail auth deny') {
@@ -250,7 +250,7 @@ function savePosterFile(tempImgPath) {
           content: '需要您授权保存相册',
           confirmText: '去授权',
           success: (res) => {
-            if (res.cancel) return;
+            if (res.cancel) return
             uni.openSetting({
               success: (auth) => {
                 if (auth.authSetting['scope.writePhotosAlbum']) {
@@ -258,30 +258,30 @@ function savePosterFile(tempImgPath) {
                     title: '提示',
                     content: '获取权限成功,再次点击图片即可保存',
                     showCancel: false,
-                  });
+                  })
                 } else {
                   uni.showModal({
                     title: '提示',
                     content: '获取权限失败，将无法保存到相册哦~',
                     showCancel: false,
-                  });
+                  })
                 }
               },
-            });
+            })
           },
-        });
+        })
       } else if (res.errMsg === 'saveImageToPhotosAlbum:fail cancel') {
         uni.showToast({
           title: '已取消',
           icon: 'none',
-        });
+        })
       } else {
         uni.showToast({
           title: '保存相册失败',
-        });
+        })
       }
     },
-  });
+  })
 }
 ```
 
@@ -292,7 +292,7 @@ function savePosterFile(tempImgPath) {
 原因是画布跨域加载了非本域名的图片，导致画布被污染，无法导出为图片。解决办法添加 `crossOrigin` 属性
 
 ```javascript
-image.crossOrigin = 'anonymous';
+image.crossOrigin = 'anonymous'
 ```
 
 ### 图片加载的时候报错 `CORS` 跨域错误
@@ -300,7 +300,7 @@ image.crossOrigin = 'anonymous';
 如果服务端没有设置防盗链的话以及其他限制的话，这种情况很可能是浏览器缓存导致的，可以在图片链接后面加上随机数。
 
 ```javascript
-image.src = `${url}?${Math.random()}`;
+image.src = `${url}?${Math.random()}`
 ```
 
 > 参考 <https://segmentfault.com/q/1010000008648867>

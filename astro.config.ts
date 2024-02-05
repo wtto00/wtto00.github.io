@@ -1,16 +1,16 @@
-import { rehypeHeadingIds } from '@astrojs/markdown-remark';
-import sitemap from '@astrojs/sitemap';
-import solid from '@astrojs/solid-js';
-import { defineConfig } from 'astro/config';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeExternalLinks from 'rehype-external-links';
-import rehypeSlug from 'rehype-slug';
-import remarkCollapse from 'remark-collapse';
-import remarkToc from 'remark-toc';
-import UnoCSS from 'unocss/astro';
+import { rehypeHeadingIds } from '@astrojs/markdown-remark'
+import sitemap from '@astrojs/sitemap'
+import solid from '@astrojs/solid-js'
+import { defineConfig } from 'astro/config'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeExternalLinks from 'rehype-external-links'
+import rehypeSlug from 'rehype-slug'
+import remarkCollapse from 'remark-collapse'
+import remarkToc from 'remark-toc'
+import UnoCSS from 'unocss/astro'
 
-import githubLightTheme from './scripts/github-light';
-import { SITE } from './src/config';
+import githubLightTheme from './scripts/github-light'
+import { SITE } from './src/config'
 
 // https://astro.build/config
 export default defineConfig({
@@ -66,4 +66,4 @@ export default defineConfig({
       exclude: ['@resvg/resvg-js'],
     },
   },
-});
+})

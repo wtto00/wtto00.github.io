@@ -9,7 +9,7 @@ tags:
 description: >-
   使用innerHTML插入DOM元素时，如果HTML字符串中包含一些不确定的内容，比如js的代码，就会造成xss攻击。如果是单纯的字符串，最好是使用innerText赋值。如果必须要拼接html标签，使用
   htmlEscape 方法拼接字符串，或使用DOMPurify库处理。
-updateTime: 2024-01-01T16:14:23.687Z
+updateTime: 2024-02-05T15:59:21.298Z
 ---
 
 前端项目一般应该尽量避免直接插入 `html` 字符串，因为这样很容易造成 [xss](https://developer.mozilla.org/zh-CN/docs/Glossary/Cross-site_scripting) 攻击。
@@ -23,24 +23,24 @@ updateTime: 2024-01-01T16:14:23.687Z
 ## 拼接 html 时，进行 Escape 处理
 
 ```javascript
-var say = 'a bird in hand > two in the bush';
-var html = htmlEscape`<div>I would just like to say : ${say}</div>`;
+var say = 'a bird in hand > two in the bush'
+var html = htmlEscape`<div>I would just like to say : ${say}</div>`
 
 function htmlEscape(literals, ...placeholders) {
-  let result = '';
+  let result = ''
   for (let i = 0; i < placeholders.length; i += 1) {
-    result += literals[i];
+    result += literals[i]
     result += placeholders[i]
       .replace(/&/g, '&amp;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
-      .replace(/javascript/gi, '$&&rlm;');
+      .replace(/javascript/gi, '$&&rlm;')
   }
 
-  result += literals[literals.length - 1];
-  return result;
+  result += literals[literals.length - 1]
+  return result
 }
 ```
 

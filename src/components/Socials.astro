@@ -11,25 +11,31 @@ const { centered = false } = Astro.props
 
 const socialIcons: Record<string, string> = {
   Github: 'i-custom:github',
-  Mail: 'i-custom:email'
+  Mail: 'i-custom:email',
 }
 ---
 
-<div class='flex-wrap justify-center gap-1' class:list={{ flex: centered }}>
+<div class="flex-wrap justify-center gap-1" class:list={{ flex: centered }}>
   {
     SOCIALS.filter((social) => social.active).map((social) => (
-      <LinkButton href={social.href} className='p-2 text-0 hover:rotate-6 sm:p-1' title={social.linkTitle} ariaLabel={social.linkTitle} target='_blank'>
-        <i class='h-7.5 w-7.5 sm:(h-6.6 w-6.6)' aria-hidden="true" class:list={socialIcons[social.name] ?? ''} />
+      <LinkButton
+        href={social.href}
+        className="p-2 text-0 hover:rotate-6 sm:p-1"
+        title={social.linkTitle}
+        ariaLabel={social.linkTitle}
+        target="_blank"
+      >
+        <i class="h-7.5 w-7.5 sm:(h-6.6 w-6.6)" aria-hidden="true" class:list={socialIcons[social.name] ?? ''} />
       </LinkButton>
     ))
   }
   <LinkButton
-    href='/rss.xml'
-    className='p-2 text-0 hover:rotate-6 sm:p-1'
-    ariaLabel='rss feed'
-    title='RSS Feed'
-    target='_blank'
+    href="/rss.xml"
+    className="p-2 text-0 hover:rotate-6 sm:p-1"
+    ariaLabel="rss feed"
+    title="RSS Feed"
+    target="_blank"
   >
-    <i class='i-custom:rss inline-block h-7.5 w-7.5 c-accent sm:(h-6.6 w-6.6)' aria-hidden="true"></i>
+    <i class="i-custom:rss inline-block h-7.5 w-7.5 c-accent sm:(h-6.6 w-6.6)" aria-hidden="true"></i>
   </LinkButton>
 </div>

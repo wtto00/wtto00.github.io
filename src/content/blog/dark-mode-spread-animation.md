@@ -7,7 +7,7 @@ draft: false
 tags:
   - css
 description: 暗黑模式切换、跟随系统、扩散动画：startViewTransition
-updateTime: 2024-01-01T16:14:23.737Z
+updateTime: 2024-02-05T15:59:21.293Z
 ---
 
 实现功能：
@@ -23,7 +23,7 @@ updateTime: 2024-01-01T16:14:23.737Z
 ## 初始化 `MediaQueryList` 对象
 
 ```ts
-const mediaQueryList: MediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+const mediaQueryList: MediaQueryList = window.matchMedia('(prefers-color-scheme: dark)')
 ```
 
 这个对象主要用于判断当前系统是否是暗色模式，以及监听系统主题暗色模式的改变。
@@ -32,7 +32,7 @@ const mediaQueryList: MediaQueryList = window.matchMedia('(prefers-color-scheme:
 
 ```ts
 /** 三种主题设置 */
-type ColorScheme = 'OS' | 'Dark' | 'Light';
+type ColorScheme = 'OS' | 'Dark' | 'Light'
 
 /**
  * 判断主题设置是否合法
@@ -41,12 +41,12 @@ type ColorScheme = 'OS' | 'Dark' | 'Light';
  * Light: 亮色模式
  */
 function isColorScheme(color: string): color is ColorScheme {
-  return color === 'OS' || color === 'Dark' || color === 'Light';
+  return color === 'OS' || color === 'Dark' || color === 'Light'
 }
 
-const localColorScheme = localStorage.getItem('colorScheme') ?? '';
+const localColorScheme = localStorage.getItem('colorScheme') ?? ''
 // 如果本地保存的主题值不合法，则使用默认的 `跟随系统` 主题
-const colorScheme = isColorScheme(localColorScheme) ? localColorScheme : 'OS';
+const colorScheme = isColorScheme(localColorScheme) ? localColorScheme : 'OS'
 ```
 
 ## 设置页面主题
@@ -60,7 +60,7 @@ const colorScheme = isColorScheme(localColorScheme) ? localColorScheme : 'OS';
  * 当前主题色是否是暗色
  */
 function isDark() {
-  return document.documentElement.classList.contains('dark');
+  return document.documentElement.classList.contains('dark')
 }
 ```
 
@@ -71,7 +71,7 @@ function isDark() {
  * 当前系统的主题色是否是暗色/深色/夜间
  */
 function systemIsDark() {
-  return mediaQueryList.matches;
+  return mediaQueryList.matches
 }
 ```
 
@@ -88,10 +88,10 @@ function systemIsDark() {
 function listenSystemTheme() {
   if (mediaQueryList.addListener) {
     // 兼容旧版浏览器，将来会被废弃
-    mediaQueryList.addListener(toggleTheme);
+    mediaQueryList.addListener(toggleTheme)
   } else {
     // 新版浏览器
-    mediaQueryList.addEventListener('change', toggleTheme);
+    mediaQueryList.addEventListener('change', toggleTheme)
   }
 }
 
@@ -101,10 +101,10 @@ function listenSystemTheme() {
 function unListenSystemTheme() {
   if (mediaQueryList.removeListener) {
     // 兼容旧版浏览器，将来会被废弃
-    mediaQueryList.removeListener(toggleTheme);
+    mediaQueryList.removeListener(toggleTheme)
   } else {
     // 新版浏览器
-    mediaQueryList.removeEventListener('change', toggleTheme);
+    mediaQueryList.removeEventListener('change', toggleTheme)
   }
 }
 ```
@@ -118,7 +118,7 @@ function unListenSystemTheme() {
  * 当前页面的主题设置
  * 未初始化前为空
  */
-let colorScheme: ColorScheme;
+let colorScheme: ColorScheme
 
 /**
  * 设置主题模式
@@ -127,48 +127,48 @@ let colorScheme: ColorScheme;
  */
 function setColorScheme(scheme: ColorScheme, event?: MouseEvent) {
   // 如果当前页面的主题设置和要设置的主题一致，则不执行
-  if (colorScheme === scheme) return;
+  if (colorScheme === scheme) return
   // 当前页面主题是否是暗色
-  const currentDark = isDark();
+  const currentDark = isDark()
   switch (scheme) {
     case 'OS':
       // 设置主题色跟随系统
       // 当前系统主题是否是暗色
-      const systemDark = systemIsDark();
+      const systemDark = systemIsDark()
       // 当前主题色与系统主题色不一致时，切换主题
       if (currentDark !== systemDark) {
-        toggleTheme(event);
+        toggleTheme(event)
       }
       // 从不是 `跟随系统` 的设置，改变为 `跟随系统`，添加监听方法
-      listenSystemTheme();
-      break;
+      listenSystemTheme()
+      break
     case 'Dark':
       // 设置主题色为暗色模式
       // 当前页面主题色不是暗色的话，则切换主题
       if (!currentDark) {
-        toggleTheme(event);
+        toggleTheme(event)
       }
       // 从 `跟随系统` 的设置，改变为暗色主题，取消掉之前的监听方法
       if (colorScheme === 'OS') {
-        unListenSystemTheme();
+        unListenSystemTheme()
       }
-      break;
+      break
     case 'Light':
       // 亮色模式
       // 当前页面主题色是暗色的话，则切换主题
       if (currentDark) {
-        toggleTheme(event);
+        toggleTheme(event)
       }
       // 从 `跟随系统` 的设置，改变为亮色主题，取消掉之前的监听方法
       if (colorScheme === 'Light') {
-        unListenSystemTheme();
+        unListenSystemTheme()
       }
-      break;
+      break
   }
   // 永久化保存设置
-  localStorage.setItem('colorScheme', scheme);
+  localStorage.setItem('colorScheme', scheme)
   // 标记当前页面的主题设置
-  colorScheme = scheme;
+  colorScheme = scheme
 }
 ```
 
@@ -182,10 +182,10 @@ function setColorScheme(scheme: ColorScheme, event?: MouseEvent) {
  * @link https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition
  */
 interface ViewTransition {
-  ready: Promise<void>;
+  ready: Promise<void>
 }
 interface Document {
-  startViewTransition: (callback: () => void) => ViewTransition;
+  startViewTransition: (callback: () => void) => ViewTransition
 }
 ```
 
@@ -196,7 +196,7 @@ interface Document {
  * 切换主题色，html标签切换dark类
  */
 function toggleDark() {
-  document.documentElement.classList.toggle('dark');
+  document.documentElement.classList.toggle('dark')
 }
 ```
 
@@ -210,7 +210,7 @@ function toggleDark() {
  * @link https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media/prefers-reduced-motion
  */
 function isReducedMotion() {
-  return window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+  return window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true
 }
 ```
 
@@ -223,25 +223,25 @@ function isReducedMotion() {
  */
 function toggleTheme(event?: MouseEvent) {
   // 如果当前页面是暗色，则切换为亮色；如果当前页面是亮色，则切换为暗色
-  const willDark = !isDark();
+  const willDark = !isDark()
   // 浏览器新特性不支持 或者 开启了动画减弱
   if (!document.startViewTransition || isReducedMotion()) {
-    toggleDark();
-    return;
+    toggleDark()
+    return
   }
 
   // 开始加载 ViewTransition 扩散动画
   const transition = document.startViewTransition(() => {
-    toggleDark();
-  });
+    toggleDark()
+  })
 
   // 传入点击事件，从点击处开始扩散。否则，从右上角开始扩散
-  const x = event?.clientX ?? window.innerWidth;
-  const y = event?.clientY ?? 0;
+  const x = event?.clientX ?? window.innerWidth
+  const y = event?.clientY ?? 0
 
-  const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+  const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y))
   void transition.ready.then(() => {
-    const clipPath = [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`];
+    const clipPath = [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`]
     document.documentElement.animate(
       {
         clipPath: willDark ? clipPath : [...clipPath].reverse(),
@@ -251,8 +251,8 @@ function toggleTheme(event?: MouseEvent) {
         easing: 'ease-in',
         pseudoElement: willDark ? '::view-transition-new(root)' : '::view-transition-old(root)',
       },
-    );
-  });
+    )
+  })
 }
 ```
 

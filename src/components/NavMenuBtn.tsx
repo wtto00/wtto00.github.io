@@ -1,6 +1,6 @@
 interface Props {
-  expanded?: boolean;
-  onClick: () => void;
+  expanded?: boolean
+  onClick: () => void
 }
 export default function NavMenuBtn(props: Props) {
   return (
@@ -65,5 +65,5 @@ export default function NavMenuBtn(props: Props) {
         />
       </svg>
     </button>
-  );
+  )
 }

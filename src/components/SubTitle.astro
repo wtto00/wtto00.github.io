@@ -1,23 +1,24 @@
 ---
-import QRCode from 'qrcode';
+import QRCode from 'qrcode'
 
-import FormattedDatetime from './FormattedDatetime.astro';
+import FormattedDatetime from './FormattedDatetime.astro'
 
 interface Props {
-  title?: string;
-  datetime: string | Date;
-  size?: 'sm' | 'lg';
-  className?: string;
+  title?: string
+  datetime: string | Date
+  size?: 'sm' | 'lg'
+  className?: string
 }
 
-const { datetime, size = 'sm', className, title } = Astro.props;
+const { datetime, size = 'sm', className, title } = Astro.props
 
-let qrImg = '';
-if (title) qrImg = await QRCode.toDataURL(Astro.url.href, { type: 'image/jpeg', margin: 1 });
+let qrImg = ''
+if (title) qrImg = await QRCode.toDataURL(Astro.url.href, { type: 'image/jpeg', margin: 1 })
 ---
 
 <div class="relative z-1 flex items-center space-x-2" class:list={[className]}>
-  <i class="i-custom:calendar h-6 w-6 op-80" aria-hidden="true" class:list={[size === 'sm' ? 'scale-90' : 'scale-100']}></i>
+  <i class="i-custom:calendar h-6 w-6 op-80" aria-hidden="true" class:list={[size === 'sm' ? 'scale-90' : 'scale-100']}
+  ></i>
   <span class="sr-only op-80">Posted on:</span>
   <span class="italic op-80" class:list={[size === 'sm' ? 'text-sm' : 'text-4']}>
     <FormattedDatetime datetime={datetime} />

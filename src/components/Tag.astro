@@ -1,11 +1,11 @@
 ---
-import { unicodeSlugify } from '@/utils/slugify';
+import { unicodeSlugify } from '@/utils/slugify'
 export interface Props {
-  name: string;
-  size?: 'sm' | 'lg';
+  name: string
+  size?: 'sm' | 'lg'
 }
 
-const { name, size = 'sm' } = Astro.props;
+const { name, size = 'sm' } = Astro.props
 ---
 
 <li class="inline-block" class:list={[size === 'sm' ? 'my-1 underline-offset-4' : 'my-3 mx-1 underline-offset-8']}>
@@ -15,7 +15,10 @@ const { name, size = 'sm' } = Astro.props;
     class:list={[size === 'sm' ? 'text-sm' : 'text-lg']}
     class="mr-2 inline-flex items-center b-b-2 b-base b-dashed hover:(translate-y--2px b-accent c-accent) focus-visible:p-1"
   >
-    <i class="i-custom:topic translate-x--2px op-80" aria-hidden="true" class:list={[size === 'sm' ? 'h-4 w-4' : 'h-5 w-5']}></i>
+    <i
+      class="i-custom:topic translate-x--2px op-80"
+      aria-hidden="true"
+      class:list={[size === 'sm' ? 'h-4 w-4' : 'h-5 w-5']}></i>
     <span>{name.toLowerCase()}</span>
   </a>
 </li>

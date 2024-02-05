@@ -1,12 +1,12 @@
 ---
-import { getLocalDate, getLocalTime } from '@/utils/datetime';
+import { getLocalDate, getLocalTime } from '@/utils/datetime'
 interface Props {
-  datetime: string | Date;
+  datetime: string | Date
 }
 
-const { datetime } = Astro.props;
+const { datetime } = Astro.props
 
-const myDatetime = new Date(datetime);
+const myDatetime = new Date(datetime)
 ---
 
 {getLocalDate(myDatetime)}

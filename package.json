@@ -12,7 +12,7 @@
     "astro": "astro",
     "lint": "eslint --color --fix .",
     "zhlint:all": "zhlint \"{,!(node_modules)/**/}*.md\" --fix",
-    "format": "prettier . --write --ignore-unknown",
+    "format": "prettier . --write --ignore-unknown --plugin=prettier-plugin-astro",
     "prepare": "husky && echo npx lint-staged > .husky/pre-commit"
   },
   "dependencies": {
@@ -54,6 +54,7 @@
     "husky": "^9.0.6",
     "lint-staged": "^15.2.0",
     "prettier": "^3.2.4",
+    "prettier-plugin-astro": "^0.13.0",
     "sharp": "^0.33.2",
     "unocss": "^0.58.4",
     "unocss-preset-theme": "^0.12.0",
@@ -61,7 +62,7 @@
   },
   "lint-staged": {
     "*": [
-      "prettier --write --ignore-unknown",
+      "prettier --write --plugin=prettier-plugin-astro --ignore-unknown",
       "astro check"
     ],
     "*.{js,mjs,jsx,ts,mts,tsx,astro}": [

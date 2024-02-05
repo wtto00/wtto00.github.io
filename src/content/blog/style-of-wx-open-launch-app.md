@@ -8,7 +8,7 @@ tags:
   - 微信
   - 小程序
 description: 微信 H5 开放标签 <wx-open-launch-app> 打开 APP，打开小程序，样式问题
-updateTime: 2024-01-01T16:14:23.689Z
+updateTime: 2024-02-05T15:59:21.304Z
 ---
 
 官当文档 <https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_Open_Tag.html>
@@ -21,7 +21,7 @@ updateTime: 2024-01-01T16:14:23.689Z
 
 ```jsx
 // WxOpenLaunchApp.jsx
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
@@ -30,17 +30,17 @@ export default defineComponent({
     height: { type: Number, required: true },
   },
   mounted() {
-    const launchAppBtn = document.getElementById(this.id);
+    const launchAppBtn = document.getElementById(this.id)
     launchAppBtn.addEventListener('launch', (e) => {
-      console.log('success', e);
-    });
+      console.log('success', e)
+    })
     launchAppBtn.addEventListener('error', (e) => {
-      this.$emit('fail', e);
-      console.log('fail', e);
-    });
+      this.$emit('fail', e)
+      console.log('fail', e)
+    })
     launchAppBtn.addEventListener('ready', (e) => {
-      console.log('ready', e);
-    });
+      console.log('ready', e)
+    })
   },
   render() {
     return (
@@ -49,8 +49,8 @@ export default defineComponent({
         <div
           onClick={(e) => {
             // 非微信浏览器触发
-            this.$emit('fail', e);
-            console.log('fail', e);
+            this.$emit('fail', e)
+            console.log('fail', e)
           }}
         >
           <wx-open-launch-app
@@ -65,9 +65,9 @@ export default defineComponent({
           </wx-open-launch-app>
         </div>
       </div>
-    );
+    )
   },
-});
+})
 ```
 
 ## vue 组件
@@ -88,35 +88,35 @@ export default defineComponent({
 </template>
 
 <script setup>
-import { defineEmit, defineProps, onMounted } from 'vue';
-import { toAppId } from '@/config';
+import { defineEmit, defineProps, onMounted } from 'vue'
+import { toAppId } from '@/config'
 
 const props = defineProps({
   id: { type: String, required: true },
   extinfo: { type: String, required: true },
   height: { type: Number, required: true },
-});
-const emits = defineEmit(['fail']);
+})
+const emits = defineEmit(['fail'])
 
 onMounted(() => {
-  const launchAppBtn = document.getElementById(props.id);
+  const launchAppBtn = document.getElementById(props.id)
   launchAppBtn.addEventListener('launch', (e) => {
-    console.log('success', e);
-  });
+    console.log('success', e)
+  })
   launchAppBtn.addEventListener('error', (e) => {
-    emits('fail', e);
-    console.log('fail', e);
-  });
+    emits('fail', e)
+    console.log('fail', e)
+  })
   launchAppBtn.addEventListener('ready', (e) => {
-    console.log('ready', e);
-  });
-});
+    console.log('ready', e)
+  })
+})
 
 const fail = (e) => {
   // 非微信浏览器触发
-  emits('fail', e);
-  console.log('fail', e);
-};
+  emits('fail', e)
+  console.log('fail', e)
+}
 </script>
 
 <style lang="less" scoped>

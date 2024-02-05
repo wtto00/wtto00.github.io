@@ -1,4 +1,4 @@
-import { LOCALE } from '@/config';
+import { LOCALE } from '@/config'
 
 /**
  * 获取格式化的日期
@@ -10,7 +10,7 @@ export function getLocalDate(datetime: string | Date) {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  });
+  })
 }
 
 /**
@@ -22,5 +22,5 @@ export function getLocalTime(datetime: string | Date) {
   return (typeof datetime === 'string' ? new Date(datetime) : datetime).toLocaleTimeString(LOCALE, {
     hour: '2-digit',
     minute: '2-digit',
-  });
+  })
 }

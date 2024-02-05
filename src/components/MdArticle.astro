@@ -1,6 +1,5 @@
 ---
-import ScrollToTopBtn from "./ScrollToTopBtn.astro";
-
+import ScrollToTopBtn from './ScrollToTopBtn.astro'
 ---
 
 <astro-article class="prose-wtto block max-w-unset w-full prose">
@@ -10,16 +9,16 @@ import ScrollToTopBtn from "./ScrollToTopBtn.astro";
 </astro-article>
 
 <script>
-  import { addCopyCodeBtn, headLinkCopy } from '@/utils/mdScripts';
+  import { addCopyCodeBtn, headLinkCopy } from '@/utils/mdScripts'
 
   class AstroArticle extends HTMLElement {
     constructor() {
-      super();
+      super()
 
-      addCopyCodeBtn();
-      headLinkCopy();
+      addCopyCodeBtn()
+      headLinkCopy()
     }
   }
 
-  customElements.define('astro-article', AstroArticle);
+  customElements.define('astro-article', AstroArticle)
 </script>

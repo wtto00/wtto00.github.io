@@ -1,16 +1,16 @@
 ---
-import { SITE } from '@/config';
-import { getLocalDate } from '@/utils/datetime';
+import { SITE } from '@/config'
+import { getLocalDate } from '@/utils/datetime'
 
 interface Props {
-  title: string;
-  fileName: string;
-  pubDatetime: Date;
-  updateTime: Date | undefined;
+  title: string
+  fileName: string
+  pubDatetime: Date
+  updateTime: Date | undefined
 }
 
-const { title, fileName, pubDatetime, updateTime } = Astro.props;
-const fileUrl = `https://github.com/wtto00/wtto00.github.io/blob/main/src/content/blog/${fileName}`;
+const { title, fileName, pubDatetime, updateTime } = Astro.props
+const fileUrl = `https://github.com/wtto00/wtto00.github.io/blob/main/src/content/blog/${fileName}`
 ---
 
 <div class="relative z-0 mt-5 b-1 b-base b-op-10 rd-2 p-5 text-sm space-y-2">

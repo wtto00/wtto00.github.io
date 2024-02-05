@@ -18,7 +18,7 @@ const { href, className, ariaLabel, title, disabled = false, target } = Astro.pr
     <button
       title={title}
       aria-disabled={true}
-      class='group pointer-events-none inline-flex items-center justify-center op-50'
+      class="group pointer-events-none inline-flex items-center justify-center op-50"
       class:list={[className]}
       aria-label={ariaLabel}
       aria-disabled={true}
@@ -28,7 +28,7 @@ const { href, className, ariaLabel, title, disabled = false, target } = Astro.pr
   ) : (
     <a
       href={href}
-      class='group inline-flex items-center justify-center hover:c-accent'
+      class="group inline-flex items-center justify-center hover:c-accent"
       class:list={[className]}
       aria-label={ariaLabel}
       title={title}

@@ -1,17 +1,17 @@
 ---
-import '@/style.css';
+import '@/style.css'
 
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from 'astro:transitions'
 
-import { SITE } from '@/config';
+import { SITE } from '@/config'
 
-const googleSiteVerification = process.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+const googleSiteVerification = process.env.PUBLIC_GOOGLE_SITE_VERIFICATION
 
 export interface Props {
-  title?: string;
-  description?: string | undefined;
-  ogImage?: string;
-  canonicalURL?: string | undefined;
+  title?: string
+  description?: string | undefined
+  ogImage?: string
+  canonicalURL?: string | undefined
 }
 
 const {
@@ -19,9 +19,9 @@ const {
   description = SITE.desc,
   ogImage,
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
-} = Astro.props;
+} = Astro.props
 
-const socialImageURL = ogImage || new URL('og.png', Astro.url.origin).href;
+const socialImageURL = ogImage || new URL('og.png', Astro.url.origin).href
 ---
 
 <!doctype html>
@@ -67,14 +67,14 @@ const socialImageURL = ogImage || new URL('og.png', Astro.url.origin).href;
   <body>
     <slot />
     <script>
-      import { initTheme } from '@/utils/theme';
+      import { initTheme } from '@/utils/theme'
 
-      initTheme();
+      initTheme()
 
       // 每个页面都会执行
       document.addEventListener('astro:after-swap', () => {
-        initTheme();
-      });
+        initTheme()
+      })
     </script>
   </body>
 </html>

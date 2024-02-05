@@ -6,15 +6,15 @@
  * @link https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition
  */
 interface ViewTransition {
-  ready: Promise<void>;
+  ready: Promise<void>
 }
 
 interface Document {
-  startViewTransition: (callback: () => void) => ViewTransition;
+  startViewTransition: (callback: () => void) => ViewTransition
 }
 
 declare module 'remark-collapse' {
-  import type { RemarkPlugin } from '@astrojs/markdown-remark';
-  const remarkCollapse: RemarkPlugin;
-  export default remarkCollapse;
+  import type { RemarkPlugin } from '@astrojs/markdown-remark'
+  const remarkCollapse: RemarkPlugin
+  export default remarkCollapse
 }
