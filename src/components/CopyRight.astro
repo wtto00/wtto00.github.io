@@ -30,14 +30,14 @@ const fileUrl = `https://github.com/wtto00/wtto00.github.io/blob/main/src/conten
     <span class="whitespace-nowrap">发表时间:&nbsp;</span><span class="ml-2">{getLocalDate(pubDatetime)}</span>
   </div>
   <div class="flex items-start">
-    <span class="whitespace-nowrap">最后更新时间:&nbsp;</span><span class="ml-2"
-      >{getLocalDate(updateTime || pubDatetime)}</span
-    >
+    <span class="whitespace-nowrap">最后更新时间:&nbsp;</span><span class="ml-2">
+      {getLocalDate(updateTime || pubDatetime)}
+    </span>
   </div>
   <div class="flex items-start">
-    <span class="whitespace-nowrap">文章链接:&nbsp;</span><a class="ml-2 c-accent hover:op-75" href={Astro.url.href}
-      >{Astro.url.href}</a
-    >
+    <span class="whitespace-nowrap">文章链接:&nbsp;</span><a class="ml-2 c-accent hover:op-75" href={Astro.url.href}>
+      {Astro.url.href}
+    </a>
   </div>
   <div class="flex items-start">
     <span class="whitespace-nowrap">版权说明:&nbsp;</span>
