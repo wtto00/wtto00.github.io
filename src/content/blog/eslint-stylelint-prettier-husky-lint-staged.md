@@ -7,7 +7,7 @@ draft: false
 tags:
   - eslint
 description: 'EditorConfig,Eslint,Stylelint,Prettier,Husky,lint-staged,zhlint,commitlint'
-updateTime: 2024-02-05T15:59:21.297Z
+updateTime: 2024-02-05T16:00:16.970Z
 ---
 
 ## EditorConfig
@@ -103,6 +103,7 @@ npm pkg set scripts.format="prettier . --write --ignore-unknown"
 {
   "printWidth": 120,
   "singleQuote": true,
+  "semi": false,
   "trailingComma": "all",
   "arrowParens": "always"
 }
