@@ -16,7 +16,7 @@
     "prepare": "husky && echo npx lint-staged > .husky/pre-commit"
   },
   "dependencies": {
-    "@astrojs/check": "^0.4.1",
+    "@astrojs/check": "^0.5.0",
     "@astrojs/markdown-remark": "^4.2.0",
     "@astrojs/rss": "^4.0.4",
     "@astrojs/sitemap": "^3.0.5",
