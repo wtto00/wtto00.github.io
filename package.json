@@ -48,7 +48,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-astro": "^0.31.3",
     "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-simple-import-sort": "^11.0.0",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
     "eslint-plugin-solid": "^0.13.1",
     "gray-matter": "^4.0.3",
     "husky": "^9.0.6",
