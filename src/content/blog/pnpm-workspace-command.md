@@ -1,5 +1,5 @@
 ---
-title: 记录一些pnpm的worksapce用法
+title: 记录一些pnpm的workspace用法
 postSlug: pnpm-workspace-command
 featured: false
 draft: false
@@ -7,7 +7,7 @@ tags:
   - pnpm
 description: 使用pnpm自带的workspace管理多包仓库，以下是我使用过程中的一些经验。这里记录下来，以供以后查找。
 pubDatetime: 2024-02-23T15:59:22.972Z
-updateTime: 2024-02-24T05:56:39.583Z
+updateTime: 2024-02-24T05:59:28.731Z
 ---
 
 使用pnpm自带的workspace管理多包仓库，以下是我使用过程中的一些经验。这里记录下来，以供以后查找。
