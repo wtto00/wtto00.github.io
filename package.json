@@ -58,7 +58,7 @@
     "sharp": "^0.33.2",
     "unocss": "^0.58.5",
     "unocss-preset-theme": "^0.12.0",
-    "zhlint": "^0.7.4"
+    "zhlint": "^0.8.0"
   },
   "lint-staged": {
     "*": [
