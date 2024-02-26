@@ -38,11 +38,6 @@ for (const file of files) {
 
   const { content, data } = read(file)
 
-  if (data.draft) {
-    console.log(`文件 ${file} 是草稿状态`)
-    continue
-  }
-
   const now = new Date()
 
   if (!data.pubDatetime) {
