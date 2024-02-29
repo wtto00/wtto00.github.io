@@ -7,7 +7,7 @@ tags:
   - 电脑相关
 description: 新买的电脑，或重新安装的系统，从头开始搭建我自己的开发环境。
 pubDatetime: 2024-01-28T18:11:12.094Z
-updateTime: 2024-01-31T16:22:29.610Z
+updateTime: 2024-02-29T05:37:54.306Z
 ---
 
 新买的电脑，或重新安装的系统，从头开始搭建我自己的开发环境。
@@ -209,3 +209,7 @@ brew install ruby
 ```shell
 sudo gem install cocoapods
 ```
+
+### Flutter
+
+跟随此[文档](https://flutter.cn/community/china?tab=macos-pub)步骤安装。
