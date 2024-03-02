@@ -7,7 +7,7 @@ tags:
   - pnpm
 description: 使用pnpm自带的workspace管理多包仓库，以下是我使用过程中的一些经验。这里记录下来，以供以后查找。
 pubDatetime: 2024-02-23T15:59:22.972Z
-updateTime: 2024-02-26T02:03:34.948Z
+updateTime: 2024-03-02T15:49:07.195Z
 ---
 
 使用 pnpm 自带的 workspace 管理多包仓库，以下是我使用过程中的一些经验。这里记录下来，以供以后查找。
@@ -70,7 +70,7 @@ packages:
 
 ### pnpm 的一些命令
 
-#### -C, --dir
+#### -C，--dir
 
 在相对路径中执行命令。[详细说明](https://pnpm.io/zh/pnpm-cli#-c-path---dir-path)
 
@@ -79,7 +79,7 @@ packages:
 pnpm -C packages/a build
 ```
 
-#### -w, --workspace-root
+#### -w，--workspace-root
 
 在工作空间根目录中执行命令。[详细说明](https://pnpm.io/zh/pnpm-cli#-w---workspace-root)
 
@@ -92,7 +92,7 @@ pnpm -C packages/a build
 pnpm publish -r
 ```
 
-#### --filter, -F
+#### --filter，-F
 
 筛选特定的包名。[详细说明](https://pnpm.io/zh/filtering)
 
