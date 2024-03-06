@@ -7,7 +7,7 @@ import { existsSync, writeFileSync } from 'node:fs'
 import { basename, dirname, extname, resolve } from 'node:path'
 
 import matter from 'gray-matter'
-import { run as zhlint } from 'zhlint'
+import { runWithConfig as zhlint } from 'zhlint'
 
 const { read, stringify } = matter
 
@@ -45,7 +45,7 @@ for (const file of files) {
   }
   data.updateTime = now
 
-  const result = zhlint(content)
+  const result = zhlint(content, { preset: 'default' })
 
   writeFileSync(file, stringify({ content: result.result }, data))
 }
