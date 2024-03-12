@@ -55,7 +55,7 @@ export default defineConfig({
     ],
     shikiConfig: {
       wrap: true,
-      experimentalThemes: {
+      themes: {
         light: githubLightTheme,
         dark: 'github-dark',
       },
