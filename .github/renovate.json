@@ -1,5 +1,6 @@
 {
   "semanticCommits": "enabled",
+  "baseBranches": ["dev"],
   "schedule": ["every weekend"],
   "packageRules": [
     {
