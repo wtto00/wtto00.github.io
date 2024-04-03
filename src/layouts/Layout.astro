@@ -62,6 +62,18 @@ const socialImageURL = ogImage || new URL('og.png', Astro.url.origin).href
       googleSiteVerification && <meta name="google-site-verification" content={googleSiteVerification} />
     }
 
+    <script>
+      // @ts-expect-error js,not-ts
+      var _hmt = _hmt || []
+      ;(function () {
+        var hm = document.createElement('script')
+        hm.src = 'https://hm.baidu.com/hm.js?6f295edd9fe69b2eb803d9b5e24a4c50'
+        var s = document.getElementsByTagName('script')[0]
+        // @ts-expect-error js,not-ts
+        s.parentNode.insertBefore(hm, s)
+      })()
+    </script>
+
     <ViewTransitions />
   </head>
   <body>

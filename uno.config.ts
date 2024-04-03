@@ -1,7 +1,7 @@
 import type { Theme } from '@unocss/preset-uno'
 import transformerDirectives from '@unocss/transformer-directives'
 import transformerVariantGroup from '@unocss/transformer-variant-group'
-import { defineConfig, presetIcons, presetTypography, presetUno } from 'unocss'
+import { defineConfig, type PresetFactory, presetIcons, presetTypography, presetUno } from 'unocss'
 import presetTheme from 'unocss-preset-theme'
 
 import { colorAddOpacity } from './scripts/uno-utils'
@@ -119,7 +119,7 @@ export default defineConfig<Theme>({
           },
         },
       },
-    }),
+    }) as PresetFactory<Theme>,
   ],
   content: {
     filesystem: ['./**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
