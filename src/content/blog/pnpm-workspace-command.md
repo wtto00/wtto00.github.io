@@ -99,6 +99,8 @@ pnpm publish -r
 ```shell
 # 在c包中安装lodash作为依赖
 pnpm add lodash --filter c
+# 执行c包的build命令
+pnpm -F c build
 ```
 
 #### --workspace
