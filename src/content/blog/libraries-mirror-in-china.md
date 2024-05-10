@@ -78,7 +78,7 @@ export PUB_HOSTED_URL=https://pub.flutter-io.cn
 
 ## homebrew
 
-使用[中科大镜像](https://mirrors.ustc.edu.cn/)
+使用[中科大镜像](https://mirrors.ustc.edu.cn/help/brew.git.html)
 
 ```shell
 echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"' >> ~/.zprofile # Homebrew
@@ -91,7 +91,6 @@ echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottle
 echo 'export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"' >> ~/.zprofile # Homebrew Bottles
 
 # brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git # Homebrew Cask
-brew tap --custom-remote --force-auto-update homebrew/cask-versions https://mirrors.ustc.edu.cn/homebrew-cask-versions.git # Homebrew Cask Versions
 brew tap --custom-remote --force-auto-update homebrew/services https://mirrors.ustc.edu.cn/homebrew-services.git # Homebrew Services
 ```
 
