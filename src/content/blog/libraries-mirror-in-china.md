@@ -31,6 +31,10 @@ export FNM_NODE_DIST_MIRROR="https://mirrors.bfsu.edu.cn/nodejs-release/"
 
 前往[清华大学镜像站](https://mirrors.tuna.tsinghua.edu.cn/github-release/git-for-windows/git/)下载。
 
+## JDK
+
+前往[清华大学镜像站](https://mirrors.tuna.tsinghua.edu.cn/Adoptium/)下载。
+
 ## cargo-Rust
 
 使用[字节跳动](http://rsproxy.cn/)的镜像
