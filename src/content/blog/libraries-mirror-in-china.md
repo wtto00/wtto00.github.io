@@ -106,6 +106,7 @@ allprojects {
         def ALIYUN_REPOSITORY_URL = 'https://maven.aliyun.com/repository/public'
         def ALIYUN_GOOGLE_URL = 'https://maven.aliyun.com/repository/google'
         def HUAWEIYUN_MAVEN_URL = 'https://mirrors.huaweicloud.com/repository/maven'
+        def SCIJAVA_URL = 'https://maven.scijava.org/content/repositories/public'
         all { ArtifactRepository repo ->
             if(repo instanceof MavenArtifactRepository){
                 def url = repo.url.toString()
@@ -123,6 +124,7 @@ allprojects {
         maven { url ALIYUN_REPOSITORY_URL }
         maven { url ALIYUN_GOOGLE_URL }
         maven { url HUAWEIYUN_MAVEN_URL }
+        maven { url SCIJAVA_URL }
     }
 }
 ```
@@ -130,6 +132,8 @@ allprojects {
 如果用了其他仓库，可以查看日志，然后到[阿里云云效 Maven 官网](https://developer.aliyun.com/mvn/guide)查看并替换
 
 由于阿里云的镜像无法下载微信 openSDK6.8.26 (<https://maven.aliyun.com/repository/public/com/tencent/mm/opensdk/wechat-sdk-android/6.8.26/wechat-sdk-android-6.8.26.pom>) 版本，所以后面加个[华为云 maven 镜像](https://mirrors.huaweicloud.com/mirrorDetail/5ea0025f2ab89b484a4dd5ce)。
+
+由于阿里云以及华为云的镜像某些时候更新不及时，延时性比较大，对于比较急用的依赖包，加上[scijava](https://maven.scijava.org/content/repositories/public)
 
 ## dnf-fedora
 
