@@ -151,6 +151,17 @@ sudo sed -e 's|^metalink=|#metalink=|g' \
 
 更新请以[官方文档](https://mirrors.tuna.tsinghua.edu.cn/help/fedora/)为准。
 
+经过测试，Fedora38不可用，38以后的版本可用。因为Fedora官方已把38版本的源归档。
+
+## Ubuntu
+
+使用[中科大镜像](https://mirrors.ustc.edu.cn/help/ubuntu.html)
+
+```shell
+sudo sed -i 's@//.*archive.ubuntu.com@//mirrors.ustc.edu.cn@g' /etc/apt/sources.list
+# sudo sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+```
+
 ## pip-python
 
 - `python` 安装包下载
