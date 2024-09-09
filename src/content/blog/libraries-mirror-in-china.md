@@ -18,12 +18,6 @@ updateTime: 2024-02-04T10:32:15.766Z
 npm config set registry https://registry.npmmirror.com
 ```
 
-corepack
-
-```shell
-export COREPACK_NPM_REGISTRY="https://registry.npmmirror.com"
-```
-
 ## nodejs
 
 使用[北京外国语大学](https://mirrors.bfsu.edu.cn/help/nodejs-release/)的镜像
@@ -31,6 +25,12 @@ export COREPACK_NPM_REGISTRY="https://registry.npmmirror.com"
 ```shell
 # 使用fnm下载nodejs
 export FNM_NODE_DIST_MIRROR="https://mirrors.bfsu.edu.cn/nodejs-release/"
+```
+
+corepack
+
+```shell
+export COREPACK_NPM_REGISTRY="https://registry.npmmirror.com"
 ```
 
 ## git-for-windows
