@@ -141,6 +141,15 @@ allprojects {
 
 由于阿里云以及华为云的镜像某些时候更新不及时，延时性比较大，对于比较急用的依赖包，加上[scijava](https://maven.scijava.org/content/repositories/public)
 
+**gradle wrapper config**
+
+```properties
+#distributionUrl=https\://services.gradle.org/distributions/gradle-6.4.1-all.zip
+distributionUrl=https\://mirrors.cloud.tencent.com/gradle/gradle-6.4.1-all.zip
+```
+
+根据实际情况修改版本号
+
 ## dnf-fedora
 
 使用[清华大学镜像](https://mirrors.tuna.tsinghua.edu.cn/)
