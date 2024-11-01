@@ -200,10 +200,10 @@ npm pkg set scripts.commitlint="commitlint --edit"
 pnpm add husky -D
 
 # 添加初始化脚本
-npm pkg set scripts.prepare="husky install && husky set .husky/pre-commit \"npx lint-staged\""
+npm pkg set scripts.prepare="husky && echo npx lint-staged > .husky/pre-commit"
 
 # 如果需要添加上commitlint
-npm pkg set scripts.prepare="husky install && husky set .husky/pre-commit \"npx lint-staged\" && husky set .husky/commit-msg \"npx --no -- commitlint --edit ${1}\""
+npm pkg set scripts.prepare="husky && echo -e \"npx lint-staged\nnpx --no -- commitlint --edit \\${1}\" > .husky/pre-commit"
 
 # 初始化
 pnpm prepare
