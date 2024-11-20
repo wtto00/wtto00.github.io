@@ -123,8 +123,10 @@ svchost.exe                   1032 Services                   0     11,440 K
 ### 杀掉占用端口的程序
 
 ```shell
+taskkill /f /t /pid xxxPID
 taskkill /f /t /im xx进程
 # 示例
+taskkill /f /t /pid 1032
 taskkill /f /t /im System
 ```
 
