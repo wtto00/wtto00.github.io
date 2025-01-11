@@ -31,7 +31,11 @@ corepack
 
 ```shell
 export COREPACK_NPM_REGISTRY="https://registry.npmmirror.com"
+# Windows
+[Environment]::SetEnvironmentVariable("COREPACK_NPM_REGISTRY","https://registry.npmmirror.com")
 ```
+
+如果遇到网络302错误，那么可以使用`npm i -g corepack`更新最新版本。
 
 ## git-for-windows
 
