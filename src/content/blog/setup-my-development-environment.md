@@ -80,6 +80,9 @@ fnm install --lts
 
 # 配置镜像
 npm config set registry https://registry.npmmirror.com
+
+# 设置nodejs脚本可执行
+Set-ExecutionPolicy RemoteSigned
 ```
 
 ### gsudo
