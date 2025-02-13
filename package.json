@@ -20,7 +20,7 @@
     "@astrojs/markdown-remark": "^5.0.0",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.2",
-    "@astrojs/solid-js": "^4.0.1",
+    "@astrojs/solid-js": "^5.0.4",
     "@resvg/resvg-js": "^2.6.2",
     "astro": "^4.5.14",
     "fuse.js": "^7.0.0",
