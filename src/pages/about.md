@@ -9,4 +9,4 @@ title: '关于我'
 
 平时喜欢打游戏 🎮，听音乐 🎵，爬山 🧗，打羽毛球 🏸。
 
-欢迎联系 [email](mailto:wtto00@outlook.com) 以及微信 (wtto00) 交流技术，共同成长，共同进步。
+欢迎联系 [email](mailto:wtto00@outlook.com) 或者微信 (wtto00) 交流技术，共同成长，共同进步。
