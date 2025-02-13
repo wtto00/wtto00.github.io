@@ -7,7 +7,7 @@ draft: false
 tags:
   - 镜像
 description: '一些常用库的国内镜像: npm,cargo,maven,flutter,homebrew,dnf,ruby,pip'
-updateTime: 2024-02-04T10:32:15.766Z
+updateTime: 2025-02-13T09:29:58.967Z
 ---
 
 ## npm-JavaScript
@@ -35,7 +35,7 @@ export COREPACK_NPM_REGISTRY="https://registry.npmmirror.com"
 [Environment]::SetEnvironmentVariable("COREPACK_NPM_REGISTRY","https://registry.npmmirror.com")
 ```
 
-如果遇到网络302错误，那么可以使用`npm i -g corepack`更新最新版本。
+如果遇到网络 302 错误，那么可以使用 `npm i -g corepack` 更新最新版本。
 
 ## git-for-windows
 
@@ -143,7 +143,7 @@ allprojects {
 
 由于阿里云的镜像无法下载微信 openSDK6.8.26 (<https://maven.aliyun.com/repository/public/com/tencent/mm/opensdk/wechat-sdk-android/6.8.26/wechat-sdk-android-6.8.26.pom>) 版本，所以后面加个[华为云 maven 镜像](https://mirrors.huaweicloud.com/mirrorDetail/5ea0025f2ab89b484a4dd5ce)。
 
-由于阿里云以及华为云的镜像某些时候更新不及时，延时性比较大，对于比较急用的依赖包，加上[scijava](https://maven.scijava.org/content/repositories/public)
+由于阿里云以及华为云的镜像某些时候更新不及时，延时性比较大，对于比较急用的依赖包，加上 [scijava](https://maven.scijava.org/content/repositories/public)
 
 **gradle wrapper config**
 
@@ -170,7 +170,7 @@ sudo sed -e 's|^metalink=|#metalink=|g' \
 
 更新请以[官方文档](https://mirrors.tuna.tsinghua.edu.cn/help/fedora/)为准。
 
-经过测试，Fedora38不可用，38以后的版本可用。因为Fedora官方已把38版本的源归档。
+经过测试，Fedora38 不可用，38 以后的版本可用。因为 Fedora 官方已把 38 版本的源归档。
 
 ## Ubuntu
 
