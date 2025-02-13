@@ -23,7 +23,7 @@
     "@astrojs/solid-js": "^4.0.1",
     "@resvg/resvg-js": "^2.6.2",
     "astro": "^4.5.14",
-    "fuse.js": "^7.0.0",
+    "fuse.js": "^7.1.0",
     "github-slugger": "^2.0.0",
     "qrcode": "^1.5.3",
     "rehype-autolink-headings": "^7.1.0",
