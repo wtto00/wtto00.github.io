@@ -56,7 +56,7 @@
     "prettier": "^3.5.0",
     "prettier-plugin-astro": "^0.14.1",
     "sharp": "^0.33.5",
-    "unocss": "^0.58.9",
+    "unocss": "^66.0.0",
     "unocss-preset-theme": "^0.12.0",
     "zhlint": "^0.8.2"
   },
