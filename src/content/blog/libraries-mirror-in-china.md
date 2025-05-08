@@ -45,6 +45,8 @@ export COREPACK_NPM_REGISTRY="https://registry.npmmirror.com"
 
 前往[清华大学镜像站](https://mirrors.tuna.tsinghua.edu.cn/Adoptium/)下载。
 
+前往[华为云镜像](https://mirrors.huaweicloud.com/openjdk/)下载。
+
 ## cargo-Rust
 
 使用[字节跳动](http://rsproxy.cn/)的镜像
