@@ -161,6 +161,9 @@ alias code="/d/software/Microsoft\ VS\ Code/bin/code.cmd"
      ```shell
      export JAVA_HOME="/d/home/.jdks/jdk8u402-b06" # 使用自己下载的Java版本
      # export JAVA_HOME="/d/Program Files/Android/Android Studio/jbr" # 使用Android Studio中自带的Java版本
+
+     # java终端命令中文乱码
+     export JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8"
      ```
 
    - Android Studio 使用的 Java 版本，在 Android Studio 的设置中，搜索 `gradle`，在 `Gradle JDK` 选项中设置。
