@@ -43,7 +43,7 @@
     "@unocss/preset-typography": "^0.58.9",
     "@unocss/preset-uno": "^0.58.9",
     "@unocss/reset": "^0.58.9",
-    "@unocss/transformer-directives": "^0.58.9",
+    "@unocss/transformer-directives": "^66.1.1",
     "@unocss/transformer-variant-group": "^0.58.9",
     "eslint": "^8.57.0",
     "eslint-plugin-astro": "^0.33.1",
