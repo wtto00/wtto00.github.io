@@ -7,7 +7,7 @@ tags:
   - 电脑相关
 description: 新买的电脑，或重新安装的系统，从头开始搭建我自己的开发环境。
 pubDatetime: 2024-01-28T18:11:12.094Z
-updateTime: 2024-02-29T05:37:54.306Z
+updateTime: 2025-11-29T17:20:42.800Z
 ---
 
 新买的电脑，或重新安装的系统，从头开始搭建我自己的开发环境。
@@ -50,7 +50,7 @@ updateTime: 2024-02-29T05:37:54.306Z
    export CARGO_HOME="/d/home/.cargo"
    ```
 
-1. 期间安装 `Visual Studio` 时，不要忘记修改安装路径为 D 盘。
+1. 期间安装 `Visual Studio` 时，不要忘记修改安装路径为 `D:\` 盘。
 
 ### fnm
 
@@ -80,6 +80,8 @@ fnm install --lts
 
 # 配置镜像
 npm config set registry https://registry.npmmirror.com
+# 修改缓存路径，默认在C:\Users\user\AppData\Local\npm-cache
+npm config set cache "D:\home\.npm-cache" -g
 
 # 设置nodejs脚本可执行
 Set-ExecutionPolicy RemoteSigned
@@ -169,6 +171,15 @@ alias code="/d/software/Microsoft\ VS\ Code/bin/code.cmd"
    - Android Studio 使用的 Java 版本，在 Android Studio 的设置中，搜索 `gradle`，在 `Gradle JDK` 选项中设置。
 
 1. 配置 [gradle 镜像](https://wtto00.github.io/posts/libraries-mirror-in-china/#gradle-java)
+
+### Python
+
+到[北京外国语大学开源软件镜像站](https://mirrors.bfsu.edu.cn/python/)下载最新安装包，并安装到本机 `D:\home\Python`
+
+```shell
+# 修改缓存位置，默认在C:\Users\wtto\AppData\Local\pip\cache
+pip config set global.cache-dir "D:\home\.pip-cache"
+```
 
 ## MacOS
 
