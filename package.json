@@ -40,7 +40,7 @@
     "@typescript-eslint/eslint-plugin": "^7.5.0",
     "@typescript-eslint/parser": "^7.5.0",
     "@unocss/eslint-config": "^0.58.9",
-    "@unocss/preset-typography": "^0.58.9",
+    "@unocss/preset-typography": "^66.1.1",
     "@unocss/preset-uno": "^0.58.9",
     "@unocss/reset": "^0.58.9",
     "@unocss/transformer-directives": "^0.58.9",
